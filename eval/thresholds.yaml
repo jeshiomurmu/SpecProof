@@ -1,0 +1,14 @@
+# Eval gate for `make eval`. PROTECTED: never edit to make a gate pass (AGENTS.md section 8).
+# "min" = gate fails below this. "target" = what we aim for; reported, not enforced.
+# Set before any extraction was run (2026-09-25) to avoid tuning thresholds to results.
+version: 1
+metrics:
+  endpoint_coverage:            {min: 0.90, target: 1.00}   # endpoint sections with a contract / endpoint sections
+  citation_grounding_rate:      {min: 0.95, target: 0.99}   # items whose quote is found on the cited page
+  row_consistency_rate:         {min: 0.90, target: 0.98}   # table-row fields whose required/type match the row line
+  sample_parse_rate:            {min: 0.80, target: 0.95}   # doc samples parseable as JSON (low = spec defects, reported)
+  final_verified_rate:          {min: 0.85, target: 0.95}   # VERIFIED + VERIFIED_WITH_SPEC_FINDINGS / sections
+  quarantine_rate:              {max: 0.10, target: 0.03}
+  audited_precision:            {min: 0.90, target: 0.97}   # blind hand audit, see EVALUATION_FRAMEWORK.md section 4
+  determinism:                  {min: 1.00}                 # pipeline twice -> identical artifact hashes (1.0 = identical)
+  unit_test_coverage:           {min: 0.85}

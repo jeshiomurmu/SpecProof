@@ -1,0 +1,10 @@
+artifacts/work/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.specproof_task_base
+.specproof_extraction_task

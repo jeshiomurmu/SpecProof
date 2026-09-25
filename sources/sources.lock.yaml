@@ -1,0 +1,30 @@
+# Pinned third-party sources. `specproof fetch` downloads each, verifies SHA-256, and stores
+# it under artifacts/work/ (gitignored). NOTHING here is redistributed in this repository.
+# Pins verified 2026-09-25 (pre-kickoff). Do not edit during extraction tasks (protected path).
+version: 1
+sources:
+  - id: unifi_spec_pdf
+    kind: file
+    description: UniFi Access API official documentation (PDF), 194 pages
+    owner: Ubiquiti Inc.
+    license: Proprietary vendor documentation - analysis only, not redistributed; short quotes only
+    url: https://raw.githubusercontent.com/YuDefine/unifi-access-api-openapi/426e948b1f8d96ebab5b44b935bb9b27ea095db3/docs/unifi-access-api-original.pdf
+    sha256: d204c8b9ad4d329f6c89e71ebb5ccf446bcc30d2668673011bbe99a909a6a534
+    dest: artifacts/work/spec.pdf
+    notes: Mirrored by the community repo; the official copy is downloadable from the UniFi Access application (spec section 1.1).
+  - id: community_openapi
+    kind: file
+    description: Unofficial OpenAPI 3.1 conversion of the PDF (MinerU + Claude), used ONLY after extraction, for comparison
+    owner: YuDefine
+    license: MIT
+    url: https://raw.githubusercontent.com/YuDefine/unifi-access-api-openapi/426e948b1f8d96ebab5b44b935bb9b27ea095db3/openapi.yaml
+    sha256: 629c809c7869c3ccc6fed9daac5186720fe3872e017b70b075bbbc89e64b3e24
+    dest: artifacts/work/community_openapi.yaml
+  - id: py_unifi_access
+    kind: git
+    description: Async Python client for the UniFi Access API (Pydantic v2 models) - conformance target
+    owner: imhotep
+    license: MIT
+    url: https://github.com/imhotep/py-unifi-access.git
+    commit: 646697821023b420331d21649e6118c88163d814
+    dest: artifacts/work/py-unifi-access
