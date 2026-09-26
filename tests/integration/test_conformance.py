@@ -232,6 +232,56 @@ def test_CNF_015_mapping_file_with_producer(tmp_path: Path) -> None:
 
 
 @pytest.mark.integration
+def test_CNF_016_unbuildable_replay_env_is_reported(
+    workspace: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import subprocess
+
+    from specproof import io_conform
+
+    shutil.copytree(FIXTURES / "contracts_good", workspace / "artifacts" / "contract")
+    shutil.copytree(MINI, workspace / "client")
+    runner = CliRunner()
+    runner.invoke(app, ["verify", "--report-only"])
+    runner.invoke(app, ["classify"])
+    (workspace / "artifacts" / "conformance").mkdir(parents=True)
+    (workspace / "artifacts" / "conformance" / "mapping.yaml").write_text(
+        yaml.safe_dump(
+            [
+                {
+                    "section_id": "S-2.3",
+                    "model": "models.Widget",
+                    "json_path": "data",
+                    "code": {"file": "models.py", "line": 7},
+                },
+            ]
+        )
+    )
+
+    def fail(*_a: object, **_k: object) -> str:
+        raise subprocess.CalledProcessError(1, ["pip", "install"])
+
+    monkeypatch.setattr(io_conform, "ensure_replay_venv", fail)
+    result = runner.invoke(app, ["conform", "--client", "client"])
+    assert result.exit_code == 1
+    out = load_json(workspace / "artifacts" / "findings" / "conformance.json")
+    assert [e["kind"] for e in out["errors"]] == ["environment_error"]
+    assert "--python" in out["errors"][0]["message"]
+
+
+@pytest.mark.unit
+def test_CNF_017_relative_python_path_is_resolved(tmp_path: Path) -> None:
+    from specproof.io_conform import resolve_interpreter
+
+    target = tmp_path / "venv" / "Scripts" / "python.exe"
+    target.parent.mkdir(parents=True)
+    target.write_text("")
+    resolved = resolve_interpreter("venv/Scripts/python.exe", tmp_path)
+    assert Path(resolved).is_absolute() and Path(resolved) == target.resolve()
+    assert resolve_interpreter("python3", tmp_path) == "python3"
+
+
+@pytest.mark.integration
 def test_CNF_014_conform_cli(workspace: Path) -> None:
     shutil.copytree(FIXTURES / "contracts_good", workspace / "artifacts" / "contract")
     client = workspace / "client"

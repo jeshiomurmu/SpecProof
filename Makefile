@@ -34,7 +34,7 @@ pipeline:
 	$(BIN)/specproof classify
 	$(BIN)/specproof export-openapi
 	$(BIN)/specproof compare --community
-	$(BIN)/specproof conform --client artifacts/work/py-unifi-access
+	$(BIN)/specproof conform --client artifacts/work/py-unifi-access $(if $(REPLAY_PYTHON),--python $(REPLAY_PYTHON))
 	$(BIN)/specproof report
 
 eval:

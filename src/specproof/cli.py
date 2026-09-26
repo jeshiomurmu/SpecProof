@@ -232,7 +232,10 @@ def conform(
     if client is None or not client.is_dir():
         log.error("conform: --client must point to the client repository (got %s)", client)
         raise typer.Exit(2)
-    result = run_conform(Paths.from_root(Path.cwd()), client, python)
+    from specproof.io_conform import resolve_interpreter
+
+    interpreter = resolve_interpreter(python, Path.cwd()) if python else None
+    result = run_conform(Paths.from_root(Path.cwd()), client, interpreter)
     if result["errors"]:
         raise typer.Exit(1)
 

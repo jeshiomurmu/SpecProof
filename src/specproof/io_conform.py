@@ -39,6 +39,12 @@ def ensure_replay_venv(paths: Paths, client: Path) -> str:
     return str(python)
 
 
+def resolve_interpreter(value: str, cwd: Path) -> str:
+    """An interpreter path relative to cwd made absolute; a bare command name is kept."""
+    candidate = cwd / value
+    return str(candidate.resolve()) if candidate.is_file() else value
+
+
 def _mapping_producer(paths: Paths) -> Producer:
     """Lineage producer for the AI-written mapping, from its own `producer` key."""
     name = mapping_producer(paths.mapping)
@@ -85,8 +91,22 @@ def run_conform(paths: Paths, client: Path, python: str | None) -> dict[str, Any
     mappings, mapping_errors = load_mappings(paths.mapping, client, set(verified))
     errors: list[dict[str, str]] = []
     all_findings: list[Finding] = list(findings)
+    interpreter = python or ""
+    if mappings and not interpreter:
+        try:
+            interpreter = ensure_replay_venv(paths, client)
+        except subprocess.CalledProcessError as exc:
+            errors.append(
+                {
+                    "kind": "environment_error",
+                    "message": (
+                        f"could not build the replay environment ({exc}); the client may need "
+                        "a newer Python: create a venv with it and pass --python"
+                    ),
+                }
+            )
+            mappings = []
     if mappings:
-        interpreter = python or ensure_replay_venv(paths, client)
         described = introspect([m.model for m in mappings], interpreter, [client])
         for mapping in mappings:
             info = described.get(mapping.model, {"error": "not introspected"})
