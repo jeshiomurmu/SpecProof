@@ -128,6 +128,35 @@ def test_CMP_010_missing_and_extra_fields(good: Good) -> None:
 
 
 @pytest.mark.integration
+def test_CMP_011_path_parameter_case_follows_the_template(good: Good) -> None:
+    data = good("S-2.3")
+    data["fields"].append(
+        {
+            "name": "Id",
+            "location": "path",
+            "required": True,
+            "type": "string",
+            "type_raw": "String",
+            "citation": {"page": 6, "quote": "Request URL: /api/v1/widgets/:id"},
+        }
+    )
+    data["fields"].append(
+        {
+            "name": "stray",
+            "location": "path",
+            "required": True,
+            "type": "string",
+            "type_raw": "String",
+            "citation": {"page": 6, "quote": "Request URL: /api/v1/widgets/:id"},
+        }
+    )
+    spec = export([ContractSection.model_validate(data)], ["S-2.3"])
+    validate(spec)
+    params = spec["paths"]["/api/v1/widgets/{id}"]["get"]["parameters"]
+    assert [(p["in"], p["name"]) for p in params] == [("path", "id")]
+
+
+@pytest.mark.integration
 def test_CMP_009_cli_export_and_compare(workspace: Path) -> None:
     shutil.copytree(FIXTURES / "contracts_good", workspace / "artifacts" / "contract")
     shutil.copyfile(COMMUNITY, workspace / "artifacts" / "work" / "community_openapi.yaml")

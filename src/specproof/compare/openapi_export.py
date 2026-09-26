@@ -39,19 +39,31 @@ def _schema(fields: list[FieldSpec]) -> dict[str, Any]:
 
 def _parameters(contract: ContractSection, path: str) -> list[dict[str, Any]]:
     params: list[dict[str, Any]] = []
-    declared = {(f.location, f.name) for f in contract.fields}
+    # OpenAPI requires path parameter names to match the template exactly; the document
+    # sometimes prints them in another case (Id vs :id). Unmatched path rows are skipped.
+    template = {name.lower(): name for name in _TEMPLATE.findall(path)}
+    declared: set[tuple[str, str]] = set()
     for field in sorted(contract.fields, key=lambda f: (f.location, f.name)):
-        if field.location in ("header", "path", "query"):
-            params.append(
-                {
-                    "in": field.location,
-                    "name": field.name,
-                    "required": True if field.location == "path" else bool(field.required),
-                    "schema": build_schema([field])["properties"].get(field.name, {}),
-                    CITATION_KEY: _cite(field.citation),
-                }
-            )
-    for name in _TEMPLATE.findall(path):
+        if field.location not in ("header", "path", "query"):
+            continue
+        name = field.name
+        if field.location == "path":
+            if name.lower() not in template:
+                continue
+            name = template[name.lower()]
+        if (field.location, name) in declared:
+            continue
+        declared.add((field.location, name))
+        params.append(
+            {
+                "in": field.location,
+                "name": name,
+                "required": True if field.location == "path" else bool(field.required),
+                "schema": build_schema([field])["properties"].get(field.name, {}),
+                CITATION_KEY: _cite(field.citation),
+            }
+        )
+    for name in template.values():
         if ("path", name) not in declared:
             params.append(
                 {"in": "path", "name": name, "required": True, "schema": {"type": "string"}}
