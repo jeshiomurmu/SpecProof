@@ -89,7 +89,7 @@ LLM spec extraction and spec-to-code checking already exist; see [`docs/PRIOR_AR
 
 ## AI usage disclosure
 
-Built with IBM Bob 2.0 as the primary engineering partner. Claude Code was used only for review and adversarial testing, as logged in [`docs/AI_USAGE_LOG.md`](docs/AI_USAGE_LOG.md). Planning documents were written before kickoff; all product code was written during the event.
+The deterministic engine (task cards T01–T06, T09–T12) was written with Claude Code. IBM Bob 2.0 handles spec extraction (custom mode, skill, subagents). Every AI session is logged in [`docs/AI_USAGE_LOG.md`](docs/AI_USAGE_LOG.md). Planning documents were written before kickoff but first committed after it (commit `802ad9f`, 2026-09-25 22:31 BST). Product code work started after kickoff, at about 22:20 BST on 2026-09-25; see the commit timestamps.
 
 ## License
 

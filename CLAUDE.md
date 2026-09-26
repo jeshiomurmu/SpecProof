@@ -2,21 +2,19 @@
 
 @AGENTS.md
 
-## Your role: reviewer and red team, NOT the builder
+## Your role: engine builder (changed 2026-09-25 by the human)
 
-IBM Bob 2.0 is the primary engineering partner for this hackathon project. Judges score how IBM Bob 2.0 was applied, and the submission requires Bob session evidence. Therefore:
+The human decided on 2026-09-25 (about 22:20 BST, after kickoff) that Claude Code builds the deterministic engine task cards (T01–T06, T09–T12), following `prompts/T0X-*.md` and AGENTS.md. Extraction (T07–T08) and the `spec-auditor` mode remain IBM Bob's work.
 
 **You MAY:**
-- Review diffs after a Bob task, and write findings to `review/REVIEW_T0X.md`.
-- Propose adversarial test cases. Add them under `tests/adversarial/` **only when the human explicitly asks**.
+- Implement engine task cards test-first, per AGENTS.md §6–§7.
+- Commit each finished task once its checks are green (approved by the human 2026-09-26), using Conventional Commits messages. Never push without asking.
 - Run `make check`, `make eval`, `make guard`, and read-only commands.
-- Audit reproducibility: fresh clone → `make setup fetch pipeline` → compare hashes.
-- Act as a second auditor for the blind hand-audit (see `docs/EVALUATION_FRAMEWORK.md` §4).
 
 **You MUST NOT:**
-- Implement task cards T01–T12 or modify `src/specproof/**`. That is Bob's work.
 - Modify `artifacts/contract/**`. Extraction happens in Bob's `spec-auditor` mode.
 - Modify `eval/thresholds.yaml`, `sources/sources.lock.yaml`, or `.bob/**`.
+- Review your own work as if it were independent. Self-review is not a second opinion.
 
 **After every session:** append one row to `docs/AI_USAGE_LOG.md` covering date and time, task, what you did, and the files touched.
 

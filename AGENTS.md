@@ -64,7 +64,7 @@ bob_sessions/         exported Bob task sessions + screenshots + INDEX.md
 3. Switch to Agent mode and implement test-first.
 4. Run `make check`. It must be green.
 5. Update `docs/CHANGELOG.md` with one line: `T0X: <what changed>`.
-6. Commit with the message `T0X: <imperative summary>`.
+6. Commit with a Conventional Commits message (`feat: …`, `fix: …`, `test: …`, `docs: …`, `chore: …`), imperative and specific, with the task ID as a body trailer: `Refs: T0X`.
 7. Remind the human to export this session to `bob_sessions/exports/` and screenshot the consumption summary.
 
 ## 8. Protected paths (reward-hacking guard)
