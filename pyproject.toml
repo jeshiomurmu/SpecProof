@@ -54,6 +54,10 @@ strict = true
 files = ["src"]
 plugins = ["pydantic.mypy"]
 
+[[tool.mypy.overrides]]
+module = ["pdfplumber", "pdfplumber.*"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --strict-markers"

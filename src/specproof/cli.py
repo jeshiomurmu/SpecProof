@@ -1,6 +1,7 @@
 """SpecProof command-line interface (architecture section 10)."""
 
 import logging
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated
 
@@ -23,13 +24,66 @@ def main(verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False) -> N
 @app.command()
 def fetch(lock: Path = Path("sources/sources.lock.yaml")) -> None:
     """Download pinned sources and verify their SHA-256."""
-    _stub("T02")
+    from specproof.sources.fetch import FetchError, fetch_all
+
+    try:
+        fetch_all(lock, Path.cwd())
+    except FetchError as exc:
+        log.error("%s", exc)
+        raise typer.Exit(1) from exc
 
 
 @app.command()
 def ingest(extractor: str = "auto") -> None:
     """Extract page text from the spec PDF into artifacts/work/pages.jsonl."""
-    _stub("T02")
+    from specproof import __version__
+    from specproof.config import Paths
+    from specproof.ingest.extractors import select_extractor
+    from specproof.models.manifest import ManifestRecord, append_record, find_record
+    from specproof.util.hashing import sha256_file
+    from specproof.util.io_pages import write_pages
+
+    paths = Paths.from_root(Path.cwd())
+    if not paths.spec_pdf.exists():
+        log.error("missing %s; run `specproof fetch` first", paths.rel(paths.spec_pdf))
+        raise typer.Exit(2)
+    try:
+        chosen = select_extractor(extractor)
+    except (RuntimeError, ValueError) as exc:
+        log.error("%s", exc)
+        raise typer.Exit(2) from exc
+    pdf_sha = sha256_file(paths.spec_pdf)
+    producer = {
+        "kind": "deterministic",
+        "tool": "specproof",
+        "version": __version__,
+        "extractor": chosen.name,
+        "extractor_version": chosen.version(),
+    }
+    inputs = [{"path": paths.rel(paths.spec_pdf), "sha256": pdf_sha, "source_id": "unifi_spec_pdf"}]
+    artifact = paths.rel(paths.pages)
+    previous = find_record(paths.manifest, artifact)
+    if (
+        previous is not None
+        and paths.pages.exists()
+        and previous.producer == producer
+        and previous.inputs == inputs
+        and previous.sha256 == sha256_file(paths.pages)
+    ):
+        log.info("ingest: cached (%s, pdf %s)", chosen.name, pdf_sha[:12])
+        return
+    pages = chosen.extract(paths.spec_pdf)
+    write_pages(paths.pages, pages)
+    record = ManifestRecord(
+        artifact=artifact,
+        sha256=sha256_file(paths.pages),
+        stage="ingest",
+        producer=producer,
+        inputs=inputs,
+        created_at=datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    )
+    append_record(paths.manifest, record)
+    log.info("ingest: %d pages with %s", len(pages), chosen.name)
 
 
 @app.command()

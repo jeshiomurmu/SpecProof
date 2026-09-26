@@ -15,6 +15,13 @@ def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item
             item.add_marker(skip)
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def repo_root() -> Path:
     return REPO_ROOT
+
+
+@pytest.fixture(scope="session")
+def synthetic_pdf(tmp_path_factory: pytest.TempPathFactory) -> Path:
+    from fixtures.build_synthetic_pdf import build
+
+    return build(tmp_path_factory.mktemp("fx01") / "synthetic.pdf")

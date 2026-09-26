@@ -1,0 +1,22 @@
+[
+  {
+    "artifact": "artifacts/work/pages.jsonl",
+    "created_at": "2026-09-25T17:02:42Z",
+    "inputs": [
+      {
+        "path": "artifacts/work/spec.pdf",
+        "sha256": "d204c8b9ad4d329f6c89e71ebb5ccf446bcc30d2668673011bbe99a909a6a534",
+        "source_id": "unifi_spec_pdf"
+      }
+    ],
+    "producer": {
+      "extractor": "pdfplumber",
+      "extractor_version": "0.11.10",
+      "kind": "deterministic",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2",
+    "stage": "ingest"
+  }
+]
