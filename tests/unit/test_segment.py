@@ -81,6 +81,23 @@ def test_SEG_007_monotonic_filter_rejects_stray_and_version_strings() -> None:
 
 
 @pytest.mark.unit
+def test_SEG_011_wide_layout_spacing_and_marker_spacing() -> None:
+    spaced = "3.20" + " " * 9 + (" " * 12).join(["Fetch", "the", "Access", "Policies", "Assigned"])
+    assert len(spaced) > 80
+    pages = [
+        make_page(1, "3.1 Schemas\ntext"),
+        make_page(2, spaced + "\nRequest   URL:   /api/v1/policies\nMethod :  GET"),
+    ]
+    sections = {s.entry["section_id"]: s.entry for s in segment(pages)}
+    assert sections["S-3.20"]["title"] == "Fetch the Access Policies Assigned"
+    assert sections["S-3.20"]["kind"] == "endpoint"
+    assert (sections["S-3.20"]["method_hint"], sections["S-3.20"]["path_hint"]) == (
+        "GET",
+        "/api/v1/policies",
+    )
+
+
+@pytest.mark.unit
 def test_SEG_008_no_full_text_in_index(synthetic_pages: list[Page]) -> None:
     for section in segment(synthetic_pages):
         assert set(section.entry) == {

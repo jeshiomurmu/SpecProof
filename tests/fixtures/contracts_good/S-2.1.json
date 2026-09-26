@@ -1,0 +1,43 @@
+{
+  "citations": {},
+  "definitions": [
+    {
+      "citation": {"page": 3, "quote": "color                 String            Widget color"},
+      "description": "Widget color.",
+      "enum": ["Red", "Green", "Blue"],
+      "enum_citation": {"page": 3, "quote": "Widget color: enum shade {Red,Green,Blue}"},
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "color",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 3, "quote": "size                  Integer           Widget size in millimetres."},
+      "description": "Widget size in millimetres.",
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "size",
+      "required": null,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    }
+  ],
+  "extraction": {"attempt": 1, "bob_task_ref": null, "mode": "hand-written", "producer": "fixture", "prompt_version": "fx02"},
+  "fields": [],
+  "kind": "schema",
+  "method": null,
+  "path": null,
+  "permission_key": null,
+  "samples": {"request": null, "response": null},
+  "schema_version": 1,
+  "section_id": "S-2.1",
+  "title": "Schemas"
+}

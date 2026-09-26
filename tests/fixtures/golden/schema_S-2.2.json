@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "color": {
+      "enum": [
+        "Red",
+        "Green",
+        "Blue"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "size": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "color",
+    "name"
+  ],
+  "type": "object"
+}

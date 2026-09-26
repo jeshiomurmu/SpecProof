@@ -114,7 +114,11 @@ def segment() -> None:
     sections = run_segment(read_pages(paths.pages))
     dump_json(paths.sections_index, [s.entry for s in sections])
     write_jsonl(
-        paths.sections_text, [{"id": s.entry["section_id"], "text": s.text} for s in sections]
+        paths.sections_text,
+        [
+            {"id": s.entry["section_id"], "lines": [list(pair) for pair in s.lines]}
+            for s in sections
+        ],
     )
     inputs = [InputRef(path=paths.rel(paths.pages), sha256=sha256_file(paths.pages))]
     producer = Producer(kind="deterministic", tool="specproof", version=__version__)
@@ -144,7 +148,18 @@ def verify(
     report_only: Annotated[bool, typer.Option("--report-only")] = False,
 ) -> None:
     """Run deterministic verification rules V1-V5 on contract sections."""
-    _stub("T05")
+    from specproof.config import Paths
+    from specproof.io_verify import run_verify
+    from specproof.verify.engine import has_extraction_errors
+
+    paths = Paths.from_root(Path.cwd())
+    try:
+        results = run_verify(paths, section, chapter)
+    except FileNotFoundError as exc:
+        log.error("missing input %s; run `specproof ingest` and `segment` first", exc.filename)
+        raise typer.Exit(2) from exc
+    if not report_only and any(has_extraction_errors(r) for r in results):
+        raise typer.Exit(1)
 
 
 @app.command("loop-status")

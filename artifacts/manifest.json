@@ -1,11 +1,11 @@
 [
   {
     "artifact": "artifacts/sections_index.json",
-    "created_at": "2026-09-26T01:16:19Z",
+    "created_at": "2026-09-26T01:31:54Z",
     "inputs": [
       {
         "path": "artifacts/work/pages.jsonl",
-        "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2"
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
       }
     ],
     "producer": {
@@ -18,7 +18,7 @@
   },
   {
     "artifact": "artifacts/work/pages.jsonl",
-    "created_at": "2026-09-25T17:02:42Z",
+    "created_at": "2026-09-26T01:31:18Z",
     "inputs": [
       {
         "path": "artifacts/work/spec.pdf",
@@ -28,21 +28,21 @@
     ],
     "producer": {
       "extractor": "pdfplumber",
-      "extractor_version": "0.11.10",
+      "extractor_version": "0.11.10 layout x_density=3.0",
       "kind": "deterministic",
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2",
+    "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b",
     "stage": "ingest"
   },
   {
     "artifact": "artifacts/work/sections.jsonl",
-    "created_at": "2026-09-26T01:15:15Z",
+    "created_at": "2026-09-26T01:31:54Z",
     "inputs": [
       {
         "path": "artifacts/work/pages.jsonl",
-        "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2"
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
       }
     ],
     "producer": {
@@ -50,7 +50,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "d0b92e78d10e6c4a95f30d1255a8af9484eff935d5fabf5a8fbc8fa2114a58f9",
+    "sha256": "e3e9efc3946547239c441ddc0feaf2c993ec747044e2827fd773724aec5b6ad5",
     "stage": "segment"
   }
 ]

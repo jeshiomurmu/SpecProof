@@ -20,6 +20,16 @@ def write_pages(path: Path, pages: list[Page]) -> None:
     write_bytes_atomic(path, ("\n".join(lines) + "\n").encode("utf-8"))
 
 
+def read_section_lines(path: Path) -> dict[str, list[tuple[int, str]]]:
+    """Read sections.jsonl into {section_id: [(page, line), ...]}."""
+    out: dict[str, list[tuple[int, str]]] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line:
+            row = json.loads(line)
+            out[row["id"]] = [(int(page), str(text)) for page, text in row["lines"]]
+    return out
+
+
 def read_pages(path: Path) -> list[Page]:
     """Read pages.jsonl back into Page objects."""
     pages = []

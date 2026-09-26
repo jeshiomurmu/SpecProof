@@ -1,0 +1,108 @@
+import json
+from collections.abc import Callable
+from pathlib import Path
+from typing import Any
+
+import pytest
+
+from specproof.models.contract import ContractSection
+from specproof.verify.samples import build_request_schema, extract_payload, validate_samples
+
+Good = Callable[[str], dict[str, Any]]
+GOLDEN = Path(__file__).resolve().parent.parent / "fixtures" / "golden" / "schema_S-2.2.json"
+
+
+def _with_request_payload(good: Good, payload: str) -> ContractSection:
+    data = good("S-2.2")
+    data["samples"]["request"]["raw"] = (
+        f"curl '{{{{host}}}}/api/v1/widgets'\n --data-raw '{payload}'"
+    )
+    return ContractSection.model_validate(data)
+
+
+def _codes(contract: ContractSection) -> list[tuple[str, str | None]]:
+    issues, _counts = validate_samples(contract)
+    return [(i.code, i.field) for i in issues]
+
+
+@pytest.mark.unit
+def test_SMP_001_curl_payload_across_line_breaks(good: Good) -> None:
+    raw = good("S-2.2")["samples"]["request"]["raw"]
+    assert json.loads(extract_payload(raw)) == {
+        "name": "Bolt",
+        "color": "Grean",
+        "size": 3,
+        "notes": "fragile",
+    }
+    assert extract_payload('  {"a": 1}  ') == '{"a": 1}'
+
+
+@pytest.mark.unit
+def test_SMP_002_malformed_sample(good: Good) -> None:
+    contract = ContractSection.model_validate(good("S-2.4"))
+    issues, counts = validate_samples(contract)
+    assert [(i.code, i.category, i.severity) for i in issues] == [
+        ("V3_SAMPLE_UNPARSEABLE", "sample_conflict", "error")
+    ]
+    assert counts == {"samples": 1, "samples_parsed": 0}
+
+
+@pytest.mark.unit
+def test_SMP_003_required_missing_is_warning(good: Good) -> None:
+    contract = _with_request_payload(good, '{"color": "Red", "size": 3}')
+    issues, _ = validate_samples(contract)
+    assert [(i.code, i.field, i.severity) for i in issues] == [
+        ("V3_REQUIRED_MISSING", "name", "warning")
+    ]
+
+
+@pytest.mark.unit
+def test_SMP_004_type_mismatch(good: Good) -> None:
+    contract = _with_request_payload(good, '{"name": "Bolt", "color": "Red", "size": "3"}')
+    assert _codes(contract) == [("V3_TYPE_MISMATCH", "size")]
+
+
+@pytest.mark.unit
+def test_SMP_005_enum_violation(good: Good) -> None:
+    contract = ContractSection.model_validate(good("S-2.2"))
+    issues, counts = validate_samples(contract)
+    assert [(i.code, i.field, i.category) for i in issues] == [
+        ("V3_ENUM_VIOLATION", "color", "sample_conflict")
+    ]
+    assert issues[0].evidence is not None and issues[0].evidence.page == 5
+    assert counts == {"samples": 2, "samples_parsed": 2}
+
+
+@pytest.mark.unit
+def test_SMP_006_unknown_key_is_info(good: Good) -> None:
+    contract = _with_request_payload(good, '{"name": "Bolt", "color": "Red", "extra": 1}')
+    issues, _ = validate_samples(contract)
+    assert [(i.code, i.field, i.severity) for i in issues] == [
+        ("V3_UNKNOWN_FIELD", "extra", "info")
+    ]
+
+
+@pytest.mark.unit
+def test_SMP_007_placeholders_raise_nothing(good: Good) -> None:
+    payload = '{"name": "example@*.com", "color": "Red", "notes": "wHFmHR******kD6wHg"}'
+    assert _codes(_with_request_payload(good, payload)) == []
+
+
+@pytest.mark.unit
+def test_SMP_008_response_envelope_and_fields(good: Good) -> None:
+    ok = ContractSection.model_validate(good("S-2.3"))
+    assert _codes(ok) == []
+
+    bad = good("S-2.3")
+    bad["samples"]["response"]["raw"] = '{"msg": "success", "data": [{"id": "w-1", "name": "B",'
+    bad["samples"]["response"]["raw"] += ' "color": "Red", "created_at": "yesterday"}]}'
+    assert _codes(ContractSection.model_validate(bad)) == [
+        ("V3_REQUIRED_MISSING", "code"),
+        ("V3_TYPE_MISMATCH", "created_at"),
+    ]
+
+
+@pytest.mark.unit
+def test_SMP_009_schema_build_golden(good: Good) -> None:
+    schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))
+    assert schema == json.loads(GOLDEN.read_text(encoding="utf-8"))

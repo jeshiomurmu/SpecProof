@@ -1,0 +1,95 @@
+{
+  "citations": {
+    "method": {"page": 6, "quote": "Permission Key: view:widget\nMethod: GET"},
+    "path": {"page": 6, "quote": "Request URL: /api/v1/widgets/:id"},
+    "permission_key": {"page": 6, "quote": "Permission Key: view:widget"}
+  },
+  "definitions": [],
+  "extraction": {"attempt": 1, "bob_task_ref": null, "mode": "hand-written", "producer": "fixture", "prompt_version": "fx02"},
+  "fields": [
+    {
+      "citation": {"page": 6, "quote": "color                 T       String    Color, see 2.1."},
+      "description": "Color, see 2.1.",
+      "enum": ["Red", "Green", "Blue"],
+      "enum_citation": {"page": 3, "quote": "Widget color: enum shade {Red,Green,Blue}"},
+      "example": "Red",
+      "location": "response",
+      "min_version": null,
+      "name": "color",
+      "required": true,
+      "schema_ref": "S-2.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 6, "quote": "created_at            T       Integer   Creation time."},
+      "description": "Creation time.",
+      "enum": null,
+      "enum_citation": null,
+      "example": 1727000000,
+      "location": "response",
+      "min_version": null,
+      "name": "created_at",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {"page": 6, "quote": "id                    T       String    Widget ID."},
+      "description": "Widget ID.",
+      "enum": null,
+      "enum_citation": null,
+      "example": "w-1",
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 6, "quote": "name                  T       String    Name of the widget."},
+      "description": "Name of the widget.",
+      "enum": null,
+      "enum_citation": null,
+      "example": "Bolt",
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 6, "quote": "size                  F       Integer   Size in millimetres."},
+      "description": "Size in millimetres.",
+      "enum": null,
+      "enum_citation": null,
+      "example": 3,
+      "location": "response",
+      "min_version": null,
+      "name": "size",
+      "required": false,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/widgets/{id}",
+  "permission_key": "view:widget",
+  "samples": {
+    "request": null,
+    "response": {
+      "citation": {"page": 6, "quote": "\"data\": {\"id\": \"w-1\", \"name\": \"Bolt\""},
+      "raw": "{\n \"code\": \"SUCCESS\",\n \"msg\": \"success\",\n \"data\": {\"id\": \"w-1\", \"name\": \"Bolt\", \"color\": \"Red\", \"created_at\": 1727000000}\n}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-2.3",
+  "title": "Fetch Widget"
+}

@@ -9,18 +9,21 @@ from specproof.util.hashing import sha256_text
 from specproof.util.text import norm
 
 TOC_LINE = re.compile(r"\.{5,}\s*\d+\s*$")
-HEADING = re.compile(r"^\s{0,12}(\d{1,2})\.(\d{1,2})\s+([A-Z][^\n]{1,80}?)\s*$")
-METHOD = re.compile(r"Method:\s*([A-Z]+)")
-REQUEST_URL = re.compile(r"Request URL:\s*(\S+)")
+HEADING = re.compile(r"^(\d{1,2})\.(\d{1,2})\s+([A-Z][^\n]{1,80}?)\s*$")
+_HEADING_MAX_INDENT = 12
+_WS_RUN = re.compile(r"\s+")
+METHOD = re.compile(r"Method\s*:\s*([A-Z]+)")
+REQUEST_URL = re.compile(r"Request\s+URL\s*:\s*(\S+)")
 _TOC_MIN_LINES = 5
 
 
 @dataclass(frozen=True)
 class Section:
-    """One segmented section: its index entry (no full text) and its full text."""
+    """One segmented section: index entry (no full text), full text, and (page, line) pairs."""
 
     entry: dict[str, Any]
     text: str
+    lines: tuple[tuple[int, str], ...]
 
 
 @dataclass(frozen=True)
@@ -52,10 +55,17 @@ def _lines(pages: list[Page]) -> list[tuple[int, str, bool]]:
     return rows
 
 
+def _heading_match(line: str) -> re.Match[str] | None:
+    """Match on the whitespace-collapsed line, so layout spacing cannot exceed the title limit."""
+    if len(line) - len(line.lstrip(" ")) > _HEADING_MAX_INDENT:
+        return None
+    return HEADING.match(_WS_RUN.sub(" ", line.strip()))
+
+
 def _headings(lines: list[tuple[int, str, bool]]) -> list[_Heading]:
     accepted: list[_Heading] = []
     for index, (_page, line, toc) in enumerate(lines):
-        match = HEADING.match(line)
+        match = _heading_match(line)
         if toc or match is None or TOC_LINE.search(line):
             continue
         chapter, number = int(match.group(1)), int(match.group(2))
@@ -68,7 +78,7 @@ def _headings(lines: list[tuple[int, str, bool]]) -> list[_Heading]:
 
 
 def _kind(title: str, text: str) -> str:
-    if "Request URL:" in text:
+    if REQUEST_URL.search(text):
         return "endpoint"
     if "Schema" in title:
         return "schema"
@@ -103,7 +113,8 @@ def segment(pages: list[Page]) -> list[Section]:
         text = "\n".join(line for _page, line, _toc in span)
         page_end = max(page for page, line, _toc in span if line.strip())
         entry = _entry(heading, text, span[0][0], page_end)
-        sections.append(Section(entry=entry, text=text))
+        numbered = tuple((page, line) for page, line, _toc in span)
+        sections.append(Section(entry=entry, text=text, lines=numbered))
     return sorted(
         sections, key=lambda s: (s.entry["chapter"], int(s.entry["number"].split(".")[1]))
     )

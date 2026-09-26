@@ -47,6 +47,26 @@ Reasons:
 
 `--extractor pdftotext` stays available for comparison.
 
+## Addendum (T05): layout scale
+
+Checking the verifier against the real PDF showed that pdfplumber's default horizontal scale (`x_density=7.25` points per character) turns the ~10 pt column gaps of most real tables into **one** space. The 2+-space row regex then saw only 4 of the 17 rows in S-4.2. Page 14, used in the spike, happens to have wider gaps.
+
+| x_density | Rows detected on p13, 14, 52, 53, 54, 56 | S-4.2 rows |
+|---|---|---|
+| 7.25 (default) | 8 | 4 |
+| 5 | 18 | 12 |
+| 4 | 21 | 15 |
+| **3** | **23** | **17 (all)** |
+
+With `x_density=3`, the whole document yields 477 rows, and every endpoint section has at least one detected row (before: 14 had none). The verified facts still hold on the new text: the p52 enum, "Interviemw" on p56 and p63, and the p14 `first_name T String` row.
+
+Follow-on changes:
+1. Each page's common left margin is removed during ingest (the 72 pt margin became ~24 spaces).
+2. The segmenter matches headings and `Request URL:` / `Method:` on whitespace-collapsed text, because wider spacing had pushed heading lines past the 80-character title limit.
+3. `row_tokens` accepts only a real type word in the type column. A wrapped type cell such as "Array of / Strings" otherwise left a description word (`assign`) in the type position, which would cause a false `V2_ROW_MISMATCH`.
+
+Segmentation after these changes is identical to T03's output (same 131 IDs, kinds, page ranges, hints and titles).
+
 Consequences:
 - The ingest performance budget (< 20 s, architecture §15) is **not met** on the first run (about 31 s here). Repeat runs hit the cache.
 - TEST_PLAN ING-005 and architecture §12 assumed pdftotext as the default. Both are updated to point here.

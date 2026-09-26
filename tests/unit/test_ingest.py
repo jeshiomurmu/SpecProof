@@ -79,7 +79,7 @@ def test_ING_005_explicit_pdftotext(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 FX01_ROWS = {
-    4: {"Authorization", "name", "color", "size", "notes"},
+    4: {"Authorization", "name", "color", "size"},
     6: {"id", "name", "color", "size", "created_at"},
     7: {"ids"},
 }
@@ -122,6 +122,14 @@ def test_ING_007_cache_and_roundtrip(
 
     monkeypatch.setattr(PdfplumberExtractor, "extract", boom)
     assert CliRunner().invoke(app, ["ingest"]).exit_code == 0
+
+
+@pytest.mark.unit
+def test_ING_008_common_left_margin_removed() -> None:
+    from specproof.ingest.extractors import make_page
+
+    page = make_page(1, "\n        2.2 Title   \n          indented\n\n        body\n\n")
+    assert page.text == "\n2.2 Title\n  indented\n\nbody"
 
 
 @pytest.mark.unit

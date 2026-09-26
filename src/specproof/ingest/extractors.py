@@ -13,6 +13,9 @@ from specproof.util.hashing import sha256_text
 
 _PARALLEL_MIN_PAGES = 24
 _WORKERS = 8
+# Points per output character. The default 7.25 collapses ~10pt column gaps in the real
+# spec's tables to one space, hiding rows from the 2+-space row regex (review/SPIKE_T02.md).
+X_DENSITY = 3.0
 
 
 @dataclass(frozen=True)
@@ -25,11 +28,12 @@ class Page:
 
 
 def make_page(number: int, raw: str) -> Page:
-    """Build a Page with trailing spaces and trailing blank lines removed."""
+    """Build a Page with the common left margin, trailing spaces and trailing blanks removed."""
     lines = [line.rstrip() for line in raw.replace("\r\n", "\n").split("\n")]
     while lines and not lines[-1]:
         lines.pop()
-    text = "\n".join(lines)
+    margin = min((len(line) - len(line.lstrip(" ")) for line in lines if line), default=0)
+    text = "\n".join(line[margin:] for line in lines)
     return Page(number=number, text=text, sha256=sha256_text(text))
 
 
@@ -45,7 +49,10 @@ class TextExtractor(Protocol):
 
 def _plumber_pages(pdf: Path, numbers: list[int]) -> list[tuple[int, str]]:
     with pdfplumber.open(pdf) as doc:
-        return [(n, doc.pages[n - 1].extract_text(layout=True) or "") for n in numbers]
+        return [
+            (n, doc.pages[n - 1].extract_text(layout=True, x_density=X_DENSITY) or "")
+            for n in numbers
+        ]
 
 
 class PdfplumberExtractor:
@@ -57,8 +64,8 @@ class PdfplumberExtractor:
         self.workers = workers
 
     def version(self) -> str:
-        """Return the pdfplumber package version."""
-        return str(pdfplumber.__version__)
+        """Return the pdfplumber version plus the layout settings, so settings changes re-ingest."""
+        return f"{pdfplumber.__version__} layout x_density={X_DENSITY}"
 
     def extract(self, pdf: Path) -> list[Page]:
         """Extract every page, ordered by page number."""

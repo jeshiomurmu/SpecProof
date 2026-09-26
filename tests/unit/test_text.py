@@ -41,3 +41,21 @@ def test_TXT_005_row_tokens() -> None:
 @pytest.mark.unit
 def test_TXT_006_prose_rejected() -> None:
     assert row_tokens("the first_name T is String") is None
+
+
+@pytest.mark.unit
+@pytest.mark.parametrize(
+    ("line", "expected"),
+    [
+        ("ids     T      assign    Touch     Passes", None),
+        ("emails  F      Email    of  the   user.", None),
+        ("count   T      Int", ("count", "T", "Int")),
+        ("bundles  F   Array[object]", ("bundles", "F", "Array[object]")),
+        ("expand[]  F   string   objects", ("expand[]", "F", "string")),
+    ],
+    ids=["wrapped-type-word", "wrapped-type-capital", "int", "array-lower", "lower-string"],
+)
+def test_TXT_007_type_token_must_be_a_type_word(
+    line: str, expected: tuple[str, str, str] | None
+) -> None:
+    assert row_tokens(line) == expected

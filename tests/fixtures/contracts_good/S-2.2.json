@@ -1,0 +1,98 @@
+{
+  "citations": {
+    "method": {"page": 4, "quote": "Method: POST"},
+    "path": {"page": 4, "quote": "Request URL: /api/v1/widgets"},
+    "permission_key": {"page": 4, "quote": "Permission Key: edit:widget"}
+  },
+  "definitions": [],
+  "extraction": {"attempt": 1, "bob_task_ref": null, "mode": "hand-written", "producer": "fixture", "prompt_version": "fx02"},
+  "fields": [
+    {
+      "citation": {"page": 4, "quote": "Authorization         T       String    Bearer token."},
+      "description": "Bearer token.",
+      "enum": null,
+      "enum_citation": null,
+      "example": "Bearer wHFmHR******kD6wHg",
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 4, "quote": "color                 T       String    Color, see 2.1."},
+      "description": "Color, see 2.1.",
+      "enum": ["Red", "Green", "Blue"],
+      "enum_citation": {"page": 3, "quote": "Widget color: enum shade {Red,Green,Blue}"},
+      "example": "Red",
+      "location": "body",
+      "min_version": null,
+      "name": "color",
+      "required": true,
+      "schema_ref": "S-2.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 4, "quote": "name                  T       String    Name of the widget."},
+      "description": "Name of the widget.",
+      "enum": null,
+      "enum_citation": null,
+      "example": "Bolt",
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 4, "quote": "notes                 Free-text notes about"},
+      "description": "Free-text notes about the widget.",
+      "enum": null,
+      "enum_citation": null,
+      "example": "fragile",
+      "location": "body",
+      "min_version": null,
+      "name": "notes",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {"page": 4, "quote": "size                  F       Integer   Size in millimetres."},
+      "description": "Size in millimetres.",
+      "enum": null,
+      "enum_citation": null,
+      "example": 3,
+      "location": "body",
+      "min_version": null,
+      "name": "size",
+      "required": false,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/widgets",
+  "permission_key": "edit:widget",
+  "samples": {
+    "request": {
+      "citation": {"page": 5, "quote": "\"color\": \"Grean\","},
+      "raw": "curl '{{host}}/api/v1/widgets'\n -H 'Authorization: Bearer wHFmHR******kD6wHg'\n --data-raw '{\n   \"name\": \"Bolt\",\n   \"color\": \"Grean\",\n   \"size\": 3,\n   \"notes\": \"fragile\"\n }'"
+    },
+    "response": {
+      "citation": {"page": 4, "quote": "\"data\": {\"id\": \"w-1\"}"},
+      "raw": "{\n \"code\": \"SUCCESS\",\n \"msg\": \"success\",\n \"data\": {\"id\": \"w-1\"}\n}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-2.2",
+  "title": "Create Widget"
+}

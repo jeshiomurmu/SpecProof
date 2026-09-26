@@ -1,0 +1,39 @@
+{
+  "citations": {
+    "method": {"page": 7, "quote": "Method: DELETE"},
+    "path": {"page": 7, "quote": "Request URL: /api/v1/widgets"},
+    "permission_key": {"page": 7, "quote": "Permission Key: edit:widget"}
+  },
+  "definitions": [],
+  "extraction": {"attempt": 1, "bob_task_ref": null, "mode": "hand-written", "producer": "fixture", "prompt_version": "fx02"},
+  "fields": [
+    {
+      "citation": {"page": 7, "quote": "ids                   T       Array[String] Widget IDs to delete."},
+      "description": "Widget IDs to delete.",
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "ids",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/widgets",
+  "permission_key": "edit:widget",
+  "samples": {
+    "request": {
+      "citation": {"page": 7, "quote": "\"ids\": [\"w-1\"],"},
+      "raw": "curl -X DELETE '{{host}}/api/v1/widgets'\n --data-raw '{\n   \"ids\": [\"w-1\"],\n }'"
+    },
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-2.4",
+  "title": "Broken Sample"
+}
