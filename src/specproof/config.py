@@ -42,6 +42,10 @@ class Paths:
     def sections_index(self) -> Path:
         return self.artifacts / "sections_index.json"
 
+    @property
+    def sections_text(self) -> Path:
+        return self.work / "sections.jsonl"
+
     def rel(self, path: Path) -> str:
         """Return path relative to root, with forward slashes."""
         return path.relative_to(self.root).as_posix()

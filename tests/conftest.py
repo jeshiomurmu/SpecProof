@@ -2,6 +2,8 @@ from pathlib import Path
 
 import pytest
 
+from specproof.ingest.extractors import Page, PdfplumberExtractor
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SPEC_PDF = REPO_ROOT / "artifacts" / "work" / "spec.pdf"
 
@@ -25,3 +27,8 @@ def synthetic_pdf(tmp_path_factory: pytest.TempPathFactory) -> Path:
     from fixtures.build_synthetic_pdf import build
 
     return build(tmp_path_factory.mktemp("fx01") / "synthetic.pdf")
+
+
+@pytest.fixture(scope="session")
+def synthetic_pages(synthetic_pdf: Path) -> list[Page]:
+    return PdfplumberExtractor().extract(synthetic_pdf)

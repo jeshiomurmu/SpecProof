@@ -15,6 +15,10 @@ def _stub(task: str) -> None:
     log.warning("not implemented (%s)", task)
 
 
+def _now() -> str:
+    return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 @app.callback()
 def main(verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False) -> None:
     """Configure logging for every command."""
@@ -80,7 +84,7 @@ def ingest(extractor: str = "auto") -> None:
         stage="ingest",
         producer=producer,
         inputs=inputs,
-        created_at=datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        created_at=_now(),
     )
     append_record(paths.manifest, record)
     log.info("ingest: %d pages with %s", len(pages), chosen.name)
@@ -89,7 +93,41 @@ def ingest(extractor: str = "auto") -> None:
 @app.command()
 def segment() -> None:
     """Split pages into sections and write artifacts/sections_index.json."""
-    _stub("T03")
+    from specproof import __version__
+    from specproof.config import Paths
+    from specproof.ingest.segment import segment as run_segment
+    from specproof.models.manifest import ManifestRecord, append_record
+    from specproof.util.hashing import sha256_file
+    from specproof.util.io_json import dump_json, write_jsonl
+    from specproof.util.io_pages import read_pages
+
+    paths = Paths.from_root(Path.cwd())
+    if not paths.pages.exists():
+        log.error("missing %s; run `specproof ingest` first", paths.rel(paths.pages))
+        raise typer.Exit(2)
+    sections = run_segment(read_pages(paths.pages))
+    dump_json(paths.sections_index, [s.entry for s in sections])
+    write_jsonl(
+        paths.sections_text, [{"id": s.entry["section_id"], "text": s.text} for s in sections]
+    )
+    inputs = [{"path": paths.rel(paths.pages), "sha256": sha256_file(paths.pages)}]
+    producer = {"kind": "deterministic", "tool": "specproof", "version": __version__}
+    for artifact in (paths.sections_index, paths.sections_text):
+        append_record(
+            paths.manifest,
+            ManifestRecord(
+                artifact=paths.rel(artifact),
+                sha256=sha256_file(artifact),
+                stage="segment",
+                producer=producer,
+                inputs=inputs,
+                created_at=_now(),
+            ),
+        )
+    kinds: dict[str, int] = {}
+    for section in sections:
+        kinds[section.entry["kind"]] = kinds.get(section.entry["kind"], 0) + 1
+    log.info("segment: %d sections %s", len(sections), dict(sorted(kinds.items())))
 
 
 @app.command()

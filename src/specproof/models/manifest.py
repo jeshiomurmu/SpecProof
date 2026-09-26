@@ -27,8 +27,18 @@ def load_manifest(path: Path) -> list[ManifestRecord]:
 
 
 def append_record(path: Path, record: ManifestRecord) -> None:
-    """Add record, replacing any older record for the same artifact; keep sorted by artifact."""
-    records = [r for r in load_manifest(path) if r.artifact != record.artifact]
+    """Add record, replacing any older record for the same artifact; keep sorted by artifact.
+
+    An older record that differs only in created_at is kept, so unchanged reruns leave the
+    manifest byte-identical.
+    """
+    existing = load_manifest(path)
+    old = next((r for r in existing if r.artifact == record.artifact), None)
+    if old is not None and old.model_dump(exclude={"created_at"}) == record.model_dump(
+        exclude={"created_at"}
+    ):
+        return
+    records = [r for r in existing if r.artifact != record.artifact]
     records.append(record)
     records.sort(key=lambda r: r.artifact)
     dump_json(path, [r.model_dump() for r in records])

@@ -1,5 +1,22 @@
 [
   {
+    "artifact": "artifacts/sections_index.json",
+    "created_at": "2026-09-26T01:16:19Z",
+    "inputs": [
+      {
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e",
+    "stage": "segment"
+  },
+  {
     "artifact": "artifacts/work/pages.jsonl",
     "created_at": "2026-09-25T17:02:42Z",
     "inputs": [
@@ -18,5 +35,22 @@
     },
     "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2",
     "stage": "ingest"
+  },
+  {
+    "artifact": "artifacts/work/sections.jsonl",
+    "created_at": "2026-09-26T01:15:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "f80eca8ace3edf72c0616161d8e242592aac707087b9deb3e4c595d1b6e5bbd2"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "d0b92e78d10e6c4a95f30d1255a8af9484eff935d5fabf5a8fbc8fa2114a58f9",
+    "stage": "segment"
   }
 ]

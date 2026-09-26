@@ -1,9 +1,11 @@
 from pathlib import Path
+from typing import Any
 
 import pytest
 
 from specproof.config import Paths
 from specproof.ingest.extractors import Page, select_extractor
+from specproof.ingest.segment import segment
 from specproof.models.manifest import find_record
 from specproof.util.hashing import sha256_file
 from specproof.util.io_pages import read_pages
@@ -40,3 +42,27 @@ def test_ING_R01_page_14_first_name_row(real_pages: list[Page]) -> None:
 def test_ING_R02_page_count_and_pin(real_pages: list[Page], repo_root: Path) -> None:
     assert len(real_pages) == 194
     assert sha256_file(repo_root / "artifacts" / "work" / "spec.pdf") == PIN
+
+
+@pytest.fixture(scope="module")
+def real_index(real_pages: list[Page]) -> dict[str, dict[str, Any]]:
+    return {s.entry["section_id"]: s.entry for s in segment(real_pages)}
+
+
+@pytest.mark.real_source
+def test_SEG_R01_at_least_107_endpoint_sections(real_index: dict[str, dict[str, Any]]) -> None:
+    endpoints = [e for e in real_index.values() if e["kind"] == "endpoint"]
+    assert len(endpoints) >= 107
+
+
+@pytest.mark.real_source
+def test_SEG_R02_schema_section_4_1(real_index: dict[str, dict[str, Any]]) -> None:
+    s41 = real_index["S-4.1"]
+    assert s41["kind"] == "schema"
+    assert s41["page_start"] <= 52 <= s41["page_end"]
+
+
+@pytest.mark.real_source
+def test_SEG_R03_hints_section_3_2(real_index: dict[str, dict[str, Any]]) -> None:
+    s32 = real_index["S-3.2"]
+    assert (s32["method_hint"], s32["path_hint"]) == ("POST", "/api/v1/developer/users")

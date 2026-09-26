@@ -24,6 +24,12 @@ def dump_json(path: Path, obj: Any) -> None:
     write_bytes_atomic(path, dumps_json(obj).encode("utf-8"))
 
 
+def write_jsonl(path: Path, rows: list[Any]) -> None:
+    """Atomically write one sorted-key JSON object per line, LF endings."""
+    lines = [json.dumps(row, sort_keys=True, ensure_ascii=False) for row in rows]
+    write_bytes_atomic(path, ("\n".join(lines) + "\n").encode("utf-8"))
+
+
 def load_json(path: Path) -> Any:
     """Read a UTF-8 JSON file."""
     return json.loads(path.read_text(encoding="utf-8"))
