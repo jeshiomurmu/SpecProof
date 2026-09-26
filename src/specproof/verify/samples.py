@@ -36,6 +36,13 @@ def extract_payload(raw: str) -> str | None:
         return None if raw.lstrip().startswith("curl") else raw.strip()
     quote = match.group(1)
     start = match.end()
+    if raw[start:].lstrip(" ").startswith(quote):
+        return None
+    # The body ends at the first closing bracket followed by the closing quote, so a
+    # second curl example later in the same block is not swallowed.
+    closing = re.search(r"[}\]]\s*" + re.escape(quote), raw[start:])
+    if closing is not None:
+        return raw[start : start + closing.start() + 1].strip() or None
     end = raw.rfind(quote)
     payload = raw[start:end].strip() if end >= start else raw[start:].strip()
     return payload or None

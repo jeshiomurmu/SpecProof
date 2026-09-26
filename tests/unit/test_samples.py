@@ -149,6 +149,15 @@ def test_SMP_013_undocumented_body_is_not_type_checked(good: Good) -> None:
 
 
 @pytest.mark.unit
+def test_SMP_019_payload_ends_at_its_own_closing_quote() -> None:
+    raw = (
+        "curl -XPUT '{{host}}/x'\n --data '{\n \"a\": 1,\n}'\nSecond example\n"
+        "curl -XPUT '{{host}}/x'\n --data '{\n \"b\": 2\n}'"
+    )
+    assert extract_payload(raw) == '{\n "a": 1,\n}'
+
+
+@pytest.mark.unit
 def test_SMP_014_empty_data_is_no_body() -> None:
     assert extract_payload("curl -XPUT '{{host}}/x'\n --data ''") is None
 
