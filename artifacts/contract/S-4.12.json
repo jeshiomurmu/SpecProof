@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.12",
+  "kind": "endpoint",
+  "title": "Unassign QR Code from Visitor",
+  "method": "DELETE",
+  "path": "/api/v1/developer/visitors/:id/qr_codes",
+  "permission_key": "edit:visitor",
+  "notes": ["UniFi Access Requirement: Version 3.3.10 or later"],
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 70, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Identity ID of the visitor.",
+      "citation": {"page": 70, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "curl     --location         --request         DELETE\n    'https://192.168.1.1:12445/api/v1/developer/visitors/15a90692-6f3b-4e1c-9886-\nbcd15e9c3f2d/qr_codes'                  \\\n\n    --header        'Authorization:             Bearer      s4KgshBaoXTWxWfAHLPwDw'                   \\\n    --header        'Content-Type:            application/json'               \\\n    --insecure",
+      "citation": {"page": 70, "quote": "curl     --location         --request         DELETE\n    'https://192.168.1.1:12445/api/v1/developer/visitors/15a90692-6f3b-4e1c-9886-"}
+    },
+    "response": {
+      "raw": "{\n       \"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\"\n    }",
+      "citation": {"page": 71, "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\""}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

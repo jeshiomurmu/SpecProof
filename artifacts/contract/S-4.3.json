@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.3",
+  "kind": "endpoint",
+  "title": "Fetch Visitor",
+  "method": "GET",
+  "path": "/api/v1/developer/visitors/:id",
+  "permission_key": "view:visitor",
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 57, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Identity ID of the visitor.",
+      "citation": {"page": 57, "quote": "id                                  T                               String                  Identity    ID  of  the   visitor."}
+    },
+    {
+      "name": "Schemas",
+      "location": "response",
+      "required": null,
+      "type": "object",
+      "type_raw": "Schemas",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Schemas",
+      "schema_ref": "S-4.1",
+      "citation": {"page": 57, "quote": "Response                 Body\n\n\n     Schemas:            Schemas"}
+    }
+  ],
+  "samples": {
+    "response": {
+      "raw": "{\n\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\",\n           \"id\":     \"3566867c-fa04-4752-98f6-43cf9a342d4a\",\n           \"last_name\":           \"Last     Name\",\n           \"nfc_cards\":           [",
+      "citation": {"page": 57, "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\""}
+    },
+    "request": {
+      "raw": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n\n           --insecure",
+      "citation": {"page": 58, "quote": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'"}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

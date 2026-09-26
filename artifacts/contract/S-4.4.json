@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.4",
+  "kind": "endpoint",
+  "title": "Fetch All Visitors",
+  "method": "GET",
+  "path": "/api/v1/developer/visitors",
+  "permission_key": "view:visitor",
+  "notes": ["license plates will be supported by 3.3.10 or later"],
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 59, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "status",
+      "location": "query",
+      "required": false,
+      "type": "integer",
+      "type_raw": "Integer",
+      "enum": ["UPCOMING=1", "VISITED=2", "VISITING=3", "CANCELLED=4", "NO_VISIT=5", "ACTIVE=6"],
+      "enum_citation": {
+        "page": 59,
+        "quote": "status        F            Integer                                                                                                  1\n                                         {UPCOMING=1,VISITED=2,VISITING=3,CANCELLED=4,NO_VISIT=5,ACTIVE=6}"
+      },
+      "description": "The visitor's status.enum status {UPCOMING=1,VISITED=2,VISITING=3,CANCELLED=4,NO_VISIT=5,ACTIVE=6}",
+      "citation": {"page": 59, "quote": "status        F            Integer"}
+    },
+    {
+      "name": "keyword",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Support prefix matching for first name and last name. NOTE: The status filtering is disabled when searching with keyword.",
+      "citation": {"page": 59, "quote": "keyword       F            String                                                                                                   H"}
+    },
+    {
+      "name": "page_num",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Current page number in the pagination.",
+      "citation": {"page": 59, "quote": "page_num      F            String     Current page number in the pagination."}
+    },
+    {
+      "name": "page_size",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Number of visitors per page.",
+      "citation": {"page": 59, "quote": "page_size     F            String     Number  of visitors per page."}
+    },
+    {
+      "name": "expand[]",
+      "location": "query",
+      "required": false,
+      "type": "string",
+      "type_raw": "string",
+      "enum": ["none", "access_policy", "resource", "schedule", "nfc_card", "pin_code"],
+      "enum_citation": {
+        "page": 59,
+        "quote": "expand[]      F            string     Determine whether to return the objects (Optional). currently supports the following objects: enum &expand[]=access_policy"
+      },
+      "description": "Determine whether to return the objects (Optional). currently supports the following objects: enum objects {none,access_policy,resource,schedule,nfc_card,pin_code}. For the \"none\" option, it means that no object will be returned. UniFi Access Requirement: 1.22.16 or later",
+      "citation": {"page": 59, "quote": "expand[]      F            string"}
+    },
+    {
+      "name": "Schemas",
+      "location": "response",
+      "required": null,
+      "type": "object",
+      "type_raw": "Schemas",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Schemas",
+      "schema_ref": "S-4.1",
+      "citation": {"page": 59, "quote": "Response                 Body\n     Schemas:            Schemas"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "curl     -XGET     '{{host}}/api/v1/developer/visitors?page_num=1&page_size=25'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure\n\n\n    #  fetch      users     through        keyword\n    curl     -XGET     '{{host}}/api/v1/developer/visitors?keyword=H'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure",
+      "citation": {"page": 59, "quote": "curl     -XGET     '{{host}}/api/v1/developer/visitors?page_num=1&page_size=25'"}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

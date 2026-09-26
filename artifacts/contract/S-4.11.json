@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.11",
+  "kind": "endpoint",
+  "title": "Assign QR Code to Visitor",
+  "method": "PUT",
+  "path": "/api/v1/developer/visitors/:id/qr_codes",
+  "permission_key": "edit:visitor",
+  "notes": ["UniFi Access Requirement: Version 3.3.10 or later"],
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 69, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Identity ID of the visitor.",
+      "citation": {"page": 69, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/visitors/15a90692-\n6f3b-4e1c-9886-bcd15e9c3f2d/qr_codes'                              \\\n--header        'Authorization:             Bearer      s4KgshBaoXTWxWfAHLPwDw'                   \\\n\n    --insecure",
+      "citation": {"page": 69, "quote": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/visitors/15a90692-"}
+    },
+    "response": {
+      "raw": "{\n       \"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\"\n    }",
+      "citation": {"page": 70, "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\""}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

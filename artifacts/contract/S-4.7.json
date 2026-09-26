@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.7",
+  "kind": "endpoint",
+  "title": "Assign NFC Card To Visitor",
+  "method": "PUT",
+  "path": "/api/v1/developer/visitors/:id/nfc_cards",
+  "permission_key": "edit:visitor",
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 65, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Identity ID of the visitor.",
+      "citation": {"page": 65, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
+    },
+    {
+      "name": "token",
+      "location": "body",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token of the NFC card.",
+      "citation": {"page": 65, "quote": "token             T               String        Token   of the NFC  card."}
+    },
+    {
+      "name": "force_add",
+      "location": "body",
+      "required": false,
+      "type": "boolean",
+      "type_raw": "Boolean",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Determine whether to overwrite an NFC card that has already been assigned.",
+      "citation": {"page": 65, "quote": "force_add         F               Boolean       Determine    whether   to overwrite"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "{\n                  \"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\",\n                  \"force_add\":           true\n           }",
+      "citation": {"page": 66, "quote": "\"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\",\n                  \"force_add\":           true"}
+    },
+    "response": {
+      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}",
+      "citation": {"page": 66, "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

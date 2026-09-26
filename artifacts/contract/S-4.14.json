@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.14",
+  "kind": "endpoint",
+  "title": "Unassign License Plate Number from Visitor",
+  "method": "DELETE",
+  "path": "/api/v1/developer/visitors/:visitor_id/license_plates/:license_plate_id",
+  "permission_key": "edit:visitor",
+  "notes": ["UniFi Access Requirement: Version 3.3.10 or later"],
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 72, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "visitor_id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "ID of the visitor to unassign the license plate number from.",
+      "citation": {"page": 72, "quote": "visitor_id                  T                    String        ID  of  the  visitor   to\n                                                                                                                Get   it from   the   API"}
+    },
+    {
+      "name": "license_plate_id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "ID of the license plate number to unassign.",
+      "citation": {"page": 72, "quote": "license_plate_id            T                    String\n                                                                   ID  of  the  license    plate                From    the   license   plate   numbers       in"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "curl     --location         --request         DELETE\n    'https://192.168.1.1:12445/api/v1/developer/visitors/b8635fc9-e9d2-4ec5-8763-\nd2c067ba4fc2/license_plates/0effb50b-8bc9-4a91-b06d-7aec2c896b91'                                                   \\\n    --header        'Authorization:             Bearer      s4KgshBaoXTWxWfAHLPwDw'                   \\\n    --header        'Content-Type:            application/json'",
+      "citation": {"page": 72, "quote": "curl     --location         --request         DELETE\n    'https://192.168.1.1:12445/api/v1/developer/visitors/b8635fc9-e9d2-4ec5-8763-"}
+    },
+    "response": {
+      "raw": "{\n       \"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\"\n    }",
+      "citation": {"page": 73, "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\""}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}

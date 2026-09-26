@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.9",
+  "kind": "endpoint",
+  "title": "Assign PIN Code To Visitor",
+  "method": "PUT",
+  "path": "/api/v1/developer/visitors/:id/pin_codes",
+  "permission_key": "edit:visitor",
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Token required for authentication and access control.",
+      "citation": {"page": 67, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+    },
+    {
+      "name": "id",
+      "location": "path",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Identity ID of the visitor.",
+      "citation": {"page": 67, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
+    },
+    {
+      "name": "pin_code",
+      "location": "body",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "enum": null,
+      "enum_citation": null,
+      "description": "Generate a PIN code for the visitor to unlock doors.",
+      "citation": {"page": 67, "quote": "pin_code               T                    String         Generate       a  PIN   code   for"}
+    }
+  ],
+  "samples": {
+    "request": {
+      "raw": "{\n                  \"pin_code\":          \"57301208\"\n           }",
+      "citation": {"page": 68, "quote": "\"pin_code\":          \"57301208\""}
+    },
+    "response": {
+      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}",
+      "citation": {"page": 68, "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"}
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T08-ch4"
+  }
+}
