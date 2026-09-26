@@ -173,6 +173,39 @@ def test_SMP_016_null_is_allowed_for_any_documented_type(good: Good) -> None:
     assert _codes(ContractSection.model_validate(data)) == []
 
 
+def _with_response(good: Good, fields: list[dict[str, Any]], raw: str) -> ContractSection:
+    data = good("S-2.3")
+    data["fields"] = [f for f in data["fields"] if f["location"] != "response"] + fields
+    data["samples"]["response"]["raw"] = raw
+    return ContractSection.model_validate(data)
+
+
+def _resp_field(name: str, type_: str, type_raw: str) -> dict[str, Any]:
+    return {
+        "name": name,
+        "location": "response",
+        "required": True,
+        "type": type_,
+        "type_raw": type_raw,
+        "citation": {"page": 6, "quote": "Request URL: /api/v1/widgets/:id"},
+    }
+
+
+@pytest.mark.unit
+def test_SMP_017_data_row_describes_the_envelope(good: Good) -> None:
+    array_data = _resp_field("Data", "array", "Array[Object]")
+    ok = _with_response(good, [array_data], '{"code": "S", "msg": "m", "data": [{"x": 1}]}')
+    assert _codes(ok) == []
+    wrong = _with_response(good, [array_data], '{"code": "S", "msg": "m", "data": {"x": 1}}')
+    assert _codes(wrong) == [("V3_TYPE_MISMATCH", "Data")]
+
+
+@pytest.mark.unit
+def test_SMP_018_undocumented_response_data_is_not_type_checked(good: Good) -> None:
+    contract = _with_response(good, [], '{"code": "S", "msg": "m", "data": "success"}')
+    assert _codes(contract) == []
+
+
 @pytest.mark.unit
 def test_SMP_009_schema_build_golden(good: Good) -> None:
     schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))

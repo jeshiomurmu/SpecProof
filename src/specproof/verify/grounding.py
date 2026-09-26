@@ -149,6 +149,11 @@ def _is_boundary(text: str) -> bool:
     return text.startswith(BOUNDARIES) or bool(_HEADING.match(text))
 
 
+def _is_hard_boundary(text: str) -> bool:
+    """A sample marker, table header or heading: never part of a sample's own lines."""
+    return text.startswith(BOUNDARIES[:8]) or bool(_HEADING.match(text))
+
+
 def _next_content(ctx: SectionContext, start: int) -> str | None:
     """The next non-empty line after start, skipping a page's last line (a footer)."""
     lines = ctx.lines
@@ -180,6 +185,10 @@ def check_sample_verbatim(ctx: SectionContext, sample: Sample, which: str) -> li
         if position == len(section):
             msg = f"{which} sample is not a verbatim copy of the document"
             hint: dict[str, str | int] = {"first_unmatched": wanted[:_HINT_MAX]}
+            return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
+        if _is_hard_boundary(section[position]):
+            msg = f"{which} sample runs past the end of its block"
+            hint = {"first_unmatched": section[position][:_HINT_MAX]}
             return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
         last = position
         position += 1

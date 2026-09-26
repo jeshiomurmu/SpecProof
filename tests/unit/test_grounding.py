@@ -204,6 +204,24 @@ def test_VER_017_chapter_headings_and_comments_end_a_block(after: str) -> None:
 
 
 @pytest.mark.unit
+def test_VER_018_sample_running_past_its_block(section_ctx: Ctx, good: Good) -> None:
+    lines = [
+        (1, "Response Sample"),
+        (1, '{"code":"SUCCESS","msg":"success"}'),
+        (1, "6. Credential"),
+        (1, "The APIs here are designed for managing PIN codes"),
+    ]
+    ctx = SectionContext(norm_pages={1: ""}, lines=tuple(lines), page_start=1, page_end=1)
+    overlong = Sample(
+        raw='{"code":"SUCCESS","msg":"success"}\n6. Credential',
+        citation=Citation(page=1, quote='{"code":"SUCCESS","msg":"success"}'),
+    )
+    issues = check_sample_verbatim(ctx, overlong, "response")
+    assert [i.code for i in issues] == ["V2_SAMPLE_NOT_VERBATIM"]
+    assert "past the end" in issues[0].message
+
+
+@pytest.mark.unit
 def test_VER_013_repaired_sample_not_verbatim(section_ctx: Ctx, good: Good) -> None:
     ctx = section_ctx("S-2.2")
     original = ContractSection.model_validate(good("S-2.2"))

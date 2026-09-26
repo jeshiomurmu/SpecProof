@@ -176,8 +176,18 @@ def _response_issues(contract: ContractSection, payload: Any, cite: Citation) ->
     issues = _validate(payload, envelope, "response", cite)
     if not isinstance(payload, dict) or payload.get("data") is None:
         return issues
-    schema = build_schema([f for f in contract.fields if f.location == "response"], nullable=True)
+    response = [f for f in contract.fields if f.location == "response"]
     data = payload["data"]
+    for spec in (f for f in response if f.name.lower() == "data"):
+        # A "Data" row in a Response Body table describes the envelope's data value itself.
+        schema = build_schema([spec.model_copy(update={"name": "data"})], nullable=True)
+        schema["required"] = []
+        for issue in _validate({"data": data}, schema, "response", cite):
+            issues.append(issue.model_copy(update={"field": spec.name}))
+    items = [f for f in response if f.name.lower() not in ("data", "code", "msg")]
+    if not items:
+        return issues
+    schema = build_schema(items, nullable=True)
     for item in data if isinstance(data, list) else [data]:
         issues.extend(_validate(item, schema, "response data", cite))
     return issues
