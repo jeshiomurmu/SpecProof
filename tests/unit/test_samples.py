@@ -149,6 +149,31 @@ def test_SMP_013_undocumented_body_is_not_type_checked(good: Good) -> None:
 
 
 @pytest.mark.unit
+def test_SMP_014_empty_data_is_no_body() -> None:
+    assert extract_payload("curl -XPUT '{{host}}/x'\n --data ''") is None
+
+
+@pytest.mark.unit
+def test_SMP_015_layout_wrapped_string_is_joined(good: Good) -> None:
+    data = good("S-2.3")
+    data["samples"]["response"]["raw"] = (
+        '{\n "code": "SUCCESS",\n "msg": "success",\n "data": {"id": "w-1", "name": "Very long\n'
+        '   name", "color": "Red", "created_at": 1727000000}\n}'
+    )
+    assert _codes(ContractSection.model_validate(data)) == []
+
+
+@pytest.mark.unit
+def test_SMP_016_null_is_allowed_for_any_documented_type(good: Good) -> None:
+    data = good("S-2.3")
+    data["samples"]["response"]["raw"] = (
+        '{"code": "SUCCESS", "msg": "success", "data": {"id": "w-1", "name": null, '
+        '"color": "Red", "created_at": null}}'
+    )
+    assert _codes(ContractSection.model_validate(data)) == []
+
+
+@pytest.mark.unit
 def test_SMP_009_schema_build_golden(good: Good) -> None:
     schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))
     assert schema == json.loads(GOLDEN.read_text(encoding="utf-8"))

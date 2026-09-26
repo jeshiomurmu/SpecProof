@@ -37,7 +37,33 @@ def extract_payload(raw: str) -> str | None:
     quote = match.group(1)
     start = match.end()
     end = raw.rfind(quote)
-    return raw[start:end].strip() if end > start else raw[start:].strip()
+    payload = raw[start:end].strip() if end >= start else raw[start:].strip()
+    return payload or None
+
+
+def join_wrapped_strings(text: str) -> str:
+    """Remove line breaks (and the indentation after them) inside JSON string literals.
+
+    A raw newline is illegal inside a JSON string, so one there can only be the PDF code
+    box wrapping a long value onto the next line."""
+    out: list[str] = []
+    in_string = escaped = skipping = False
+    for char in text:
+        if skipping:
+            if char in " \t":
+                continue
+            skipping = False
+        if in_string:
+            if char == "\n":
+                skipping = True
+                continue
+            escaped = char == "\\" and not escaped
+            if char == '"' and not escaped:
+                in_string = False
+        elif char == '"':
+            in_string = True
+        out.append(char)
+    return "".join(out)
 
 
 def _simple(fields: list[FieldSpec]) -> list[FieldSpec]:
@@ -46,15 +72,20 @@ def _simple(fields: list[FieldSpec]) -> list[FieldSpec]:
     )
 
 
-def build_schema(fields: list[FieldSpec]) -> dict[str, Any]:
-    """Draft 2020-12 schema over top-level fields: types, enums, required; extra keys allowed."""
+def build_schema(fields: list[FieldSpec], nullable: bool = False) -> dict[str, Any]:
+    """Draft 2020-12 schema over top-level fields: types, enums, required; extra keys allowed.
+
+    nullable=True also accepts null for every field; used when validating samples, because
+    the document never states nullability."""
     properties: dict[str, Any] = {}
     for field in _simple(fields):
         prop: dict[str, Any] = {}
         if field.type in _JSON_TYPES:
-            prop["type"] = _JSON_TYPES[field.type]
+            prop["type"] = (
+                [_JSON_TYPES[field.type], "null"] if nullable else _JSON_TYPES[field.type]
+            )
         if field.enum:
-            prop["enum"] = list(field.enum)
+            prop["enum"] = [*field.enum, None] if nullable else list(field.enum)
         properties[field.name] = prop
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
@@ -72,7 +103,7 @@ def build_request_schema(contract: ContractSection) -> dict[str, Any]:
 
 def _parse(text: str, which: str, citation: Citation) -> tuple[Any, list[Issue]]:
     try:
-        return json.loads(text), []
+        return json.loads(join_wrapped_strings(text)), []
     except json.JSONDecodeError as exc:
         msg = f"{which} sample is not valid JSON: {exc.msg} (line {exc.lineno})"
         issue = Issue(
@@ -118,7 +149,8 @@ def _validate(instance: Any, schema: dict[str, Any], which: str, cite: Citation)
 def _request_issues(contract: ContractSection, payload: Any, cite: Citation) -> list[Issue]:
     if not any(f.location == "body" for f in contract.fields):
         return []
-    issues = _validate(payload, build_request_schema(contract), "request", cite)
+    body = [f for f in contract.fields if f.location == "body"]
+    issues = _validate(payload, build_schema(body, nullable=True), "request", cite)
     if isinstance(payload, dict):
         known = {f.name for f in contract.fields if f.location == "body"}
         for key in sorted(set(payload) - known):
@@ -144,7 +176,7 @@ def _response_issues(contract: ContractSection, payload: Any, cite: Citation) ->
     issues = _validate(payload, envelope, "response", cite)
     if not isinstance(payload, dict) or payload.get("data") is None:
         return issues
-    schema = build_schema([f for f in contract.fields if f.location == "response"])
+    schema = build_schema([f for f in contract.fields if f.location == "response"], nullable=True)
     data = payload["data"]
     for item in data if isinstance(data, list) else [data]:
         issues.extend(_validate(item, schema, "response data", cite))

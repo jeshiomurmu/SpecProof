@@ -3,6 +3,7 @@
 Pure and deterministic. rapidfuzz only fills retry hints; it never decides an outcome.
 """
 
+import re
 from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
@@ -12,7 +13,6 @@ from rapidfuzz import fuzz
 from specproof.models.contract import QUOTE_MIN, Citation, FieldSpec, Sample
 from specproof.models.verification import Issue
 from specproof.util.text import norm, row_tokens
-from specproof.verify.samples import extract_payload
 
 ROW_LOCATIONS = frozenset({"header", "body", "query", "path"})
 _HINT_MAX = 200
@@ -129,10 +129,47 @@ def check_enum(field: FieldSpec) -> list[Issue]:
     return [_issue("V2_ENUM_NOT_GROUNDED", msg, field=field.name, evidence=source)]
 
 
+BOUNDARIES = (
+    "Request Sample",
+    "Response Sample",
+    "Request Header",
+    "Request Body",
+    "Request Path",
+    "Response Body",
+    "Query Parameters",
+    "Path Parameters",
+    "curl",
+    "-",
+)
+_HEADING = re.compile(r"^\d{1,2}\.\d{1,2}\s+[A-Z]")
+
+
+def _is_boundary(text: str) -> bool:
+    return text.startswith(BOUNDARIES) or bool(_HEADING.match(text))
+
+
+def _next_content(ctx: SectionContext, start: int) -> str | None:
+    """The next non-empty line after start, skipping a page's last line (a footer)."""
+    lines = ctx.lines
+    for index in range(start, len(lines)):
+        page, text = lines[index]
+        if not text.strip():
+            continue
+        later = [p for p, t in lines[index + 1 :] if t.strip()]
+        if not later or later[0] != page:
+            continue
+        return norm(text)
+    return None
+
+
 def check_sample_verbatim(ctx: SectionContext, sample: Sample, which: str) -> list[Issue]:
-    """Sample lines must appear, in order, inside the section's lines (footers tolerated)."""
+    """Sample lines appear in order in the section, and the copy runs to the end of its block.
+
+    A block ends at the next sample marker, table header, section heading or curl line, so
+    a sample that is malformed in the document itself still counts as complete."""
     section = [norm(line) for _page, line in ctx.lines]
     position = 0
+    last = -1
     for raw_line in sample.raw.split("\n"):
         wanted = norm(raw_line)
         if not wanted:
@@ -143,29 +180,11 @@ def check_sample_verbatim(ctx: SectionContext, sample: Sample, which: str) -> li
             msg = f"{which} sample is not a verbatim copy of the document"
             hint: dict[str, str | int] = {"first_unmatched": wanted[:_HINT_MAX]}
             return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
+        last = position
         position += 1
-    unclosed = open_brackets(extract_payload(sample.raw) or "")
-    if unclosed:
-        msg = f"{which} sample is an incomplete copy: {unclosed} bracket(s) never closed"
-        hint = {"first_unmatched": "copy the sample through its final closing bracket"}
+    following = _next_content(ctx, last + 1) if last >= 0 else None
+    if following is not None and not _is_boundary(following):
+        msg = f"{which} sample is an incomplete copy: the document continues after it"
+        hint = {"first_unmatched": following[:_HINT_MAX]}
         return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
     return []
-
-
-def open_brackets(text: str) -> int:
-    """Number of { or [ left unclosed, ignoring brackets inside JSON strings."""
-    depth = 0
-    in_string = escaped = False
-    for char in text:
-        if in_string:
-            escaped = char == "\\" and not escaped
-            if char == '"' and not escaped:
-                in_string = False
-            continue
-        if char == '"':
-            in_string = True
-        elif char in "{[":
-            depth += 1
-        elif char in "}]":
-            depth -= 1
-    return max(depth, 0)

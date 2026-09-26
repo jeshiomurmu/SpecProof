@@ -5,7 +5,7 @@ from typing import Any
 import pytest
 from fixtures.mutations import mutate
 
-from specproof.models.contract import Citation, ContractSection, FieldSpec
+from specproof.models.contract import Citation, ContractSection, FieldSpec, Sample
 from specproof.verify import grounding
 from specproof.verify.grounding import (
     SectionContext,
@@ -161,6 +161,28 @@ def test_VER_015_malformed_but_complete_sample_passes_verbatim(
     contract = ContractSection.model_validate(good("S-2.4"))
     assert contract.samples.request is not None
     assert check_sample_verbatim(section_ctx("S-2.4"), contract.samples.request, "request") == []
+
+
+@pytest.mark.unit
+def test_VER_016_malformed_document_sample_with_open_brackets_is_complete() -> None:
+    lines = [
+        (1, "Response Sample"),
+        (1, "{"),
+        (1, "  {"),
+        (1, '"code": "SUCCESS"'),
+        (1, "}"),
+        (1, "Request Sample"),
+        (1, "curl -XGET 'x'"),
+    ]
+    ctx = SectionContext(norm_pages={1: ""}, lines=tuple(lines), page_start=1, page_end=1)
+    sample = Sample(
+        raw='{\n  {\n"code": "SUCCESS"\n}', citation=Citation(page=1, quote='"code": "SUCCESS"')
+    )
+    assert check_sample_verbatim(ctx, sample, "response") == []
+    cut = Sample(raw="{\n  {", citation=Citation(page=1, quote='"code": "SUCCESS"'))
+    assert [i.code for i in check_sample_verbatim(ctx, cut, "response")] == [
+        "V2_SAMPLE_NOT_VERBATIM"
+    ]
 
 
 @pytest.mark.unit
