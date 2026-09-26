@@ -1,0 +1,155 @@
+{
+  "citations": {
+    "method": {
+      "page": 158,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 158,
+      "quote": "Request       URL:    /api/v1/developer/system/logs/export"
+    },
+    "permission_key": {
+      "page": 158,
+      "quote": "Permission        Key:    view:system_log"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 158,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 158,
+        "quote": "topic         T            String                                                                                                      door_openings"
+      },
+      "description": null,
+      "enum": [
+        "critical",
+        "door_openings",
+        "updates",
+        "device_events",
+        "admin_activity",
+        "visitor"
+      ],
+      "enum_citation": {
+        "page": 158,
+        "quote": "{critical,door_openings,updates,device_events,admin_activity,visitor}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "topic",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 158,
+        "quote": "since         T            Integer    Start time for log fetching.                                                                     1689304925"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "since",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 158,
+        "quote": "until         T            Integer    End time for log fetching. Note that the since and until periods cannot exceed one month.        1689804925"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "until",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 158,
+        "quote": "timezone      T            String     Timezone for formatting time.                                                                    America/New_York"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "timezone",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 158,
+        "quote": "actor_id      F            String     Identity ID of the actor (user, visitor, and device)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "actor_id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/system/logs/export",
+  "permission_key": "view:system_log",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 159,
+        "quote": "curl     '{{host}}/api/v1/developer/system/logs/export'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/system/logs/export'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                  \"topic\":        \"door_openings\",\n                  \"since\":        1690770546,\n                  \"until\":        1690771546,\n                  \"timezone\":          \"America/New_York\",\n                  \"actor_id\":\"3e1f196e-c97b-4748-aecb-eab5e9c251b2\"\n           }'\n           --insecure"
+    },
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-9.3",
+  "title": "Export System Logs"
+}

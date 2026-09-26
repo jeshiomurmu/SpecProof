@@ -1,0 +1,147 @@
+{
+  "citations": {
+    "path": {
+      "page": 146,
+      "quote": "Request       URL:    /api/v1/developer/devices"
+    },
+    "permission_key": {
+      "page": 146,
+      "quote": "Permission        Key:    view:device"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 146,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 147,
+        "quote": "refresh                 F                     String                                                                                  refresh=true"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "refresh",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 147,
+        "quote": "id               T              String                                                                /api/v1/developer/credentials/nfc_cards/sessions"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 147,
+        "quote": "name             T              String    Name   of the device."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 147,
+        "quote": "type             T              String    Type  of the device."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 147,
+        "quote": "alias            T              String    Alias of the device."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "alias",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/devices",
+  "permission_key": "view:device",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 147,
+        "quote": "curl    '{{host}}/api/v1/developer/devices?refresh=true'"
+      },
+      "raw": "      curl    '{{host}}/api/v1/developer/devices?refresh=true'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 147,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  [\n                         {\n                                \"alias\":        \"UNVR     -   Main     Floor\",\n                                \"id\":      \"7483c2773855\",\n                                \"name\":       \"UA-HUB-3855\",\n                                \"type\":       \"UAH\"\n                         },\n                         {\n                                \"alias\":        \"UNVR     -   Main     Floor\",\n                                \"id\":      \"f492bfd28ced\",\n                                \"name\":       \"UA-LITE-8CED\",\n                                \"type\":       \"UDA-LITE\"\n                         },\n                         {\n                                \"alias\":        \"UNVR     -   Main     Floor\",\n                                \"id\":      \"0418d6a2bb7a\",\n                                \"name\":       \"UA-G2-PRO-BB7A\",\n                                \"type\":       \"UA-G2-PRO\"\n                         }\n                  ]\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-8.1",
+  "title": "Fetch Devices"
+}

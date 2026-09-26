@@ -1,0 +1,134 @@
+{
+  "citations": {
+    "method": {
+      "page": 153,
+      "quote": "Method:         POST"
+    },
+    "path": {
+      "page": 153,
+      "quote": "Request        URL:    /api/v1/developer/devices/:device_id/doorbell"
+    },
+    "permission_key": {
+      "page": 153,
+      "quote": "Permission         Key:     edit:device"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 153,
+        "quote": "Authorization               T                     String          Bearer     Token     required      for  authentication         and    access     control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 153,
+        "quote": "Content-Type                T                     String          Must    be    application/json."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Content-Type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 153,
+        "quote": "device_id               T                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "device_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 153,
+        "quote": "room_name                F                     String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "room_name",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 153,
+        "quote": "cancel                   F                     Boolean                                                                              false"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "cancel",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/devices/:device_id/doorbell",
+  "permission_key": "edit:device",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 154,
+        "quote": "curl     --location         'https://192.168.1.1:12445/api/v1/developer/devices/788a20c002c7/doorbell'                                                          \\"
+      },
+      "raw": "    curl     --location         'https://192.168.1.1:12445/api/v1/developer/devices/788a20c002c7/doorbell'                                                          \\\n    --header        'Authorization:             Bearer      qW8Wle29QpEiUuRzdraOdoLQirvukxPT'                           \\\n    --header        'Content-Type:            application/json'               \\\n    --data      '{\n           \"room_name\":           \"intercom        directory         name\",\n           \"cancel\":        true\n    }'"
+    },
+    "response": {
+      "citation": {
+        "page": 154,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       \"success\",\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-8.4",
+  "title": "Trigger Doorbells"
+}

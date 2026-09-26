@@ -87,6 +87,28 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 147,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-318d603b",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.1",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of the sample",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 13,
         "quote": "touch_pass                                             Array[Object]",
         "snippet": null
@@ -140,6 +162,66 @@
     "severity": "high",
     "title": "Sample value type contradicts the documented type of is_bind_hub",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 156,
+        "quote": "actor                        T                    Object                     Information        about     the   event    operator.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-4896b535",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits actor, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "event                        T                    Object                     Basic    information        about    the   event.",
+        "snippet": null
+      }
+    ],
+    "id": "F-57e3eddb",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits event, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [
@@ -312,6 +394,28 @@
     "severity": "high",
     "title": "Sample value violates the documented enum for visit_reason",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-b2274bf9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits msg, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [

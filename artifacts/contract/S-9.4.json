@@ -1,0 +1,79 @@
+{
+  "citations": {
+    "path": {
+      "page": 159,
+      "quote": "Request       URL:    api/v1/developer/system/logs/resource/:id"
+    },
+    "permission_key": {
+      "page": 159,
+      "quote": "Permission        Key:    view:system_log"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 159,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 159,
+        "quote": "Id                    T                  String                                                    b5b172381fec\",\"display_name\":"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "api/v1/developer/system/logs/resource/:id",
+  "permission_key": "view:system_log",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 160,
+        "quote": "curl     '{{host}}/api/v1/developer/system/logs/resource/0418d6a38f00-b6906057-2a90-4426-835c-"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/system/logs/resource/0418d6a38f00-b6906057-2a90-4426-835c-\n    b5b172381fec'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 160,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"msg\":      \"success\",\n           \"data\":       {\n                  \"video_record\":             \"/activities_resource/video/1708424638_f24a7b67-c584-4e22-a7b8-\n    074f0fa93da0.mp4\",\n                  \"video_record_thumbnail\":                     \"/activities_resource/thumbnail/1708424638_a6d1fa60-d895-\n    4d4c-a40c-447f97c8824f.jpg\",\n                  \"created_at\":            \"2024-02-20T18:23:58+08:00\",\n                  \"updated_at\":            \"2024-02-20T18:23:58+08:00\"\n           }\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-9.4",
+  "title": "Fetch Resources in System Logs"
+}

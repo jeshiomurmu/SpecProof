@@ -1,0 +1,24 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 10,
+    "items": 10,
+    "row_checked": 4,
+    "row_ok": 4,
+    "rows_detected": 4,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "info",
+      "code": "V2_ROW_NOT_FOUND",
+      "evidence": null,
+      "field": "Content-Type",
+      "hint": null,
+      "message": "no single-line table row for 'Content-Type'; row check skipped",
+      "severity": "info"
+    }
+  ],
+  "section_id": "S-8.4"
+}

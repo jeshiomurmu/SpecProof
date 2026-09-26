@@ -1,0 +1,36 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 33,
+    "items": 33,
+    "row_checked": 25,
+    "row_ok": 25,
+    "rows_detected": 25,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "info",
+      "code": "V2_ROW_NOT_FOUND",
+      "evidence": null,
+      "field": "Content-Type",
+      "hint": null,
+      "message": "no single-line table row for 'Content-Type'; row check skipped",
+      "severity": "info"
+    },
+    {
+      "category": "info",
+      "code": "V3_UNKNOWN_FIELD",
+      "evidence": {
+        "page": 152,
+        "quote": "curl     --location         --request         PUT"
+      },
+      "field": "access_methods",
+      "hint": null,
+      "message": "request sample key 'access_methods' is not a documented body field",
+      "severity": "info"
+    }
+  ],
+  "section_id": "S-8.3"
+}

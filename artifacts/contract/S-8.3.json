@@ -1,0 +1,505 @@
+{
+  "citations": {
+    "method": {
+      "page": 150,
+      "quote": "Method:         PUT\\"
+    },
+    "path": {
+      "page": 150,
+      "quote": "Request        URL:    /api/v1/developer/devices/:device_id/settings"
+    },
+    "permission_key": {
+      "page": 150,
+      "quote": "Permission         Key:     edit:device"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 150,
+        "quote": "Authorization               T                     String          Bearer     Token     required      for  authentication         and    access     control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 150,
+        "quote": "Content-Type                T                     String          Must    be    application/json."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Content-Type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 150,
+        "quote": "device_id               T                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "device_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "nfc                                     F                 Object         NFC   access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "nfc",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "nfc.enabled                             F                 String         method     is enabled    (\"true\"     or                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "nfc.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_tap                                  F                 Object"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_tap",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_tap.enabled                          F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_tap.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_button                               F                 Object"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_button",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_button.enabled                       F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_button.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_shake                                F                 Object"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_shake",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "bt_shake.enabled                        F                 String                                                                    \"false\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "bt_shake.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "mobile_wave                             F                 Object         Mobile   Wave    access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "mobile_wave",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "mobile_wave.enabled                     F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "mobile_wave.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "pin_code                                F                 Object         PIN  access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "pin_code.enabled                        F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "pin_code.pin_code_shuffle               F                 String                                                                    \"false\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code.pin_code_shuffle",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "face                                    F                 Object         Face  Unlock    access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "face",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "face.enabled                            F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "face.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "face.anti_spoofing_level                F                 String         medium,     no}   Anti-spoofing     security   level       \"medium\""
+      },
+      "description": null,
+      "enum": [
+        "high",
+        "medium",
+        "no"
+      ],
+      "enum_citation": {
+        "page": 151,
+        "quote": "enum anti_spoofing_level {high,\nface.anti_spoofing_level F String medium, no}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "face.anti_spoofing_level",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "face.detect_distance                    F                 String         far}   Face   Unlock   detection    distance               \"medium\""
+      },
+      "description": null,
+      "enum": [
+        "near",
+        "medium",
+        "far"
+      ],
+      "enum_citation": {
+        "page": 151,
+        "quote": "enum detect_distance {near, medium,\nface.detect_distance F String far}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "face.detect_distance",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "wave                                    F                 Object         Hand   Wave    access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "wave",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "wave.enabled                            F                 String                                                                    \"false\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "wave.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 151,
+        "quote": "qr_code                                 F                 Object         QR  code   access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "qr_code",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 152,
+        "quote": "qr_code.enabled                         F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "qr_code.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 152,
+        "quote": "touch_pass                              F                 Object         Touch   Pass   access   method     setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "touch_pass",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 152,
+        "quote": "touch_pass.enabled                      F                 String                                                                    \"true\""
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "touch_pass.enabled",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/devices/:device_id/settings",
+  "permission_key": "edit:device",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 152,
+        "quote": "curl     --location         --request         PUT"
+      },
+      "raw": "    curl     --location         --request         PUT\n    'https://192.168.1.1:12445/api/v1/developer/devices/942a6f4247b2/settings'                                                          \\\n    --header        'Authorization:             Bearer      N8oZJZ6U16i4mN6ZnRhw/A'                   \\\n    --header        'Content-Type:            application/json'               \\\n    --data      '{\n       \"access_methods\":               {\n           \"bt_button\":           {\n              \"enabled\":          \"yes\"\n           },\n           \"bt_tap\":        {\n              \"enabled\":          \"yes\"\n           },\n           \"face\":       {\n              \"anti_spoofing_level\":                   \"medium\",\n              \"detect_distance\":                \"medium\"\n           },\n           \"nfc\":      {\n              \"enabled\":          \"yes\"\n           },\n           \"pin_code\":          {\n              \"enabled\":          \"yes\",\n              \"pin_code_shuffle\":                 \"no\"\n           },\n           \"qr_code\":         {\n              \"enabled\":          \"yes\"\n           },\n           \"touch_pass\":           {\n              \"enabled\":          \"yes\"\n           }\n       }\n    }'"
+    },
+    "response": {
+      "citation": {
+        "page": 153,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       \"success\",\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-8.3",
+  "title": "Update Access Device's Access Method Settings"
+}

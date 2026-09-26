@@ -1,0 +1,73 @@
+{
+  "citations": {
+    "path": {
+      "page": 160,
+      "quote": "Request       URL:    api/v1/developer/system/static/:path"
+    },
+    "permission_key": {
+      "page": 160,
+      "quote": "Permission        Key:    view:system_log"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 160,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 160,
+        "quote": "path                    T                     String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "path",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "api/v1/developer/system/static/:path",
+  "permission_key": "view:system_log",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 161,
+        "quote": "curl     '{{host}}/api/v1/developer/system/static/avatar/da1aceb6-20ba-4285-a6b1-c4f2bf7161f8'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/system/static/avatar/da1aceb6-20ba-4285-a6b1-c4f2bf7161f8'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-9.5",
+  "title": "Fetch Static Resources in System Logs"
+}

@@ -1,0 +1,484 @@
+{
+  "citations": {
+    "path": {
+      "page": 148,
+      "quote": "Request        URL:    /api/v1/developer/devices/:device_id/settings"
+    },
+    "permission_key": {
+      "page": 148,
+      "quote": "Permission         Key:     view:device"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 148,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "device_id               T                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "device_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "nfc                                            Object          NFC    access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "nfc",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "nfc.enabled                                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "nfc.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "bt_tap                                         Object          Mobile     Tap    (via  Bluetooth)       access    method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_tap",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "bt_tap.enabled                                 String          Indicates      whether      Mobile     Tap    is enabled      (\"true\"       or   \"false\")."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_tap.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "bt_button                                      Object          Mobile     Unlock      (via  Bluetooth)       access    method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_button",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 148,
+        "quote": "bt_button.enabled                              String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_button.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "bt_shake                                       Object          Mobile     Shake     (via  Bluetooth)       access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_shake",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "bt_shake.enabled                               String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bt_shake.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "mobile_wave                                    Object          Mobile     Wave      access    method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "mobile_wave",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "mobile_wave.enabled                            String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "mobile_wave.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "pin_code                                       Object          PIN   access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "pin_code",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "pin_code.enabled                               String          Indicates      whether      PIN   is  enabled      (\"true\"       or  \"false\")."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "pin_code.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "pin_code.pin_code_shuffle                      String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "pin_code.pin_code_shuffle",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "face                                           Object          Face    Unlock     access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "face",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "face.enabled                                   String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "face.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "face.anti_spoofing_level                       String"
+      },
+      "description": null,
+      "enum": [
+        "high",
+        "medium",
+        "no"
+      ],
+      "enum_citation": {
+        "page": 149,
+        "quote": "enum   anti_spoofing_leve   {high,   medium,   no}Anti-spoofing"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "face.anti_spoofing_level",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "face.detect_distance                           String          {high,    medium,       no}Face        Unlock      detection         distance        setting"
+      },
+      "description": null,
+      "enum": [
+        "near",
+        "medium",
+        "far"
+      ],
+      "enum_citation": {
+        "page": 149,
+        "quote": "{near,   medium,   far}Face   Unlock   detection   distance   setting."
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "face.detect_distance",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "wave                                           Object          Hand     Wave     access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "wave",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "wave.enabled                                   String          Indicates      whether      Hand     Wave     is  enabled      (\"true\"       or  \"false\")."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "wave.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "qr_code                                        Object          QR    code    access    method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "qr_code",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "qr_code.enabled                                String          Indicates      whether      QR    code    is enabled      (\"true\"       or   \"false\")."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "qr_code.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "touch_pass                                     Object          Touch     Pass    access     method       setting."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "touch_pass",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 149,
+        "quote": "touch_pass.enabled                             String          Indicates      whether      Touch     Pass    is enabled      (\"true\"       or   \"false\")."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "touch_pass.enabled",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/devices/:device_id/settings",
+  "permission_key": "view:device",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 148,
+        "quote": "curl     --location         'https://192.168.1.1:12445/api/v1/developer/devices/942a6f4247b2/settings'                                                          \\"
+      },
+      "raw": "    curl     --location         'https://192.168.1.1:12445/api/v1/developer/devices/942a6f4247b2/settings'                                                          \\\n    --header        'Authorization:             Bearer      bphW1H4jW7q9uQ751PN3Nw'"
+    },
+    "response": {
+      "citation": {
+        "page": 149,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"access_methods\":               {\n              \"bt_button\":           {\n                  \"enabled\":         \"yes\"\n              },\n              \"bt_tap\":         {\n                  \"enabled\":         \"yes\"\n              },\n              \"face\":       {\n                  \"anti_spoofing_level\":                  \"no\",\n                  \"detect_distance\":               \"far\"\n              },\n              \"nfc\":       {\n                  \"enabled\":         \"yes\"\n              },\n              \"pin_code\":          {\n                  \"enabled\":         \"yes\",\n                  \"pin_code_shuffle\":                \"no\"\n              },\n              \"qr_code\":          {\n                  \"enabled\":         \"yes\"\n              },\n              \"touch_pass\":            {\n                  \"enabled\":         \"yes\"\n              }\n           },\n           \"device_id\":           \"942a6f4247b2\"\n       },\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-8.2",
+  "title": "Fetch Access Device's Access Method Settings"
+}

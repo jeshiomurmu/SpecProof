@@ -1,0 +1,246 @@
+{
+  "citations": {
+    "method": {
+      "page": 156,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 156,
+      "quote": "Request       URL:    /api/v1/developer/system/logs"
+    },
+    "permission_key": {
+      "page": 156,
+      "quote": "Permission        Key:    view:system_log"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 156,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "page_num                   F                       String            Current     page     number       in the   pagination.                     1"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_num",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "page_size                  F                       String            Number       of  logs   per   page.                                        25"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_size",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "topic          T            String                                                                                                      door_openings"
+      },
+      "description": null,
+      "enum": [
+        "critical",
+        "door_openings",
+        "updates",
+        "device_events",
+        "admin_activity",
+        "visitor"
+      ],
+      "enum_citation": {
+        "page": 156,
+        "quote": "{critical,door_openings,updates,device_events,admin_activity,visitor}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "topic",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "since          F            Integer    Start time for log fetching.                                                                     1689304925"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "since",
+      "required": false,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "until          F            Integer    End time for log fetching.                                                                       1689804925"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "until",
+      "required": false,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "actor_id       F            String     Identity ID of the actor (user, visitor, and device)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "actor_id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 156,
+        "quote": "actor                        T                    Object                     Information        about     the   event    operator."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "actor",
+      "required": true,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 157,
+        "quote": "event                        T                    Object                     Basic    information        about    the   event."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "event",
+      "required": true,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 157,
+        "quote": "authentication               F                    Object                     Certification      information."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "authentication",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 157,
+        "quote": "target                       F                    Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "target",
+      "required": false,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/system/logs",
+  "permission_key": "view:system_log",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 157,
+        "quote": "curl     '{{host}}/api/v1/developer/system/logs?page_size=1&page_num=25'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/system/logs?page_size=1&page_num=25'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                  \"topic\":        \"door_openings\",\n                  \"since\":        1690770546,\n                  \"until\":        1690771546,\n                  \"actor_id\":\"3e1f196e-c97b-4748-aecb-eab5e9c251b2\"\n           }'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"hits\":       [\n                         {\n                                \"@timestamp\":            \"2023-07-11T12:11:27Z\",\n                                \"_id\":      \"\",\n                                \"_source\":         {\n                                       \"actor\":        {\n                                              \"alternate_id\":             \"\",\n                                              \"alternate_name\":               \"\",\n                                              \"display_name\":             \"N/A\",\n                                              \"id\":      \"\",\n                                              \"type\":       \"user\"\n                                       },\n                                       \"authentication\":               {\n                                              \"credential_provider\":                   \"NFC\",\n                                              \"issuer\":         \"6FC02554\"\n                                       },\n                                       \"event\":        {\n                                              \"display_message\":                \"Access       Denied      /   Unknown       (NFC)\",\n                                              \"published\":           1689077487000,\n                                              \"reason\":         \"\",\n                                              \"result\":         \"BLOCKED\",\n                                              \"type\":       \"access.door.unlock\"\n                                       },\n                                       \"target\":         [\n                                              {\n                                                     \"alternate_id\":             \"\",\n                                                     \"alternate_name\":               \"\",\n                                                     \"display_name\":             \"UA-HUB-3855\",\n                                                     \"id\":      \"7483c2773855\",\n                                                     \"type\":       \"UAH\"\n                                              }\n                                       ]\n                                },\n                                \"tag\":      \"access\"\n                         }\n                  ]\n           },\n           \"page\":       1,\n           \"total\":        4\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-9.2",
+  "title": "Fetch System Logs"
+}

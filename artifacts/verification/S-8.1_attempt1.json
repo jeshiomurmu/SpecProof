@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 10,
+    "items": 10,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 6,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_TYPE_MISMATCH",
+      "evidence": {
+        "page": 147,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": null,
+      "hint": null,
+      "message": "response data sample: [{'alias': 'UNVR     -   Main     Floor', 'id': '7483c2773855', 'name': 'UA-HUB-3855', 'type': 'UAH'}, {'alias': 'UNVR     -   Main     Floor', 'id': 'f492bfd28ced', 'name': 'UA-LITE-8CED', 'type': 'UDA-LITE'}, {'alias': 'UNVR     -   Main     Floor', 'id': '0418d6a2bb7a', 'name': 'UA-G2-PRO-BB7A', 'type': 'UA-G2-PRO'}] is not of type 'object'",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-8.1"
+}
