@@ -19,7 +19,7 @@ from specproof.verify.grounding import (
     check_sample_verbatim,
 )
 from specproof.verify.samples import validate_samples
-from specproof.verify.structure import check_coverage, check_endpoint
+from specproof.verify.structure import check_coverage, check_endpoint, detected_rows
 
 EXTRACTION = "extraction"
 
@@ -104,7 +104,15 @@ def verify_section(
 ) -> VerificationResult:
     """Verify one contract (raw JSON text) against its section; same inputs, same result."""
     section_id = str(entry["section_id"])
-    keys = ("items", "grounded", "row_checked", "row_ok", "samples", "samples_parsed")
+    keys = (
+        "items",
+        "grounded",
+        "row_checked",
+        "row_ok",
+        "rows_detected",
+        "samples",
+        "samples_parsed",
+    )
     counts: dict[str, int] = dict.fromkeys(keys, 0)
     contract, issues = load_contract(raw, section_id)
     if contract is None:
@@ -118,6 +126,7 @@ def verify_section(
     counts.update(sample_counts)
     issues.extend(check_endpoint(contract, entry))
     issues.extend(check_coverage(ctx, contract))
+    counts["rows_detected"] = len(detected_rows(ctx))
     return VerificationResult(
         section_id=section_id, attempt=contract.extraction.attempt, issues=issues, counts=counts
     )

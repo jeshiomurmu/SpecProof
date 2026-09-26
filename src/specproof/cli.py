@@ -249,20 +249,56 @@ def report() -> None:
 
 @app.command("eval")
 def eval_(thresholds: Path = Path("eval/thresholds.yaml")) -> None:
-    """Compare metrics against the eval gate thresholds."""
-    _stub("T11")
+    """Recompute metrics.json and compare it against the eval gate thresholds."""
+    from specproof.config import Paths
+    from specproof.io_metrics import run_eval
+
+    if not thresholds.exists():
+        log.error("eval: thresholds file %s not found", thresholds)
+        raise typer.Exit(2)
+    result = run_eval(Paths.from_root(Path.cwd()), thresholds)
+    typer.echo(f"{'metric':32} {'value':>8}  {'threshold':22} verdict")
+    for row in result.rows:
+        limit = ", ".join(f"{k} {v}" for k, v in sorted(row["threshold"].items()) if k != "target")
+        value = "null" if row["value"] is None else f"{row['value']}"
+        typer.echo(f"{row['metric']:32} {value:>8}  {limit:22} {row['verdict']}  {row['reason']}")
+    typer.echo("eval: PASS" if result.passed else "eval: FAIL")
+    if not result.passed:
+        raise typer.Exit(1)
 
 
 @app.command("audit-sample")
 def audit_sample(n: int = 40, seed: int = 20260926) -> None:
     """Draw a stratified blind audit sample."""
-    _stub("T11")
+    from specproof.config import Paths
+    from specproof.io_metrics import AuditExistsError, run_audit_sample
+
+    try:
+        count = run_audit_sample(Paths.from_root(Path.cwd()), n, seed)
+    except AuditExistsError as exc:
+        log.error("audit-sample: %s", exc)
+        raise typer.Exit(1) from exc
+    log.info("audit-sample: wrote %d items to eval/audit/audit_sample.csv", count)
 
 
 @app.command("audit-score")
 def audit_score() -> None:
     """Join audit verdicts with statuses and compute audited metrics."""
-    _stub("T11")
+    from specproof.config import Paths
+    from specproof.io_metrics import run_audit_score, run_metrics
+
+    paths = Paths.from_root(Path.cwd())
+    if not paths.audit_sample.exists():
+        log.error("audit-score: run `specproof audit-sample` and fill in the verdicts first")
+        raise typer.Exit(2)
+    result = run_audit_score(paths)
+    run_metrics(paths)
+    log.info(
+        "audit-score: %d/%d correct (%d unscored)",
+        result["correct"],
+        result["n"],
+        result["unscored"],
+    )
 
 
 @app.command()

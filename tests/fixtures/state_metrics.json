@@ -1,0 +1,54 @@
+{
+  "_comment": "FX-06: hand-built pipeline state with known counts. Expected values are computed by hand in tests/unit/test_metrics.py.",
+  "index": [
+    {"section_id": "S-2.1", "kind": "schema"},
+    {"section_id": "S-2.2", "kind": "endpoint"},
+    {"section_id": "S-2.3", "kind": "endpoint"},
+    {"section_id": "S-2.4", "kind": "endpoint"},
+    {"section_id": "S-2.5", "kind": "endpoint"},
+    {"section_id": "S-1.1", "kind": "overview"}
+  ],
+  "contracts": ["S-2.1", "S-2.2", "S-2.3", "S-2.4"],
+  "latest": {
+    "S-2.1": {"attempt": 1, "counts": {"items": 3, "grounded": 3, "row_checked": 0, "row_ok": 0, "rows_detected": 0, "samples": 0, "samples_parsed": 0}, "issues": []},
+    "S-2.2": {"attempt": 2, "counts": {"items": 11, "grounded": 11, "row_checked": 4, "row_ok": 4, "rows_detected": 4, "samples": 2, "samples_parsed": 2}, "issues": [
+      {"code": "V2_ROW_NOT_FOUND", "category": "info", "severity": "info", "field": "notes"},
+      {"code": "V3_ENUM_VIOLATION", "category": "sample_conflict", "severity": "error", "field": "color"}]},
+    "S-2.3": {"attempt": 3, "counts": {"items": 9, "grounded": 7, "row_checked": 5, "row_ok": 3, "rows_detected": 5, "samples": 1, "samples_parsed": 1}, "issues": [
+      {"code": "V1_SCHEMA_INVALID", "category": "extraction", "severity": "error", "field": null},
+      {"code": "V2_CITATION_NOT_FOUND", "category": "extraction", "severity": "error", "field": "id"},
+      {"code": "V2_ROW_MISMATCH", "category": "extraction", "severity": "error", "field": "size"},
+      {"code": "V5_COVERAGE_GAP", "category": "extraction", "severity": "error", "field": "created_at"}]},
+    "S-2.4": {"attempt": 1, "counts": {"items": 5, "grounded": 5, "row_checked": 1, "row_ok": 1, "rows_detected": 1, "samples": 1, "samples_parsed": 0}, "issues": [
+      {"code": "V3_SAMPLE_UNPARSEABLE", "category": "sample_conflict", "severity": "error", "field": null}]}
+  },
+  "first": {
+    "S-2.1": {"attempt": 1, "issues": []},
+    "S-2.2": {"attempt": 1, "issues": [
+      {"code": "V2_CITATION_WRONG_PAGE", "category": "extraction", "severity": "error", "field": "name"},
+      {"code": "V2_ROW_MISMATCH", "category": "extraction", "severity": "error", "field": "size"}]},
+    "S-2.3": {"attempt": 1, "issues": [
+      {"code": "V2_CITATION_NOT_FOUND", "category": "extraction", "severity": "error", "field": "id"},
+      {"code": "V4_PATH_MISMATCH", "category": "extraction", "severity": "error", "field": null}]},
+    "S-2.4": {"attempt": 1, "issues": [
+      {"code": "V3_SAMPLE_UNPARSEABLE", "category": "sample_conflict", "severity": "error", "field": null}]}
+  },
+  "status": {
+    "S-2.1": {"status": "VERIFIED", "attempt": 1},
+    "S-2.2": {"status": "VERIFIED_WITH_SPEC_FINDINGS", "attempt": 2},
+    "S-2.3": {"status": "QUARANTINED", "attempt": 3},
+    "S-2.4": {"status": "VERIFIED_WITH_SPEC_FINDINGS", "attempt": 1}
+  },
+  "findings": [
+    {"id": "F-00000001", "type": "SPEC_SELF_INCONSISTENCY", "review": {"status": "CANDIDATE"}},
+    {"id": "F-00000002", "type": "SPEC_MALFORMED_SAMPLE", "review": {"status": "CANDIDATE"}},
+    {"id": "F-00000003", "type": "COMMUNITY_REQUIRED_MISMATCH", "review": {"status": "CANDIDATE"}},
+    {"id": "F-00000004", "type": "COMMUNITY_TYPE_MISMATCH", "review": {"status": "CANDIDATE"}},
+    {"id": "F-00000005", "type": "CLIENT_SAMPLE_REJECTED", "review": {"status": "CANDIDATE"}}
+  ],
+  "reviews": {"F-00000001": "CONFIRMED", "F-00000003": "REJECTED", "F-00000005": "CONFIRMED"},
+  "audit": {"n": 40, "correct": 38, "sections": 12, "sections_with_miss": 1, "verifier_passed": 36, "verifier_passed_incorrect": 1},
+  "manual_minutes": [12.0, 7.5, 21.0],
+  "determinism": {"identical": 20, "total": 20},
+  "coverage_percent": 91.37
+}

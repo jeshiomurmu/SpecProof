@@ -19,7 +19,7 @@ check:
 	$(BIN)/ruff check .
 	$(BIN)/ruff format --check .
 	$(BIN)/mypy
-	$(BIN)/pytest -m "unit or integration" --cov=specproof --cov-report=term-missing --cov-fail-under=85
+	$(BIN)/pytest -m "unit or integration" --cov=specproof --cov-report=term-missing --cov-report=json:artifacts/work/coverage.json --cov-fail-under=85
 
 test-e2e:
 	$(BIN)/pytest -m "e2e or real_source"

@@ -90,6 +90,34 @@ class Paths:
     def conformance_findings(self) -> Path:
         return self.artifacts / "findings" / "conformance.json"
 
+    @property
+    def metrics(self) -> Path:
+        return self.artifacts / "metrics.json"
+
+    @property
+    def eval_result(self) -> Path:
+        return self.artifacts / "eval_result.json"
+
+    @property
+    def audit_dir(self) -> Path:
+        return self.root / "eval" / "audit"
+
+    @property
+    def audit_sample(self) -> Path:
+        return self.audit_dir / "audit_sample.csv"
+
+    @property
+    def audit_score(self) -> Path:
+        return self.audit_dir / "audit_score.json"
+
+    @property
+    def findings_review(self) -> Path:
+        return self.audit_dir / "findings_review.csv"
+
+    @property
+    def manual_baseline(self) -> Path:
+        return self.audit_dir / "manual_baseline.csv"
+
     def rel(self, path: Path) -> str:
         """Return path relative to root, with forward slashes."""
         return path.relative_to(self.root).as_posix()

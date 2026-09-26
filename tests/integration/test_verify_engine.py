@@ -74,6 +74,7 @@ def test_ENG_005_counts(run_verify: Run, good: Good) -> None:
         "grounded": 11,
         "row_checked": 4,
         "row_ok": 4,
+        "rows_detected": 4,
         "samples": 2,
         "samples_parsed": 2,
     }
@@ -82,6 +83,7 @@ def test_ENG_005_counts(run_verify: Run, good: Good) -> None:
         "grounded": 5,
         "row_checked": 1,
         "row_ok": 1,
+        "rows_detected": 1,
         "samples": 1,
         "samples_parsed": 0,
     }
