@@ -43,7 +43,13 @@ def ingest(extractor: str = "auto") -> None:
     from specproof import __version__
     from specproof.config import Paths
     from specproof.ingest.extractors import select_extractor
-    from specproof.models.manifest import ManifestRecord, append_record, find_record
+    from specproof.models.manifest import (
+        InputRef,
+        ManifestRecord,
+        Producer,
+        append_record,
+        find_record,
+    )
     from specproof.util.hashing import sha256_file
     from specproof.util.io_pages import write_pages
 
@@ -57,14 +63,14 @@ def ingest(extractor: str = "auto") -> None:
         log.error("%s", exc)
         raise typer.Exit(2) from exc
     pdf_sha = sha256_file(paths.spec_pdf)
-    producer = {
-        "kind": "deterministic",
-        "tool": "specproof",
-        "version": __version__,
-        "extractor": chosen.name,
-        "extractor_version": chosen.version(),
-    }
-    inputs = [{"path": paths.rel(paths.spec_pdf), "sha256": pdf_sha, "source_id": "unifi_spec_pdf"}]
+    producer = Producer(
+        kind="deterministic",
+        tool="specproof",
+        version=__version__,
+        extractor=chosen.name,
+        extractor_version=chosen.version(),
+    )
+    inputs = [InputRef(path=paths.rel(paths.spec_pdf), sha256=pdf_sha, source_id="unifi_spec_pdf")]
     artifact = paths.rel(paths.pages)
     previous = find_record(paths.manifest, artifact)
     if (
@@ -96,7 +102,7 @@ def segment() -> None:
     from specproof import __version__
     from specproof.config import Paths
     from specproof.ingest.segment import segment as run_segment
-    from specproof.models.manifest import ManifestRecord, append_record
+    from specproof.models.manifest import InputRef, ManifestRecord, Producer, append_record
     from specproof.util.hashing import sha256_file
     from specproof.util.io_json import dump_json, write_jsonl
     from specproof.util.io_pages import read_pages
@@ -110,8 +116,8 @@ def segment() -> None:
     write_jsonl(
         paths.sections_text, [{"id": s.entry["section_id"], "text": s.text} for s in sections]
     )
-    inputs = [{"path": paths.rel(paths.pages), "sha256": sha256_file(paths.pages)}]
-    producer = {"kind": "deterministic", "tool": "specproof", "version": __version__}
+    inputs = [InputRef(path=paths.rel(paths.pages), sha256=sha256_file(paths.pages))]
+    producer = Producer(kind="deterministic", tool="specproof", version=__version__)
     for artifact in (paths.sections_index, paths.sections_text):
         append_record(
             paths.manifest,

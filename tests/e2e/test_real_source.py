@@ -22,8 +22,8 @@ def real_pages(repo_root: Path) -> list[Page]:
     if (
         record is not None
         and paths.pages.exists()
-        and record.producer.get("extractor") == "pdfplumber"
-        and record.inputs[0]["sha256"] == PIN
+        and record.producer.extractor == "pdfplumber"
+        and record.inputs[0].sha256 == PIN
         and record.sha256 == sha256_file(paths.pages)
     ):
         return read_pages(paths.pages)
