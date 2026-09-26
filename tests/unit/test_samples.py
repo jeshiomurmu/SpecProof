@@ -131,6 +131,14 @@ def test_SMP_011_response_without_data_is_fine(good: Good, raw: str) -> None:
 
 
 @pytest.mark.unit
+def test_SMP_012_short_data_flag(good: Good) -> None:
+    raw = "curl -XPUT '{{host}}/x'\n -d '{\n \"name\": \"Bolt\"\n }'"
+    assert extract_payload(raw) == '{\n "name": "Bolt"\n }'
+    assert extract_payload("curl '{{host}}/x' --data '{\"a\": 1}'") == '{"a": 1}'
+    assert extract_payload("curl -H 'x-id: 1' '{{host}}/x'") is None
+
+
+@pytest.mark.unit
 def test_SMP_009_schema_build_golden(good: Good) -> None:
     schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))
     assert schema == json.loads(GOLDEN.read_text(encoding="utf-8"))

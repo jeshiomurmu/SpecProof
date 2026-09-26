@@ -20,7 +20,7 @@ _JSON_TYPES = {
     "object": "object",
     "array": "array",
 }
-_DATA_RAW = re.compile(r"--data(?:-raw|-binary)?\s+(['\"])")
+_DATA_RAW = re.compile(r"(?<!\S)(?:--data(?:-raw|-binary)?|-d)\s+(['\"])")
 # The document's responses always carry code and msg; data is absent or null for
 # operations that return nothing (e.g. DELETE), so it is not required.
 ENVELOPE_REQUIRED = ("code", "msg")

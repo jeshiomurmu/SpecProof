@@ -22,6 +22,17 @@ def test_STR_001_invalid_contract_is_v1_not_exception(run_verify: Run, raw: str)
 
 
 @pytest.mark.unit
+def test_STR_007_schema_error_names_the_field(run_verify: Run, good: Good) -> None:
+    data = good("S-2.2")
+    data["notes"] = ["an extra key"]
+    data["fields"][0]["required"] = "sometimes"
+    [issue] = run_verify(data, "S-2.2").issues
+    assert issue.code == "V1_SCHEMA_INVALID"
+    assert "notes: Extra inputs are not permitted" in issue.message
+    assert "fields.0.required" in issue.message
+
+
+@pytest.mark.unit
 def test_STR_002_method_mismatch(good: Good, synthetic_sections: dict[str, Section]) -> None:
     contract = ContractSection.model_validate({**good("S-2.2"), "method": "PUT"})
     issues = check_endpoint(contract, synthetic_sections["S-2.2"].entry)

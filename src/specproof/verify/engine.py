@@ -45,7 +45,16 @@ def load_contract(raw: str, section_id: str) -> tuple[ContractSection | None, li
         if contract.section_id != section_id:
             raise ValueError(f"section_id {contract.section_id} does not match {section_id}")
         return contract, []
-    except (ValueError, ValidationError) as exc:
+    except ValidationError as exc:
+        details = [
+            f"{'.'.join(str(p) for p in err['loc'])}: {err['msg']}" for err in exc.errors()[:8]
+        ]
+        message = "contract does not match the schema: " + "; ".join(details)
+        issue = Issue(
+            code="V1_SCHEMA_INVALID", severity="error", category=EXTRACTION, message=message
+        )
+        return None, [issue]
+    except ValueError as exc:
         message = str(exc).splitlines()[0] if str(exc) else type(exc).__name__
         issue = Issue(
             code="V1_SCHEMA_INVALID", severity="error", category=EXTRACTION, message=message

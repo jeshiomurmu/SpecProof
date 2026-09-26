@@ -100,7 +100,11 @@ def classify(
     """Return the section status and its spec findings; the same inputs give the same output."""
     errors = len(extraction_errors(result))
     if errors:
-        stalled = previous is not None and errors >= len(extraction_errors(previous))
+        # A schema-invalid attempt ran no other rule, so its error count is not comparable.
+        measured = previous is not None and not any(
+            i.code == "V1_SCHEMA_INVALID" for i in previous.issues
+        )
+        stalled = measured and previous is not None and errors >= len(extraction_errors(previous))
         if stalled or result.attempt >= MAX_ATTEMPTS:
             return "QUARANTINED", []
         return "NEEDS_RETRY", []

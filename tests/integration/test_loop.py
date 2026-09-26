@@ -180,6 +180,15 @@ def test_LOOP_011_early_stop_when_errors_do_not_decrease(run_verify: Run, good: 
 
 
 @pytest.mark.integration
+def test_LOOP_013_no_early_stop_after_schema_invalid_attempt(run_verify: Run, good: Good) -> None:
+    first = run_verify('{"schema_version": 1, "section_id": "S-2.2"}', "S-2.2")
+    assert [i.code for i in first.issues] == ["V1_SCHEMA_INVALID"]
+    retry = _with_attempt(mutate(good("S-2.2"), "wrong_method"), 2)
+    status, _, _ = _classify(run_verify, retry, "S-2.2", previous=first)
+    assert status == "NEEDS_RETRY"
+
+
+@pytest.mark.integration
 def test_LOOP_012_feedback_removed_once_terminal(workspace: Path, good: Good) -> None:
     contracts = workspace / "artifacts" / "contract"
     contracts.mkdir(parents=True)
