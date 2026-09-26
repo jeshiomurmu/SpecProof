@@ -142,8 +142,28 @@ def test_E2E_R03_determinism_on_real_artifacts(
         "identical": identical,
         "differences": differences,
     }
-    (repo_root / "artifacts" / "determinism.json").write_text(
-        json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    from datetime import UTC, datetime
+
+    from specproof.models.manifest import InputRef, ManifestRecord, Producer, append_record
+    from specproof.util.io_json import dump_json
+
+    target = repo_root / "artifacts" / "determinism.json"
+    dump_json(target, result)
+    append_record(
+        repo_root / "artifacts" / "manifest.json",
+        ManifestRecord(
+            artifact="artifacts/determinism.json",
+            sha256=sha256_file(target),
+            stage="determinism",
+            producer=Producer(kind="deterministic", tool="pytest E2E-R03"),
+            inputs=[
+                InputRef(
+                    path="artifacts/sections_index.json",
+                    sha256=sha256_file(repo_root / "artifacts" / "sections_index.json"),
+                )
+            ],
+            created_at=datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        ),
     )
     assert differences == []
 

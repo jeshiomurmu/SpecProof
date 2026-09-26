@@ -1,0 +1,1706 @@
+[
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "bt_tap                                  F                 Object",
+        "snippet": null
+      }
+    ],
+    "id": "F-00efb06c",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `bt_tap`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 177,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/webhooks/endpoints/a22ee283-c91f-432b-9d0f-",
+        "snippet": null
+      }
+    ],
+    "id": "F-0156e6d0",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-11.5",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "deleted                          T                     Boolean                    Indicate     whether      a  resource      is disabled.",
+        "snippet": null
+      }
+    ],
+    "id": "F-040d4cd9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "face                                    F                 Object         Face  Unlock    access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-057fc198",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `face`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1system~1logs~1resource~1{id}/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 159,
+        "quote": "Id                    T                  String                                                    b5b172381fec\",\"display_name\":",
+        "snippet": null
+      }
+    ],
+    "id": "F-0bb8a784",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.4",
+    "severity": "low",
+    "title": "Community spec omits `Id`, which the PDF documents on page 159.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1{id}/delete/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 77,
+        "quote": "Id                                 T                               String                 Identity    ID  of  the   access    policy.",
+        "snippet": null
+      }
+    ],
+    "id": "F-0e257d8c",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.4",
+    "severity": "low",
+    "title": "Community spec omits `Id`, which the PDF documents on page 77.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 131,
+        "quote": "resources         F               Array[String]     this parameter    if it doesn't need  to                       /api/v1/developer/door_groups/topology",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 132,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-0f3b02b5",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.4",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of resources",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "deleted                           T                     Boolean            Indicate     whether      the   resource      is  disabled.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-103cd2b4",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 17,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-13962a9e",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.4",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "mobile_wave                             F                 Object         Mobile   Wave    access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-22e2f0e9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `mobile_wave`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 56,
+        "quote": "\"visit_reason\":             \"Interviemw\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-2518a1ed",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-4.2",
+    "severity": "high",
+    "title": "Sample value violates the documented enum for visit_reason",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1{id}/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 78,
+        "quote": "Id                                 T                               String                 Identity    ID  of  the   access    policy.",
+        "snippet": null
+      }
+    ],
+    "id": "F-2a2ebe0e",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.5",
+    "severity": "low",
+    "title": "Community spec omits `Id`, which the PDF documents on page 78.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups",
+        "snippet": null
+      }
+    ],
+    "id": "F-2ce06a9c",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 175,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/webhooks/endpoints'",
+        "snippet": null
+      }
+    ],
+    "id": "F-2d465646",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-11.4",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4795,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties/access_methods"
+      }
+    ],
+    "id": "F-317997a8",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "info",
+    "title": "Community spec has `access_methods`, which the PDF section does not document.",
+    "type": "COMMUNITY_EXTRA_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 147,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-318d603b",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.1",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of the sample",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users",
+        "snippet": null
+      }
+    ],
+    "id": "F-3202ab46",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "name                              T                     String             Name      of  the   resources.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-37cb6094",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 13,
+        "quote": "touch_pass                                             Array[Object]",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 20,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-41067aa7",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.5",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of touch_pass",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 137,
+        "quote": "is_bind_hub              T            String   to a hub device. It can only be used for",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 138,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-4406a47e",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.8",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of is_bind_hub",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4833,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1doorbell/post/requestBody/content/application~1json/schema/required"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 153,
+        "quote": "room_name                F                     String",
+        "snippet": null
+      }
+    ],
+    "id": "F-47123097",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.4",
+    "severity": "medium",
+    "title": "Community spec marks `room_name` as required; the PDF row on page 153 marks it optional (F).",
+    "type": "COMMUNITY_REQUIRED_MISMATCH"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 156,
+        "quote": "actor                        T                    Object                     Information        about     the   event    operator.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-4896b535",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits actor, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "event                        T                    Object                     Basic    information        about    the   event.",
+        "snippet": null
+      }
+    ],
+    "id": "F-57e3eddb",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits event, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 129,
+        "quote": "resources               T              String     All doors contained  under  the group.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 130,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-623698f4",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.3",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of resources",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 85,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/access_policies/holiday_groups/7be7a7a0-818f-4f76-",
+        "snippet": null
+      }
+    ],
+    "id": "F-64374118",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.9",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1credentials~1nfc_cards~1sessions~1{id}/delete/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 105,
+        "quote": "id                   T                  String                                                                                               from   the  API",
+        "snippet": null
+      }
+    ],
+    "id": "F-6546c17f",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-6.4",
+    "severity": "low",
+    "title": "Community spec omits `id`, which the PDF documents on page 105.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 3003,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1{id}/put/requestBody/content/application~1json/schema/properties/resources"
+      }
+    ],
+    "id": "F-661399aa",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.3",
+    "severity": "info",
+    "title": "Community spec has `resources`, which the PDF section does not document.",
+    "type": "COMMUNITY_EXTRA_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "nfc                                     F                 Object         NFC   access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-6cf173af",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `nfc`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 136,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 136,
+        "quote": "is_bind_hub              T            String   to a hub device. It can only be used for",
+        "snippet": null
+      }
+    ],
+    "id": "F-72ea066d",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.7",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of is_bind_hub",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 2909,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies/post/requestBody/content/application~1json/schema/properties/resources"
+      }
+    ],
+    "id": "F-7926672f",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.2",
+    "severity": "info",
+    "title": "Community spec has `resources`, which the PDF section does not document.",
+    "type": "COMMUNITY_EXTRA_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 2999,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1{id}/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 76,
+        "quote": "resource             F              Array[Object]     the access policy. Omit  this parameter        /api/v1/developer/door_groups/topology;",
+        "snippet": null
+      }
+    ],
+    "id": "F-7c094e3d",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.3",
+    "severity": "low",
+    "title": "Community spec omits `resource`, which the PDF documents on page 76.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "deleted                          T                     Boolean                    Indicate     whether      a  resource      is disabled.",
+        "snippet": null
+      }
+    ],
+    "id": "F-88db75e8",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 128,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 128,
+        "quote": "resources         T               Array[String]     Collection of door  ID.                                        /api/v1/developer/door_groups/topology",
+        "snippet": null
+      }
+    ],
+    "id": "F-895887db",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.2",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of resources",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1holiday_groups~1{id}/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 87,
+        "quote": "Id                                 T                              String                Identity     ID  of  the   holiday    group.",
+        "snippet": null
+      }
+    ],
+    "id": "F-8ae38c53",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.11",
+    "severity": "low",
+    "title": "Community spec omits `Id`, which the PDF documents on page 87.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "name                             T                     String                     Name      of  the   resources.",
+        "snippet": null
+      }
+    ],
+    "id": "F-90f85c70",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1api_server~1certificates/post/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 191,
+        "quote": "cert                                 T                                 File                  Certificate                             server.crt",
+        "snippet": null
+      }
+    ],
+    "id": "F-933cc645",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-12.1",
+    "severity": "low",
+    "title": "Community spec omits `cert`, which the PDF documents on page 191.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 162,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/users/identity/invitations'",
+        "snippet": null
+      }
+    ],
+    "id": "F-93d0b6a1",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.1",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 98,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 98,
+        "quote": "week_schedule                    T                    Object",
+        "snippet": null
+      }
+    ],
+    "id": "F-959533e6",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.16",
+    "severity": "medium",
+    "title": "Sample omits week_schedule, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies~1holiday_groups/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 89,
+        "quote": "Id                                 T                              String                Identity     ID  of  the   holiday    group.",
+        "snippet": null
+      }
+    ],
+    "id": "F-9d686227",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.12",
+    "severity": "low",
+    "title": "Community spec omits `Id`, which the PDF documents on page 89.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "pin_code                                F                 Object         PIN  access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-9e0f7761",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `pin_code`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "id                                T                     String             Identity    ID  of  the   resources.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-9ee3d244",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "wave                                    F                 Object         Hand   Wave    access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-a5b8c679",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `wave`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "bt_button                               F                 Object",
+        "snippet": null
+      }
+    ],
+    "id": "F-a7ca89ef",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `bt_button`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 63,
+        "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\"",
+        "snippet": null
+      }
+    ],
+    "id": "F-a96f5336",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-4.5",
+    "severity": "high",
+    "title": "Sample value violates the documented enum for visit_reason",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1system~1static~1{path}/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 160,
+        "quote": "path                    T                     String",
+        "snippet": null
+      }
+    ],
+    "id": "F-acc5c7d6",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.5",
+    "severity": "low",
+    "title": "Community spec omits `path`, which the PDF documents on page 160.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1users~1{id}~1avatar/post/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 51,
+        "quote": "file                              T                             File                Profile    picture    image     file  to  upload.",
+        "snippet": null
+      }
+    ],
+    "id": "F-af2adf84",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.30",
+    "severity": "low",
+    "title": "Community spec omits `file`, which the PDF documents on page 51.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 157,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-b2274bf9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Sample omits msg, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4967,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1system~1logs~1export/post/requestBody/content/application~1json/schema/properties/topic/enum"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 158,
+        "quote": "topic         T            String                                                                                                      door_openings",
+        "snippet": null
+      }
+    ],
+    "id": "F-b3aac90a",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.3",
+    "severity": "medium",
+    "title": "Community enum for `topic` differs from the PDF on page 158: missing none, extra ['all'].",
+    "type": "COMMUNITY_ENUM_MISMATCH"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4892,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1system~1logs/post/requestBody/content/application~1json/schema/properties/topic/enum"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 156,
+        "quote": "topic          T            String                                                                                                      door_openings",
+        "snippet": null
+      }
+    ],
+    "id": "F-c0e391d0",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-9.2",
+    "severity": "medium",
+    "title": "Community enum for `topic` differs from the PDF on page 156: missing none, extra ['all'].",
+    "type": "COMMUNITY_ENUM_MISMATCH"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 43,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-c704b394",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.24",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1credentials~1nfc_cards~1sessions~1{id}/get/requestBody/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 104,
+        "quote": "id                   T                  String                                                                                               from   the  API",
+        "snippet": null
+      }
+    ],
+    "id": "F-ca1d797f",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-6.3",
+    "severity": "low",
+    "title": "Community spec omits `id`, which the PDF documents on page 104.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 2905,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1access_policies/post/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 74,
+        "quote": "resource           F             Array[Object]                                                   /api/v1/developer/door_groups/topology;",
+        "snippet": null
+      }
+    ],
+    "id": "F-cea82680",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.2",
+    "severity": "low",
+    "title": "Community spec omits `resource`, which the PDF documents on page 74.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 119,
+        "quote": "curl     --location         --request         PUT",
+        "snippet": null
+      }
+    ],
+    "id": "F-d0f1ee66",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-6.15",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 152,
+        "quote": "touch_pass                              F                 Object         Touch   Pass   access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-d938154e",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `touch_pass`, which the PDF documents on page 152.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "name                             T                     String                     Name      of  the   resources.",
+        "snippet": null
+      }
+    ],
+    "id": "F-ee160a81",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "qr_code                                 F                 Object         QR  code   access   method     setting.",
+        "snippet": null
+      }
+    ],
+    "id": "F-f4d19869",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `qr_code`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 96,
+        "quote": "id                  T                String                                    /api/v1/developer/access_policies",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 97,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-f718c698",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-5.15",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": 4794,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1devices~1{device_id}~1settings/put/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 151,
+        "quote": "bt_shake                                F                 Object",
+        "snippet": null
+      }
+    ],
+    "id": "F-fa8911b9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-8.3",
+    "severity": "low",
+    "title": "Community spec omits `bt_shake`, which the PDF documents on page 151.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1credentials~1nfc_cards~1import/post/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 124,
+        "quote": "file                         T                         File             A  CSV    file containing       NFC    IDs  or  optional      aliases.",
+        "snippet": null
+      }
+    ],
+    "id": "F-fcda0304",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-6.19",
+    "severity": "low",
+    "title": "Community spec omits `file`, which the PDF documents on page 124.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  },
+  {
+    "evidence": [
+      {
+        "file": "artifacts/work/community_openapi.yaml",
+        "kind": "code",
+        "line": null,
+        "page": null,
+        "quote": null,
+        "snippet": "#/paths/~1api~1v1~1developer~1api_server~1certificates/post/requestBody/content/application~1json/schema/properties"
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 191,
+        "quote": "key                                  T                                 File                  Private     Key                         server.key",
+        "snippet": null
+      }
+    ],
+    "id": "F-fd1c6e5e",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-12.1",
+    "severity": "low",
+    "title": "Community spec omits `key`, which the PDF documents on page 191.",
+    "type": "COMMUNITY_MISSING_FIELD"
+  }
+]

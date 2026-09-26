@@ -1,0 +1,127 @@
+{
+  "errors": [],
+  "findings": [],
+  "inventory": [
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 225,
+      "method": "GET",
+      "path": "/api/v1/developer/doors"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 233,
+      "method": "GET",
+      "path": "/api/v1/developer/doors"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 242,
+      "method": "GET",
+      "path": "/api/v1/developer/devices"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 325,
+      "method": "PUT",
+      "path": "/api/v1/developer/doors/{}/unlock"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 334,
+      "method": "GET",
+      "path": "/api/v1/developer/doors/{}/lock_rule"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 341,
+      "method": "PUT",
+      "path": "/api/v1/developer/doors/{}/lock_rule"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 353,
+      "method": "GET",
+      "path": "/api/v1/developer/doors/settings/emergency"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 357,
+      "method": "PUT",
+      "path": "/api/v1/developer/doors/settings/emergency"
+    },
+    {
+      "dynamic": true,
+      "file": "unifi_access_api/client.py",
+      "line": 373,
+      "method": "GET",
+      "path": "/api/v1/developer/system/static{}"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 427,
+      "method": "UNKNOWN",
+      "path": "/api/v1/developer/devices/notifications"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 448,
+      "method": "GET",
+      "path": "/api/v1/developer/users"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 453,
+      "method": "PUT",
+      "path": "/api/v1/developer/users/{}"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 463,
+      "method": "PUT",
+      "path": "/api/v1/developer/users/{}/pin_codes"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 465,
+      "method": "DELETE",
+      "path": "/api/v1/developer/users/{}/pin_codes"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 473,
+      "method": "GET",
+      "path": "/api/v1/developer/devices/{}/settings"
+    },
+    {
+      "dynamic": false,
+      "file": "unifi_access_api/client.py",
+      "line": 482,
+      "method": "PUT",
+      "path": "/api/v1/developer/devices/{}/settings"
+    }
+  ],
+  "mapping_errors": [],
+  "uncheckable": [
+    {
+      "file": "unifi_access_api/client.py",
+      "line": 373,
+      "method": "GET",
+      "path": "/api/v1/developer/system/static{}"
+    }
+  ]
+}

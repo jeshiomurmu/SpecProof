@@ -1,0 +1,93 @@
+{
+  "passed": false,
+  "results": [
+    {
+      "metric": "audited_precision",
+      "reason": "missing: blind audit not scored yet (specproof audit-score, T13)",
+      "threshold": {
+        "min": 0.9,
+        "target": 0.97
+      },
+      "value": null,
+      "verdict": "FAIL"
+    },
+    {
+      "metric": "citation_grounding_rate",
+      "reason": "",
+      "threshold": {
+        "min": 0.95,
+        "target": 0.99
+      },
+      "value": 1.0,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "determinism",
+      "reason": "",
+      "threshold": {
+        "min": 1.0
+      },
+      "value": 1.0,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "endpoint_coverage",
+      "reason": "",
+      "threshold": {
+        "min": 0.9,
+        "target": 1.0
+      },
+      "value": 1.0,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "final_verified_rate",
+      "reason": "",
+      "threshold": {
+        "min": 0.85,
+        "target": 0.95
+      },
+      "value": 0.9913,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "quarantine_rate",
+      "reason": "",
+      "threshold": {
+        "max": 0.1,
+        "target": 0.03
+      },
+      "value": 0.0086,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "row_consistency_rate",
+      "reason": "",
+      "threshold": {
+        "min": 0.9,
+        "target": 0.98
+      },
+      "value": 1.0,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "sample_parse_rate",
+      "reason": "",
+      "threshold": {
+        "min": 0.8,
+        "target": 0.95
+      },
+      "value": 0.951,
+      "verdict": "PASS"
+    },
+    {
+      "metric": "unit_test_coverage",
+      "reason": "",
+      "threshold": {
+        "min": 0.85
+      },
+      "value": 0.9032,
+      "verdict": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "audited_miss_rate": {
+    "reason": "blind audit not scored yet (specproof audit-score, T13)",
+    "value": null
+  },
+  "audited_precision": {
+    "reason": "blind audit not scored yet (specproof audit-score, T13)",
+    "value": null
+  },
+  "bobcoins_per_verified_endpoint": {
+    "reason": "comes from IBM Bob task exports and screenshots (T08); not machine-readable here",
+    "value": null
+  },
+  "citation_grounding_rate": {
+    "denominator": 1406,
+    "numerator": 1406,
+    "value": 1.0
+  },
+  "citation_presence_rate": {
+    "denominator": 1406,
+    "numerator": 1406,
+    "value": 1.0
+  },
+  "client_findings_candidate": {
+    "by_type": {},
+    "total": 0
+  },
+  "client_findings_confirmed": {
+    "by_type": {},
+    "total": 0
+  },
+  "community_discrepancies_candidate": {
+    "by_type": {
+      "COMMUNITY_ENUM_MISMATCH": 2,
+      "COMMUNITY_EXTRA_FIELD": 3,
+      "COMMUNITY_MISSING_FIELD": 24,
+      "COMMUNITY_REQUIRED_MISMATCH": 1
+    },
+    "total": 30
+  },
+  "community_discrepancies_confirmed": {
+    "by_type": {},
+    "total": 0
+  },
+  "determinism": {
+    "denominator": 243,
+    "numerator": 243,
+    "value": 1.0
+  },
+  "endpoint_coverage": {
+    "denominator": 108,
+    "numerator": 108,
+    "value": 1.0
+  },
+  "field_coverage": {
+    "denominator": 467,
+    "numerator": 467,
+    "value": 1.0
+  },
+  "final_verified_rate": {
+    "denominator": 116,
+    "numerator": 115,
+    "value": 0.9913
+  },
+  "first_pass_verified_rate": {
+    "denominator": 116,
+    "numerator": 97,
+    "value": 0.8362
+  },
+  "issues_fixed_by_loop": {
+    "denominator": 22,
+    "numerator": 22,
+    "value": 1.0
+  },
+  "loop_lift": {
+    "formula": "final_verified_rate - first_pass_verified_rate",
+    "value": 0.1551
+  },
+  "manual_minutes_per_endpoint": {
+    "reason": "eval/audit/manual_baseline.csv not recorded yet",
+    "value": null
+  },
+  "mean_attempts": {
+    "denominator": 116,
+    "numerator": 140,
+    "value": 1.2068
+  },
+  "projected_manual_hours_full_spec": {
+    "reason": "reported in the report with its range",
+    "value": null
+  },
+  "quarantine_rate": {
+    "denominator": 116,
+    "numerator": 1,
+    "value": 0.0086
+  },
+  "row_check_applicability": {
+    "denominator": 387,
+    "numerator": 380,
+    "value": 0.9819
+  },
+  "row_consistency_rate": {
+    "denominator": 380,
+    "numerator": 380,
+    "value": 1.0
+  },
+  "sample_parse_rate": {
+    "denominator": 143,
+    "numerator": 136,
+    "value": 0.951
+  },
+  "schema_valid_rate": {
+    "denominator": 116,
+    "numerator": 116,
+    "value": 1.0
+  },
+  "spec_findings_candidate": {
+    "by_type": {
+      "SPEC_MALFORMED_SAMPLE": 7,
+      "SPEC_SAMPLE_INCOMPLETE": 14,
+      "SPEC_SELF_INCONSISTENCY": 9
+    },
+    "total": 30
+  },
+  "spec_findings_confirmed": {
+    "by_type": {},
+    "total": 0
+  },
+  "specproof_minutes_per_endpoint": {
+    "reason": "comes from IBM Bob task exports and screenshots (T08); not machine-readable here",
+    "value": null
+  },
+  "time_reduction_factor": {
+    "reason": "needs specproof_minutes_per_endpoint",
+    "value": null
+  },
+  "unit_test_coverage": {
+    "source": "coverage.py",
+    "value": 0.9032
+  },
+  "verifier_false_accept": {
+    "reason": "blind audit not scored yet (specproof audit-score, T13)",
+    "value": null
+  }
+}

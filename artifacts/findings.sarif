@@ -1,0 +1,658 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `bt_tap`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-00efb06c"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `face`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-057fc198"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `Id`, which the PDF documents on page 159."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-0bb8a784"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `Id`, which the PDF documents on page 77."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-0e257d8c"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `mobile_wave`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-22e2f0e9"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `Id`, which the PDF documents on page 78."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-2a2ebe0e"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4795
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec has `access_methods`, which the PDF section does not document."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-317997a8"
+          },
+          "ruleId": "COMMUNITY_EXTRA_FIELD"
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4833
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec marks `room_name` as required; the PDF row on page 153 marks it optional (F)."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-47123097"
+          },
+          "ruleId": "COMMUNITY_REQUIRED_MISMATCH"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `id`, which the PDF documents on page 105."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-6546c17f"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 3003
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec has `resources`, which the PDF section does not document."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-661399aa"
+          },
+          "ruleId": "COMMUNITY_EXTRA_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `nfc`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-6cf173af"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 2909
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec has `resources`, which the PDF section does not document."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-7926672f"
+          },
+          "ruleId": "COMMUNITY_EXTRA_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 2999
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `resource`, which the PDF documents on page 76."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-7c094e3d"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `Id`, which the PDF documents on page 87."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-8ae38c53"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `cert`, which the PDF documents on page 191."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-933cc645"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `Id`, which the PDF documents on page 89."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-9d686227"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `pin_code`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-9e0f7761"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `wave`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-a5b8c679"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `bt_button`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-a7ca89ef"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `path`, which the PDF documents on page 160."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-acc5c7d6"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `file`, which the PDF documents on page 51."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-af2adf84"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4967
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community enum for `topic` differs from the PDF on page 158: missing none, extra ['all']."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-b3aac90a"
+          },
+          "ruleId": "COMMUNITY_ENUM_MISMATCH"
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4892
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community enum for `topic` differs from the PDF on page 156: missing none, extra ['all']."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-c0e391d0"
+          },
+          "ruleId": "COMMUNITY_ENUM_MISMATCH"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `id`, which the PDF documents on page 104."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-ca1d797f"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 2905
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `resource`, which the PDF documents on page 74."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-cea82680"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `touch_pass`, which the PDF documents on page 152."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-d938154e"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `qr_code`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-f4d19869"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                },
+                "region": {
+                  "startLine": 4794
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `bt_shake`, which the PDF documents on page 151."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-fa8911b9"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `file`, which the PDF documents on page 124."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-fcda0304"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        },
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/community_openapi.yaml"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Community spec omits `key`, which the PDF documents on page 191."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-fd1c6e5e"
+          },
+          "ruleId": "COMMUNITY_MISSING_FIELD"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "SpecProof",
+          "rules": [
+            {
+              "id": "COMMUNITY_ENUM_MISMATCH",
+              "name": "COMMUNITY_ENUM_MISMATCH"
+            },
+            {
+              "id": "COMMUNITY_EXTRA_FIELD",
+              "name": "COMMUNITY_EXTRA_FIELD"
+            },
+            {
+              "id": "COMMUNITY_MISSING_FIELD",
+              "name": "COMMUNITY_MISSING_FIELD"
+            },
+            {
+              "id": "COMMUNITY_REQUIRED_MISMATCH",
+              "name": "COMMUNITY_REQUIRED_MISMATCH"
+            }
+          ],
+          "version": "0.1.0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}
