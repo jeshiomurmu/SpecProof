@@ -158,6 +158,16 @@ def test_SMP_019_payload_ends_at_its_own_closing_quote() -> None:
 
 
 @pytest.mark.unit
+def test_SMP_020_one_issue_per_missing_required_field(good: Good) -> None:
+    contract = _with_request_payload(good, '{"size": 3}')
+    issues, _ = validate_samples(contract)
+    required = [(i.field, i.message) for i in issues if i.code == "V3_REQUIRED_MISSING"]
+    assert [f for f, _m in required] == ["color", "name"]
+    for field, message in required:
+        assert f"'{field}' is a required property" in message
+
+
+@pytest.mark.unit
 def test_SMP_014_empty_data_is_no_body() -> None:
     assert extract_payload("curl -XPUT '{{host}}/x'\n --data ''") is None
 

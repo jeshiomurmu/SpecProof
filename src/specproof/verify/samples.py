@@ -24,6 +24,7 @@ _DATA_RAW = re.compile(r"(?<!\S)(?:--data(?:-raw|-binary)?|-d)\s+(['\"])")
 # The document's responses always carry code and msg; data is absent or null for
 # operations that return nothing (e.g. DELETE), so it is not required.
 ENVELOPE_REQUIRED = ("code", "msg")
+_REQUIRED_NAME = re.compile(r"^'(.+)' is a required property$")
 _V3 = {"required": "V3_REQUIRED_MISSING", "type": "V3_TYPE_MISMATCH", "enum": "V3_ENUM_VIOLATION"}
 _SEVERITY = {"required": "warning", "type": "error", "enum": "error"}
 
@@ -134,8 +135,9 @@ def _validate(instance: Any, schema: dict[str, Any], which: str, cite: Citation)
         if kind not in _V3:
             continue
         if kind == "required":
-            missing = [n for n in error.validator_value if n not in error.instance]
-            names: list[str | None] = list(missing)
+            # jsonschema raises one "required" error per missing property.
+            named = _REQUIRED_NAME.match(str(error.message))
+            names: list[str | None] = [named.group(1)] if named else [None]
         else:
             names = [str(error.absolute_path[0]) if error.absolute_path else None]
         for name in names:
