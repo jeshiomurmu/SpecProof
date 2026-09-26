@@ -1,0 +1,164 @@
+{
+  "citations": {
+    "path": {
+      "page": 173,
+      "quote": "Request       URL:    /api/v1/developer/webhooks/endpoints"
+    },
+    "permission_key": {
+      "page": 173,
+      "quote": "Permission        Key:    view:webhook"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 173,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 173,
+        "quote": "id                      T                     String                              Identity     ID  of  the  endpoint."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 173,
+        "quote": "endpoint                T                     String                              The    HTTPS     URL    where      webhook       events     are   sent."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "endpoint",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 173,
+        "quote": "name                    T                     String                              Name      of  the   webhook        subscription."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 174,
+        "quote": "events                  T                     Array[String]                       List  of  events     to  subscribe       to."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "events",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    },
+    {
+      "citation": {
+        "page": 174,
+        "quote": "secret                  T                     String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "secret",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 174,
+        "quote": "headers                 F\nString>                             endpoint       service."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "headers",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object<String, String>"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/webhooks/endpoints",
+  "permission_key": "view:webhook",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 174,
+        "quote": "curl     '{{host}}/api/v1/developer/webhooks/endpoints'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/webhooks/endpoints'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 174,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"endpoint\":          \"http://192.168.1.1:8080\",\n                         \"events\":         [\n                                \"access.doorbell.incoming\",\n                                \"access.doorbell.completed\",\n                                \"access.doorbell.incoming.REN\",\n                                \"access.device.dps_status\",\n                                \"access.door.unlock\"\n                         ],\n                         \"id\":     \"1a639160-a7c8-45cb-8789-50dfd255a0fe\",\n                         \"name\":       \"subscription            events\",\n                         \"secret\":         \"6601f1243d2ff70f\",\n                         \"headers\":         {\n                                \"key\":      \"value\"\n                         }\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-11.3",
+  "title": "Fetch Webhook Endpoints List [Webhook]"
+}

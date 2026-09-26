@@ -1,0 +1,155 @@
+{
+  "citations": {
+    "path": {
+      "page": 168,
+      "quote": "Request       URL:    /api/v1/developer/user_groups/:id/identity/assignments"
+    },
+    "permission_key": {
+      "page": 168,
+      "quote": "Permission        Key:    view:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 169,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 169,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 169,
+        "quote": "[resource_type]   {ev_station,vpn,wifi,camera}"
+      },
+      "description": null,
+      "enum": [
+        "ev_station",
+        "vpn",
+        "wifi",
+        "camera"
+      ],
+      "enum_citation": {
+        "page": 169,
+        "quote": "[resource_type]   {ev_station,vpn,wifi,camera}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "[resource_type]",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 169,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 169,
+        "quote": "name                             T                     String                     Name      of  the   resources."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 169,
+        "quote": "deleted                          T                     Boolean                    Indicate     whether      a  resource      is disabled."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "deleted",
+      "required": true,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/user_groups/:id/identity/assignments",
+  "permission_key": "view:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 169,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/user_groups/7476c839-8e10-472e-894f-"
+      },
+      "raw": "    curl     -XGET     '{{host}}/api/v1/developer/user_groups/7476c839-8e10-472e-894f-\n    c5b8254c35b5/identity/assignments'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ev_station\":            [],\n                  \"vpn\":      [\n                         {\n                                \"deleted\":         false,\n                                \"id\":      \"65dff9a9c188cb71cfac8e9d\",\n                                \"metadata\":          {\n                                       \"has_ip\":         true\n                                },\n                                \"name\":       \"UDM     Pro\",\n                                \"short_name\":            \"\"\n                         }\n                  ],\n                  \"wifi\":       [\n                         {\n                                \"deleted\":         false,\n                                \"id\":      \"65dff9a8c188cb71cfac8e9a\",\n                                \"metadata\":          null,\n                                \"name\":       \"UniFi      Identity\",\n                                \"short_name\":            \"\"\n                         }\n                  ]\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-10.6",
+  "title": "Fetch the Resources Assigned to User Groups"
+}

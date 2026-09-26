@@ -1,0 +1,50 @@
+{
+  "citations": {
+    "method": {
+      "page": 179,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 179,
+      "quote": "Request       URL:    Your     webhook       endpoint"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 179,
+        "quote": "Signature      T             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Signature",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "Your     webhook       endpoint",
+  "permission_key": null,
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-11.7",
+  "title": "Allow Webhook Endpoint Owner to Receive Webhook"
+}

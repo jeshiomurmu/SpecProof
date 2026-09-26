@@ -1,0 +1,100 @@
+{
+  "citations": {
+    "method": {
+      "page": 191,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 191,
+      "quote": "Request       URL:    /api/v1/developer/api_server/certificates"
+    },
+    "permission_key": {
+      "page": 191,
+      "quote": "Permission        Key:    edit:api_server"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 191,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 191,
+        "quote": "key                                  T                                 File                  Private     Key                         server.key"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "key",
+      "required": true,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "File"
+    },
+    {
+      "citation": {
+        "page": 191,
+        "quote": "cert                                 T                                 File                  Certificate                             server.crt"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "cert",
+      "required": true,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "File"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/api_server/certificates",
+  "permission_key": "edit:api_server",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 192,
+        "quote": "'{{host}}/api/v1/developer/api_server/certificates'                                        \\"
+      },
+      "raw": "    curl     -XPOST\n    '{{host}}/api/v1/developer/api_server/certificates'                                        \\\n    --H    'Authorization:             Bearer      wHFmHR******kD6wHg/yg'                   \\\n    --form      'key=@\"/server.key\"'                 \\\n    --form      'cert=@\"/server.crt\"'"
+    },
+    "response": {
+      "citation": {
+        "page": 192,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       \"success\",\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-12.1",
+  "title": "Upload HTTPS Certificate"
+}

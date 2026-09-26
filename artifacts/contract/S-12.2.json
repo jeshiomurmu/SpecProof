@@ -1,0 +1,66 @@
+{
+  "citations": {
+    "method": {
+      "page": 192,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 192,
+      "quote": "Request       URL:    /api/v1/developer/api_server/certificates"
+    },
+    "permission_key": {
+      "page": 192,
+      "quote": "Permission        Key:    edit:api_server"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 192,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/api_server/certificates",
+  "permission_key": "edit:api_server",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 193,
+        "quote": "curl     -XDELETE"
+      },
+      "raw": "    curl     -XDELETE\n    '{{host}}/api/v1/developer/api_server/certificates'                                        \\\n    --H    'Authorization:             Bearer      wHFmHR******kD6wHg/yg'"
+    },
+    "response": {
+      "citation": {
+        "page": 192,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       \"success\",\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-12.2",
+  "title": "Delete HTTPS Certificate"
+}

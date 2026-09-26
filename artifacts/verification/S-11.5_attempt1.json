@@ -1,0 +1,36 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 10,
+    "items": 10,
+    "row_checked": 5,
+    "row_ok": 5,
+    "rows_detected": 5,
+    "samples": 2,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "info",
+      "code": "V2_ROW_NOT_FOUND",
+      "evidence": null,
+      "field": "headers",
+      "hint": null,
+      "message": "no single-line table row for 'headers'; row check skipped",
+      "severity": "info"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 177,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/webhooks/endpoints/a22ee283-c91f-432b-9d0f-"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Extra data (line 16)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-11.5"
+}

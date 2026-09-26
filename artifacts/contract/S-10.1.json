@@ -1,0 +1,100 @@
+{
+  "citations": {
+    "method": {
+      "page": 161,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 161,
+      "quote": "Request       URL:    /api/v1/developer/users/identity/invitations"
+    },
+    "permission_key": {
+      "page": 161,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 162,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 162,
+        "quote": "Array[Object].user_id                  T                    String          Identity    ID  of  the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Array[Object].user_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 162,
+        "quote": "Array[Object].email                    F                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Array[Object].email",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/users/identity/invitations",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 162,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/users/identity/invitations'"
+      },
+      "raw": "    curl     -XPOST      '{{host}}/api/v1/developer/users/identity/invitations'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '[\n           {\n                  \"user_id\":         \"e0051e08-c4d5-43db-87c8-a9b19cb66513\",\n                  \"email\":        \"example@*.com\"\n           },\n    ]'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 162,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-10.1",
+  "title": "Send UniFi Identity Invitations"
+}

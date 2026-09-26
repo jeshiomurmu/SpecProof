@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 178,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 178,
+      "quote": "Request       URL:    /api/v1/developer/webhooks/endpoints/:id"
+    },
+    "permission_key": {
+      "page": 178,
+      "quote": "Permission        Key:    edit:webhook"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 178,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 178,
+        "quote": "id                      T                     String\nendpoint.                                   e89bcccad4be"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/webhooks/endpoints/:id",
+  "permission_key": "edit:webhook",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 178,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/webhooks/endpoints/a22ee283-c91f-432b-9d0f-"
+      },
+      "raw": "    curl     -XDELETE       '{{host}}/api/v1/developer/webhooks/endpoints/a22ee283-c91f-432b-9d0f-\n    e89bcccad4be'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 179,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       null,\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-11.6",
+  "title": "Delete Webhook Endpoints [Webhook]"
+}

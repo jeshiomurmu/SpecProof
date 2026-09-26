@@ -5,6 +5,58 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 177,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/webhooks/endpoints/a22ee283-c91f-432b-9d0f-",
+        "snippet": null
+      }
+    ],
+    "id": "F-0156e6d0",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-11.5",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "deleted                          T                     Boolean                    Indicate     whether      a  resource      is disabled.",
+        "snippet": null
+      }
+    ],
+    "id": "F-040d4cd9",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 131,
         "quote": "resources         F               Array[String]     this parameter    if it doesn't need  to                       /api/v1/developer/door_groups/topology",
         "snippet": null
@@ -28,6 +80,36 @@
     "severity": "high",
     "title": "Sample value type contradicts the documented type of resources",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "deleted                           T                     Boolean            Indicate     whether      the   resource      is  disabled.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-103cd2b4",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [
@@ -87,6 +169,58 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups",
+        "snippet": null
+      }
+    ],
+    "id": "F-2ce06a9c",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 175,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/webhooks/endpoints'",
+        "snippet": null
+      }
+    ],
+    "id": "F-2d465646",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-11.4",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 147,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -102,6 +236,66 @@
     "severity": "high",
     "title": "Sample value type contradicts the documented type of the sample",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users",
+        "snippet": null
+      }
+    ],
+    "id": "F-3202ab46",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "name                              T                     String             Name      of  the   resources.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-37cb6094",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [
@@ -311,6 +505,36 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "deleted                          T                     Boolean                    Indicate     whether      a  resource      is disabled.",
+        "snippet": null
+      }
+    ],
+    "id": "F-88db75e8",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits deleted, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 128,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -341,6 +565,58 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 166,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 166,
+        "quote": "name                             T                     String                     Name      of  the   resources.",
+        "snippet": null
+      }
+    ],
+    "id": "F-90f85c70",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.4",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 162,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/users/identity/invitations'",
+        "snippet": null
+      }
+    ],
+    "id": "F-93d0b6a1",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.1",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 98,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -363,6 +639,36 @@
     "section_id": "S-5.16",
     "severity": "medium",
     "title": "Sample omits week_schedule, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 163,
+        "quote": "id                                T                     String             Identity    ID  of  the   resources.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 164,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-9ee3d244",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.2",
+    "severity": "medium",
+    "title": "Sample omits id, which the document marks required",
     "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
@@ -460,6 +766,36 @@
     "severity": "medium",
     "title": "Document sample is not valid JSON",
     "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 169,
+        "quote": "name                             T                     String                     Name      of  the   resources.",
+        "snippet": null
+      }
+    ],
+    "id": "F-ee160a81",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-10.6",
+    "severity": "medium",
+    "title": "Sample omits name, which the document marks required",
+    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [

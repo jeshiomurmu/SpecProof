@@ -1,0 +1,134 @@
+{
+  "citations": {
+    "method": {
+      "page": 175,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 174,
+      "quote": "Request       URL:    /api/v1/developer/webhooks/endpoints"
+    },
+    "permission_key": {
+      "page": 174,
+      "quote": "Permission        Key:    edit:webhook"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 175,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 175,
+        "quote": "endpoint                T                     String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "endpoint",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 175,
+        "quote": "name                    T                     String                            Name     of  the   webhook        subscription."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 175,
+        "quote": "events                  T                     Array[String]                     List  of  events    to  subscribe       to."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "events",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    },
+    {
+      "citation": {
+        "page": 175,
+        "quote": "headers                 F\nString>                           endpoint      service."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "headers",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object<String, String>"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/webhooks/endpoints",
+  "permission_key": "edit:webhook",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 175,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/webhooks/endpoints'"
+      },
+      "raw": "    curl     -XPOST      '{{host}}/api/v1/developer/webhooks/endpoints'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                  \"name\":       \"subscription            events\",\n                  \"endpoint\":          \"http://192.168.1.1:8080\",\n                  \"events\":        [\n                         \"access.doorbell.incoming\",\n                         \"access.doorbell.completed\",\n                         \"access.doorbell.incoming.REN\",\n                         \"access.device.dps_status\",\n                         \"access.door.unlock\"\n                  ],\n                  \"headers\":         {\n                         \"key\":      \"value\"\n                    }\n           }\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 176,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"endpoint\":          \"http://192.168.1.1:8080\",\n                  \"events\":        [\n                         \"access.doorbell.incoming\",\n                         \"access.doorbell.completed\",\n                         \"access.doorbell.incoming.REN\",\n                         \"access.device.dps_status\",\n                         \"access.door.unlock\"\n                  ],\n                  \"id\":     \"a22ee283-c91f-432b-9d0f-e89bcccad4be\",\n                  \"name\":       \"subscription            events\",\n                  \"secret\":        \"1a7c9c6a69bb5a1e\",\n                    \"headers\":         {\n                         \"key\":      \"value\"\n                    }\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-11.4",
+  "title": "Add Webhook Endpoints [Webhook]"
+}

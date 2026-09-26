@@ -1,0 +1,32 @@
+{
+  "citations": {
+    "path": {
+      "page": 170,
+      "quote": "Request       URL:    /api/v1/developer/devices/notifications"
+    },
+    "permission_key": {
+      "page": 170,
+      "quote": "Permission        Key:    view:device"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/devices/notifications",
+  "permission_key": "view:device",
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-11.1",
+  "title": "Fetch Notifications [WebSocket]"
+}
