@@ -197,13 +197,31 @@ def classify() -> None:
 @app.command("export-openapi")
 def export_openapi() -> None:
     """Export verified sections to OpenAPI 3.1."""
-    _stub("T09")
+    from specproof.config import Paths
+    from specproof.io_compare import ExportInvalidError, run_export
+
+    try:
+        run_export(Paths.from_root(Path.cwd()))
+    except ExportInvalidError as exc:
+        log.error("export-openapi: exported document is invalid: %s", exc)
+        raise typer.Exit(1) from exc
 
 
 @app.command()
 def compare(community: Annotated[bool, typer.Option("--community")] = False) -> None:
     """Diff the exported contract against the community OpenAPI."""
-    _stub("T09")
+    from specproof.config import Paths
+    from specproof.io_compare import run_compare
+
+    paths = Paths.from_root(Path.cwd())
+    if not community:
+        log.error("compare: choose a target, e.g. --community")
+        raise typer.Exit(2)
+    for required in (paths.openapi_export, paths.community):
+        if not required.exists():
+            log.error("compare: missing %s", paths.rel(required))
+            raise typer.Exit(2)
+    run_compare(paths)
 
 
 @app.command()

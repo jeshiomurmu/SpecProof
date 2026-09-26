@@ -1,0 +1,46 @@
+# FX-05: a community-style conversion of FX-01 with deliberate differences from FX-02:
+# size marked required, name typed integer, color enum missing Blue, no DELETE endpoint.
+# Paths have no leading slash and use {widget_id} instead of :id; these must NOT be diffs.
+openapi: 3.1.0
+info:
+  title: Widget API (community conversion)
+  version: "1.0"
+paths:
+  api/v1/widgets:
+    post:
+      summary: Create Widget
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WidgetCreate"
+      responses:
+        "200":
+          description: OK
+  api/v1/widgets/{widget_id}:
+    get:
+      summary: Fetch Widget
+      parameters:
+        - name: widget_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    WidgetCreate:
+      type: object
+      required: [name, color, size]
+      properties:
+        name:
+          type: integer
+        color:
+          type: string
+          enum: [Red, Green]
+        size:
+          type: integer
+        notes:
+          type: string

@@ -66,6 +66,18 @@ class Paths:
     def spec_findings(self) -> Path:
         return self.artifacts / "findings" / "spec.json"
 
+    @property
+    def openapi_export(self) -> Path:
+        return self.artifacts / "openapi.specproof.yaml"
+
+    @property
+    def community(self) -> Path:
+        return self.work / "community_openapi.yaml"
+
+    @property
+    def community_findings(self) -> Path:
+        return self.artifacts / "findings" / "community.json"
+
     def rel(self, path: Path) -> str:
         """Return path relative to root, with forward slashes."""
         return path.relative_to(self.root).as_posix()
