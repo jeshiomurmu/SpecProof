@@ -63,6 +63,17 @@ def test_SEG_R02_schema_section_4_1(real_index: dict[str, dict[str, Any]]) -> No
 
 
 @pytest.mark.real_source
+def test_CNF_R01_client_inventory_has_11_paths(repo_root: Path) -> None:
+    from specproof.conformance.inventory import scan_endpoints
+
+    client = repo_root / "artifacts" / "work" / "py-unifi-access"
+    refs = scan_endpoints(client)
+    developer = {r.path_norm for r in refs if r.path_norm.startswith("/api/v1/developer/")}
+    assert len(developer) == 11
+    assert all("tests/" not in r.file for r in refs)
+
+
+@pytest.mark.real_source
 def test_SEG_R03_hints_section_3_2(real_index: dict[str, dict[str, Any]]) -> None:
     s32 = real_index["S-3.2"]
     assert (s32["method_hint"], s32["path_hint"]) == ("POST", "/api/v1/developer/users")

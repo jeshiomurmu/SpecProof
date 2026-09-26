@@ -78,6 +78,18 @@ class Paths:
     def community_findings(self) -> Path:
         return self.artifacts / "findings" / "community.json"
 
+    @property
+    def mapping(self) -> Path:
+        return self.artifacts / "conformance" / "mapping.yaml"
+
+    @property
+    def replay_test(self) -> Path:
+        return self.artifacts / "conformance" / "test_sample_replay.py"
+
+    @property
+    def conformance_findings(self) -> Path:
+        return self.artifacts / "findings" / "conformance.json"
+
     def rel(self, path: Path) -> str:
         """Return path relative to root, with forward slashes."""
         return path.relative_to(self.root).as_posix()

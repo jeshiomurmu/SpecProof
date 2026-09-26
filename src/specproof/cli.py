@@ -225,9 +225,20 @@ def compare(community: Annotated[bool, typer.Option("--community")] = False) -> 
 
 
 @app.command()
-def conform(client: Annotated[Path | None, typer.Option("--client")] = None) -> None:
+def conform(
+    client: Annotated[Path | None, typer.Option("--client")] = None,
+    python: Annotated[str | None, typer.Option("--python")] = None,
+) -> None:
     """Check client code against the verified contract."""
-    _stub("T10")
+    from specproof.config import Paths
+    from specproof.io_conform import run_conform
+
+    if client is None or not client.is_dir():
+        log.error("conform: --client must point to the client repository (got %s)", client)
+        raise typer.Exit(2)
+    result = run_conform(Paths.from_root(Path.cwd()), client, python)
+    if result["errors"]:
+        raise typer.Exit(1)
 
 
 @app.command()
