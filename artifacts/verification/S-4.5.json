@@ -1,0 +1,27 @@
+{
+  "attempt": 2,
+  "counts": {
+    "grounded": 22,
+    "items": 22,
+    "row_checked": 18,
+    "row_ok": 18,
+    "rows_detected": 18,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_ENUM_VIOLATION",
+      "evidence": {
+        "page": 63,
+        "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\""
+      },
+      "field": "visit_reason",
+      "hint": null,
+      "message": "request sample: 'Interviemw' is not one of ['Interview', 'Business', 'Cooperation', 'Others']",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.5"
+}

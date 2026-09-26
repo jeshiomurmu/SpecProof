@@ -1,0 +1,27 @@
+{
+  "attempt": 2,
+  "counts": {
+    "grounded": 3,
+    "items": 4,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 2,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "id",
+      "hint": {
+        "closest_match": "Identity ID of the Get it from the API",
+        "closest_page": 70
+      },
+      "message": "quote not found on page 70 or elsewhere in the section",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.12"
+}

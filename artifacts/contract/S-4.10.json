@@ -1,50 +1,62 @@
 {
-  "schema_version": 1,
-  "section_id": "S-4.10",
+  "extraction": {
+    "attempt": 2,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 68,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": "Token required for authentication and access control.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "header",
+      "name": "Authorization",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 68,
+        "quote": "id                      T                    String\n visitor. /api/v1/developer/visitors"
+      },
+      "description": "Identity ID of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "path",
+      "name": "id",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
   "kind": "endpoint",
-  "title": "Unassign PIN Code From Visitor",
   "method": "DELETE",
   "path": "/api/v1/developer/visitors/:id/pin_codes",
   "permission_key": "edit:visitor",
-  "fields": [
-    {
-      "name": "Authorization",
-      "location": "header",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Token required for authentication and access control.",
-      "citation": {"page": 68, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
-    },
-    {
-      "name": "id",
-      "location": "path",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Identity ID of the visitor.",
-      "citation": {"page": 68, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
-    }
-  ],
   "samples": {
     "request": {
-      "raw": "curl     -XDELETE       '{{host}}/api/v1/developer/visitors/17d2f099-99df-429b-becb-\n1399a6937e5a/pin_codes\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n\n           --insecure",
-      "citation": {"page": 69, "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/visitors/17d2f099-99df-429b-becb-"}
+      "citation": {
+        "page": 69,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/visitors/17d2f099-99df-429b-becb-"
+      },
+      "raw": "curl     -XDELETE       '{{host}}/api/v1/developer/visitors/17d2f099-99df-429b-becb-\n1399a6937e5a/pin_codes\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n\n           --insecure"
     },
     "response": {
-      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}",
-      "citation": {"page": 69, "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"}
+      "citation": {
+        "page": 69,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
     }
   },
-  "extraction": {
-    "producer": "ibm-bob",
-    "mode": "spec-auditor",
-    "prompt_version": "extract-v1",
-    "attempt": 1,
-    "bob_task_ref": "T08-ch4"
-  }
+  "schema_version": 1,
+  "section_id": "S-4.10",
+  "title": "Unassign PIN Code From Visitor"
 }

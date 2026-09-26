@@ -1,0 +1,24 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 0,
+    "items": 0,
+    "row_checked": 0,
+    "row_ok": 0,
+    "rows_detected": 0,
+    "samples": 0,
+    "samples_parsed": 0
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V1_SCHEMA_INVALID",
+      "evidence": null,
+      "field": null,
+      "hint": null,
+      "message": "1 validation error for ContractSection",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.4"
+}

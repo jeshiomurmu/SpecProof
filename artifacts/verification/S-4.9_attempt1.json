@@ -1,0 +1,39 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 3,
+    "items": 5,
+    "row_checked": 3,
+    "row_ok": 3,
+    "rows_detected": 3,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "id",
+      "hint": {
+        "closest_match": "Identity ID of the Get it from the API",
+        "closest_page": 67
+      },
+      "message": "quote not found on page 67 or elsewhere in the section",
+      "severity": "error"
+    },
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "pin_code",
+      "hint": {
+        "closest_match": "Generate a PIN code for",
+        "closest_page": 67
+      },
+      "message": "quote not found on page 67 or elsewhere in the section",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.9"
+}

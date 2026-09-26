@@ -1,0 +1,39 @@
+{
+  "attempt": 2,
+  "counts": {
+    "grounded": 3,
+    "items": 5,
+    "row_checked": 3,
+    "row_ok": 3,
+    "rows_detected": 3,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "license_plate_id",
+      "hint": {
+        "closest_match": "ID of the license plate From the license plate numbers in",
+        "closest_page": 72
+      },
+      "message": "quote not found on page 72 or elsewhere in the section",
+      "severity": "error"
+    },
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "visitor_id",
+      "hint": {
+        "closest_match": "ID of the visitor to",
+        "closest_page": 72
+      },
+      "message": "quote not found on page 72 or elsewhere in the section",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.14"
+}

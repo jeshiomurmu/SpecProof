@@ -1,0 +1,39 @@
+{
+  "attempt": 2,
+  "counts": {
+    "grounded": 3,
+    "items": 4,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 2,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "id",
+      "hint": {
+        "closest_match": "ID of the Get it from the API",
+        "closest_page": 71
+      },
+      "message": "quote not found on page 71 or elsewhere in the section",
+      "severity": "error"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_TYPE_MISMATCH",
+      "evidence": {
+        "page": 71,
+        "quote": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/visitors/b8635fc9-"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample: ['abcd', 'efge3'] is not of type 'object'",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.13"
+}

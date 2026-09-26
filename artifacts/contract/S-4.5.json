@@ -1,241 +1,309 @@
 {
-  "schema_version": 1,
-  "section_id": "S-4.5",
-  "kind": "endpoint",
-  "title": "Update Visitor",
-  "method": "PUT",
-  "path": "/api/v1/developer/visitors/:id",
-  "permission_key": "edit:visitor",
+  "extraction": {
+    "attempt": 2,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
   "fields": [
     {
-      "name": "Authorization",
+      "citation": {
+        "page": 60,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": "Token required for authentication and access control.",
+      "enum": null,
+      "enum_citation": null,
       "location": "header",
+      "name": "Authorization",
       "required": true,
       "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Token required for authentication and access control.",
-      "citation": {"page": 60, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
+      "type_raw": "String"
     },
     {
-      "name": "first_name",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
+      "citation": {
+        "page": 60,
+        "quote": "first_name              F              String        First name  of the visitor."
+      },
       "description": "First name of the visitor.",
-      "citation": {"page": 60, "quote": "first_name              F              String        First name  of the visitor."}
-    },
-    {
-      "name": "last_name",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
+      "location": "body",
+      "name": "first_name",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "last_name               F              String        Last name   of the visitor."
+      },
       "description": "Last name of the visitor.",
-      "citation": {"page": 60, "quote": "last_name               F              String        Last name   of the visitor."}
-    },
-    {
-      "name": "remarks",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
+      "location": "body",
+      "name": "last_name",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "remarks                 F              String        Remarks   about  the visitor."
+      },
       "description": "Remarks about the visitor.",
-      "citation": {"page": 60, "quote": "remarks                 F              String        Remarks   about  the visitor."}
-    },
-    {
-      "name": "mobile_phone",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
+      "location": "body",
+      "name": "remarks",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "mobile_phone            F              String        Mobile  phone   number   of the  visitor."
+      },
       "description": "Mobile phone number of the visitor.",
-      "citation": {"page": 60, "quote": "mobile_phone            F              String        Mobile  phone   number   of the  visitor."}
-    },
-    {
-      "name": "email",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
+      "location": "body",
+      "name": "mobile_phone",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "email                   F              String        Email address   of the visitor."
+      },
       "description": "Email address of the visitor.",
-      "citation": {"page": 60, "quote": "email                   F              String        Email address   of the visitor."}
-    },
-    {
-      "name": "visitor_company",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
+      "location": "body",
+      "name": "email",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "visitor_company         F              String        Company    name   of the visitor."
+      },
       "description": "Company name of the visitor.",
-      "citation": {"page": 60, "quote": "visitor_company         F              String        Company    name   of the visitor."}
-    },
-    {
-      "name": "start_time",
-      "location": "body",
-      "required": false,
-      "type": "integer",
-      "type_raw": "Integer",
       "enum": null,
       "enum_citation": null,
-      "description": "Start time of the visit.",
-      "citation": {"page": 60, "quote": "start_time              F              Integer       Start time of the visit.                                                     1688546460"}
-    },
-    {
-      "name": "end_time",
       "location": "body",
-      "required": false,
-      "type": "integer",
-      "type_raw": "Integer",
-      "enum": null,
-      "enum_citation": null,
-      "description": "End time of the visit.",
-      "citation": {"page": 60, "quote": "end_time                F              Integer       End time  of the visit.                                                      1688572799"}
-    },
-    {
-      "name": "visit_reason",
-      "location": "body",
+      "name": "visitor_company",
       "required": false,
       "type": "string",
-      "type_raw": "String",
-      "enum": ["Interview", "Business", "Cooperation", "Others"],
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "start_time              F              Integer       Start time of the visit.                                                     1688546460"
+      },
+      "description": "Start time of the visit.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "body",
+      "name": "start_time",
+      "required": false,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "end_time                F              Integer       End time  of the visit.                                                      1688572799"
+      },
+      "description": "End time of the visit.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "body",
+      "name": "end_time",
+      "required": false,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 60,
+        "quote": "visit_reason            F              String                                                                                                                     Interview"
+      },
+      "description": "Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+      "enum": [
+        "Interview",
+        "Business",
+        "Cooperation",
+        "Others"
+      ],
       "enum_citation": {
         "page": 52,
         "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}"
       },
-      "description": "Visit reason: enum reason {Interview,Business,Cooperation,Others}",
-      "citation": {"page": 60, "quote": "visit_reason            F              String                                                                                                                     Interview"}
+      "location": "body",
+      "name": "visit_reason",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
     },
     {
-      "name": "resources",
+      "citation": {
+        "page": 60,
+        "quote": "resources            F             Array[Object]    Omit this parameter  if it doesn't need"
+      },
+      "description": "Assign available locations to the visitor. Omit this parameter if it doesn't need to be updated.",
+      "enum": null,
+      "enum_citation": null,
       "location": "body",
+      "name": "resources",
       "required": false,
       "type": "array",
-      "type_raw": "Array[Object]",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Assign available locations to the visitor. Omit this parameter if it doesn't need to be updated.",
-      "citation": {"page": 60, "quote": "resources            F             Array[Object]    Omit this parameter  if it doesn't need"}
+      "type_raw": "Array[Object]"
     },
     {
-      "name": "resources[0].id",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
+      "citation": {
+        "page": 61,
+        "quote": "resources[0].id      F             String"
+      },
       "description": "When resource type is door_group, it refers to the group ID of a building or a customized door group. When type is door, it refers to the ID of a door.",
-      "citation": {"page": 61, "quote": "resources[0].id      F             String"}
-    },
-    {
-      "name": "resources[0].type",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
-      "description": "Support both door and door_group.",
-      "citation": {"page": 61, "quote": "resources[0].type    F             String           Support both  door anddoor_group."}
+      "location": "body",
+      "name": "resources[0].id",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
     },
     {
-      "name": "week_schedule",
+      "citation": {
+        "page": 61,
+        "quote": "resources[0].type    F             String           Support both  door anddoor_group."
+      },
+      "description": "Support both door and door_group.",
+      "enum": null,
+      "enum_citation": null,
       "location": "body",
+      "name": "resources[0].type",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 61,
+        "quote": "week_schedule                                         F                  Object"
+      },
+      "description": "The customizable scheduling strategy for each day from Sunday to Saturday. If not specified, it means access is allowed every day. Omit this parameter if it doesn't need to be updated.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "body",
+      "name": "week_schedule",
       "required": false,
       "type": "object",
-      "type_raw": "Object",
-      "enum": null,
-      "enum_citation": null,
-      "description": "The customizable scheduling strategy for each day from Sunday to Saturday. If not specified, it means access is allowed every day. Omit this parameter if it doesn't need to be updated.",
-      "citation": {"page": 61, "quote": "week_schedule                                         F                  Object"}
+      "type_raw": "Object"
     },
     {
-      "name": "week_schedule.monday",
+      "citation": {
+        "page": 61,
+        "quote": "week_schedule.monday                                  F                  Array[Object]"
+      },
+      "description": "Specify the daily access time period from Sunday to Saturday.",
+      "enum": null,
+      "enum_citation": null,
       "location": "body",
+      "name": "week_schedule.monday",
       "required": false,
       "type": "array",
-      "type_raw": "Array[Object]",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Specify the daily access time period from Sunday to Saturday.",
-      "citation": {"page": 61, "quote": "week_schedule.monday                                  F                  Array[Object]"}
+      "type_raw": "Array[Object]"
     },
     {
-      "name": "week_schedule.monday[0].start_time",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
+      "citation": {
+        "page": 61,
+        "quote": "week_schedule.monday[0].start_time                    F                  String                                                                      00:00:00"
+      },
       "description": "Start time of the access time period.",
-      "citation": {"page": 61, "quote": "week_schedule.monday[0].start_time                    F                  String                                                                      00:00:00"}
-    },
-    {
-      "name": "week_schedule.monday[0].end_time",
-      "location": "body",
-      "required": false,
-      "type": "string",
-      "type_raw": "String",
       "enum": null,
       "enum_citation": null,
-      "description": "End time of the access time period.",
-      "citation": {"page": 61, "quote": "week_schedule.monday[0].end_time                      F                  String                 End   time   of the  access   time   period.         23:59:59"}
+      "location": "body",
+      "name": "week_schedule.monday[0].start_time",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
     },
     {
-      "name": "id",
+      "citation": {
+        "page": 61,
+        "quote": "week_schedule.monday[0].end_time                      F                  String                 End   time   of the  access   time   period.         23:59:59"
+      },
+      "description": "End time of the access time period.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "body",
+      "name": "week_schedule.monday[0].end_time",
+      "required": false,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 61,
+        "quote": "id                                  T                               String                  Identity    ID  of  the   visitor."
+      },
+      "description": "Identity ID of the visitor.",
+      "enum": null,
+      "enum_citation": null,
       "location": "path",
+      "name": "id",
       "required": true,
       "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Identity ID of the visitor.",
-      "citation": {"page": 61, "quote": "id                                  T                               String                  Identity    ID  of  the   visitor."}
+      "type_raw": "String"
     },
     {
-      "name": "Schemas",
-      "location": "response",
-      "required": null,
-      "type": "object",
-      "type_raw": "[Schemas]",
+      "citation": {
+        "page": 61,
+        "quote": "Response                 Body\n\n\n     Schemas:            [Schemas]\n     Note:     Status    change      is not   supported."
+      },
+      "description": "[Schemas] Note: Status change is not supported.",
       "enum": null,
       "enum_citation": null,
-      "description": "[Schemas] Note: Status change is not supported.",
+      "location": "response",
+      "name": "Schemas",
+      "required": null,
       "schema_ref": "S-4.1",
-      "citation": {"page": 61, "quote": "Response                 Body\n\n\n     Schemas:            [Schemas]\n     Note:     Status    change      is not   supported."}
+      "type": "object",
+      "type_raw": "[Schemas]"
     }
   ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/visitors/:id",
+  "permission_key": "edit:visitor",
   "samples": {
-    "response": {
-      "raw": "{\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"first_name\":            \"H\",\n\n                  \"id\":     \"8564ce90-76ba-445f-b78b-6cca39af0130\",\n                  \"last_name\":           \"L\",\n                  \"nfc_cards\":           [],\n                  \"pin_code\":          null,\n                  \"resources\":           [\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"name\":       \"Door-Group-1\",\n                                \"type\":       \"door_group\"\n                         },",
-      "citation": {"page": 61, "quote": "\"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"first_name\":            \"H\""}
-    },
     "request": {
-      "raw": "{\n                  \"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\",\n                  \"email\":        \"\",\n                  \"visitor_company\":               \"\",\n\n                  \"start_time\":            1688546460,\n                  \"end_time\":          1788572799,\n                  \"visit_reason\":             \"Interviemw\",\n                  \"week_schedule\":              {\n                         \"sunday\":         [],\n                         \"monday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"tuesday\":         [],\n                         \"wednesday\":           [\n\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"thursday\":          [\n                                {\n                                       \"start_time\":            \"11:00:00\",\n                                       \"end_time\":          \"18:00:59\"\n                                }\n                         ],\n                         \"friday\":         [\n\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"saturday\":          []\n                  },\n                  \"resources\":           [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\"\n                         },",
-      "citation": {"page": 63, "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\""}
+      "citation": {
+        "page": 63,
+        "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\""
+      },
+      "raw": "    curl     -XPUT     '{{host}}/api/v1/developer/visitors/c81dfee6-5970-4938-bd30-40820e16ea01'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '\n           {\n                  \"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\",\n                  \"email\":        \"\",\n                  \"visitor_company\":               \"\",\n                  \"start_time\":            1688546460,\n                  \"end_time\":          1788572799,\n                  \"visit_reason\":             \"Interviemw\",\n                  \"week_schedule\":              {\n                         \"sunday\":         [],\n                         \"monday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"tuesday\":         [],\n                         \"wednesday\":           [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"thursday\":          [\n                                {\n                                       \"start_time\":            \"11:00:00\",\n                                       \"end_time\":          \"18:00:59\"\n                                }\n                         ],\n                         \"friday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"saturday\":          []\n                  },\n                  \"resources\":           [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"type\":       \"door_group\"\n                         },\n                         {\n                                \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                \"type\":       \"door_group\"\n                         }\n                  ]\n           }'"
+    },
+    "response": {
+      "citation": {
+        "page": 61,
+        "quote": "\"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"first_name\":            \"H\""
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"first_name\":            \"H\",\n                  \"id\":     \"8564ce90-76ba-445f-b78b-6cca39af0130\",\n                  \"last_name\":           \"L\",\n                  \"nfc_cards\":           [],\n                  \"pin_code\":          null,\n                  \"resources\":           [\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"name\":       \"Door-Group-1\",\n                                \"type\":       \"door_group\"\n                         },\n                     {\n                            \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                            \"name\":       \"UNVR\",\n                            \"type\":       \"door_group\"\n                     },\n                     {\n                            \"id\":      \"e311ca94-172c-49fe-9c91-49bd8ecef845\",\n                            \"name\":       \"visitor-1691646856144\",\n                            \"type\":       \"door_group\"\n                     }\n              ],\n              \"schedule\":          {\n                     \"id\":     \"c03bf601-0b90-4341-bce4-6061931e9f4e\",\n                     \"is_default\":            false,\n                     \"name\":       \"visitor-1691646856097\",\n                     \"type\":       \"access\",\n                     \"weekly\":         {\n                            \"friday\":         [\n                                   {\n                                          \"end_time\":          \"17:00:59\",\n                                          \"start_time\":            \"10:00:00\"\n                                   }\n                            ],\n                            \"monday\":         [\n                                   {\n                                          \"end_time\":          \"17:00:59\",\n                                          \"start_time\":            \"10:00:00\"\n                                   }\n                            ],\n                            \"saturday\":          [],\n                            \"sunday\":         [],\n                            \"thursday\":          [\n                                   {\n                                          \"end_time\":          \"18:00:59\",\n                                          \"start_time\":            \"11:00:00\"\n                                   }\n                            ],\n                            \"tuesday\":         [],\n                            \"wednesday\":           [\n                                   {\n                                          \"end_time\":          \"17:00:59\",\n                                          \"start_time\":            \"10:00:00\"\n                                   }\n                            ]\n                     }\n              },\n              \"schedule_id\":            \"c03bf601-0b90-4341-bce4-6061931e9f4e\",\n              \"status\":        \"ACTIVE\"\n       },\n       \"msg\":      \"success\"\n}"
     }
   },
-  "extraction": {
-    "producer": "ibm-bob",
-    "mode": "spec-auditor",
-    "prompt_version": "extract-v1",
-    "attempt": 1,
-    "bob_task_ref": "T08-ch4"
-  }
+  "schema_version": 1,
+  "section_id": "S-4.5",
+  "title": "Update Visitor"
 }

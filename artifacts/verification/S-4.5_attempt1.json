@@ -1,0 +1,61 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 22,
+    "items": 22,
+    "row_checked": 18,
+    "row_ok": 18,
+    "rows_detected": 18,
+    "samples": 2,
+    "samples_parsed": 0
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
+      "field": null,
+      "hint": {
+        "first_unmatched": "copy the sample through its final closing bracket"
+      },
+      "message": "request sample is an incomplete copy: 2 bracket(s) never closed",
+      "severity": "error"
+    },
+    {
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
+      "field": null,
+      "hint": {
+        "first_unmatched": "copy the sample through its final closing bracket"
+      },
+      "message": "response sample is an incomplete copy: 3 bracket(s) never closed",
+      "severity": "error"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 63,
+        "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\""
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Expecting value (line 47)",
+      "severity": "error"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 61,
+        "quote": "\"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"first_name\":            \"H\""
+      },
+      "field": null,
+      "hint": null,
+      "message": "response sample is not valid JSON: Expecting value (line 15)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.5"
+}

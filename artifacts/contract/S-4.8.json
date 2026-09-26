@@ -1,61 +1,76 @@
 {
-  "schema_version": 1,
-  "section_id": "S-4.8",
+  "extraction": {
+    "attempt": 2,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 66,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": "Token required for authentication and access control.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "header",
+      "name": "Authorization",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 66,
+        "quote": "id                      T                    String\n visitor. /api/v1/developer/visitors"
+      },
+      "description": "Identity ID of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "path",
+      "name": "id",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 66,
+        "quote": "token                   T                    String\n card. /api/v1/developer/visitors"
+      },
+      "description": "Token of the NFC card.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "body",
+      "name": "token",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
   "kind": "endpoint",
-  "title": "Unassign NFC Card From Visitor",
   "method": "PUT",
   "path": "/api/v1/developer/visitors/:id/nfc_cards/delete",
   "permission_key": "edit:visitor",
-  "fields": [
-    {
-      "name": "Authorization",
-      "location": "header",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Token required for authentication and access control.",
-      "citation": {"page": 66, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
-    },
-    {
-      "name": "id",
-      "location": "path",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Identity ID of the visitor.",
-      "citation": {"page": 66, "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"}
-    },
-    {
-      "name": "token",
-      "location": "body",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Token of the NFC card.",
-      "citation": {"page": 66, "quote": "token                   T                    String\n                                                                Token     of  the   NFC             Get   it from    the  API"}
-    }
-  ],
   "samples": {
     "request": {
-      "raw": "{\n                  \"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\"\n           }",
-      "citation": {"page": 67, "quote": "\"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\""}
+      "citation": {
+        "page": 67,
+        "quote": "\"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\""
+      },
+      "raw": "{\n                  \"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\"\n           }"
     },
     "response": {
-      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}",
-      "citation": {"page": 67, "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"}
+      "citation": {
+        "page": 67,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
     }
   },
-  "extraction": {
-    "producer": "ibm-bob",
-    "mode": "spec-auditor",
-    "prompt_version": "extract-v1",
-    "attempt": 1,
-    "bob_task_ref": "T08-ch4"
-  }
+  "schema_version": 1,
+  "section_id": "S-4.8",
+  "title": "Unassign NFC Card From Visitor"
 }

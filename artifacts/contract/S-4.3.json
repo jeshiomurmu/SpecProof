@@ -1,62 +1,77 @@
 {
-  "schema_version": 1,
-  "section_id": "S-4.3",
+  "extraction": {
+    "attempt": 2,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 57,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": "Token required for authentication and access control.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "header",
+      "name": "Authorization",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 57,
+        "quote": "id                                  T                               String                  Identity    ID  of  the   visitor."
+      },
+      "description": "Identity ID of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "location": "path",
+      "name": "id",
+      "required": true,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 57,
+        "quote": "Response                 Body\n\n\n     Schemas:            Schemas"
+      },
+      "description": "Schemas",
+      "enum": null,
+      "enum_citation": null,
+      "location": "response",
+      "name": "Schemas",
+      "required": null,
+      "schema_ref": "S-4.1",
+      "type": "object",
+      "type_raw": "Schemas"
+    }
+  ],
   "kind": "endpoint",
-  "title": "Fetch Visitor",
   "method": "GET",
   "path": "/api/v1/developer/visitors/:id",
   "permission_key": "view:visitor",
-  "fields": [
-    {
-      "name": "Authorization",
-      "location": "header",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Token required for authentication and access control.",
-      "citation": {"page": 57, "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."}
-    },
-    {
-      "name": "id",
-      "location": "path",
-      "required": true,
-      "type": "string",
-      "type_raw": "String",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Identity ID of the visitor.",
-      "citation": {"page": 57, "quote": "id                                  T                               String                  Identity    ID  of  the   visitor."}
-    },
-    {
-      "name": "Schemas",
-      "location": "response",
-      "required": null,
-      "type": "object",
-      "type_raw": "Schemas",
-      "enum": null,
-      "enum_citation": null,
-      "description": "Schemas",
-      "schema_ref": "S-4.1",
-      "citation": {"page": 57, "quote": "Response                 Body\n\n\n     Schemas:            Schemas"}
-    }
-  ],
   "samples": {
-    "response": {
-      "raw": "{\n\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\",\n           \"id\":     \"3566867c-fa04-4752-98f6-43cf9a342d4a\",\n           \"last_name\":           \"Last     Name\",\n           \"nfc_cards\":           [",
-      "citation": {"page": 57, "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\""}
-    },
     "request": {
-      "raw": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n\n           --insecure",
-      "citation": {"page": 58, "quote": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'"}
+      "citation": {
+        "page": 58,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'"
+      },
+      "raw": "curl     -XGET     '{{host}}/api/v1/developer/visitors/76794bd8-98c0-49b6-9230-ba8c5812cf29'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 57,
+        "quote": "\"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\""
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"first_name\":           \"User1\",\n           \"id\":     \"3566867c-fa04-4752-98f6-43cf9a342d4a\",\n           \"last_name\":           \"Last     Name\",\n           \"nfc_cards\":           [\n              {\n                  \"id\":     \"100001\",\n                  \"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\",\n                  \"type\":       \"ua_card\"\n              }\n           ],\n           \"license_plates\":               [\n              {\n                  \"credential\":            \"jq178\",\n                  \"credential_status\":                 \"active\",\n                  \"credential_type\":               \"license\",\n                  \"id\":     \"5cac1825-f5e9-410d-a32e-a1fb9fc83b92\"\n              },\n              {\n                  \"credential\":            \"bs279\",\n                  \"credential_status\":                 \"active\",\n                  \"credential_type\":               \"license\",\n                  \"id\":     \"f44c6f4e-543d-4aed-ae8c-9c17bab66787\"\n              }\n           ],\n           \"pin_code\":          {\n              \"token\":        \"bc3e3135013e2dcae119390b7897166e8cec3bcf5becb6b05578ab67634559ed\"\n           },\n           \"resources\":           [\n              {\n                  \"id\":     \"fd293ecb-98d2-425b-a020-cb9365ea48b3\",\n                  \"name\":       \"visitor-1690337152955\",\n                  \"type\":       \"door_group\"\n              }\n           ],\n           \"schedule\":          {\n              \"id\":      \"6ccf9e1e-b174-476d-b2fe-96817c780fbf\",\n              \"is_default\":            false,\n              \"name\":       \"visitor-1690337152955\",\n              \"type\":       \"access\",\n              \"weekly\":         null\n           },\n           \"schedule_id\":            \"6ccf9e1e-b174-476d-b2fe-96817c780fbf\",\n           \"status\":        \"VISITED\"\n       },\n       \"msg\":       \"success\"\n    }"
     }
   },
-  "extraction": {
-    "producer": "ibm-bob",
-    "mode": "spec-auditor",
-    "prompt_version": "extract-v1",
-    "attempt": 1,
-    "bob_task_ref": "T08-ch4"
-  }
+  "schema_version": 1,
+  "section_id": "S-4.3",
+  "title": "Fetch Visitor"
 }

@@ -1,0 +1,39 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 4,
+    "items": 6,
+    "row_checked": 4,
+    "row_ok": 4,
+    "rows_detected": 4,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "force_add",
+      "hint": {
+        "closest_match": "Determine whether to overwrite",
+        "closest_page": 65
+      },
+      "message": "quote not found on page 65 or elsewhere in the section",
+      "severity": "error"
+    },
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "id",
+      "hint": {
+        "closest_match": "Identity ID of the Get it from the API",
+        "closest_page": 65
+      },
+      "message": "quote not found on page 65 or elsewhere in the section",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.7"
+}

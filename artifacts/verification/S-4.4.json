@@ -1,0 +1,39 @@
+{
+  "attempt": 2,
+  "counts": {
+    "grounded": 9,
+    "items": 10,
+    "row_checked": 6,
+    "row_ok": 6,
+    "rows_detected": 6,
+    "samples": 0,
+    "samples_parsed": 0
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_CITATION_NOT_FOUND",
+      "evidence": null,
+      "field": "expand[]",
+      "hint": {
+        "closest_match": "expand[]=access_policy",
+        "closest_page": 59
+      },
+      "message": "quote not found on page 59 or elsewhere in the section",
+      "severity": "error"
+    },
+    {
+      "category": "extraction",
+      "code": "V2_ENUM_NOT_GROUNDED",
+      "evidence": {
+        "page": 59,
+        "quote": "expand[]      F            string     Determine whether to return the objects (Optional). currently supports the following objects: enum &expand[]=access_policy"
+      },
+      "field": "expand[]",
+      "hint": null,
+      "message": "enum values not in the cited quote: none, resource, schedule, nfc_card, pin_code",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.4"
+}

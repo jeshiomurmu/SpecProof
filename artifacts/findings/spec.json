@@ -28,5 +28,35 @@
     "severity": "high",
     "title": "Sample value violates the documented enum for visit_reason",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 63,
+        "quote": "\"first_name\":            \"Test\",\n                  \"last_name\":           \"L\",\n                  \"remarks\":         \"\",\n                  \"mobile_phone\":             \"\"",
+        "snippet": null
+      }
+    ],
+    "id": "F-a96f5336",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-4.5",
+    "severity": "high",
+    "title": "Sample value violates the documented enum for visit_reason",
+    "type": "SPEC_SELF_INCONSISTENCY"
   }
 ]
