@@ -222,6 +222,29 @@ def test_VER_018_sample_running_past_its_block(section_ctx: Ctx, good: Good) -> 
 
 
 @pytest.mark.unit
+def test_VER_019_copy_across_an_example_separator(section_ctx: Ctx) -> None:
+    lines = [
+        (1, "Response Sample"),
+        (1, '{"code": "SUCCESS"}'),
+        (1, "# Second example"),
+        (1, '{"code": "FAIL"}'),
+        (1, "Request Sample"),
+    ]
+    ctx = SectionContext(norm_pages={1: ""}, lines=tuple(lines), page_start=1, page_end=1)
+    both = Sample(
+        raw='{"code": "SUCCESS"}\n# Second example\n{"code": "FAIL"}',
+        citation=Citation(page=1, quote='{"code": "SUCCESS"}'),
+    )
+    assert [i.code for i in check_sample_verbatim(ctx, both, "response")] == [
+        "V2_SAMPLE_NOT_VERBATIM"
+    ]
+    first = Sample(
+        raw='{"code": "SUCCESS"}', citation=Citation(page=1, quote='{"code": "SUCCESS"}')
+    )
+    assert check_sample_verbatim(ctx, first, "response") == []
+
+
+@pytest.mark.unit
 def test_VER_013_repaired_sample_not_verbatim(section_ctx: Ctx, good: Good) -> None:
     ctx = section_ctx("S-2.2")
     original = ContractSection.model_validate(good("S-2.2"))

@@ -150,8 +150,9 @@ def _is_boundary(text: str) -> bool:
 
 
 def _is_hard_boundary(text: str) -> bool:
-    """A sample marker, table header or heading: never part of a sample's own lines."""
-    return text.startswith(BOUNDARIES[:8]) or bool(_HEADING.match(text))
+    """A sample marker, table header, heading or '#' example separator: never part of a
+    sample's own lines."""
+    return text.startswith((*BOUNDARIES[:8], "#")) or bool(_HEADING.match(text))
 
 
 def _next_content(ctx: SectionContext, start: int) -> str | None:
