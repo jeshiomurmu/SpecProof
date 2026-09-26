@@ -7,7 +7,7 @@ BIN := $(VENV)/bin
 PYTHON ?= python3
 endif
 
-.PHONY: setup check test-e2e fetch pipeline eval guard site
+.PHONY: setup check test-e2e fetch pipeline eval guard site readme
 
 setup:
 	$(PYTHON) -m venv $(VENV)
@@ -42,6 +42,9 @@ eval:
 
 guard:
 	$(BIN)/specproof guard
+
+readme:
+	$(BIN)/python scripts/readme_results.py
 
 site:
 	$(BIN)/python -c "import shutil; shutil.rmtree('dist/site', ignore_errors=True); shutil.copytree('artifacts/report', 'dist/site/report'); shutil.copyfile('demo/index.html', 'dist/site/index.html')"
