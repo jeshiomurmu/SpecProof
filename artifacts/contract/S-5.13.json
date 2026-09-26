@@ -1,0 +1,415 @@
+{
+  "citations": {},
+  "definitions": [
+    {
+      "citation": {
+        "page": 90,
+        "quote": "id                                                            String                     Identity    ID  of  the   schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "name                                                          String                     Name      of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "is_default                                                    Boolean"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "is_default",
+      "required": null,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "type                                                          String\na user    along    with   an   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "type",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly                                                        Object                     day   from    Sunday      to  Saturday.      If not   specified,     it"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "weekly",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly.monday                                                 Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "weekly.monday",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly.monday[].start_time                                    String                     Start   time   of  the   access     time   period."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "weekly.monday[].start_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly.monday[].end_time                                      String                     End   time    of  the   access    time    period."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "weekly.monday[].end_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_schedule                                              Array[Object]              UniFi    Access     Requirement:            1.20.11        or"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_schedule[0].start_time                                String                     Start   time   of  the   access     time   period."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule[0].start_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_schedule[0].end_time                                  String                     End   time    of  the   access    time    period."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule[0].end_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_group_id                                              String                     Identity    ID  of  the   holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_group.id                                              String                     Identity    ID  of  the   holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_group.name                                            String                     Name      of  the  holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.is_default                                      Boolean"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.is_default",
+      "required": null,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.description                                     String                     Description       of  the   holiday    group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.description",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays                                        Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].description                          String                     Description       of  the   holiday."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].description",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].id                                   String                     Identity    ID  of  the   holiday."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].name                                 String                     Name      of  the  holiday."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].repeat                               Boolean                    Indicate     whether      the   holiday     repeats     annually."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].repeat",
+      "required": null,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].start_time                           String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].start_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 91,
+        "quote": "holiday_group.holidays[].end_time                             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group.holidays[].end_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [],
+  "kind": "schema",
+  "method": null,
+  "path": null,
+  "permission_key": null,
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-5.13",
+  "title": "Schedule Schemas"
+}

@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 86,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 86,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/holiday_groups/:id"
+    },
+    "permission_key": {
+      "page": 86,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 86,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 86,
+        "quote": "id                  T                 String       Identity ID of the  holiday  group.           /api/v1/developer/access_policies/holiday_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/access_policies/holiday_groups/:id",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 87,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/access_policies/holiday_groups/7be7a7a0-818f-4f76-"
+      },
+      "raw": "    curl     -XDELETE       '{{host}}/api/v1/developer/access_policies/holiday_groups/7be7a7a0-818f-4f76-\n    98c3-1c38957f4dca'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 87,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       \"success\",\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.10",
+  "title": "Delete Holiday Group"
+}

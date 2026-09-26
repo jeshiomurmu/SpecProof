@@ -1,0 +1,147 @@
+{
+  "citations": {
+    "path": {
+      "page": 79,
+      "quote": "Request       URL:    /api/v1/developer/access_policies"
+    },
+    "permission_key": {
+      "page": 79,
+      "quote": "Permission        Key:    view:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 79,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 79,
+        "quote": "Data                            T                            Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "Data",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "Id                                                        Identity    ID   of  the  access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "Id",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "unknown",
+      "type_raw": ""
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "name                           String                     Name      of  the   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources                      Array[Object]              Specify     the   locations     that   can   be   accessed."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "schedule_id                    String                     Identity    ID   of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/access_policies",
+  "permission_key": "view:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 79,
+        "quote": "curl    '{{host}}/api/v1/developer/access_policies'"
+      },
+      "raw": "      curl    '{{host}}/api/v1/developer/access_policies'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 80,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"id\":     \"73f15cab-c725-4a76-a419-a4026d131e96\",\n                         \"name\":       \"Default        Admin     Policy\",\n                         \"resources\":           [\n                                {\n                                       \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                       \"type\":       \"door_group\"\n                                },\n                                {\n                                       \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                       \"type\":       \"door_group\"\n                                }\n                         ],\n                         \"schedule_id\":            \"73facd6c-839e-4521-a4f4-c07e1d44e748\"\n                  },\n                  {\n                         \"id\":     \"b96948a4-fed9-40a3-9c4a-e473822a3db7\",\n                         \"name\":       \"Default        UNVR     Policy\",\n                         \"resources\":           [\n                                {\n                                       \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                       \"type\":       \"door_group\"\n                                },\n                                {\n                                       \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                       \"type\":       \"door\"\n                                }\n                         ],\n                         \"schedule_id\":            \"58c0f89b-f35c-4d2c-af7b-8b8918df2c31\"\n                  },\n                  {\n                         \"id\":     \"edbc80df-3698-49fd-8b53-f1867f104947\",\n                         \"name\":       \"TEST\",\n                         \"resources\":           [\n                                {\n                                       \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                       \"type\":       \"door_group\"\n                                },\n                                {\n                                       \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                       \"type\":       \"door_group\"\n                                },\n                                {\n                                       \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                       \"type\":       \"door\"\n                                }\n                         ],\n                         \"schedule_id\":            \"73facd6c-839e-4521-a4f4-c07e1d44e748\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.6",
+  "title": "Fetch All Access Policies"
+}

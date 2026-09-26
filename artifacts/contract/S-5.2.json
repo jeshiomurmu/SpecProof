@@ -1,0 +1,225 @@
+{
+  "citations": {
+    "method": {
+      "page": 73,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 73,
+      "quote": "Request       URL:    /api/v1/developer/access_policies"
+    },
+    "permission_key": {
+      "page": 73,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 74,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "name               T             String          Name  of the access policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "resource           F             Array[Object]                                                   /api/v1/developer/door_groups/topology;"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resource",
+      "required": false,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "resources[].type   F             String           enum type {door,door_group}"
+      },
+      "description": null,
+      "enum": [
+        "door",
+        "door_group"
+      ],
+      "enum_citation": {
+        "page": 74,
+        "quote": "resources[].type   F             String           enum type {door,door_group}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].type",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "resources[].id     F             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "schedule_id        T             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 74,
+        "quote": "id               T             String                           /api/v1/developer/users/:user_id/access_policies                  policy to a user or unassign a"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "name                           String                     Name      of  the   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources                      Array[Object]              Specify     the   locations     that   can   be   accessed."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "schedule_id                    String                     Identity    ID   of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/access_policies",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 74,
+        "quote": "curl     '{{host}}/api/v1/developer/access_policies'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/access_policies'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'                  --data-raw\n           '{\n                  \"name\":       \"test\",\n                  \"resource\":          [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"type\":       \"door_group\"\n                         },\n                           {\n                                \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                \"type\":       \"door_group\"\n                         }\n                  ],\n                  \"schedule_id\":            \"4e108aeb-ec9a-4822-bf86-170ea986f934\"\n           }'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 75,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"id\":     \"bb5eb965-42dc-4206-9654-88a2d1c3aaa5\",\n                  \"name\":       \"test13\",\n                  \"resources\":           [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"type\":       \"door_group\"\n                         },\n                         {\n                                \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                \"type\":       \"door_group\"\n                         }\n                  ],\n                  \"schedule_id\":            \"4e108aeb-ec9a-4822-bf86-170ea986f934\"\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.2",
+  "title": "Create Access Policy"
+}

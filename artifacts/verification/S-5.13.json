@@ -1,0 +1,14 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 23,
+    "items": 23,
+    "row_checked": 0,
+    "row_ok": 0,
+    "rows_detected": 0,
+    "samples": 0,
+    "samples_parsed": 0
+  },
+  "issues": [],
+  "section_id": "S-5.13"
+}

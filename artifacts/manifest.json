@@ -1,5 +1,24 @@
 [
   {
+    "artifact": "artifacts/contract/S-2.8.json",
+    "created_at": "2026-09-26T04:20:17Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "b02e199752507701b41916b74b8b65a54f16af249a91f2d9610043787bc38d8b",
+    "stage": "extract"
+  },
+  {
     "artifact": "artifacts/contract/S-3.1.json",
     "created_at": "2026-09-26T03:55:06Z",
     "inputs": [
@@ -840,6 +859,348 @@
     "stage": "extract"
   },
   {
+    "artifact": "artifacts/contract/S-5.1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "83f04a79c6bac7cc5a031c81aa514b4dde5fba0469aae79464f0cb0b98b9ca0d",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.10.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "5aae5d82d38454f4dc614ca275b57e59075bf491d758673a80ce4270c01211bc",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.11.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "2cd91a0155d1c5c1c767712a99f20f6601a3d606712e1ce1decf1b0786cf1cd9",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.12.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "7f9178ff0b33381b27e0e225eaa5f2065fa375233384feb9d3341e4650efa1df",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.13.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "50b2f96af3b0ccc219e972e111ceefb9bc6ae2f90f676e99a6a4766c8b57ae77",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.14.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "7cb508b02e99617c51ab6e306be25f328707f942ee676510d509b17b17b1ceb5",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.15.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "75858fab09e6912c934879925984edec240de321d941b70974393dd937a232af",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.16.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "009439be9e134f248546e56d8aa7b1ea2d71a803d0e0152e9754b359a4520ffc",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.17.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "23f179b63a41aa1aa81ff5b6e6b80f0b62fe76fe9d017a634d9dfc4b937502b3",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.18.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "d8b58aa9d8ef6be7a65e4a95717d9c80e2a4d2e47df26fa686634bf25cda3354",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.2.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "c6e3385c41678e5157504c695a85d08fd88eeba1924508a9c1db3e55f0d5d01c",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.3.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "607d88990b57bee4f0c9bf0c63d292264bfaee6fcbe71ce63670dbc7e04b2b68",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.4.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "07d3eb92aee2c8b53a80a9fa27f88934937bb43f5c0cff714a195c4cc229539f",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.5.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "bdc1331c44885187bd3c7be39b2a570fac137c477094b4907728a82f7daede2a",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.6.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "ddff1fb99116174c4c6cc55e417eb70bfa1839c87294fbe8c19db4614ce16f6b",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.7.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "3b9c641e4e7218ceb8ee021606445c1191da5c24db42cac7a983ee1db0683ea0",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.8.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "d26b0af2a56f697f3dc144136547a38494ecc8c38ad865ceedf564bae7cc47a4",
+    "stage": "extract"
+  },
+  {
+    "artifact": "artifacts/contract/S-5.9.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/sections_index.json",
+        "sha256": "e96d2804f8fd1610b5846c52bab32275b0de92da8b505fbd4a860ff848c6122e"
+      }
+    ],
+    "producer": {
+      "attempt": 1,
+      "kind": "external",
+      "mode": "specproof-extract",
+      "prompt_version": "extract-v1",
+      "tool": "claude-code"
+    },
+    "sha256": "5c4094f09c171605f66790892bf28931d838d935cdef143195f711224fb5fa89",
+    "stage": "extract"
+  },
+  {
     "artifact": "artifacts/feedback/S-3.24.md",
     "created_at": "2026-09-26T03:56:36Z",
     "inputs": [
@@ -1075,8 +1436,12 @@
   },
   {
     "artifact": "artifacts/findings/spec.json",
-    "created_at": "2026-09-26T04:02:12Z",
+    "created_at": "2026-09-26T04:20:59Z",
     "inputs": [
+      {
+        "path": "artifacts/verification/S-2.8.json",
+        "sha256": "59a197edd1e488147fa780a74ec614888049ccbc2f3f9c25a228377bb7404245"
+      },
       {
         "path": "artifacts/verification/S-3.1.json",
         "sha256": "fef77abec33e01937034d6d77be9a9c81bca85c53948c29765d60ec81aee5e14"
@@ -1252,6 +1617,78 @@
       {
         "path": "artifacts/verification/S-4.9.json",
         "sha256": "85395870af6bcbde23ee56bce2f7ba7bf9e2e2c8156d5fd210b5c6de9621808c"
+      },
+      {
+        "path": "artifacts/verification/S-5.1.json",
+        "sha256": "b186baf70e866ccfd7a338ac2927ab705ddc2e783a675c7bdf1a8ab90f07ea75"
+      },
+      {
+        "path": "artifacts/verification/S-5.10.json",
+        "sha256": "48c984cec5db523cca1e20a38e6e071c2b904bb48c9fad3b28bf67b5d33bb681"
+      },
+      {
+        "path": "artifacts/verification/S-5.11.json",
+        "sha256": "0952110bbca0fa942b4eb85d6bd849fdac90b5d588c5c070be3cb26b0f866c3c"
+      },
+      {
+        "path": "artifacts/verification/S-5.12.json",
+        "sha256": "35f78a8f6d98b26a05313d62fc19bc609d5339eb3e08aea85aa2ff2184113d4c"
+      },
+      {
+        "path": "artifacts/verification/S-5.13.json",
+        "sha256": "5ab1b50f2aed2e6f8f02acba2cd9229e5b300c197893cad337e6a455a6d2f4bf"
+      },
+      {
+        "path": "artifacts/verification/S-5.14.json",
+        "sha256": "5f2b40e305947074bbed2297f6251a130553d254b347224bca41ab795a351285"
+      },
+      {
+        "path": "artifacts/verification/S-5.15.json",
+        "sha256": "e287d1fda0b5b497b3608f6b9c8f02a399532ed47d940f040e977a0fe12f827b"
+      },
+      {
+        "path": "artifacts/verification/S-5.16.json",
+        "sha256": "58394a2c49f66f2dc24ec564d4a8d4afc3ed8449d6b96be5c66566a69d096efe"
+      },
+      {
+        "path": "artifacts/verification/S-5.17.json",
+        "sha256": "5d89040c40c8dbf01486a4a91e4904e4edbb2ca07bfd08fe5d4b16ac58333d1a"
+      },
+      {
+        "path": "artifacts/verification/S-5.18.json",
+        "sha256": "073355509366bd2eb464d98950c882a91195f1fd30da7a531def5a1cb720eb32"
+      },
+      {
+        "path": "artifacts/verification/S-5.2.json",
+        "sha256": "1ff4d877606f1f636dbf4d89808a68d6224dea4ee145147b05cd86dec57be254"
+      },
+      {
+        "path": "artifacts/verification/S-5.3.json",
+        "sha256": "3a3b5bcddff862470ca365436f220dce8a8d4e27fde72a4cccf24e96b6a53335"
+      },
+      {
+        "path": "artifacts/verification/S-5.4.json",
+        "sha256": "fad32de2ce7ba6002758e41b40f44c2cabfe25cc868bbba37679687ff0c5b4c7"
+      },
+      {
+        "path": "artifacts/verification/S-5.5.json",
+        "sha256": "2a057db6c4273edc63b85ca42ea7d537b52e25dd13d9222c21286c5ff73ea585"
+      },
+      {
+        "path": "artifacts/verification/S-5.6.json",
+        "sha256": "0a07cde6aa1fb398bfb9e276e23a8fd0a611dd927fd9c9231d034e427e678c8d"
+      },
+      {
+        "path": "artifacts/verification/S-5.7.json",
+        "sha256": "965c771f5c63b01ecbaf5080a1770ed081d85c886391101198d021f1087f2e58"
+      },
+      {
+        "path": "artifacts/verification/S-5.8.json",
+        "sha256": "f6b71404b97e260e8a65b07f930b32b1ee4921a9c38b79fa8ff228d96aa958e1"
+      },
+      {
+        "path": "artifacts/verification/S-5.9.json",
+        "sha256": "4c03cc7df804e04e4e7b45b8565432a27f3b4758485be54a2e420fa58c88413c"
       }
     ],
     "producer": {
@@ -1260,7 +1697,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "023b8cee6651592d0e0be404fc9a3c52f574469f6a08df4ecfdbffe7e60692cc",
+    "sha256": "56eb9032076e2e8a64d986b9d02748ca01a201bc5caa22ec640bdb735a2f1dd1",
     "stage": "classify"
   },
   {
@@ -1282,8 +1719,12 @@
   },
   {
     "artifact": "artifacts/status.json",
-    "created_at": "2026-09-26T04:02:11Z",
+    "created_at": "2026-09-26T04:20:59Z",
     "inputs": [
+      {
+        "path": "artifacts/verification/S-2.8.json",
+        "sha256": "59a197edd1e488147fa780a74ec614888049ccbc2f3f9c25a228377bb7404245"
+      },
       {
         "path": "artifacts/verification/S-3.1.json",
         "sha256": "fef77abec33e01937034d6d77be9a9c81bca85c53948c29765d60ec81aee5e14"
@@ -1459,6 +1900,78 @@
       {
         "path": "artifacts/verification/S-4.9.json",
         "sha256": "85395870af6bcbde23ee56bce2f7ba7bf9e2e2c8156d5fd210b5c6de9621808c"
+      },
+      {
+        "path": "artifacts/verification/S-5.1.json",
+        "sha256": "b186baf70e866ccfd7a338ac2927ab705ddc2e783a675c7bdf1a8ab90f07ea75"
+      },
+      {
+        "path": "artifacts/verification/S-5.10.json",
+        "sha256": "48c984cec5db523cca1e20a38e6e071c2b904bb48c9fad3b28bf67b5d33bb681"
+      },
+      {
+        "path": "artifacts/verification/S-5.11.json",
+        "sha256": "0952110bbca0fa942b4eb85d6bd849fdac90b5d588c5c070be3cb26b0f866c3c"
+      },
+      {
+        "path": "artifacts/verification/S-5.12.json",
+        "sha256": "35f78a8f6d98b26a05313d62fc19bc609d5339eb3e08aea85aa2ff2184113d4c"
+      },
+      {
+        "path": "artifacts/verification/S-5.13.json",
+        "sha256": "5ab1b50f2aed2e6f8f02acba2cd9229e5b300c197893cad337e6a455a6d2f4bf"
+      },
+      {
+        "path": "artifacts/verification/S-5.14.json",
+        "sha256": "5f2b40e305947074bbed2297f6251a130553d254b347224bca41ab795a351285"
+      },
+      {
+        "path": "artifacts/verification/S-5.15.json",
+        "sha256": "e287d1fda0b5b497b3608f6b9c8f02a399532ed47d940f040e977a0fe12f827b"
+      },
+      {
+        "path": "artifacts/verification/S-5.16.json",
+        "sha256": "58394a2c49f66f2dc24ec564d4a8d4afc3ed8449d6b96be5c66566a69d096efe"
+      },
+      {
+        "path": "artifacts/verification/S-5.17.json",
+        "sha256": "5d89040c40c8dbf01486a4a91e4904e4edbb2ca07bfd08fe5d4b16ac58333d1a"
+      },
+      {
+        "path": "artifacts/verification/S-5.18.json",
+        "sha256": "073355509366bd2eb464d98950c882a91195f1fd30da7a531def5a1cb720eb32"
+      },
+      {
+        "path": "artifacts/verification/S-5.2.json",
+        "sha256": "1ff4d877606f1f636dbf4d89808a68d6224dea4ee145147b05cd86dec57be254"
+      },
+      {
+        "path": "artifacts/verification/S-5.3.json",
+        "sha256": "3a3b5bcddff862470ca365436f220dce8a8d4e27fde72a4cccf24e96b6a53335"
+      },
+      {
+        "path": "artifacts/verification/S-5.4.json",
+        "sha256": "fad32de2ce7ba6002758e41b40f44c2cabfe25cc868bbba37679687ff0c5b4c7"
+      },
+      {
+        "path": "artifacts/verification/S-5.5.json",
+        "sha256": "2a057db6c4273edc63b85ca42ea7d537b52e25dd13d9222c21286c5ff73ea585"
+      },
+      {
+        "path": "artifacts/verification/S-5.6.json",
+        "sha256": "0a07cde6aa1fb398bfb9e276e23a8fd0a611dd927fd9c9231d034e427e678c8d"
+      },
+      {
+        "path": "artifacts/verification/S-5.7.json",
+        "sha256": "965c771f5c63b01ecbaf5080a1770ed081d85c886391101198d021f1087f2e58"
+      },
+      {
+        "path": "artifacts/verification/S-5.8.json",
+        "sha256": "f6b71404b97e260e8a65b07f930b32b1ee4921a9c38b79fa8ff228d96aa958e1"
+      },
+      {
+        "path": "artifacts/verification/S-5.9.json",
+        "sha256": "4c03cc7df804e04e4e7b45b8565432a27f3b4758485be54a2e420fa58c88413c"
       }
     ],
     "producer": {
@@ -1467,8 +1980,58 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "5b71665ce79d3071d55174ef5b2f85438599ca5f7a123916fd9039ee7d34fe90",
+    "sha256": "13dd969d948506117337cc69c11fe6b713cc2d36f2afd6de8e5aabe74a4f3f2b",
     "stage": "classify"
+  },
+  {
+    "artifact": "artifacts/verification/S-2.8.json",
+    "created_at": "2026-09-26T04:20:17Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-2.8.json",
+        "sha256": "b02e199752507701b41916b74b8b65a54f16af249a91f2d9610043787bc38d8b"
+      },
+      {
+        "pages": [
+          12
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "59a197edd1e488147fa780a74ec614888049ccbc2f3f9c25a228377bb7404245",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-2.8_attempt1.json",
+    "created_at": "2026-09-26T04:20:17Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-2.8.json",
+        "sha256": "b02e199752507701b41916b74b8b65a54f16af249a91f2d9610043787bc38d8b"
+      },
+      {
+        "pages": [
+          12
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "59a197edd1e488147fa780a74ec614888049ccbc2f3f9c25a228377bb7404245",
+    "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-3.1.json",
@@ -4205,6 +4768,964 @@
       "version": "0.1.0"
     },
     "sha256": "85395870af6bcbde23ee56bce2f7ba7bf9e2e2c8156d5fd210b5c6de9621808c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.1.json",
+        "sha256": "83f04a79c6bac7cc5a031c81aa514b4dde5fba0469aae79464f0cb0b98b9ca0d"
+      },
+      {
+        "pages": [
+          73
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "b186baf70e866ccfd7a338ac2927ab705ddc2e783a675c7bdf1a8ab90f07ea75",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.10.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.10.json",
+        "sha256": "5aae5d82d38454f4dc614ca275b57e59075bf491d758673a80ce4270c01211bc"
+      },
+      {
+        "pages": [
+          86,
+          87
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "48c984cec5db523cca1e20a38e6e071c2b904bb48c9fad3b28bf67b5d33bb681",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.10_attempt1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.10.json",
+        "sha256": "5aae5d82d38454f4dc614ca275b57e59075bf491d758673a80ce4270c01211bc"
+      },
+      {
+        "pages": [
+          86,
+          87
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "48c984cec5db523cca1e20a38e6e071c2b904bb48c9fad3b28bf67b5d33bb681",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.11.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.11.json",
+        "sha256": "2cd91a0155d1c5c1c767712a99f20f6601a3d606712e1ce1decf1b0786cf1cd9"
+      },
+      {
+        "pages": [
+          87,
+          88
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "0952110bbca0fa942b4eb85d6bd849fdac90b5d588c5c070be3cb26b0f866c3c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.11_attempt1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.11.json",
+        "sha256": "2cd91a0155d1c5c1c767712a99f20f6601a3d606712e1ce1decf1b0786cf1cd9"
+      },
+      {
+        "pages": [
+          87,
+          88
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "0952110bbca0fa942b4eb85d6bd849fdac90b5d588c5c070be3cb26b0f866c3c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.12.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.12.json",
+        "sha256": "7f9178ff0b33381b27e0e225eaa5f2065fa375233384feb9d3341e4650efa1df"
+      },
+      {
+        "pages": [
+          88,
+          89,
+          90
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "35f78a8f6d98b26a05313d62fc19bc609d5339eb3e08aea85aa2ff2184113d4c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.12_attempt1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.12.json",
+        "sha256": "7f9178ff0b33381b27e0e225eaa5f2065fa375233384feb9d3341e4650efa1df"
+      },
+      {
+        "pages": [
+          88,
+          89,
+          90
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "35f78a8f6d98b26a05313d62fc19bc609d5339eb3e08aea85aa2ff2184113d4c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.13.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.13.json",
+        "sha256": "50b2f96af3b0ccc219e972e111ceefb9bc6ae2f90f676e99a6a4766c8b57ae77"
+      },
+      {
+        "pages": [
+          90,
+          91
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5ab1b50f2aed2e6f8f02acba2cd9229e5b300c197893cad337e6a455a6d2f4bf",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.13_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.13.json",
+        "sha256": "50b2f96af3b0ccc219e972e111ceefb9bc6ae2f90f676e99a6a4766c8b57ae77"
+      },
+      {
+        "pages": [
+          90,
+          91
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5ab1b50f2aed2e6f8f02acba2cd9229e5b300c197893cad337e6a455a6d2f4bf",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.14.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.14.json",
+        "sha256": "7cb508b02e99617c51ab6e306be25f328707f942ee676510d509b17b17b1ceb5"
+      },
+      {
+        "pages": [
+          91,
+          92,
+          93,
+          94,
+          95
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5f2b40e305947074bbed2297f6251a130553d254b347224bca41ab795a351285",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.14_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.14.json",
+        "sha256": "7cb508b02e99617c51ab6e306be25f328707f942ee676510d509b17b17b1ceb5"
+      },
+      {
+        "pages": [
+          91,
+          92,
+          93,
+          94,
+          95
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5f2b40e305947074bbed2297f6251a130553d254b347224bca41ab795a351285",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.15.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.15.json",
+        "sha256": "75858fab09e6912c934879925984edec240de321d941b70974393dd937a232af"
+      },
+      {
+        "pages": [
+          95,
+          96,
+          97
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "e287d1fda0b5b497b3608f6b9c8f02a399532ed47d940f040e977a0fe12f827b",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.15_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.15.json",
+        "sha256": "75858fab09e6912c934879925984edec240de321d941b70974393dd937a232af"
+      },
+      {
+        "pages": [
+          95,
+          96,
+          97
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "e287d1fda0b5b497b3608f6b9c8f02a399532ed47d940f040e977a0fe12f827b",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.16.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.16.json",
+        "sha256": "009439be9e134f248546e56d8aa7b1ea2d71a803d0e0152e9754b359a4520ffc"
+      },
+      {
+        "pages": [
+          97,
+          98,
+          99,
+          100
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "58394a2c49f66f2dc24ec564d4a8d4afc3ed8449d6b96be5c66566a69d096efe",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.16_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.16.json",
+        "sha256": "009439be9e134f248546e56d8aa7b1ea2d71a803d0e0152e9754b359a4520ffc"
+      },
+      {
+        "pages": [
+          97,
+          98,
+          99,
+          100
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "58394a2c49f66f2dc24ec564d4a8d4afc3ed8449d6b96be5c66566a69d096efe",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.17.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.17.json",
+        "sha256": "23f179b63a41aa1aa81ff5b6e6b80f0b62fe76fe9d017a634d9dfc4b937502b3"
+      },
+      {
+        "pages": [
+          100,
+          101
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5d89040c40c8dbf01486a4a91e4904e4edbb2ca07bfd08fe5d4b16ac58333d1a",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.17_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.17.json",
+        "sha256": "23f179b63a41aa1aa81ff5b6e6b80f0b62fe76fe9d017a634d9dfc4b937502b3"
+      },
+      {
+        "pages": [
+          100,
+          101
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "5d89040c40c8dbf01486a4a91e4904e4edbb2ca07bfd08fe5d4b16ac58333d1a",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.18.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.18.json",
+        "sha256": "d8b58aa9d8ef6be7a65e4a95717d9c80e2a4d2e47df26fa686634bf25cda3354"
+      },
+      {
+        "pages": [
+          101,
+          102
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "073355509366bd2eb464d98950c882a91195f1fd30da7a531def5a1cb720eb32",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.18_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.18.json",
+        "sha256": "d8b58aa9d8ef6be7a65e4a95717d9c80e2a4d2e47df26fa686634bf25cda3354"
+      },
+      {
+        "pages": [
+          101,
+          102
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "073355509366bd2eb464d98950c882a91195f1fd30da7a531def5a1cb720eb32",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.1_attempt1.json",
+    "created_at": "2026-09-26T04:20:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.1.json",
+        "sha256": "83f04a79c6bac7cc5a031c81aa514b4dde5fba0469aae79464f0cb0b98b9ca0d"
+      },
+      {
+        "pages": [
+          73
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "b186baf70e866ccfd7a338ac2927ab705ddc2e783a675c7bdf1a8ab90f07ea75",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.2.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.2.json",
+        "sha256": "c6e3385c41678e5157504c695a85d08fd88eeba1924508a9c1db3e55f0d5d01c"
+      },
+      {
+        "pages": [
+          73,
+          74,
+          75
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "1ff4d877606f1f636dbf4d89808a68d6224dea4ee145147b05cd86dec57be254",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.2_attempt1.json",
+    "created_at": "2026-09-26T04:20:15Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.2.json",
+        "sha256": "c6e3385c41678e5157504c695a85d08fd88eeba1924508a9c1db3e55f0d5d01c"
+      },
+      {
+        "pages": [
+          73,
+          74,
+          75
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "1ff4d877606f1f636dbf4d89808a68d6224dea4ee145147b05cd86dec57be254",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.3.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.3.json",
+        "sha256": "607d88990b57bee4f0c9bf0c63d292264bfaee6fcbe71ce63670dbc7e04b2b68"
+      },
+      {
+        "pages": [
+          75,
+          76,
+          77
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "3a3b5bcddff862470ca365436f220dce8a8d4e27fde72a4cccf24e96b6a53335",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.3_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.3.json",
+        "sha256": "607d88990b57bee4f0c9bf0c63d292264bfaee6fcbe71ce63670dbc7e04b2b68"
+      },
+      {
+        "pages": [
+          75,
+          76,
+          77
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "3a3b5bcddff862470ca365436f220dce8a8d4e27fde72a4cccf24e96b6a53335",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.4.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.4.json",
+        "sha256": "07d3eb92aee2c8b53a80a9fa27f88934937bb43f5c0cff714a195c4cc229539f"
+      },
+      {
+        "pages": [
+          77
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "fad32de2ce7ba6002758e41b40f44c2cabfe25cc868bbba37679687ff0c5b4c7",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.4_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.4.json",
+        "sha256": "07d3eb92aee2c8b53a80a9fa27f88934937bb43f5c0cff714a195c4cc229539f"
+      },
+      {
+        "pages": [
+          77
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "fad32de2ce7ba6002758e41b40f44c2cabfe25cc868bbba37679687ff0c5b4c7",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.5.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.5.json",
+        "sha256": "bdc1331c44885187bd3c7be39b2a570fac137c477094b4907728a82f7daede2a"
+      },
+      {
+        "pages": [
+          77,
+          78,
+          79
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "2a057db6c4273edc63b85ca42ea7d537b52e25dd13d9222c21286c5ff73ea585",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.5_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.5.json",
+        "sha256": "bdc1331c44885187bd3c7be39b2a570fac137c477094b4907728a82f7daede2a"
+      },
+      {
+        "pages": [
+          77,
+          78,
+          79
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "2a057db6c4273edc63b85ca42ea7d537b52e25dd13d9222c21286c5ff73ea585",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.6.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.6.json",
+        "sha256": "ddff1fb99116174c4c6cc55e417eb70bfa1839c87294fbe8c19db4614ce16f6b"
+      },
+      {
+        "pages": [
+          79,
+          80,
+          81
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "0a07cde6aa1fb398bfb9e276e23a8fd0a611dd927fd9c9231d034e427e678c8d",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.6_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.6.json",
+        "sha256": "ddff1fb99116174c4c6cc55e417eb70bfa1839c87294fbe8c19db4614ce16f6b"
+      },
+      {
+        "pages": [
+          79,
+          80,
+          81
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "0a07cde6aa1fb398bfb9e276e23a8fd0a611dd927fd9c9231d034e427e678c8d",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.7.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.7.json",
+        "sha256": "3b9c641e4e7218ceb8ee021606445c1191da5c24db42cac7a983ee1db0683ea0"
+      },
+      {
+        "pages": [
+          81
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "965c771f5c63b01ecbaf5080a1770ed081d85c886391101198d021f1087f2e58",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.7_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.7.json",
+        "sha256": "3b9c641e4e7218ceb8ee021606445c1191da5c24db42cac7a983ee1db0683ea0"
+      },
+      {
+        "pages": [
+          81
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "965c771f5c63b01ecbaf5080a1770ed081d85c886391101198d021f1087f2e58",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.8.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.8.json",
+        "sha256": "d26b0af2a56f697f3dc144136547a38494ecc8c38ad865ceedf564bae7cc47a4"
+      },
+      {
+        "pages": [
+          81,
+          82,
+          83,
+          84
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "f6b71404b97e260e8a65b07f930b32b1ee4921a9c38b79fa8ff228d96aa958e1",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.8_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.8.json",
+        "sha256": "d26b0af2a56f697f3dc144136547a38494ecc8c38ad865ceedf564bae7cc47a4"
+      },
+      {
+        "pages": [
+          81,
+          82,
+          83,
+          84
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "f6b71404b97e260e8a65b07f930b32b1ee4921a9c38b79fa8ff228d96aa958e1",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.9.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.9.json",
+        "sha256": "5c4094f09c171605f66790892bf28931d838d935cdef143195f711224fb5fa89"
+      },
+      {
+        "pages": [
+          84,
+          85,
+          86
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "4c03cc7df804e04e4e7b45b8565432a27f3b4758485be54a2e420fa58c88413c",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-5.9_attempt1.json",
+    "created_at": "2026-09-26T04:20:16Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-5.9.json",
+        "sha256": "5c4094f09c171605f66790892bf28931d838d935cdef143195f711224fb5fa89"
+      },
+      {
+        "pages": [
+          84,
+          85,
+          86
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "4c03cc7df804e04e4e7b45b8565432a27f3b4758485be54a2e420fa58c88413c",
     "stage": "verify"
   },
   {

@@ -1,0 +1,75 @@
+{
+  "citations": {},
+  "definitions": [
+    {
+      "citation": {
+        "page": 12,
+        "quote": "1. code:   Represents   the   result   of  request   handling"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "code",
+      "required": null,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "(not specified)"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "2. msg:   Represents   the   error   description"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "msg",
+      "required": null,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "(not specified)"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "3. data:   Represents   the   data   of  API   requests."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "data",
+      "required": null,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "(not specified)"
+    }
+  ],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [],
+  "kind": "schema",
+  "method": null,
+  "path": null,
+  "permission_key": null,
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-2.8",
+  "title": "Response Schema"
+}

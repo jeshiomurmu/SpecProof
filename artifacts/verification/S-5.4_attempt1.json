@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 7,
+    "items": 7,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 2,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_TYPE_MISMATCH",
+      "evidence": {
+        "page": 77,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+      },
+      "field": null,
+      "hint": null,
+      "message": "response data sample: 'success' is not of type 'object'",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-5.4"
+}

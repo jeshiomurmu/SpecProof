@@ -1,0 +1,351 @@
+{
+  "citations": {
+    "path": {
+      "page": 95,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/schedules/:id"
+    },
+    "permission_key": {
+      "page": 95,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 95,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "Id                            T                         String             Identity    ID  of  the   schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "name                                                F                String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "week_schedule                                       F                Object"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "week_schedule",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "week_schedule.monday                                F                Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "week_schedule.monday",
+      "required": false,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "week_schedule.monday[0].start_time                  F                String                                                                00:00:00"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "week_schedule.monday[0].start_time",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "week_schedule.monday[0].end_time                    F                String                                                                23:59:59"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "week_schedule.monday[0].end_time",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 95,
+        "quote": "holiday_group_id                                    F                String                The  default  is  No  holidays                  4dbe-9b98-"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_group_id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 96,
+        "quote": "holiday_schedule                                    F                Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule",
+      "required": false,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 96,
+        "quote": "holiday_schedule[].start_time                       F                String                                                                03:15:00"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule[].start_time",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 96,
+        "quote": "holiday_schedule[].end_time                         F                String                                                                11:45:59"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "holiday_schedule[].end_time",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 96,
+        "quote": "id                  T                String                                    /api/v1/developer/access_policies"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "name                                                          String                     Name      of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "is_default                                                    Boolean"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "is_default",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "type                                                          String\na user    along    with   an   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly                                                        Object                     day   from    Sunday      to  Saturday.      If not   specified,     it"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "weekly",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_schedule                                              Array[Object]              UniFi    Access     Requirement:            1.20.11        or"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "holiday_schedule",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_group_id                                              String                     Identity    ID  of  the   holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "holiday_group_id",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/access_policies/schedules/:id",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 96,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/access_policies/schedules/1d31b648-b8ff-4bd1-b742-"
+      },
+      "raw": "    curl     -XPUT     '{{host}}/api/v1/developer/access_policies/schedules/1d31b648-b8ff-4bd1-b742-\n    60dbd70592cd'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'                  --data-raw\n           '{\n                  \"name\":       \"schedule-1688977094169\",\n                  \"holiday_group_id\":                \"75660081-431b-4dbe-9b98-e0257877118e\",\n                  \"week_schedule\":              {\n                         \"sunday\":         [],\n                         \"monday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"tuesday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"wednesday\":           [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"thursday\":          [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:01:59\"\n                                }\n                         ],\n                         \"friday\":         [\n                                {\n                                       \"start_time\":            \"10:00:00\",\n                                       \"end_time\":          \"17:00:59\"\n                                }\n                         ],\n                         \"saturday\":          []\n                  },\n                  \"holiday_schedule\":                [\n                         {\n                                \"start_time\":            \"03:15:00\",\n                                \"end_time\":          \"11:45:59\"\n                         }\n                  ]\n           }'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 97,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {},\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.15",
+  "title": "Update Schedule"
+}

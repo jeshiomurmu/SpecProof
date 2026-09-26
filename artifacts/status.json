@@ -1,4 +1,9 @@
 {
+  "S-2.8": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
   "S-3.1": {
     "attempt": 1,
     "extraction_errors": 0,
@@ -218,5 +223,95 @@
     "attempt": 2,
     "extraction_errors": 0,
     "status": "VERIFIED"
+  },
+  "S-5.1": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.10": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.11": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.12": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.13": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.14": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.15": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.16": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.17": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.18": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.2": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.3": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.4": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.5": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.6": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-5.7": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.8": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-5.9": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
   }
 }

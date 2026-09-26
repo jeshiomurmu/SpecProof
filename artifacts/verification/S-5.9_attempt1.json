@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 20,
+    "items": 20,
+    "row_checked": 11,
+    "row_ok": 11,
+    "rows_detected": 12,
+    "samples": 2,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 85,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/access_policies/holiday_groups/7be7a7a0-818f-4f76-"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Expecting value (line 10)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-5.9"
+}

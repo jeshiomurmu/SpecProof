@@ -1,0 +1,232 @@
+{
+  "citations": {
+    "path": {
+      "page": 75,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/:id"
+    },
+    "permission_key": {
+      "page": 75,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 75,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "Id                            T                          String             Identity    ID  of  the   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "name                 F              String            parameter    if it doesn't need to be"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "resource             F              Array[Object]     the access policy. Omit  this parameter        /api/v1/developer/door_groups/topology;"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resource",
+      "required": false,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "resources[].type     F              String             enum  type  {door,door_group}"
+      },
+      "description": null,
+      "enum": [
+        "door",
+        "door_group"
+      ],
+      "enum_citation": {
+        "page": 76,
+        "quote": "resources[].type     F              String             enum  type  {door,door_group}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].type",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "resources[].id       F              String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 76,
+        "quote": "schedule_id          F              String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 77,
+        "quote": "id               T             String                           /api/v1/developer/users/:user_id/access_policies                  policy to a user or unassign a"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "name                           String                     Name      of  the   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources                      Array[Object]              Specify     the   locations     that   can   be   accessed."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "schedule_id                    String                     Identity    ID   of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": null,
+      "schema_ref": "S-5.1",
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/access_policies/:id",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 76,
+        "quote": "curl     '{{host}}/api/v1/developer/access_policies/242c88e3-0524-42de-8447-45891c5df714'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/access_policies/242c88e3-0524-42de-8447-45891c5df714'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'                  --data-raw\n           '{\n                  \"name\":       \"test\",\n                  \"resource\":          [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                                \"type\":       \"door_group\"\n                         },\n                           {\n                                \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                                \"type\":       \"door_group\"\n                         }\n                  ],\n                  \"schedule_id\":            \"4e108aeb-ec9a-4822-bf86-170ea986f934\"\n           }'\n           --insecure"
+    },
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-5.3",
+  "title": "Update Access Policy"
+}

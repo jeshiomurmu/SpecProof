@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 77,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 77,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/:id"
+    },
+    "permission_key": {
+      "page": 77,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 77,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 77,
+        "quote": "Id                                 T                               String                 Identity    ID  of  the   access    policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/access_policies/:id",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 77,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/access_policies/460d0bcc-5d4f-4e7b-8a3c-"
+      },
+      "raw": "    curl     -XDELETE       '{{host}}/api/v1/developer/access_policies/460d0bcc-5d4f-4e7b-8a3c-\n    8d4502765e11'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 77,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.4",
+  "title": "Delete Access Policy"
+}

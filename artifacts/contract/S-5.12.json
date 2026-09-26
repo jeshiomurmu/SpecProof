@@ -1,0 +1,181 @@
+{
+  "citations": {
+    "path": {
+      "page": 88,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/holiday_groups"
+    },
+    "permission_key": {
+      "page": 88,
+      "quote": "Permission        Key:    view:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 89,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 89,
+        "quote": "Id                                 T                              String                Identity     ID  of  the   holiday    group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 89,
+        "quote": "id               T               String                                    /api/v1/developer/access_policies/schedules"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 89,
+        "quote": "name             T               String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 89,
+        "quote": "description      T               String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "description",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 89,
+        "quote": "count            T               Integer"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "count",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 81,
+        "quote": "is_default                             Boolean                    Indicate     whether       the  holiday     group     is the   system      default."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "is_default",
+      "required": null,
+      "schema_ref": "S-5.7",
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 81,
+        "quote": "holidays                               Array[Object]              Show     a  list of  the   holidays     within    the   holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "holidays",
+      "required": null,
+      "schema_ref": "S-5.7",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/access_policies/holiday_groups",
+  "permission_key": "view:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 89,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/access_policies/holiday_groups'"
+      },
+      "raw": "    curl     -XGET     '{{host}}/api/v1/developer/access_policies/holiday_groups'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 89,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"count\":        0,\n                         \"description\":            \"\",\n                         \"id\":     \"8cc22b49-a7f4-49a6-9f04-044444992d6c\",\n                         \"is_default\":            true,\n                         \"name\":       \"No    Holidays\"\n                  },\n                  {\n                         \"count\":        2,\n                         \"description\":            \"\",\n                         \"id\":     \"86c634da-7b2c-411c-a2c1-1495d089c719\",\n                         \"is_default\":            false,\n                         \"name\":       \"Holiday        Group-1692867312225\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.12",
+  "title": "Fetch All Holiday Groups"
+}

@@ -1,0 +1,132 @@
+{
+  "citations": {},
+  "definitions": [
+    {
+      "citation": {
+        "page": 73,
+        "quote": "Id                                                        Identity    ID   of  the  access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Id",
+      "required": null,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": ""
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "name                           String                     Name      of  the   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources                      Array[Object]              Specify     the   locations     that   can   be   accessed."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources[].type               String"
+      },
+      "description": null,
+      "enum": [
+        "door",
+        "door_group"
+      ],
+      "enum_citation": {
+        "page": 73,
+        "quote": "{door,door_group}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].type",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "resources[].id                 String                     building     or  a  customized        door    group.     When      type   is  door,     it refers"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "resources[].id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 73,
+        "quote": "schedule_id                    String                     Identity    ID   of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "schedule_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [],
+  "kind": "schema",
+  "method": null,
+  "path": null,
+  "permission_key": null,
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-5.1",
+  "title": "Access Policy Schemas"
+}

@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 15,
+    "items": 15,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 6,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_REQUIRED_MISSING",
+      "evidence": {
+        "page": 98,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "week_schedule",
+      "hint": null,
+      "message": "response data sample: 'week_schedule' is a required property",
+      "severity": "warning"
+    }
+  ],
+  "section_id": "S-5.16"
+}

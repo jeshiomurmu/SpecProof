@@ -1,0 +1,198 @@
+{
+  "citations": {
+    "path": {
+      "page": 100,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/schedules"
+    },
+    "permission_key": {
+      "page": 100,
+      "quote": "Permission        Key:    view:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 100,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 100,
+        "quote": "Data                              T                             Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "Data",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "id                                                            String                     Identity    ID  of  the   schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "name                                                          String                     Name      of  the  schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "is_default                                                    Boolean"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "is_default",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "type                                                          String\na user    along    with   an   access     policy."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "weekly                                                        Object                     day   from    Sunday      to  Saturday.      If not   specified,     it"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "weekly",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_schedule                                              Array[Object]              UniFi    Access     Requirement:            1.20.11        or"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "holiday_schedule",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 90,
+        "quote": "holiday_group_id                                              String                     Identity    ID  of  the   holiday     group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "holiday_group_id",
+      "required": null,
+      "schema_ref": "S-5.13",
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/access_policies/schedules",
+  "permission_key": "view:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 100,
+        "quote": "curl    --location          '{{host}}/api/v1/developer/access_policies/schedules'"
+      },
+      "raw": "      curl    --location          '{{host}}/api/v1/developer/access_policies/schedules'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 100,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"id\":     \"73facd6c-839e-4521-a4f4-c07e1d44e748\",\n                         \"holiday_group_id\":                \"75660081-431b-4dbe-9b98-e0257877118e\",\n                         \"is_default\":            true,\n                         \"name\":       \"Always       Access\",\n                         \"status\":         1,\n                         \"type\":       \"access\"\n                  },\n                  {\n                         \"id\":     \"58c0f89b-f35c-4d2c-af7b-8b8918df2c31\",\n                         \"holiday_group_id\":                \"75660081-431b-4dbe-9b98-e0257877118e\",\n                         \"is_default\":            false,\n                         \"name\":       \"UNVR      Schedule\",\n                         \"status\":         1,\n                         \"type\":       \"access\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.17",
+  "title": "Fetch All Schedules"
+}

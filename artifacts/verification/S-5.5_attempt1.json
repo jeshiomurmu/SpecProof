@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 11,
+    "items": 11,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 3,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_REQUIRED_MISSING",
+      "evidence": {
+        "page": 78,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "Data",
+      "hint": null,
+      "message": "response data sample: 'Data' is a required property",
+      "severity": "warning"
+    }
+  ],
+  "section_id": "S-5.5"
+}

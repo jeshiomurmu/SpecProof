@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 22,
+    "items": 22,
+    "row_checked": 11,
+    "row_ok": 11,
+    "rows_detected": 12,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_REQUIRED_MISSING",
+      "evidence": {
+        "page": 97,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "id",
+      "hint": null,
+      "message": "response data sample: 'id' is a required property",
+      "severity": "warning"
+    }
+  ],
+  "section_id": "S-5.15"
+}

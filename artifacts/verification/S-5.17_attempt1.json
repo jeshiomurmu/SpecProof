@@ -1,0 +1,39 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 13,
+    "items": 13,
+    "row_checked": 1,
+    "row_ok": 1,
+    "rows_detected": 2,
+    "samples": 1,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_REQUIRED_MISSING",
+      "evidence": {
+        "page": 100,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "Data",
+      "hint": null,
+      "message": "response data sample: 'Data' is a required property",
+      "severity": "warning"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_REQUIRED_MISSING",
+      "evidence": {
+        "page": 100,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "Data",
+      "hint": null,
+      "message": "response data sample: 'Data' is a required property",
+      "severity": "warning"
+    }
+  ],
+  "section_id": "S-5.17"
+}

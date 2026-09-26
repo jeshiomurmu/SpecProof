@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 101,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 101,
+      "quote": "Request       URL:    /api/v1/developer/access_policies/schedules/:id"
+    },
+    "permission_key": {
+      "page": 101,
+      "quote": "Permission        Key:    edit:policy"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 101,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 101,
+        "quote": "Id                            T                         String             Identity    ID  of  the   schedule."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/access_policies/schedules/:id",
+  "permission_key": "edit:policy",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 102,
+        "quote": "curl    -XDELETE        '{{host}}/api/v1/developer/access_policies/schedules/f5355214-3a45-4e0b-9245-"
+      },
+      "raw": "      curl    -XDELETE        '{{host}}/api/v1/developer/access_policies/schedules/f5355214-3a45-4e0b-9245-\n    12df7075df37'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 102,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}\n6.       Credential\n     The    APIs   here    are   designed      for  managing        PIN    codes,    NFC    cards,    and    other    related    credentials."
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-5.18",
+  "title": "Delete Schedule"
+}
