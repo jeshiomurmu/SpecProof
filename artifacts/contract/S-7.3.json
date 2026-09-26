@@ -1,0 +1,204 @@
+{
+  "citations": {
+    "path": {
+      "page": 129,
+      "quote": "Request       URL:    /api/v1/developer/door_groups/:id"
+    },
+    "permission_key": {
+      "page": 129,
+      "quote": "Permission        Key:    view:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 129,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "Id                                  T                               String                 Identity     ID  of  the   door    group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "Id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "id                      T              String     Identity ID of the door group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "name                    T              String     Name   of the door group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "type                    t              String     type stands  for all doors, which is a"
+      },
+      "description": null,
+      "enum": [
+        "access",
+        "building"
+      ],
+      "enum_citation": {
+        "page": 129,
+        "quote": "{access,building}   The   building"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "resources               T              String     All doors contained  under  the group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "resources[].id          T              String     Identity ID of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources[].id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 129,
+        "quote": "resources[].type        T              String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources[].type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 130,
+        "quote": "resources[].name        T              String     Name   of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resources[].name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/door_groups/:id",
+  "permission_key": "view:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 130,
+        "quote": "curl     '{{host}}/api/v1/developer/door_groups/d5573467-d6b3-4e8f-8e48-8a322b91664a'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/door_groups/d5573467-d6b3-4e8f-8e48-8a322b91664a'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 130,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"id\":     \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                  \"name\":       \"All     Doors\",\n                  \"resources\":           [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"name\":       \"Door      3855\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"7cc1823f-9cdb-447b-b01b-4cb2abc661c0\",\n                                \"name\":       \"A2    Door\",\n                                \"type\":       \"door\"\n                         },\n                         {\n                                \"id\":      \"ececa68e-239f-4b82-adc4-0c9ce70c60ff\",\n                                \"name\":       \"A3\",\n                                \"type\":       \"door\"\n                         }\n                  ],\n                  \"type\":       \"building\"\n           },\n           \"msg\":      \"success\"\n    }\n    #  Customized          groups\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"id\":     \"1be0c995-0347-4cb2-93b3-66a9624af568\",\n                  \"name\":       \"Door      Group     01\",\n                  \"resources\":           [\n                         {\n                                \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                \"type\":       \"door\",\n                                \"name\":       \"Door      385\"\n                         }\n                  ],\n                  \"type\":       \"access\"\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.3",
+  "title": "Fetch Door Group"
+}

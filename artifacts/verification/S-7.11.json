@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 9,
+    "items": 9,
+    "row_checked": 2,
+    "row_ok": 2,
+    "rows_detected": 4,
+    "samples": 1,
+    "samples_parsed": 0
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 143,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": null,
+      "hint": null,
+      "message": "response sample is not valid JSON: Extra data (line 9)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-7.11"
+}

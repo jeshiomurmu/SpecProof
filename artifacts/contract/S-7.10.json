@@ -1,0 +1,123 @@
+{
+  "citations": {
+    "path": {
+      "page": 140,
+      "quote": "Request       URL:    /api/v1/developer/doors/:id/lock_rule"
+    },
+    "permission_key": {
+      "page": 140,
+      "quote": "Permission        Key:    edit:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 140,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 140,
+        "quote": "id                                      T                                  String                   Identity     ID  of  the  door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 140,
+        "quote": "type             T               String"
+      },
+      "description": null,
+      "enum": [
+        "keep_lock",
+        "keep_unlock",
+        "custom",
+        "reset",
+        "lock_early",
+        "lock_now"
+      ],
+      "enum_citation": {
+        "page": 140,
+        "quote": "enum type {keep_lock,keep_unlock,custom,reset,lock_early,lock_now}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 140,
+        "quote": "interval         F               Integer      Set the lock time duration  (minutes)   when   type is custom.                                             10"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "interval",
+      "required": false,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/doors/:id/lock_rule",
+  "permission_key": "edit:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 140,
+        "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'"
+      },
+      "raw": "    curl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                  \"type\":       \"custom\",\n                  \"interval\":          10\n           }'\n           --insecure\n    #  Keep     it   unlocked\n    curl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n       -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n       -H   'accept:        application/json'\n       -H   'content-type:             application/json'\n       --data      '{\n              \"type\":       \"keep_unlock\"\n       }'\n       --insecure\n#  Keep     it   locked\ncurl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n       -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n       -H   'accept:        application/json'\n       -H   'content-type:             application/json'\n       --data      '{\n              \"type\":       \"keep_lock\"\n       }'\n       --insecure\n#  Use    reset      to   restore       the    temporary         unlock      schedule        (e.g.,      “Unlock        for    1  Hour”)       to   its\noriginal        locked      state.      This     parameter         is   intended        solely      for    resetting         a  temporary         unlock\nschedule.        If    you    wish     to   lock     a  door     before      its    scheduled         unlock      time     ends,      use    lock_early\nbelow     instead.\ncurl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n       -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n       -H   'accept:        application/json'\n       -H   'content-type:             application/json'\n       --data      '{\n              \"type\":       \"reset\"\n       }'\n       --insecure\n#  If    the    door    is    currently        on    an   unlock      schedule,         you    can    use    lock_early         to    lock     the    door\nbefore      the    scheduled         time     ends.     For    instance,         if   the    unlock      schedule        is    set    from     9:00    AM    to\n6:00     PM,    you    can    use    this     parameter        at   3:00     PM    to   end    the    schedule        and    lock     the    door\nearlier.\ncurl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n       -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n       -H   'accept:        application/json'\n       -H   'content-type:             application/json'\n       --data      '{\n              \"type\":       \"lock_early\"\n       }'\n       --insecure\n#  lock_now        is   used     to    terminate        both     the    unlock      schedule        and    any    temporary         unlock      at    the\nsame     time.\ncurl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n       -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n       -H   'accept:        application/json'\n       -H   'content-type:             application/json'\n       --data      '{\n              \"type\":       \"lock_now\"\n       }'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 142,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       \"success\",\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.10",
+  "title": "Set Temporary Door Locking Rule"
+}

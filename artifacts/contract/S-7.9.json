@@ -1,0 +1,130 @@
+{
+  "citations": {
+    "path": {
+      "page": 138,
+      "quote": "Request       URL:    /api/v1/developer/doors/:id/unlock"
+    },
+    "permission_key": {
+      "page": 138,
+      "quote": "Permission        Key:    edit:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 138,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 139,
+        "quote": "id                                      T                                  String                   Identity     ID  of  the  door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 139,
+        "quote": "actor_id                 F                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "actor_id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 138,
+        "quote": "actor_name         to  customize       the   actor    identity    shown      in  system     logs   and    webhook        notifications."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "actor_name",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 139,
+        "quote": "extra                    F\n(Map)                  notifications."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "extra",
+      "required": false,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object (Map)"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/doors/:id/unlock",
+  "permission_key": "edit:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 139,
+        "quote": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/doors/cf4b9ee6-"
+      },
+      "raw": "    curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/doors/cf4b9ee6-\n    05cb-4799-a462-ec307fff2067/unlock'                            \\\n    --header        'Authorization:             Bearer      5aIi+ElDidM2Xzbi6ewtAQ'                   \\\n    --header        'Content-Type:            application/json'               \\\n    --data      '{\n           \"actor_id\":          \"actor      uuid\",\n           \"actor_name\":           \"actor       name\",\n           \"extra\":        {\n                  \"extra_string\":             \"test\",\n                  \"extra_integer\":              1,\n                  \"extra_boolean\":              true\n           }\n    }'"
+    },
+    "response": {
+      "citation": {
+        "page": 139,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       \"success\",\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.9",
+  "title": "Remote Door Unlocking"
+}

@@ -1,0 +1,221 @@
+{
+  "citations": {
+    "path": {
+      "page": 135,
+      "quote": "Request       URL:    /api/v1/developer/doors/:id"
+    },
+    "permission_key": {
+      "page": 135,
+      "quote": "Permission        Key:    view:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 135,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "id                                      T                                  String                   Identity     ID  of  the  door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "id   T   String   Identity ID of the door group."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "name                     T            String   Name  of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "full_name                T            String   Full name of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "full_name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "floor_id                 T            String   Identity ID of the floor."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "floor_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "type                     T            String   Type of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "is_bind_hub              T            String   to a hub device. It can only be used for"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "is_bind_hub",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "door_lock_relay_status   T            String   door_lock_relay_status"
+      },
+      "description": null,
+      "enum": [
+        "lock",
+        "unlock"
+      ],
+      "enum_citation": {
+        "page": 136,
+        "quote": "{lock,unlock}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "door_lock_relay_status",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 136,
+        "quote": "door_position_status     T            String   both open and  close. A null value"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "door_position_status",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/doors/:id",
+  "permission_key": "view:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 136,
+        "quote": "curl     -X   GET    '{{host}}/api/v1/developer/doors/0ed545f8-2fcd-4839-9021-b39e707f6aa9'"
+      },
+      "raw": "    curl     -X   GET    '{{host}}/api/v1/developer/doors/0ed545f8-2fcd-4839-9021-b39e707f6aa9'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 136,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"door_lock_relay_status\":                     \"lock\",\n                  \"door_position_status\":                   \"\",\n                  \"floor_id\":          \"3275af8d-3fa7-4902-a11b-011e41c8464a\",\n                  \"full_name\":           \"UNVR     -   1F   -   Main    Door\",\n                  \"id\":     \"0ed545f8-2fcd-4839-9021-b39e707f6aa9\",\n                  \"is_bind_hub\":            true,\n                  \"name\":       \"Main      Door\",\n                  \"type\":       \"door\"\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.7",
+  "title": "Fetch Door"
+}

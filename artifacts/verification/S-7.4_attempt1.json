@@ -1,0 +1,39 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 13,
+    "items": 13,
+    "row_checked": 4,
+    "row_ok": 4,
+    "rows_detected": 7,
+    "samples": 2,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 132,
+        "quote": "curl     -X   PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Extra data (line 7)",
+      "severity": "error"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_TYPE_MISMATCH",
+      "evidence": {
+        "page": 132,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "resources",
+      "hint": null,
+      "message": "response data sample: [{'id': '6ff875d2-af87-470b-9cb5-774c6596afc8', 'type': 'door'}] is not of type 'string', 'null'",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-7.4"
+}

@@ -1,0 +1,122 @@
+{
+  "citations": {
+    "path": {
+      "page": 142,
+      "quote": "Request       URL:    /api/v1/developer/doors/:id/lock_rule"
+    },
+    "permission_key": {
+      "page": 142,
+      "quote": "Permission        Key:    view:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 142,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 142,
+        "quote": "id                                      T                                  String                   Identity     ID  of  the  door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 142,
+        "quote": "type              T               String       unlocked\"   state.  custom   is used to customize   the unlock  time  duration.   schedule"
+      },
+      "description": null,
+      "enum": [
+        "schedule",
+        "keep_lock",
+        "keep_unlock",
+        "custom",
+        "lock_early"
+      ],
+      "enum_citation": {
+        "page": 142,
+        "quote": "enum type {schedule,keep_lock,keep_unlock,custom,lock_early}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 142,
+        "quote": "ended_time        T               Integer      End  time  of the set rule.                                                                           1708672257"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "ended_time",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/doors/:id/lock_rule",
+  "permission_key": "view:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 143,
+        "quote": "curl     -X   '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'"
+      },
+      "raw": "    curl     -X   '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 143,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            3602128309,\n                  \"type\":       \"keep_lock\"\n           },\n           \"msg\":      \"success\"\n    }\n    #  Keep     it   unlocked\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            3602128562,\n                  \"type\":       \"keep_unlock\"\n           },\n           \"msg\":      \"success\"\n    }\n    #  Customized          unlock      duration\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            1708673342,\n                  \"type\":       \"custom\"\n           },\n           \"msg\":      \"success\"\n    }\n    #The     `lock_early`          is    used     to   terminate        doors      in   an    unlock      schedule        early.\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                     \"type\":       \"lock_early\",\n                       \"ended_time\":            1708673342,\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.11",
+  "title": "Fetch Door Locking Rule"
+}

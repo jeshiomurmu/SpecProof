@@ -403,5 +403,70 @@
     "attempt": 1,
     "extraction_errors": 0,
     "status": "VERIFIED"
+  },
+  "S-7.1": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-7.10": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.11": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.12": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.13": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-7.2": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.3": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.4": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.5": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-7.6": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-7.7": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.8": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-7.9": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
   }
 }

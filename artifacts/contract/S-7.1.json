@@ -1,0 +1,255 @@
+{
+  "citations": {
+    "path": {
+      "page": 125,
+      "quote": "Request       URL:    /api/v1/developer/door_groups/topology"
+    },
+    "permission_key": {
+      "page": 125,
+      "quote": "Permission        Key:    view:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 125,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "id                                   F            String         Identity ID of the door group.          creating an"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "type                                 T            String                                                                     access: /api/v1/developer/door_groups"
+      },
+      "description": null,
+      "enum": [
+        "building",
+        "access"
+      ],
+      "enum_citation": {
+        "page": 126,
+        "quote": "enum group_type {building,access}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies                  T            Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].id             T            String         Identity ID of the floor."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].type           T            String         Type of the floor."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].name           T            String         Name  of the floor."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].resources      T            Array[Object]  Contain all the doors on the floor."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].resources",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].is_bind_hub    F            Boolean        a hub device. It can only be used for"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].is_bind_hub",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].resources.id   T            String         Identity ID of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].resources.id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].resources.name T            String         Name  of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].resources.name",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 126,
+        "quote": "resource_topologies[].resources.type T            String         Type of the door."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "resource_topologies[].resources.type",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/door_groups/topology",
+  "permission_key": "view:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 126,
+        "quote": "curl     -X   GET    '{{host}}/api/v1/developer/door_groups/topology'"
+      },
+      "raw": "    curl     -X   GET    '{{host}}/api/v1/developer/door_groups/topology'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 126,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"id\":     \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                         \"name\":       \"All     Doors\",\n                         \"resource_topologies\":                  [\n                                {\n                                       \"id\":      \"9bee6e0e-108d-4c52-9107-76f2c7dea4f1\",\n                                       \"name\":       \"Main      Floor\",\n                                       \"resources\":           [\n                                              {\n                                                     \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                                     \"name\":       \"Door      3855\",\n                                                     \"type\":       \"door\",\n                                                     \"is_bind_hub\":             true\n                                              }\n                                       ],\n                                       \"type\":       \"floor\"\n                                }\n                         ],\n                         \"type\":       \"building\"\n                  },\n                  {\n                         \"id\":     \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                         \"name\":       \"customized          group\",\n                         \"resource_topologies\":                  [\n                                {\n                                       \"id\":      \"9bee6e0e-108d-4c52-9107-76f2c7dea4f1\",\n                                       \"name\":       \"Main      Floor\",\n                                       \"resources\":           [\n                                              {\n                                                     \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                                                     \"name\":       \"Door      3855\",\n                                                     \"type\":       \"door\",\n                                                     \"is_bind_hub\":             true\n                                              }\n                                       ],\n                                       \"type\":       \"floor\"\n                                }\n                         ],\n                         \"type\":       \"access\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.1",
+  "title": "Fetch Door Group Topology"
+}

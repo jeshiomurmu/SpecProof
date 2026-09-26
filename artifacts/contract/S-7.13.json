@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 145,
+      "quote": "Request       URL:    /api/v1/developer/doors/settings/emergency"
+    },
+    "permission_key": {
+      "page": 145,
+      "quote": "Permission        Key:    view:space"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 145,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 145,
+        "quote": "lockdown                    F                        Boolean                True     will  keep    the   door    locked.                        true"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "lockdown",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 145,
+        "quote": "evacuation                  F                        Boolean                True     will  keep    the   door    unlocked.                      false"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "evacuation",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/doors/settings/emergency",
+  "permission_key": "view:space",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 146,
+        "quote": "curl     -X   '{{host}}/api/v1/developer/doors/settings/emergency'"
+      },
+      "raw": "    curl     -X   '{{host}}/api/v1/developer/doors/settings/emergency'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 146,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"evacuation\":            true,\n                  \"lockdown\":          false\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-7.13",
+  "title": "Fetch Door Emergency Status"
+}

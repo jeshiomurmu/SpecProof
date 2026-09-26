@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 13,
+    "items": 13,
+    "row_checked": 3,
+    "row_ok": 3,
+    "rows_detected": 7,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_TYPE_MISMATCH",
+      "evidence": {
+        "page": 128,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": "resources",
+      "hint": null,
+      "message": "response data sample: [{'id': '6ff875d2-af87-470b-9cb5-774c6596afc8', 'type': 'door'}] is not of type 'string', 'null'",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-7.2"
+}
