@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 20,
+    "items": 20,
+    "row_checked": 17,
+    "row_ok": 17,
+    "rows_detected": 17,
+    "samples": 2,
+    "samples_parsed": 2
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_ENUM_VIOLATION",
+      "evidence": {
+        "page": 56,
+        "quote": "\"visit_reason\":             \"Interviemw\","
+      },
+      "field": "visit_reason",
+      "hint": null,
+      "message": "request sample: 'Interviemw' is not one of ['Interview', 'Business', 'Cooperation', 'Others']",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-4.2"
+}

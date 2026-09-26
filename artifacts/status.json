@@ -1,0 +1,17 @@
+{
+  "S-3.2": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-4.1": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-4.2": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  }
+}

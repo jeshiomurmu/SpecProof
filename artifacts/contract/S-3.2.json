@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "section_id": "S-3.2",
+  "kind": "endpoint",
+  "title": "User Registration",
+  "method": "POST",
+  "path": "/api/v1/developer/users",
+  "permission_key": "edit:user",
+  "citations": {},
+  "fields": [
+    {
+      "name": "Authorization",
+      "location": "header",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Token required for authentication and access control.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 13,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      }
+    },
+    {
+      "name": "first_name",
+      "location": "body",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "description": "First  name     of  the   user.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 14,
+        "quote": "first_name                        T                    String            First  name     of  the   user."
+      }
+    },
+    {
+      "name": "last_name",
+      "location": "body",
+      "required": true,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Last   name     of  the  user.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 14,
+        "quote": "last_name                         T                    String            Last   name     of  the  user."
+      }
+    },
+    {
+      "name": "user_email",
+      "location": "body",
+      "required": false,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Email    of the   user.   UniFi    Access Requirement:           1.22.16       or later",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 14,
+        "quote": "user_email                        F                    String            Requirement:           1.22.16       or"
+      }
+    },
+    {
+      "name": "employee_number",
+      "location": "body",
+      "required": false,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Employee       number       of  the  user. Omit    this   parameter         if it doesn't     need     to  be   updated.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 14,
+        "quote": "employee_number                   F                    String            Omit    this   parameter         if it"
+      }
+    },
+    {
+      "name": "onboard_time",
+      "location": "body",
+      "required": false,
+      "type": "integer",
+      "type_raw": "Integer",
+      "description": "User   onboarding        date.",
+      "enum": null,
+      "enum_citation": null,
+      "example": 1689150139,
+      "citation": {
+        "page": 14,
+        "quote": "onboard_time                      F                    Integer           User   onboarding        date.                      1689150139"
+      }
+    }
+  ],
+  "samples": {
+    "response": {
+      "raw": "{\n       \"code\":       \"SUCCESS\",\n       \"msg\":      \"success\",\n       \"data\":       {\n                \"first_name\":           \"Fist      Name\",\n                \"last_name\":           \"Last     Name\",\n                \"id\":     \"37f2b996-c2c5-487b-aa22-8b453ff14a4b\",\n\n                \"user_email\":           \"example@*.com\"\n         }\n}",
+      "citation": {
+        "page": 14,
+        "quote": "\"first_name\":           \"Fist      Name\","
+      }
+    },
+    "request": {
+      "raw": "{\n       \"first_name\":\"H\",\n       \"last_name\":\"L\",\n       \"employee_number\":\"100000\",\n       \"onboard_time\":1689150139,\n       \"user_email\":            \"example@*.com\"\n}",
+      "citation": {
+        "page": 15,
+        "quote": "\"first_name\":\"H\","
+      }
+    }
+  },
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T07"
+  }
+}

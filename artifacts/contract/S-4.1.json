@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "section_id": "S-4.1",
+  "kind": "schema",
+  "title": "Schemas",
+  "citations": {},
+  "definitions": [
+    {
+      "name": "id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Identity ID of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "id                                            String          Identity ID of the visitor."
+      }
+    },
+    {
+      "name": "first_name",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "First name of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "first_name                                    String          First name of the visitor."
+      }
+    },
+    {
+      "name": "last_name",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Last name of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "last_name                                     String          Last name of the visitor."
+      }
+    },
+    {
+      "name": "status",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "The visitor's status. enum status {UPCOMING=1,VISITED=2,VISITING=3,CANCELLED=4,NO_VISIT=5,ACTIVE=6}",
+      "enum": ["UPCOMING=1", "VISITED=2", "VISITING=3", "CANCELLED=4", "NO_VISIT=5", "ACTIVE=6"],
+      "enum_citation": {
+        "page": 52,
+        "quote": "enum status {UPCOMING=1,VISITED=2,VISITING=3,CANCELLED=4,NO_VISIT=5,ACTIVE=6}"
+      },
+      "citation": {
+        "page": 52,
+        "quote": "status                                        String          The visitor's status. enum status {UPCOMING=1,VISITED=2,VISITING=3,CANCELLED=4,NO_VISIT=5,ACTIVE=6}"
+      }
+    },
+    {
+      "name": "inviter_id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Identity ID of the inviter.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "inviter_id                                    String          Identity ID of the inviter."
+      }
+    },
+    {
+      "name": "inviter_name",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Name  of the inviter.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "inviter_name                                  String          Name  of the inviter."
+      }
+    },
+    {
+      "name": "mobile_phone",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Contact phone number of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "mobile_phone                                  String          Contact phone number of the visitor."
+      }
+    },
+    {
+      "name": "remarks",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Remarks of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "remarks                                       String          Remarks of the visitor."
+      }
+    },
+    {
+      "name": "email",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Email of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "email                                         String          Email of the visitor."
+      }
+    },
+    {
+      "name": "visitor_company",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Company  of the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "visitor_company                               String          Company  of the visitor."
+      }
+    },
+    {
+      "name": "visit_reason",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+      "enum": ["Interview", "Business", "Cooperation", "Others"],
+      "enum_citation": {
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}"
+      },
+      "citation": {
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}"
+      }
+    },
+    {
+      "name": "start_time",
+      "location": "body",
+      "required": null,
+      "type": "integer",
+      "type_raw": "Integer",
+      "description": "Start time of the visit.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "start_time                                    Integer         Start time of the visit."
+      }
+    },
+    {
+      "name": "end_time",
+      "location": "body",
+      "required": null,
+      "type": "integer",
+      "type_raw": "Integer",
+      "description": "End time of the visit.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "end_time                                      Integer         End time of the visit."
+      }
+    },
+    {
+      "name": "nfc_cards",
+      "location": "body",
+      "required": null,
+      "type": "array",
+      "type_raw": "Array[Object]",
+      "description": "Token associated with the bound NFC card.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "nfc_cards                                     Array[Object]   Token associated with the bound NFC card."
+      }
+    },
+    {
+      "name": "nfc_cards[].id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Display ID of the NFC card.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "nfc_cards[].id                                String          Display ID of the NFC card."
+      }
+    },
+    {
+      "name": "nfc_cards[].token",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Unique NFC card token.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "nfc_cards[].token                             String          Unique NFC card token."
+      }
+    },
+    {
+      "name": "pin_code",
+      "location": "body",
+      "required": null,
+      "type": "object",
+      "type_raw": "Object",
+      "description": "Token associated with the bound PIN code.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "pin_code                                      Object          Token associated with the bound PIN code."
+      }
+    },
+    {
+      "name": "pin_code.token",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "The user's PIN hash code credential for unlocking a door.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 52,
+        "quote": "pin_code.token                                String          The user's PIN hash code credential for unlocking a door."
+      }
+    },
+    {
+      "name": "schedule_id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Identity ID of the schedule.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule_id                                   String          Identity ID of the schedule."
+      }
+    },
+    {
+      "name": "schedule",
+      "location": "body",
+      "required": null,
+      "type": "object",
+      "type_raw": "Object",
+      "description": "The schedule assigned to the visitor. If the schedule information is present, it indicates that the visit schedule is recurring. If the schedule information is not included, it indicates a one-time visit schedule.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule                                      Object          schedule is recurring. If the schedule information is not included, it indicates a one-time visit"
+      }
+    },
+    {
+      "name": "schedule.name",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Name  of the schedule.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.name                                 String          Name  of the schedule."
+      }
+    },
+    {
+      "name": "schedule.type",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Type of the schedule.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.type                                 String          Type of the schedule."
+      }
+    },
+    {
+      "name": "schedule.week_schedule",
+      "location": "body",
+      "required": null,
+      "type": "object",
+      "type_raw": "Object",
+      "description": "The customizable scheduling strategy for each day from Sunday to Saturday. If not specified, it means access is allowed every day.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.week_schedule                        Object"
+      }
+    },
+    {
+      "name": "schedule.week_schedule.monday",
+      "location": "body",
+      "required": null,
+      "type": "array",
+      "type_raw": "Array[Object]",
+      "description": "Specify the daily access time period from Sunday to Saturday.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.week_schedule.monday                 Array[Object]   Specify the daily access time period from Sunday to Saturday."
+      }
+    },
+    {
+      "name": "schedule.week_schedule.monday[0].start_time",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Start time of the access time period.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.week_schedule.monday[0].start_time   String          Start time of the access time period."
+      }
+    },
+    {
+      "name": "schedule.week_schedule.monday[0].end_time",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "End time of the access time period.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "schedule.week_schedule.monday[0].end_time     String          End time of the access time period."
+      }
+    },
+    {
+      "name": "resources",
+      "location": "body",
+      "required": null,
+      "type": "array",
+      "type_raw": "Array[Object]",
+      "description": "Specify the locations that the visitor can access.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "resources                                     Array[Object]   Specify the locations that the visitor can access."
+      }
+    },
+    {
+      "name": "resources[0].id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Identity ID of the door group.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "resources[0].id                               String          Identity ID of the door group."
+      }
+    },
+    {
+      "name": "resources[0].name",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Name  of the door group.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "resources[0].name                             String          Name  of the door group."
+      }
+    },
+    {
+      "name": "resources[0].type",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Type of the door group.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "resources[0].type                             String          Type of the door group."
+      }
+    },
+    {
+      "name": "license_plates",
+      "location": "body",
+      "required": null,
+      "type": "array",
+      "type_raw": "Array[Object]",
+      "description": "License plates bound to the visitor.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "license_plates                                Array[Object]   License plates bound to the visitor."
+      }
+    },
+    {
+      "name": "license_plates[].id",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Unique ID of the license plate.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "license_plates[].id                           String          Unique ID of the license plate."
+      }
+    },
+    {
+      "name": "license_plates[].credential",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "License plate number.",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "license_plates[].credential                   String          License plate number."
+      }
+    },
+    {
+      "name": "license_plates[].credential_type",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Type of credential, should be \"license\".",
+      "enum": null,
+      "enum_citation": null,
+      "citation": {
+        "page": 53,
+        "quote": "license_plates[].credential_type              String          Type of credential, should be \"license\"."
+      }
+    },
+    {
+      "name": "license_plates[].credential_status",
+      "location": "body",
+      "required": null,
+      "type": "string",
+      "type_raw": "String",
+      "description": "Status of the credential enum credential_status {active, deactivate}.",
+      "enum": ["active", "deactivate"],
+      "enum_citation": {
+        "page": 53,
+        "quote": "enum credential_status {active, deactivate}."
+      },
+      "citation": {
+        "page": 53,
+        "quote": "license_plates[].credential_status            String          Status of the credential enum credential_status {active, deactivate}."
+      }
+    }
+  ],
+  "fields": [],
+  "extraction": {
+    "producer": "ibm-bob",
+    "mode": "spec-auditor",
+    "prompt_version": "extract-v1",
+    "attempt": 1,
+    "bob_task_ref": "T07"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 52,
+        "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 56,
+        "quote": "\"visit_reason\":             \"Interviemw\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-2518a1ed",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-4.2",
+    "severity": "high",
+    "title": "Sample value violates the documented enum for visit_reason",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  }
+]
