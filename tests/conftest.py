@@ -74,6 +74,25 @@ def section_ctx(
     return build
 
 
+@pytest.fixture
+def workspace(synthetic_pdf: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
+    """A repo-shaped temp dir with the synthetic PDF ingested and segmented; cwd set to it."""
+    import shutil
+
+    from typer.testing import CliRunner
+
+    from specproof.cli import app
+
+    work = tmp_path / "artifacts" / "work"
+    work.mkdir(parents=True)
+    shutil.copyfile(synthetic_pdf, work / "spec.pdf")
+    monkeypatch.chdir(tmp_path)
+    runner = CliRunner()
+    assert runner.invoke(app, ["ingest"]).exit_code == 0
+    assert runner.invoke(app, ["segment"]).exit_code == 0
+    return tmp_path
+
+
 @pytest.fixture(scope="session")
 def run_verify(
     synthetic_sections: dict[str, Section], page_texts: dict[int, str]

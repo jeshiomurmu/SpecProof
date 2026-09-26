@@ -54,6 +54,18 @@ class Paths:
     def verification_dir(self) -> Path:
         return self.artifacts / "verification"
 
+    @property
+    def status(self) -> Path:
+        return self.artifacts / "status.json"
+
+    @property
+    def feedback_dir(self) -> Path:
+        return self.artifacts / "feedback"
+
+    @property
+    def spec_findings(self) -> Path:
+        return self.artifacts / "findings" / "spec.json"
+
     def rel(self, path: Path) -> str:
         """Return path relative to root, with forward slashes."""
         return path.relative_to(self.root).as_posix()

@@ -164,14 +164,34 @@ def verify(
 
 @app.command("loop-status")
 def loop_status(json_: Annotated[bool, typer.Option("--json")] = False) -> None:
-    """Show per-section loop state."""
-    _stub("T06")
+    """List sections that need a retry (NEEDS_RETRY with attempt < 3)."""
+    import json
+
+    from specproof.config import Paths
+    from specproof.loop.status import retryable
+
+    rows = retryable(Paths.from_root(Path.cwd()).status)
+    if json_:
+        typer.echo(json.dumps(rows, sort_keys=True))
+        return
+    for row in rows:
+        typer.echo(
+            f"{row['section_id']}  attempt {row['attempt']}  {row['extraction_errors']} errors"
+        )
+    typer.echo(f"{len(rows)} sections need a retry")
 
 
 @app.command()
 def classify() -> None:
     """Apply the classification state machine and write feedback."""
-    _stub("T06")
+    from specproof.config import Paths
+    from specproof.io_loop import run_classify
+
+    status = run_classify(Paths.from_root(Path.cwd()))
+    counts: dict[str, int] = {}
+    for row in status.values():
+        counts[row["status"]] = counts.get(row["status"], 0) + 1
+    log.info("classify: %d sections %s", len(status), dict(sorted(counts.items())))
 
 
 @app.command("export-openapi")
@@ -218,5 +238,28 @@ def audit_score() -> None:
 
 @app.command()
 def guard(base: Annotated[str | None, typer.Option("--base")] = None) -> None:
-    """Fail if protected paths changed since the task base commit."""
-    _stub("T06")
+    """Fail if protected paths changed since the task base commit (extraction tasks only)."""
+    import subprocess
+
+    from specproof.guard import BASE_FILE, MARKER, changed_paths, protected_paths
+
+    root = Path.cwd()
+    if not (root / MARKER).exists():
+        log.info("guard: not an extraction task (no %s); nothing to check", MARKER)
+        return
+    if base is None:
+        base_file = root / BASE_FILE
+        if not base_file.exists():
+            log.error("guard: no --base given and %s is missing", BASE_FILE)
+            raise typer.Exit(2)
+        base = base_file.read_text(encoding="utf-8").strip()
+    try:
+        offending = protected_paths(changed_paths(root, base))
+    except subprocess.CalledProcessError as exc:
+        log.error("guard: git failed: %s", (exc.stderr or "").strip())
+        raise typer.Exit(2) from exc
+    if offending:
+        for path in offending:
+            log.error("guard: protected path changed: %s", path)
+        raise typer.Exit(1)
+    log.info("guard: ok, no protected paths changed since %s", base[:12])

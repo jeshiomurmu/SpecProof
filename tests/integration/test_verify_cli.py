@@ -15,18 +15,6 @@ Good = Callable[[str], dict[str, Any]]
 GOOD_DIR = Path(__file__).resolve().parent.parent / "fixtures" / "contracts_good"
 
 
-@pytest.fixture
-def workspace(synthetic_pdf: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
-    work = tmp_path / "artifacts" / "work"
-    work.mkdir(parents=True)
-    shutil.copyfile(synthetic_pdf, work / "spec.pdf")
-    monkeypatch.chdir(tmp_path)
-    runner = CliRunner()
-    assert runner.invoke(app, ["ingest"]).exit_code == 0
-    assert runner.invoke(app, ["segment"]).exit_code == 0
-    return tmp_path
-
-
 @pytest.mark.integration
 def test_ENG_006_verify_cli_writes_results(workspace: Path) -> None:
     shutil.copytree(GOOD_DIR, workspace / "artifacts" / "contract")
