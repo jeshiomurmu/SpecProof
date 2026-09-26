@@ -1,6 +1,6 @@
 {
   "extraction": {
-    "attempt": 2,
+    "attempt": 3,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -24,7 +24,7 @@
     {
       "citation": {
         "page": 69,
-        "quote": "id                      T                    String\n                                                                Identity    ID  of  the             Get   it from    the   API"
+        "quote": "id                      T                    String\n visitor. /api/v1/developer/visitors"
       },
       "description": "Identity ID of the visitor.",
       "enum": null,

@@ -1,6 +1,6 @@
 {
   "extraction": {
-    "attempt": 2,
+    "attempt": 3,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -24,7 +24,7 @@
     {
       "citation": {
         "page": 72,
-        "quote": "visitor_id                  T                    String        ID  of  the  visitor   to\n                                                                                                                Get   it from   the   API"
+        "quote": "visitor_id  T  String  unassign  the  license  plate"
       },
       "description": "ID of the visitor to unassign the license plate number from.",
       "enum": null,
@@ -38,7 +38,7 @@
     {
       "citation": {
         "page": 72,
-        "quote": "license_plate_id            T                    String\n                                                                   ID  of  the  license    plate                From    the   license   plate   numbers       in"
+        "quote": "license_plate_id          T          String"
       },
       "description": "ID of the license plate number to unassign.",
       "enum": null,

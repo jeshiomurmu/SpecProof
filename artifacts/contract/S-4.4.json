@@ -1,6 +1,6 @@
 {
   "extraction": {
-    "attempt": 2,
+    "attempt": 3,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -90,7 +90,7 @@
     {
       "citation": {
         "page": 59,
-        "quote": "expand[]      F            string"
+        "quote": "expand[]            F       string       objects {none,access_policy,resource,schedule,nfc_card,pin_code}."
       },
       "description": "Determine whether to return the objects (Optional). currently supports the following objects: enum objects {none,access_policy,resource,schedule,nfc_card,pin_code}. For the \"none\" option, it means that no object will be returned. UniFi Access Requirement: 1.22.16 or later",
       "enum": [
@@ -103,7 +103,7 @@
       ],
       "enum_citation": {
         "page": 59,
-        "quote": "expand[]      F            string     Determine whether to return the objects (Optional). currently supports the following objects: enum &expand[]=access_policy"
+        "quote": "expand[]            F       string       objects {none,access_policy,resource,schedule,nfc_card,pin_code}."
       },
       "location": "query",
       "name": "expand[]",

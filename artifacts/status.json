@@ -15,24 +15,24 @@
     "status": "VERIFIED"
   },
   "S-4.11": {
-    "attempt": 2,
-    "extraction_errors": 1,
-    "status": "QUARANTINED"
+    "attempt": 3,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
   },
   "S-4.12": {
-    "attempt": 2,
-    "extraction_errors": 1,
-    "status": "QUARANTINED"
+    "attempt": 3,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
   },
   "S-4.13": {
-    "attempt": 2,
-    "extraction_errors": 1,
-    "status": "QUARANTINED"
+    "attempt": 3,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },
   "S-4.14": {
-    "attempt": 2,
-    "extraction_errors": 2,
-    "status": "QUARANTINED"
+    "attempt": 3,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
   },
   "S-4.2": {
     "attempt": 1,
@@ -45,9 +45,9 @@
     "status": "VERIFIED"
   },
   "S-4.4": {
-    "attempt": 2,
-    "extraction_errors": 2,
-    "status": "QUARANTINED"
+    "attempt": 3,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
   },
   "S-4.5": {
     "attempt": 2,
