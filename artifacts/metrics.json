@@ -22,8 +22,11 @@
     "value": 1.0
   },
   "client_findings_candidate": {
-    "by_type": {},
-    "total": 0
+    "by_type": {
+      "CLIENT_REQUIRES_UNDOCUMENTED_FIELD": 1,
+      "CLIENT_TYPE_MISMATCH": 2
+    },
+    "total": 3
   },
   "client_findings_confirmed": {
     "by_type": {},

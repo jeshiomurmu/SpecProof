@@ -1,6 +1,89 @@
 {
   "errors": [],
-  "findings": [],
+  "findings": [
+    {
+      "evidence": [
+        {
+          "file": "artifacts/work/py-unifi-access/unifi_access_api/models/user.py",
+          "kind": "code",
+          "line": 18,
+          "page": null,
+          "quote": null,
+          "snippet": "class User"
+        },
+        {
+          "file": null,
+          "kind": "doc",
+          "line": null,
+          "page": 13,
+          "quote": "pin_code                                               Object                    Token    associated       with   the   bound     PIN   code.",
+          "snippet": null
+        }
+      ],
+      "id": "F-1f37a3fc",
+      "review": {
+        "note": null,
+        "reviewer": null,
+        "status": "CANDIDATE"
+      },
+      "section_id": "S-3.5",
+      "severity": "medium",
+      "title": "Model User types `pin_code` as string; the PDF on page 13 documents it as object.",
+      "type": "CLIENT_TYPE_MISMATCH"
+    },
+    {
+      "evidence": [
+        {
+          "file": "artifacts/work/py-unifi-access/unifi_access_api/models/door.py",
+          "kind": "code",
+          "line": 89,
+          "page": null,
+          "quote": null,
+          "snippet": "class Door"
+        },
+        {
+          "file": null,
+          "kind": "doc",
+          "line": null,
+          "page": 137,
+          "quote": "is_bind_hub              T            String   to a hub device. It can only be used for",
+          "snippet": null
+        }
+      ],
+      "id": "F-b21d3b42",
+      "review": {
+        "note": null,
+        "reviewer": null,
+        "status": "CANDIDATE"
+      },
+      "section_id": "S-7.8",
+      "severity": "medium",
+      "title": "Model Door types `is_bind_hub` as boolean; the PDF on page 137 documents it as string.",
+      "type": "CLIENT_TYPE_MISMATCH"
+    },
+    {
+      "evidence": [
+        {
+          "file": "artifacts/work/py-unifi-access/unifi_access_api/models/user.py",
+          "kind": "code",
+          "line": 18,
+          "page": null,
+          "quote": null,
+          "snippet": "class User"
+        }
+      ],
+      "id": "F-c73ffe14",
+      "review": {
+        "note": null,
+        "reviewer": null,
+        "status": "CANDIDATE"
+      },
+      "section_id": "S-3.5",
+      "severity": "high",
+      "title": "Model User requires `id`, which the documented response of S-3.5 does not contain.",
+      "type": "CLIENT_REQUIRES_UNDOCUMENTED_FIELD"
+    }
+  ],
   "inventory": [
     {
       "dynamic": false,

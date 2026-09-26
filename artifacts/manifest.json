@@ -1,5 +1,38 @@
 [
   {
+    "artifact": "artifacts/conformance/mapping.yaml",
+    "created_at": "2026-09-26T06:18:47Z",
+    "inputs": [
+      {
+        "path": "artifacts/status.json",
+        "sha256": "78b2e65bda4d7d09bfa4bc3ff517332cc38bbb955546304e4eaad8558cfc55b7"
+      }
+    ],
+    "producer": {
+      "kind": "external",
+      "tool": "claude-code"
+    },
+    "sha256": "d57320de564b54b08732bc79f4117bcb131af9725810f666d5a9d0c683429d88",
+    "stage": "map"
+  },
+  {
+    "artifact": "artifacts/conformance/test_sample_replay.py",
+    "created_at": "2026-09-26T06:18:47Z",
+    "inputs": [
+      {
+        "path": "artifacts/conformance/mapping.yaml",
+        "sha256": "d57320de564b54b08732bc79f4117bcb131af9725810f666d5a9d0c683429d88"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "c81171c4f89a02eef46c163d32dcfb2a0de1d4519332352ef57dde15dfc2e1bf",
+    "stage": "conform"
+  },
+  {
     "artifact": "artifacts/contract/S-10.1.json",
     "created_at": "2026-09-26T06:04:37Z",
     "inputs": [
@@ -2588,11 +2621,11 @@
   },
   {
     "artifact": "artifacts/findings.json",
-    "created_at": "2026-09-26T06:13:12Z",
+    "created_at": "2026-09-26T06:19:10Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "78cbd8b27f201a0b982653153118872650998a3e72fdda09ffff5b3d83b446c2"
+        "sha256": "ce62e9aba06a196392dccbad3963faa3d091701adc657a3a6b7586421718a228"
       }
     ],
     "producer": {
@@ -2600,16 +2633,16 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "008e9c1b918d5a2cd225608676a1b300153ddf59cd7ec50838d7be9863713e81",
+    "sha256": "52d1a936770d8fe48e2c18776e5f211f6192861271e5d364f0356842b314043d",
     "stage": "report"
   },
   {
     "artifact": "artifacts/findings.sarif",
-    "created_at": "2026-09-26T06:13:12Z",
+    "created_at": "2026-09-26T06:19:10Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "78cbd8b27f201a0b982653153118872650998a3e72fdda09ffff5b3d83b446c2"
+        "sha256": "ce62e9aba06a196392dccbad3963faa3d091701adc657a3a6b7586421718a228"
       }
     ],
     "producer": {
@@ -2617,7 +2650,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "0df8c42f090b921bd340156f5deb15c5f90b90648daffed9d0a5654a47a8a13b",
+    "sha256": "355945b5c28d32c938849f499cb57341caf52908514a17b6d86aceeff1a3c8fb",
     "stage": "report"
   },
   {
@@ -2643,11 +2676,15 @@
   },
   {
     "artifact": "artifacts/findings/conformance.json",
-    "created_at": "2026-09-26T06:08:40Z",
+    "created_at": "2026-09-26T06:18:47Z",
     "inputs": [
       {
         "path": "artifacts/status.json",
         "sha256": "78b2e65bda4d7d09bfa4bc3ff517332cc38bbb955546304e4eaad8558cfc55b7"
+      },
+      {
+        "path": "artifacts/conformance/mapping.yaml",
+        "sha256": "d57320de564b54b08732bc79f4117bcb131af9725810f666d5a9d0c683429d88"
       }
     ],
     "producer": {
@@ -2655,7 +2692,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "1db044afcde7432ca45c8ff893919990a5adf9446062346f8f220a730bec5970",
+    "sha256": "f55b0362067bc449cc3dfaee4df37ac4d87a19193a2e0feab2fab559f9397cac",
     "stage": "conform"
   },
   {
@@ -3138,7 +3175,7 @@
   },
   {
     "artifact": "artifacts/metrics.json",
-    "created_at": "2026-09-26T06:13:12Z",
+    "created_at": "2026-09-26T06:19:10Z",
     "inputs": [
       {
         "path": "artifacts/status.json",
@@ -3154,7 +3191,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "78cbd8b27f201a0b982653153118872650998a3e72fdda09ffff5b3d83b446c2",
+    "sha256": "ce62e9aba06a196392dccbad3963faa3d091701adc657a3a6b7586421718a228",
     "stage": "metrics"
   },
   {
@@ -3636,11 +3673,11 @@
   },
   {
     "artifact": "artifacts/report/index.html",
-    "created_at": "2026-09-26T06:13:12Z",
+    "created_at": "2026-09-26T06:19:10Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "78cbd8b27f201a0b982653153118872650998a3e72fdda09ffff5b3d83b446c2"
+        "sha256": "ce62e9aba06a196392dccbad3963faa3d091701adc657a3a6b7586421718a228"
       }
     ],
     "producer": {
@@ -3648,7 +3685,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "4a85128df162b8081234fd769ddfac67ff9b717d198ed3a929038360a7ed7c8a",
+    "sha256": "72895180cbeb6fca1edfa6e4ee7aa0b8e9a727bef0c975aa5377d498f473d657",
     "stage": "report"
   },
   {

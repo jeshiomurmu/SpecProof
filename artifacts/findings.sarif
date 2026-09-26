@@ -86,6 +86,28 @@
           "ruleId": "COMMUNITY_MISSING_FIELD"
         },
         {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/py-unifi-access/unifi_access_api/models/user.py"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Model User types `pin_code` as string; the PDF on page 13 documents it as object."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-1f37a3fc"
+          },
+          "ruleId": "CLIENT_TYPE_MISMATCH"
+        },
+        {
           "level": "note",
           "locations": [
             {
@@ -444,6 +466,28 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
+                  "uri": "artifacts/work/py-unifi-access/unifi_access_api/models/door.py"
+                },
+                "region": {
+                  "startLine": 89
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Model Door types `is_bind_hub` as boolean; the PDF on page 137 documents it as string."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-b21d3b42"
+          },
+          "ruleId": "CLIENT_TYPE_MISMATCH"
+        },
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
                   "uri": "artifacts/work/community_openapi.yaml"
                 },
                 "region": {
@@ -481,6 +525,28 @@
             "specproofFindingId": "F-c0e391d0"
           },
           "ruleId": "COMMUNITY_ENUM_MISMATCH"
+        },
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "artifacts/work/py-unifi-access/unifi_access_api/models/user.py"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Model User requires `id`, which the documented response of S-3.5 does not contain."
+          },
+          "partialFingerprints": {
+            "specproofFindingId": "F-c73ffe14"
+          },
+          "ruleId": "CLIENT_REQUIRES_UNDOCUMENTED_FIELD"
         },
         {
           "level": "note",
@@ -632,6 +698,14 @@
         "driver": {
           "name": "SpecProof",
           "rules": [
+            {
+              "id": "CLIENT_REQUIRES_UNDOCUMENTED_FIELD",
+              "name": "CLIENT_REQUIRES_UNDOCUMENTED_FIELD"
+            },
+            {
+              "id": "CLIENT_TYPE_MISMATCH",
+              "name": "CLIENT_TYPE_MISMATCH"
+            },
             {
               "id": "COMMUNITY_ENUM_MISMATCH",
               "name": "COMMUNITY_ENUM_MISMATCH"

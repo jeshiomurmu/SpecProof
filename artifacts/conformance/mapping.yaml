@@ -1,0 +1,38 @@
+# Client model -> contract section whose response the model parses.
+# Written by Claude Code (not IBM Bob) from the client methods cited in `evidence`.
+# Validated deterministically by `specproof conform` (file:line must contain the class).
+producer: claude-code
+entries:
+  - section_id: S-7.8
+    model: unifi_access_api.models.door.Door
+    json_path: data[*]
+    code: {file: unifi_access_api/models/door.py, line: 89}
+    evidence: "unifi_access_api/client.py:233 return await self._request_list(Door, self._url(DOORS_URL))"
+  - section_id: S-8.1
+    model: unifi_access_api.models.door.Device
+    json_path: data[*][*]
+    code: {file: unifi_access_api/models/door.py, line: 73}
+    evidence: "unifi_access_api/client.py:243 return [Device.model_validate(dev) for group in raw for dev in group]"
+  - section_id: S-7.11
+    model: unifi_access_api.models.door.DoorLockRuleStatus
+    json_path: data
+    code: {file: unifi_access_api/models/door.py, line: 59}
+    evidence: "unifi_access_api/client.py:334 return await self._request_obj(DoorLockRuleStatus, self._url(DOOR_LOCK_RULE_URL...))"
+  - section_id: S-7.13
+    model: unifi_access_api.models.door.EmergencyStatus
+    json_path: data
+    code: {file: unifi_access_api/models/door.py, line: 66}
+    evidence: "unifi_access_api/client.py:353 return await self._request_obj(EmergencyStatus, self._url(DOORS_EMERGENCY_URL))"
+  - section_id: S-3.5
+    model: unifi_access_api.models.user.User
+    json_path: data[*]
+    code: {file: unifi_access_api/models/user.py, line: 18}
+    evidence: "unifi_access_api/client.py:448 return await self._request_list(User, self._url(USERS_URL))"
+  - section_id: S-8.2
+    model: unifi_access_api.models.device_settings.DeviceSettings
+    json_path: data
+    code: {file: unifi_access_api/models/device_settings.py, line: 40}
+    evidence: "unifi_access_api/client.py:473 return await self._request_obj(DeviceSettings, self._url(DEVICE_SETTINGS_URL...))"
+# Not mapped: DoorLockRule (request body model, parses no response); websocket models (push
+# notifications, not documented REST responses); AccessMethod/AccessMethods/FaceAccessMethod
+# (nested inside DeviceSettings, covered by its mapping).
