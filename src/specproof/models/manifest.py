@@ -9,11 +9,12 @@ from specproof.util.io_json import dump_json, load_json
 
 
 class Producer(BaseModel):
-    """Who produced an artifact: deterministic tooling or an IBM Bob extraction."""
+    """Who produced an artifact: deterministic tooling, an IBM Bob extraction, or another
+    external producer (e.g. hand-written test fixtures)."""
 
     model_config = ConfigDict(extra="forbid")
 
-    kind: Literal["deterministic", "ibm-bob"]
+    kind: Literal["deterministic", "ibm-bob", "external"]
     tool: str | None = None
     version: str | None = None
     rules_version: str | None = None

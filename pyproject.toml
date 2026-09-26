@@ -40,7 +40,7 @@ specproof = "specproof.cli:app"
 where = ["src"]
 
 [tool.setuptools.package-data]
-specproof = ["report/templates/*.j2"]
+specproof = ["report/templates/*.j2", "report/*.json"]
 
 [tool.ruff]
 line-length = 100

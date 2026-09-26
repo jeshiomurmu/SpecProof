@@ -1,5 +1,6 @@
 """I/O orchestration for `specproof verify`: read inputs, run the pure engine, write results."""
 
+import json
 import logging
 from datetime import UTC, datetime
 from pathlib import Path
@@ -68,6 +69,40 @@ def _write(paths: Paths, contract: Path, result: VerificationResult, pages: list
         append_record(paths.manifest, record)
 
 
+def record_contract(paths: Paths, contract: Path, raw: str) -> None:
+    """Lineage for an AI-produced contract: producer, mode, prompt version, attempt."""
+    try:
+        data = json.loads(raw)
+        extraction = data.get("extraction", {}) if isinstance(data, dict) else {}
+    except ValueError:
+        extraction = {}
+    producer_name = str(extraction.get("producer", ""))
+    attempt = extraction.get("attempt")
+    producer = Producer(
+        kind="ibm-bob" if producer_name == "ibm-bob" else "external",
+        tool=producer_name or None,
+        mode=extraction.get("mode"),
+        prompt_version=extraction.get("prompt_version"),
+        attempt=attempt if isinstance(attempt, int) else None,
+        bob_task_ref=extraction.get("bob_task_ref"),
+    )
+    append_record(
+        paths.manifest,
+        ManifestRecord(
+            artifact=paths.rel(contract),
+            sha256=sha256_file(contract),
+            stage="extract",
+            producer=producer,
+            inputs=[
+                InputRef(
+                    path=paths.rel(paths.sections_index), sha256=sha256_file(paths.sections_index)
+                )
+            ],
+            created_at=datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        ),
+    )
+
+
 def run_verify(
     paths: Paths, sections: list[str] | None, chapter: int | None
 ) -> list[VerificationResult]:
@@ -86,6 +121,7 @@ def run_verify(
             log.error("%s: not in sections_index.json; skipped", contract.stem)
             continue
         raw = contract.read_text(encoding="utf-8")
+        record_contract(paths, contract, raw)
         result = verify_section(raw, entry, pages, lines.get(contract.stem, []))
         span = list(range(int(entry["page_start"]), int(entry["page_end"]) + 1))
         _write(paths, contract, result, span)

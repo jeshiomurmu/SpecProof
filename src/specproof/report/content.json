@@ -1,0 +1,32 @@
+{
+  "build": [
+    {"what": "Deterministic engine (ingest, segment, verify, loop, compare, conformance, metrics, report)", "who": "Claude Code", "evidence": "Commits with Refs: T01-T06, T09-T12; docs/AI_USAGE_LOG.md"},
+    {"what": "Spec extraction: reading the PDF and writing cited contracts", "who": "IBM Bob 2.0 (spec-auditor mode, specproof-extract skill)", "evidence": "artifacts/contract/*.json (producer ibm-bob); bob_sessions/INDEX.md"},
+    {"what": "Chapter fan-out and parallel extraction", "who": "IBM Bob 2.0 subagents and background tasks", "evidence": "T08 session exports"},
+    {"what": "Retry loop over verifier feedback", "who": "IBM Bob 2.0 (/sp-loop), judged only by the deterministic verifier", "evidence": "artifacts/feedback/, verification/*_attempt*.json"},
+    {"what": "Client model to section mapping", "who": "IBM Bob 2.0 (spec-auditor mode), validated deterministically", "evidence": "artifacts/conformance/mapping.yaml"},
+    {"what": "Verification verdicts", "who": "Deterministic Python only; no model judges its own output", "evidence": "src/specproof/verify/ (no LLM calls)"}
+  ],
+  "rules": [
+    {"code": "V1", "rule": "Contract JSON is valid against the schema"},
+    {"code": "V2", "rule": "Each quote appears verbatim on its cited page; names appear in their quotes; enum values appear in their citations; samples are verbatim"},
+    {"code": "V2b", "rule": "Required flag and type match the single-line table row"},
+    {"code": "V3", "rule": "The document's own samples parse as JSON and validate against the extracted contract"},
+    {"code": "V4", "rule": "Method and path match the deterministic segmenter's hints"},
+    {"code": "V5", "rule": "Every table row the detector finds is present in the contract"}
+  ],
+  "limitations": [
+    "Validated on one vendor PDF with a regular table layout. Other layouts may need new row detectors.",
+    "Prose-only rules (conditional requirements, version notes) are captured as descriptions, not verified semantics.",
+    "Client conformance covers Python Pydantic models only.",
+    "Hand-audit precision has the confidence interval of the audited sample size; the interval is shown next to the value.",
+    "Rows whose cells wrap across lines cannot be row-checked; they are reported as not checked, never as passed."
+  ],
+  "prior_art": [
+    {"name": "SpeCrawler (arXiv 2402.11625, 2024)", "does": "LLM pipeline that generates OpenAPI specs from API documentation", "lacks": "Per-claim citations, deterministic verification, code conformance"},
+    {"name": "Trail of Bits Spec-to-Code Compliance Checker", "does": "LLM audit of code against a spec, citing sections and lines", "lacks": "The LLM judges compliance; no machine contract; no sample replay"},
+    {"name": "Community UniFi OpenAPI (YuDefine)", "does": "One-off conversion of this PDF with MinerU + Claude", "lacks": "Verification; the authors warn of omissions and errors"},
+    {"name": "OpenAPI diff tools (oasdiff, openapi-diff)", "does": "Diff two machine-readable specs", "lacks": "A machine-readable spec must already exist"},
+    {"name": "Contract testing (Pact, Schemathesis)", "does": "Test against a machine-readable contract", "lacks": "A machine-readable contract must already exist"}
+  ]
+}

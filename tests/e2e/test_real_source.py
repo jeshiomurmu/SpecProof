@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 from typing import Any
 
@@ -60,6 +61,91 @@ def test_SEG_R02_schema_section_4_1(real_index: dict[str, dict[str, Any]]) -> No
     s41 = real_index["S-4.1"]
     assert s41["kind"] == "schema"
     assert s41["page_start"] <= 52 <= s41["page_end"]
+
+
+def _require_contracts(repo_root: Path) -> None:
+    if not list((repo_root / "artifacts" / "contract").glob("S-*.json")):
+        pytest.skip("no extracted contracts yet (T07-T08 run in IBM Bob)")
+
+
+@pytest.mark.real_source
+def test_E2E_R01_visit_reason_inconsistency_reproduced(repo_root: Path) -> None:
+    _require_contracts(repo_root)
+    findings = json.loads((repo_root / "artifacts" / "findings" / "spec.json").read_text("utf-8"))
+    for section, pages in (("S-4.2", {52, 56}), ("S-4.5", {52, 63})):
+        matches = [
+            f
+            for f in findings
+            if f["type"] == "SPEC_SELF_INCONSISTENCY"
+            and f["section_id"] == section
+            and "visit_reason" in f["title"]
+        ]
+        assert matches, section
+        assert pages <= {e["page"] for e in matches[0]["evidence"]}
+
+
+@pytest.mark.real_source
+def test_E2E_R02_endpoint_coverage(repo_root: Path) -> None:
+    _require_contracts(repo_root)
+    metrics = json.loads((repo_root / "artifacts" / "metrics.json").read_text("utf-8"))
+    assert metrics["endpoint_coverage"]["value"] >= 0.90
+
+
+@pytest.mark.real_source
+def test_E2E_R03_determinism_on_real_artifacts(
+    repo_root: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import shutil
+    import sys
+
+    from typer.testing import CliRunner
+
+    from specproof.cli import app
+
+    _require_contracts(repo_root)
+    sys.path.insert(0, str(Path(__file__).parent))
+    from test_pipeline_synthetic import artifact_hashes
+
+    runs = []
+    for name in ("a", "b"):
+        root = tmp_path / name
+        (root / "artifacts").mkdir(parents=True)
+        for rel in ("artifacts/contract", "artifacts/conformance", "artifacts/work"):
+            source = repo_root / rel
+            if source.exists():
+                shutil.copytree(source, root / rel, ignore=shutil.ignore_patterns("replay-venv"))
+        shutil.copytree(repo_root / "eval", root / "eval")
+        shutil.copytree(repo_root / "sources", root / "sources")
+        (root / "artifacts" / "conformance" / "test_sample_replay.py").unlink(missing_ok=True)
+        monkeypatch.chdir(root)
+        runner = CliRunner()
+        client = "artifacts/work/py-unifi-access"
+        for args in (
+            ["ingest"],
+            ["segment"],
+            ["verify", "--report-only"],
+            ["classify"],
+            ["export-openapi"],
+            ["compare", "--community"],
+            ["conform", "--client", client, "--python", sys.executable],
+            ["report"],
+        ):
+            runner.invoke(app, args)
+        runs.append(artifact_hashes(root))
+    differences = sorted(
+        k for k in runs[0].keys() | runs[1].keys() if runs[0].get(k) != runs[1].get(k)
+    )
+    identical = len(runs[0].keys() & runs[1].keys()) - len(differences)
+    result = {
+        "runs": 2,
+        "total": len(runs[0].keys() | runs[1].keys()),
+        "identical": identical,
+        "differences": differences,
+    }
+    (repo_root / "artifacts" / "determinism.json").write_text(
+        json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    assert differences == []
 
 
 @pytest.mark.real_source

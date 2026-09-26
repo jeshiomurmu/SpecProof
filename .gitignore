@@ -9,3 +9,4 @@ htmlcov/
 .specproof_task_base
 .specproof_extraction_task
 *.egg-info/
+dist/

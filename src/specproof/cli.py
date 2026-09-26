@@ -11,10 +11,6 @@ app = typer.Typer(help="SpecProof: verified, cited contracts from document-only 
 log = logging.getLogger("specproof")
 
 
-def _stub(task: str) -> None:
-    log.warning("not implemented (%s)", task)
-
-
 def _now() -> str:
     return datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -244,7 +240,10 @@ def conform(
 @app.command()
 def report() -> None:
     """Build the HTML, JSON and SARIF evidence pack."""
-    _stub("T12")
+    from specproof.config import Paths
+    from specproof.io_report import run_report
+
+    run_report(Paths.from_root(Path.cwd()))
 
 
 @app.command("eval")

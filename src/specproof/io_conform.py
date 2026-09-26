@@ -113,6 +113,20 @@ def run_conform(paths: Paths, client: Path, python: str | None) -> dict[str, Any
         "uncheckable": uncheckable,
     }
     dump_json(paths.conformance_findings, result)
+    if paths.mapping.exists():
+        append_record(
+            paths.manifest,
+            ManifestRecord(
+                artifact=paths.rel(paths.mapping),
+                sha256=sha256_file(paths.mapping),
+                stage="map",
+                producer=Producer(kind="ibm-bob", mode="spec-auditor"),
+                inputs=[InputRef(path=paths.rel(paths.status), sha256=sha256_file(paths.status))]
+                if paths.status.exists()
+                else [],
+                created_at=datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            ),
+        )
     _record(paths, paths.conformance_findings, [paths.status, paths.mapping])
     if paths.replay_test.exists():
         _record(paths, paths.replay_test, [paths.mapping])

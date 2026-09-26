@@ -95,6 +95,18 @@ class Paths:
         return self.artifacts / "metrics.json"
 
     @property
+    def findings_all(self) -> Path:
+        return self.artifacts / "findings.json"
+
+    @property
+    def sarif(self) -> Path:
+        return self.artifacts / "findings.sarif"
+
+    @property
+    def report_html(self) -> Path:
+        return self.artifacts / "report" / "index.html"
+
+    @property
     def eval_result(self) -> Path:
         return self.artifacts / "eval_result.json"
 

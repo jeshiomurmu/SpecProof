@@ -1,4 +1,5 @@
 import ast
+import json
 import subprocess
 from pathlib import Path
 
@@ -33,6 +34,50 @@ def test_GOV_001_no_sources_tracked(repo_root: Path) -> None:
         or p.endswith("community_openapi.yaml")
     ]
     assert banned == []
+
+
+def _tracked(repo_root: Path, prefix: str) -> list[str]:
+    out = subprocess.run(
+        ["git", "ls-files", prefix], cwd=repo_root, check=True, capture_output=True, text=True
+    ).stdout
+    return sorted(line for line in out.splitlines() if line)
+
+
+def _quotes(node: object) -> list[str]:
+    if isinstance(node, dict):
+        found = [node["quote"]] if isinstance(node.get("quote"), str) else []
+        return found + [q for value in node.values() for q in _quotes(value)]
+    if isinstance(node, list):
+        return [q for value in node for q in _quotes(value)]
+    return []
+
+
+@pytest.mark.unit
+def test_GOV_002_committed_quotes_are_short(repo_root: Path) -> None:
+    from specproof.util.text import norm
+
+    too_long = []
+    for rel in _tracked(repo_root, "artifacts/contract"):
+        data = json.loads((repo_root / rel).read_text(encoding="utf-8"))
+        too_long += [f"{rel}: {len(norm(q))}" for q in _quotes(data) if len(norm(q)) > 200]
+    assert too_long == []
+
+
+@pytest.mark.unit
+def test_GOV_004_committed_artifacts_are_in_manifest(repo_root: Path) -> None:
+    from specproof.util.hashing import sha256_file
+
+    manifest_path = repo_root / "artifacts" / "manifest.json"
+    records = {r["artifact"]: r["sha256"] for r in json.loads(manifest_path.read_text("utf-8"))}
+    problems = []
+    for rel in _tracked(repo_root, "artifacts"):
+        if rel == "artifacts/manifest.json":
+            continue
+        if rel not in records:
+            problems.append(f"{rel}: no manifest record")
+        elif records[rel] != sha256_file(repo_root / rel):
+            problems.append(f"{rel}: sha256 differs from manifest")
+    assert problems == []
 
 
 @pytest.mark.unit

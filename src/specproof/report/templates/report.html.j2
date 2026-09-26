@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpecProof evidence pack: {{ state.spec_title }}</title>
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1d1f23; --muted: #5d636e; --line: #dfe1e5;
+  --accent: #1f5fbf; --ok: #1d7a46; --warn: #9a5b00; --bad: #b3261e; --chip: #eef1f6;
+  --quote: #f3f5f8; --radius: 10px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171b; --surface: #1d2026; --text: #e7e9ec; --muted: #a2a8b3; --line: #30343c;
+    --accent: #7fb0ff; --ok: #5cc98d; --warn: #e8b460; --bad: #ff8a80; --chip: #272b33;
+    --quote: #23262d;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
+header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+header { padding-block: 32px 8px; }
+h1 { font-size: 1.7rem; margin: 0 0 4px; }
+h2 { font-size: 1.25rem; margin: 40px 0 12px; }
+h3 { font-size: 1rem; margin: 0 0 6px; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.mono { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .9em; }
+.hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.hero .value { font-size: 1.35rem; font-weight: 650; overflow-wrap: anywhere; }
+.funnel .bar { background: var(--chip); border-radius: 6px; height: 14px; margin: 4px 0 10px; }
+.funnel .fill { background: var(--accent); height: 100%; border-radius: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.chip { background: var(--chip); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font: inherit; font-size: .85rem; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.findings { display: grid; gap: 10px; }
+.badge { display: inline-block; font-size: .75rem; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; margin-right: 6px; }
+.sev-high { color: var(--bad); } .sev-medium { color: var(--warn); } .sev-low, .sev-info { color: var(--muted); }
+.st-CONFIRMED { color: var(--ok); } .st-REJECTED { color: var(--bad); } .st-CANDIDATE { color: var(--muted); }
+blockquote { margin: 6px 0; padding: 8px 12px; background: var(--quote); border-left: 3px solid var(--accent); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; background: var(--surface); font-size: .9rem; }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th button { all: unset; cursor: pointer; font-weight: 650; }
+th button:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+footer { padding-block: 40px; font-size: .85rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SpecProof: {{ state.spec_title }}</h1>
+  <p class="muted">Every claim below traces to a page and a verbatim quote in the source document, or to a file and line in code.
+  Source PDF sha256 <span class="mono">{{ state.source_sha[:16] }}</span>.
+  <a href="{{ state.repo_url }}">Repository</a> · <a href="{{ state.repo_url }}bob_sessions/INDEX.md">IBM Bob session evidence</a></p>
+</header>
+<main>
+  <section aria-labelledby="h-metrics">
+    <h2 id="h-metrics">Results</h2>
+    <div class="hero">
+      {% for h in hero %}
+      <div class="card"><div class="muted">{{ h.label }}</div><div class="value">{{ h.value }}</div>{% if h.note %}<div class="muted">{{ h.note }}</div>{% endif %}</div>
+      {% endfor %}
+    </div>
+    <p class="muted">Machine-verified numbers and human-confirmed numbers are labeled separately. Values are truncated, never rounded up.</p>
+  </section>
+
+  <section aria-labelledby="h-funnel" class="funnel">
+    <h2 id="h-funnel">Self-correction loop</h2>
+    {% if state.funnel %}
+    <div class="card">
+      {% for step in state.funnel %}
+      <div>{{ step.label }}: <strong>{{ step.verified }}/{{ step.total }}</strong> sections without extraction errors</div>
+      <div class="bar" role="img" aria-label="{{ step.verified }} of {{ step.total }}"><div class="fill" style="width: {{ (100 * step.verified / step.total) | round(1, 'floor') if step.total else 0 }}%"></div></div>
+      {% endfor %}
+    </div>
+    {% else %}<p class="muted">pending - no verification results yet</p>{% endif %}
+  </section>
+
+  <section aria-labelledby="h-findings">
+    <h2 id="h-findings">Findings ({{ findings | length }})</h2>
+    <div class="chips" role="group" aria-label="Filter findings">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      {% for t in types %}<button class="chip" type="button" data-filter="type:{{ t }}" aria-pressed="false">{{ t }}</button>{% endfor %}
+      {% for s in severities %}<button class="chip" type="button" data-filter="sev:{{ s }}" aria-pressed="false">{{ s }}</button>{% endfor %}
+    </div>
+    <div class="findings">
+      {% for f in findings %}
+      <article class="card finding" id="{{ f.id }}" data-type="{{ f.type }}" data-sev="{{ f.severity }}">
+        <h3>{{ f.title }}</h3>
+        <div><span class="badge sev-{{ f.severity }}">{{ f.severity }}</span><span class="badge st-{{ f.review.status }}">{{ f.review.status }}</span><span class="mono">{{ f.type }}</span> · <span class="mono">{{ f.id }}</span> · {{ f.section_id }}</div>
+        {% for e in f.evidence %}
+          {% if e.kind == "doc" %}
+          <div class="muted">Document, page {{ e.page }}</div>
+          {% if e.quote %}<blockquote>{{ e.quote }}</blockquote>{% endif %}
+          {% else %}
+          <div class="muted mono">{{ e.file }}{% if e.line %}:{{ e.line }}{% endif %}</div>
+          {% if e.snippet %}<blockquote class="mono">{{ e.snippet }}</blockquote>{% endif %}
+          {% endif %}
+        {% endfor %}
+      </article>
+      {% else %}
+      <p class="muted">No findings yet.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="h-endpoints">
+    <h2 id="h-endpoints">Endpoints ({{ state.endpoints | length }})</h2>
+    <div class="scroll">
+      <table id="endpoints">
+        <thead><tr>
+          {% for col in ["Section", "Method", "Path", "Status", "Attempts", "Items", "Grounded", "Rows OK"] %}
+          <th scope="col"><button type="button" data-col="{{ loop.index0 }}">{{ col }}</button></th>
+          {% endfor %}
+        </tr></thead>
+        <tbody>
+          {% for e in state.endpoints %}
+          <tr><td>{{ e.section_id }}</td><td>{{ e.method }}</td><td class="mono">{{ e.path }}</td><td>{{ e.status }}</td><td>{{ e.attempts }}</td><td>{{ e["items"] }}</td><td>{{ e.grounded }}</td><td>{{ e.row_ok }}/{{ e.row_checked }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-compare" class="two">
+    <h2 id="h-compare" style="grid-column: 1 / -1">Community spec and client code</h2>
+    {% for name, group in [("Community OpenAPI comparison", community), ("Client conformance (py-unifi-access)", client), ("Spec self-consistency", spec)] %}
+    <div class="card">
+      <h3>{{ name }}</h3>
+      <div>{{ group.total }} candidate findings, {{ group.confirmed }} human-confirmed</div>
+      <ul>{% for t, n in group.by_type %}<li><span class="mono">{{ t }}</span>: {{ n }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section aria-labelledby="h-build">
+    <h2 id="h-build">How this was built</h2>
+    <div class="scroll"><table><thead><tr><th scope="col">Part</th><th scope="col">Built or produced by</th><th scope="col">Evidence</th></tr></thead><tbody>
+      {% for b in content.build %}<tr><td>{{ b.what }}</td><td>{{ b.who }}</td><td class="mono">{{ b.evidence }}</td></tr>{% endfor %}
+    </tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <h2 id="h-method">Methodology</h2>
+    <div class="scroll"><table><thead><tr><th scope="col">Rule</th><th scope="col">Check</th></tr></thead><tbody>
+      {% for r in content.rules %}<tr><td class="mono">{{ r.code }}</td><td>{{ r.rule }}</td></tr>{% endfor %}
+    </tbody></table></div>
+    <p class="muted">A sample conflict becomes a finding about the document only when both sides are grounded in the document. Otherwise the section is retried (at most 3 attempts) or quarantined.</p>
+  </section>
+
+  <section aria-labelledby="h-limits">
+    <h2 id="h-limits">Limitations</h2>
+    <ul>{% for l in content.limitations %}<li>{{ l }}</li>{% endfor %}</ul>
+  </section>
+
+  <section aria-labelledby="h-prior" id="prior-art">
+    <h2 id="h-prior">Prior art</h2>
+    <div class="scroll"><table><thead><tr><th scope="col">Work</th><th scope="col">What it does</th><th scope="col">What it does not do</th></tr></thead><tbody>
+      {% for p in content.prior_art %}<tr><td>{{ p.name }}</td><td>{{ p.does }}</td><td>{{ p.lacks }}</td></tr>{% endfor %}
+    </tbody></table></div>
+  </section>
+
+  <section aria-labelledby="h-lineage">
+    <h2 id="h-lineage">Lineage</h2>
+    <div class="scroll"><table><thead><tr><th scope="col">Artifact</th><th scope="col">sha256</th><th scope="col">Stage</th><th scope="col">Producer</th></tr></thead><tbody>
+      {% for r in state.lineage %}<tr><td class="mono">{{ r.artifact }}</td><td class="mono">{{ r.sha256[:12] }}</td><td>{{ r.stage }}</td><td>{{ r.producer }}</td></tr>{% endfor %}
+    </tbody></table></div>
+  </section>
+</main>
+<footer class="muted">
+  Content hash <span class="mono">{{ state.content_hash[:16] }}</span>. Generation times are recorded in artifacts/manifest.json, not in this page, so identical inputs give an identical page.
+</footer>
+<script>
+(function () {
+  var chips = document.querySelectorAll(".chip");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c === chip)); });
+      var f = chip.getAttribute("data-filter");
+      document.querySelectorAll(".finding").forEach(function (card) {
+        var show = f === "all" ||
+          (f.indexOf("type:") === 0 && card.getAttribute("data-type") === f.slice(5)) ||
+          (f.indexOf("sev:") === 0 && card.getAttribute("data-sev") === f.slice(4));
+        card.hidden = !show;
+      });
+    });
+  });
+  var table = document.getElementById("endpoints");
+  if (!table) { return; }
+  table.querySelectorAll("th button").forEach(function (button) {
+    var asc = true;
+    button.addEventListener("click", function () {
+      var col = Number(button.getAttribute("data-col"));
+      var body = table.tBodies[0];
+      var rows = Array.prototype.slice.call(body.rows);
+      rows.sort(function (a, b) {
+        var x = a.cells[col].textContent, y = b.cells[col].textContent;
+        var nx = parseFloat(x), ny = parseFloat(y);
+        var cmp = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y, undefined, {numeric: true});
+        return asc ? cmp : -cmp;
+      });
+      asc = !asc;
+      rows.forEach(function (r) { body.appendChild(r); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
