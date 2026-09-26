@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 124,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 124,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/import"
+    },
+    "permission_key": {
+      "page": 124,
+      "quote": "Permission        Key:    edit:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 124,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 124,
+        "quote": "file                         T                         File             A  CSV    file containing       NFC    IDs  or  optional      aliases."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "file",
+      "required": true,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "File"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/credentials/nfc_cards/import",
+  "permission_key": "edit:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 125,
+        "quote": "curl     --location         'https://192.168.1.1:12445/api/v1/developer/credentials/nfc_cards/import'                                                         \\"
+      },
+      "raw": "    curl     --location         'https://192.168.1.1:12445/api/v1/developer/credentials/nfc_cards/import'                                                         \\\n    --header        'Authorization:             Bearer      NVrB7qunKOFi/HcIjUMF0w'                   \\\n    --form      'file=@\"/Documents/nfcs.csv\"'"
+    },
+    "response": {
+      "citation": {
+        "page": 125,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"alias\":        \"alias1\",\n                         \"nfc_id\":         \"068E2836\",\n                         \"token\":        \"e0d473463b421f472f81baf0dbec7c066a5cca48bde4f7d40199d8aa15f9fc21\"\n                  },\n                  {\n                         \"alias\":        \"alias2\",\n                         \"nfc_id\":         \"068E2839\",\n                         \"token\":        \"6d29a729b99fdf5c1e1138deafc4c29a7c8567d10e1b298300a33b7d1dd4f05c\"\n                  },\n                  {\n                         \"alias\":        \"alias3\",\n                         \"nfc_id\":         \"068E2838\",\n                         \"token\":        \"082ff5a1d22c7488da657185d213979c987418416d8b99cd471346407d265130\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.19",
+  "title": "Import Third-Party NFC Cards"
+}

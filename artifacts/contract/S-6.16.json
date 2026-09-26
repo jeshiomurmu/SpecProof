@@ -1,0 +1,316 @@
+{
+  "citations": {
+    "path": {
+      "page": 120,
+      "quote": "Request       URL:    /api/v1/developer/credentials/touch_passes/:id"
+    },
+    "permission_key": {
+      "page": 120,
+      "quote": "Permission        Key:    view:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 120,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 120,
+        "quote": "id              T             String\nPass.                9287-1e6a161adeea                 /api/v1/developer/credentials/touch_passes/search"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 111,
+        "quote": "activated_at                               Object                     Timestamp         when     the   credential      is activated."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "activated_at",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "card_id                                    String                     Identifier     of  the  card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_id",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "card_name                                  String                     Display     name     of  the   card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_name",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "expired_at                                 Object                     Timestamp         when     the   credential      expires."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "expired_at",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "id                                         String                     Unique      identifier    of  the   credential      record."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "last_activity                              String                     Timestamp         of  the   last  activity   or  usage."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "last_activity",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "status                                     String"
+      },
+      "description": null,
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "SUSPENDED",
+        "INACTIVE",
+        "EXPIRED"
+      ],
+      "enum_citation": {
+        "page": 112,
+        "quote": "enum status {ACTIVE, PENDING, SUSPENDED, INACTIVE,\nstatus String\nEXPIRED}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "user_avatar                                String                     URL    to  the   user’s   avatar     image."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_avatar",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "user_email                                 String                     Email    address      of  the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "user_id                                    String                     Unique      identifier    of  the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_id",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "user_name                                  String                     Full  name      of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_name",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "user_status                                String"
+      },
+      "description": null,
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "UNLINK"
+      ],
+      "enum_citation": {
+        "page": 112,
+        "quote": "enum user_status {ACTIVE, PENDING, UNLINK} Status of"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_status",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 112,
+        "quote": "bundles                                    Array[Object]              List  of  mobile     credential      bundles      assigned      to  the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bundles",
+      "required": null,
+      "schema_ref": "S-6.11",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/touch_passes/:id",
+  "permission_key": "view:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 121,
+        "quote": "curl     --location         --request         GET"
+      },
+      "raw": "    curl     --location         --request         GET\n    'https://192.168.1.1:12445/api/v1/developer/credentials/touch_passes/c83b69ff-1992-4e7f-\n    9287-1e6a161adeea'               \\\n    --header        'Authorization:             Bearer      wHFmHR******kD6wHg'                \\\n    --header        'Content-Type:            application/json'"
+    },
+    "response": {
+      "citation": {
+        "page": 121,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"activated_at\":             {},\n           \"bundles\":         [\n              {\n                  \"bundle_id\":           \"caf6bd5b-6b8d-409a-b500-977a0f02b181\",\n                  \"bundle_status\":              \"ACTIVE\",\n                  \"device_id\":           \"device-id-1\",\n                  \"device_name\":            \"Test      Android\",\n                  \"device_type\":            20,\n                  \"source\":        \"google\"\n              }\n           ],\n           \"card_id\":         \"70A3-2FAD-181B-4CC9\",\n           \"card_name\":           \"\",\n           \"expired_at\":           {},\n           \"id\":     \"c83b69ff-1992-4e7f-9287-1e6a161adeea\",\n           \"last_activity\":              \"2025-04-09T17:49:20+08:00\",\n           \"status\":        \"ACTIVE\",\n           \"user_avatar\":            \"\",\n           \"user_email\":           \"example@ui.com\",\n           \"user_id\":         \"3e763e5d-6804-437d-ae8d-3fee74119b80\",\n           \"user_name\":           \"Example        Name\",\n           \"user_status\":            \"ACTIVE\"\n       },\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.16",
+  "title": "Fetch Touch Pass Details"
+}

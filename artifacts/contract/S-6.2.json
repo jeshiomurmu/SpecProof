@@ -1,0 +1,117 @@
+{
+  "citations": {
+    "method": {
+      "page": 103,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 103,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/sessions"
+    },
+    "permission_key": {
+      "page": 103,
+      "quote": "Permission        Key:    edit:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 103,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 103,
+        "quote": "device_id                 T                   String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "device_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 103,
+        "quote": "reset_ua_card             F                   Boolean"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "reset_ua_card",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 103,
+        "quote": "session_id    T            String                                        #6.3/api/v1/developer/credentials/nfc_cards/sessions/{session_id}"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "session_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/credentials/nfc_cards/sessions",
+  "permission_key": "edit:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 103,
+        "quote": "curl     '{{host}}/api/v1/developer/credentials/nfc_cards/sessions'"
+      },
+      "raw": "    curl     '{{host}}/api/v1/developer/credentials/nfc_cards/sessions'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\"device_id\":             \"0418d6a2bb7a\",             \"reset_ua_card\":              false}'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 104,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"msg\":      \"success\",\n           \"data\":       {\n                  \"session_id\":            \"e8a97c52-6676-4c48-8589-bd518afc4094\"\n           }\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.2",
+  "title": "Enroll NFC Card"
+}

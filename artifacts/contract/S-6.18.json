@@ -1,0 +1,73 @@
+{
+  "citations": {
+    "path": {
+      "page": 123,
+      "quote": "Request       URL:    /api/v1/developer/credentials/qr_codes/download/:visitor_id"
+    },
+    "permission_key": {
+      "page": 123,
+      "quote": "Permission        Key:    view:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 123,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 123,
+        "quote": "visitor_id             T                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "visitor_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/qr_codes/download/:visitor_id",
+  "permission_key": "view:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 124,
+        "quote": "curl     --location         --request         GET"
+      },
+      "raw": "    curl     --location         --request         GET\n    'https://192.168.1.1:12445/api/v1/developer/credentials/qr_codes/download/15a90692-6f3b-\n    4e1c-9886-bcd15e9c3f2d'                   \\\n    --header        'Authorization:             Bearer      s4KgshBaoXTWxWfAHLPwDw'                   \\\n    --header        'Content-Type:            application/json'               \\\n    --output        visitor_qr_code.png                \\\n    --insecure"
+    },
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-6.18",
+  "title": "Download QR Code Image"
+}

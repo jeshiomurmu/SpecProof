@@ -1,0 +1,255 @@
+{
+  "citations": {
+    "path": {
+      "page": 116,
+      "quote": "Request       URL:    /api/v1/developer/credentials/touch_passes/assignable"
+    },
+    "permission_key": {
+      "page": 116,
+      "quote": "Permission        Key:    view:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 116,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "id                          String            Unique      identifier     of the   Touch     Pass."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "card_id                     String            Card    ID  associated       with    the  Touch     Pass."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "card_name                   String            Optional      name      of  the  card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "last_activity               String            Timestamp         of  the   last  recorded       activity."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "last_activity",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "status                      String             enum     status      {SUSPENDED,          INACTIVE}         Status    of  the   Touch     Pass."
+      },
+      "description": null,
+      "enum": [
+        "SUSPENDED",
+        "INACTIVE"
+      ],
+      "enum_citation": {
+        "page": 116,
+        "quote": "status                      String             enum     status      {SUSPENDED,          INACTIVE}         Status    of  the   Touch     Pass."
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "user_id                     String            Unique      identifier     of the   user    (empty     if unassigned)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "user_name                   String            Full  name      of  the   user   (empty      if unassigned)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "user_email                  String            Email    of  the   user    (empty     if unassigned)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "user_status                 String            Status    of  the   user    (empty     if unassigned)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "user_avatar                 String            URL    to  the   user’s    avatar    (empty     if unassigned)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_avatar",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 116,
+        "quote": "bundles                     Array             Reserved       for  future    use    (currently     always     empty)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bundles",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/touch_passes/assignable",
+  "permission_key": "view:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 117,
+        "quote": "curl     --location         --request         GET"
+      },
+      "raw": "    curl     --location         --request         GET\n    'https://192.168.1.1:12445/api/v1/developer/credentials/touch_passes/assignable'                                                               \\\n    --header        'Authorization:             Bearer      wHFmHR******kD6wHg'                \\\n    --header        'Content-Type:            application/json'               \\\n    --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 116,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       [\n           {\n              \"bundles\":          [],\n              \"card_id\":          \"0007-130C-4845-4A01\",\n              \"card_name\":           \"\",\n              \"id\":      \"2d75e424-6171-4e86-900b-aa696fb05893\",\n              \"last_activity\":              \"2025-04-09T13:40:28+08:00\",\n              \"status\":         \"INACTIVE\",\n              \"user_avatar\":             \"\",\n              \"user_email\":            \"\",\n              \"user_id\":          \"\",\n              \"user_name\":           \"\",\n              \"user_status\":             \"\"\n           },\n           {\n              \"bundles\":          [],\n              \"card_id\":          \"70A3-2FAD-181B-4CC9\",\n              \"card_name\":           \"\",\n              \"id\":      \"c83b69ff-1992-4e7f-9287-1e6a161adeea\",\n              \"last_activity\":              \"2025-04-09T13:40:28+08:00\",\n              \"status\":         \"INACTIVE\",\n              \"user_avatar\":             \"\",\n              \"user_email\":            \"\",\n              \"user_id\":          \"\",\n              \"user_name\":           \"\",\n              \"user_status\":             \"\"\n           }\n       ],\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.14",
+  "title": "Fetch All Assignable Touch Passes"
+}

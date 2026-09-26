@@ -1,0 +1,230 @@
+{
+  "citations": {
+    "path": {
+      "page": 106,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/tokens/:token"
+    },
+    "permission_key": {
+      "page": 106,
+      "quote": "Permission        Key:    view:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 107,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 107,
+        "quote": "token          T            String                             821f90b262e90c5c0fbcddf3d6d2f3b94cc015d6e8104ab4fb96e4c8b8e90cb7"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "token",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "token                         String           Identity    token     of  the  NFC     card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "token",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "display_id                    String           Display     ID  of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "display_id",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "status                        String"
+      },
+      "description": null,
+      "enum": [
+        "assigned",
+        "pending",
+        "disable",
+        "deleted",
+        "loss"
+      ],
+      "enum_citation": {
+        "page": 106,
+        "quote": "{assigned,pending,disable,deleted,loss}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "alias                         String           Preferred      name      of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "alias",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "card_type                     String           Type    of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_type",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user_id                       String           Owner      ID  of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_id",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user_type                     String           Type    of  the   owner.      enum     user_type        {USER,VISITOR}"
+      },
+      "description": null,
+      "enum": [
+        "USER",
+        "VISITOR"
+      ],
+      "enum_citation": {
+        "page": 106,
+        "quote": "user_type                     String           Type    of  the   owner.      enum     user_type        {USER,VISITOR}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_type",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user                          Object           Owner      of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "object",
+      "type_raw": "Object"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/nfc_cards/tokens/:token",
+  "permission_key": "view:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 108,
+        "quote": "'{{host}}/api/v1/developer/credentials/nfc_cards/tokens/f77d69b08eaf5eb5d647ac1a0a73580f1b27"
+      },
+      "raw": "    curl     -XGET\n    '{{host}}/api/v1/developer/credentials/nfc_cards/tokens/f77d69b08eaf5eb5d647ac1a0a73580f1b27\n    494b345f40f54fa022a8741fa15c'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 107,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"alias\":        \"\",\n                  \"card_type\":           \"ua_card\",\n                  \"display_id\":            \"100005\",\n                  \"note\":       \"100005\",\n                  \"status\":        \"assigned\",\n                  \"token\":        \"f77d69b08eaf5eb5d647ac1a0a73580f1b27494b345f40f54fa022a8741fa15c\",\n                  \"user\":       {\n                         \"avatar\":         \"\",\n                         \"first_name\":            \"H\",\n                         \"id\":     \"e0051e08-c4d5-43db-87c8-a9b19cb66513\",\n                         \"last_name\":           \"L\",\n                         \"name\":       \"H   L\"\n                  },\n                  \"user_id\":         \"e0051e08-c4d5-43db-87c8-a9b19cb66513\",\n                  \"user_type\":           \"USER\"\n           },\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.7",
+  "title": "Fetch NFC Card"
+}

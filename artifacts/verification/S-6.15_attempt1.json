@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 28,
+    "items": 28,
+    "row_checked": 7,
+    "row_ok": 7,
+    "rows_detected": 7,
+    "samples": 2,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 119,
+        "quote": "curl     --location         --request         PUT"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Expecting property name enclosed in double quotes (line 4)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-6.15"
+}

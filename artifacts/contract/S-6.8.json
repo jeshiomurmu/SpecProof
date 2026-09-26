@@ -1,0 +1,247 @@
+{
+  "citations": {
+    "path": {
+      "page": 108,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/tokens"
+    },
+    "permission_key": {
+      "page": 108,
+      "quote": "Permission        Key:    view:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 108,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 108,
+        "quote": "page_num                   F                       String            Current     page     number       in the   pagination.                     1"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_num",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 108,
+        "quote": "page_size                  F                       String            Number       of  users    per   page.                                      25"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_size",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "token                         String           Identity    token     of  the  NFC     card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "token",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "display_id                    String           Display     ID  of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "display_id",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "status                        String"
+      },
+      "description": null,
+      "enum": [
+        "assigned",
+        "pending",
+        "disable",
+        "deleted",
+        "loss"
+      ],
+      "enum_citation": {
+        "page": 106,
+        "quote": "{assigned,pending,disable,deleted,loss}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "alias                         String           Preferred      name      of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "alias",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "card_type                     String           Type    of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_type",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user_id                       String           Owner      ID  of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_id",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user_type                     String           Type    of  the   owner.      enum     user_type        {USER,VISITOR}"
+      },
+      "description": null,
+      "enum": [
+        "USER",
+        "VISITOR"
+      ],
+      "enum_citation": {
+        "page": 106,
+        "quote": "user_type                     String           Type    of  the   owner.      enum     user_type        {USER,VISITOR}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_type",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 106,
+        "quote": "user                          Object           Owner      of  the   NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user",
+      "required": null,
+      "schema_ref": "S-6.6",
+      "type": "object",
+      "type_raw": "Object"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/nfc_cards/tokens",
+  "permission_key": "view:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 109,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/credentials/nfc_cards/tokens?page_num=1&page_size=12'"
+      },
+      "raw": "    curl     -XGET     '{{host}}/api/v1/developer/credentials/nfc_cards/tokens?page_num=1&page_size=12'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 108,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"alias\":        \"\",\n                         \"card_type\":           \"ua_card\",\n                         \"display_id\":            \"100004\",\n                         \"note\":       \"100004\",\n                         \"status\":         \"assigned\",\n                         \"token\":        \"9e24cdfafebf63e58fd02c5f67732b478948e5793d31124239597d9a86b30dc4\",\n                         \"user\":       {\n                                \"avatar\":         \"\",\n                                \"first_name\":            \"H\",\n                                \"id\":      \"e0051e08-c4d5-43db-87c8-a9b19cb66513\",\n                                \"last_name\":           \"L\",\n                                \"name\":       \"H   L\"\n                         },\n                         \"user_id\":         \"e0051e08-c4d5-43db-87c8-a9b19cb66513\",\n                         \"user_type\":           \"USER\"\n                  },\n                  {\n                         \"alias\":        \"F77D69B03\",\n                         \"card_type\":           \"ua_card\",\n                         \"display_id\":            \"100005\",\n                         \"note\":       \"100005\",\n                         \"status\":         \"assigned\",\n                         \"token\":        \"f77d69b08eaf5eb5d647ac1a0a73580f1b27494b345f40f54fa022a8741fa15c\",\n                         \"user\":       {\n                                \"avatar\":         \"\",\n                                \"first_name\":            \"H2\",\n                                \"id\":      \"34dc90a7-409f-4bf8-a5a8-1c59535a21b9\",\n                                \"last_name\":           \"L\",\n                                \"name\":       \"H2    L\"\n                         },\n                         \"user_id\":         \"34dc90a7-409f-4bf8-a5a8-1c59535a21b9\",\n                         \"user_type\":           \"VISITOR\"\n                  }\n           ],\n           \"msg\":      \"succ\",\n           \"pagination\":           {\n                  \"page_num\":          1,\n                  \"page_size\":           2,\n                  \"total\":        2\n           }\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.8",
+  "title": "Fetch All NFC Cards"
+}

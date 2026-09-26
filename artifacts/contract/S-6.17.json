@@ -1,0 +1,270 @@
+{
+  "citations": {
+    "method": {
+      "page": 122,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 121,
+      "quote": "Request       URL:    /api/v1/developer/credentials/touch_passes"
+    },
+    "permission_key": {
+      "page": 122,
+      "quote": "Permission        Key:    edit:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 122,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "count                   T                     Int                                                                                         Manual      input"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "count",
+      "required": true,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Int"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "id                             String              ID  of  the   newly    purchased        Touch     Pass."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "card_id                        String              Card    ID  assigned      to  the   pass."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "card_name                      String              Card    alias  or   name.     Initially   empty."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "status                         String              Initial  Touch     Pass    status    after   purchase       (INACTIVE)."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "last_activity                  String              Timestamp         of  the  last   activity   or  usage."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "last_activity",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "bundles                        Array               Empty     array    by  default."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "bundles",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "user_id                        String              Empty     string;    Touch     Pass   is  not   yet  assigned      to  any   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "user_name                      String              Empty     string;    Touch     Pass   is  not   yet  assigned      to  any   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "user_email                     String              Empty     string;    Touch     Pass   is  not   yet  assigned      to  any   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "user_avatar                    String              Empty     string."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_avatar",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 122,
+        "quote": "user_status                    String              Empty     string."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/credentials/touch_passes",
+  "permission_key": "edit:credential",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 123,
+        "quote": "curl     --location         'https://192.168.1.1:12445/api/v1/developer/credentials/touch_passes'                                                      \\"
+      },
+      "raw": "    curl     --location         'https://192.168.1.1:12445/api/v1/developer/credentials/touch_passes'                                                      \\\n    --header        'Authorization:             Bearer      wHFmHR******kD6wHg'                \\\n    --header        'Content-Type:            application/json'               \\\n    --data      '{\n       \"count\":        2\n    }'"
+    },
+    "response": {
+      "citation": {
+        "page": 122,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"bundles\":         [],\n           \"card_id\":         \"F8AD-3A41-787D-4D30\",\n           \"card_name\":           \"\",\n           \"id\":     \"31fa3c4e-4a42-4021-a3f9-6ae08610cf32\",\n           \"last_activity\":              \"2025-04-03T10:28:42+01:00\",\n           \"status\":        \"INACTIVE\",\n           \"user_avatar\":            \"\",\n           \"user_email\":           \"\",\n           \"user_id\":         \"\",\n           \"user_name\":           \"\",\n           \"user_status\":            \"\"\n       },\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.17",
+  "title": "Purchase Touch Passes"
+}

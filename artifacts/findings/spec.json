@@ -191,6 +191,28 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 119,
+        "quote": "curl     --location         --request         PUT",
+        "snippet": null
+      }
+    ],
+    "id": "F-d0f1ee66",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-6.15",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 96,
         "quote": "id                  T                String                                    /api/v1/developer/access_policies",
         "snippet": null

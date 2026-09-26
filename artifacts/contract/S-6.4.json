@@ -1,0 +1,77 @@
+{
+  "citations": {
+    "method": {
+      "page": 105,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 105,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/sessions/:id"
+    },
+    "permission_key": {
+      "page": 105,
+      "quote": "Permission        Key:    edit:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 105,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 105,
+        "quote": "id                   T                  String                                                                                               from   the  API"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/credentials/nfc_cards/sessions/:id",
+  "permission_key": "edit:credential",
+  "samples": {
+    "request": null,
+    "response": {
+      "citation": {
+        "page": 106,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.4",
+  "title": "Remove a Session Created for NFC Card Enrollment"
+}

@@ -1,0 +1,107 @@
+{
+  "citations": {
+    "path": {
+      "page": 104,
+      "quote": "Request       URL:    /api/v1/developer/credentials/nfc_cards/sessions/:id"
+    },
+    "permission_key": {
+      "page": 104,
+      "quote": "Permission        Key:    edit:credential"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 104,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 104,
+        "quote": "id                   T                  String                                                                                               from   the  API"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 104,
+        "quote": "token               T                  String                                                                                        token   is used   to bind"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "token",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 104,
+        "quote": "card_id             T                  String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "card_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/credentials/nfc_cards/sessions/:id",
+  "permission_key": "edit:credential",
+  "samples": {
+    "request": null,
+    "response": {
+      "citation": {
+        "page": 105,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"msg\":      \"success\",\n           \"data\":       {\n                  \"card_id\":         \"014A3151\",\n                  \"token\":        \"821f90b262e90c5c0fbcddf3d6d2f3b94cc015d6e8104ab4fb96e4c8b8e90cb7\"\n           }\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-6.3",
+  "title": "Fetch NFC Card Enrollment Status"
+}
