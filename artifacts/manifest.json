@@ -2551,7 +2551,7 @@
   },
   {
     "artifact": "artifacts/findings/spec.json",
-    "created_at": "2026-09-26T06:05:34Z",
+    "created_at": "2026-09-26T06:06:53Z",
     "inputs": [
       {
         "path": "artifacts/verification/S-10.1.json",
@@ -2559,7 +2559,7 @@
       },
       {
         "path": "artifacts/verification/S-10.2.json",
-        "sha256": "6acbab9a9fc37f5c12927ae8974618be02aaaaadc919b0027721a2073b335de2"
+        "sha256": "2f916329925c8de3141470c7d4fc4cce41c2d2856a4c616f34f66bfd08472540"
       },
       {
         "path": "artifacts/verification/S-10.3.json",
@@ -2567,7 +2567,7 @@
       },
       {
         "path": "artifacts/verification/S-10.4.json",
-        "sha256": "3c8a4d4cb8de98f653bf160d153ea0b5c4d944de5385646cd0dc9c155d56d0c1"
+        "sha256": "0be67a3a711c016d4cff930ae332e07c461e85099731fc21cbc59fdc7571218d"
       },
       {
         "path": "artifacts/verification/S-10.5.json",
@@ -2575,7 +2575,7 @@
       },
       {
         "path": "artifacts/verification/S-10.6.json",
-        "sha256": "90c8a3d68ee680d9a7db5c5d13b8074f847432808734d82f79698b1bad7d7d3e"
+        "sha256": "33436c6bb83b69605bab3a7938a8b89eedd1ecd0a5555c8b2bf17783256820e0"
       },
       {
         "path": "artifacts/verification/S-11.1.json",
@@ -3003,7 +3003,7 @@
       },
       {
         "path": "artifacts/verification/S-9.2.json",
-        "sha256": "08cf9fb6658177886ac1f63175b01f7450ba381f11c50a71fa4e1e4704c2a356"
+        "sha256": "9f1f769d64300a6f2f4cbe08f4f2678246db2347fb05d5bd7a410829ad7d96d0"
       },
       {
         "path": "artifacts/verification/S-9.3.json",
@@ -3046,7 +3046,7 @@
   },
   {
     "artifact": "artifacts/status.json",
-    "created_at": "2026-09-26T06:05:34Z",
+    "created_at": "2026-09-26T06:06:52Z",
     "inputs": [
       {
         "path": "artifacts/verification/S-10.1.json",
@@ -3054,7 +3054,7 @@
       },
       {
         "path": "artifacts/verification/S-10.2.json",
-        "sha256": "6acbab9a9fc37f5c12927ae8974618be02aaaaadc919b0027721a2073b335de2"
+        "sha256": "2f916329925c8de3141470c7d4fc4cce41c2d2856a4c616f34f66bfd08472540"
       },
       {
         "path": "artifacts/verification/S-10.3.json",
@@ -3062,7 +3062,7 @@
       },
       {
         "path": "artifacts/verification/S-10.4.json",
-        "sha256": "3c8a4d4cb8de98f653bf160d153ea0b5c4d944de5385646cd0dc9c155d56d0c1"
+        "sha256": "0be67a3a711c016d4cff930ae332e07c461e85099731fc21cbc59fdc7571218d"
       },
       {
         "path": "artifacts/verification/S-10.5.json",
@@ -3070,7 +3070,7 @@
       },
       {
         "path": "artifacts/verification/S-10.6.json",
-        "sha256": "90c8a3d68ee680d9a7db5c5d13b8074f847432808734d82f79698b1bad7d7d3e"
+        "sha256": "33436c6bb83b69605bab3a7938a8b89eedd1ecd0a5555c8b2bf17783256820e0"
       },
       {
         "path": "artifacts/verification/S-11.1.json",
@@ -3498,7 +3498,7 @@
       },
       {
         "path": "artifacts/verification/S-9.2.json",
-        "sha256": "08cf9fb6658177886ac1f63175b01f7450ba381f11c50a71fa4e1e4704c2a356"
+        "sha256": "9f1f769d64300a6f2f4cbe08f4f2678246db2347fb05d5bd7a410829ad7d96d0"
       },
       {
         "path": "artifacts/verification/S-9.3.json",
@@ -3578,7 +3578,7 @@
   },
   {
     "artifact": "artifacts/verification/S-10.2.json",
-    "created_at": "2026-09-26T06:04:37Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.2.json",
@@ -3599,12 +3599,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "6acbab9a9fc37f5c12927ae8974618be02aaaaadc919b0027721a2073b335de2",
+    "sha256": "2f916329925c8de3141470c7d4fc4cce41c2d2856a4c616f34f66bfd08472540",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-10.2_attempt1.json",
-    "created_at": "2026-09-26T06:04:37Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.2.json",
@@ -3625,7 +3625,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "6acbab9a9fc37f5c12927ae8974618be02aaaaadc919b0027721a2073b335de2",
+    "sha256": "2f916329925c8de3141470c7d4fc4cce41c2d2856a4c616f34f66bfd08472540",
     "stage": "verify"
   },
   {
@@ -3682,7 +3682,7 @@
   },
   {
     "artifact": "artifacts/verification/S-10.4.json",
-    "created_at": "2026-09-26T06:04:38Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.4.json",
@@ -3704,12 +3704,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "3c8a4d4cb8de98f653bf160d153ea0b5c4d944de5385646cd0dc9c155d56d0c1",
+    "sha256": "0be67a3a711c016d4cff930ae332e07c461e85099731fc21cbc59fdc7571218d",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-10.4_attempt1.json",
-    "created_at": "2026-09-26T06:04:38Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.4.json",
@@ -3731,7 +3731,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "3c8a4d4cb8de98f653bf160d153ea0b5c4d944de5385646cd0dc9c155d56d0c1",
+    "sha256": "0be67a3a711c016d4cff930ae332e07c461e85099731fc21cbc59fdc7571218d",
     "stage": "verify"
   },
   {
@@ -3788,7 +3788,7 @@
   },
   {
     "artifact": "artifacts/verification/S-10.6.json",
-    "created_at": "2026-09-26T06:04:38Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.6.json",
@@ -3810,12 +3810,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "90c8a3d68ee680d9a7db5c5d13b8074f847432808734d82f79698b1bad7d7d3e",
+    "sha256": "33436c6bb83b69605bab3a7938a8b89eedd1ecd0a5555c8b2bf17783256820e0",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-10.6_attempt1.json",
-    "created_at": "2026-09-26T06:04:38Z",
+    "created_at": "2026-09-26T06:06:45Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-10.6.json",
@@ -3837,7 +3837,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "90c8a3d68ee680d9a7db5c5d13b8074f847432808734d82f79698b1bad7d7d3e",
+    "sha256": "33436c6bb83b69605bab3a7938a8b89eedd1ecd0a5555c8b2bf17783256820e0",
     "stage": "verify"
   },
   {
@@ -10095,7 +10095,7 @@
   },
   {
     "artifact": "artifacts/verification/S-9.2.json",
-    "created_at": "2026-09-26T04:30:56Z",
+    "created_at": "2026-09-26T06:06:51Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-9.2.json",
@@ -10117,12 +10117,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "08cf9fb6658177886ac1f63175b01f7450ba381f11c50a71fa4e1e4704c2a356",
+    "sha256": "9f1f769d64300a6f2f4cbe08f4f2678246db2347fb05d5bd7a410829ad7d96d0",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-9.2_attempt1.json",
-    "created_at": "2026-09-26T04:30:56Z",
+    "created_at": "2026-09-26T06:06:51Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-9.2.json",
@@ -10144,7 +10144,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "08cf9fb6658177886ac1f63175b01f7450ba381f11c50a71fa4e1e4704c2a356",
+    "sha256": "9f1f769d64300a6f2f4cbe08f4f2678246db2347fb05d5bd7a410829ad7d96d0",
     "stage": "verify"
   },
   {

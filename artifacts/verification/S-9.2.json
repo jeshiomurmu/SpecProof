@@ -29,30 +29,6 @@
         "page": 157,
         "quote": "\"code\":       \"SUCCESS\","
       },
-      "field": "actor",
-      "hint": null,
-      "message": "response data sample: 'event' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 157,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "event",
-      "hint": null,
-      "message": "response data sample: 'actor' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 157,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
       "field": "event",
       "hint": null,
       "message": "response data sample: 'event' is a required property",

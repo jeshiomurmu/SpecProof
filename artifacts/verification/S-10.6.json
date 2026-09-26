@@ -29,79 +29,7 @@
         "page": 169,
         "quote": "\"code\":       \"SUCCESS\","
       },
-      "field": "deleted",
-      "hint": null,
-      "message": "response data sample: 'id' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "deleted",
-      "hint": null,
-      "message": "response data sample: 'name' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
       "field": "id",
-      "hint": null,
-      "message": "response data sample: 'deleted' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "id",
-      "hint": null,
-      "message": "response data sample: 'id' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "id",
-      "hint": null,
-      "message": "response data sample: 'name' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "name",
-      "hint": null,
-      "message": "response data sample: 'deleted' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 169,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "name",
       "hint": null,
       "message": "response data sample: 'id' is a required property",
       "severity": "warning"
