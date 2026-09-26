@@ -116,6 +116,8 @@ def _validate(instance: Any, schema: dict[str, Any], which: str, cite: Citation)
 
 
 def _request_issues(contract: ContractSection, payload: Any, cite: Citation) -> list[Issue]:
+    if not any(f.location == "body" for f in contract.fields):
+        return []
     issues = _validate(payload, build_request_schema(contract), "request", cite)
     if isinstance(payload, dict):
         known = {f.name for f in contract.fields if f.location == "body"}

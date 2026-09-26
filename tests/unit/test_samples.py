@@ -139,6 +139,16 @@ def test_SMP_012_short_data_flag(good: Good) -> None:
 
 
 @pytest.mark.unit
+def test_SMP_013_undocumented_body_is_not_type_checked(good: Good) -> None:
+    data = good("S-2.3")
+    data["samples"]["request"] = {
+        "raw": "curl -XPUT '{{host}}/x'\n --data '[\n \"abcd\"\n ]'",
+        "citation": {"page": 6, "quote": "Request URL: /api/v1/widgets/:id"},
+    }
+    assert _codes(ContractSection.model_validate(data)) == []
+
+
+@pytest.mark.unit
 def test_SMP_009_schema_build_golden(good: Good) -> None:
     schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))
     assert schema == json.loads(GOLDEN.read_text(encoding="utf-8"))
