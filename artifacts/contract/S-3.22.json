@@ -1,0 +1,79 @@
+{
+  "citations": {
+    "path": {
+      "page": 40,
+      "quote": "Request       URL:    /api/v1/developer/user_groups/:id/access_policies"
+    },
+    "permission_key": {
+      "page": 40,
+      "quote": "Permission        Key:    view:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 40,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 40,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/user_groups/:id/access_policies",
+  "permission_key": "view:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 40,
+        "quote": "curl     -XGET     '{{host}}/user_groups/23676a54-382e-4121-aa80-878d2d9bacaa/access_policies'"
+      },
+      "raw": "    curl     -XGET     '{{host}}/user_groups/23676a54-382e-4121-aa80-878d2d9bacaa/access_policies'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 41,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"id\":     \"89a4ca95-1502-4ae7-954f-d986b67afe5c\",\n                         \"name\":       \"Default        Site     Policy\",\n                         \"resources\":           [\n                                {\n                                       \"id\":      \"fd2a06e2-81af-4cf4-9bd5-8bceb5e7b7d7\",\n                                       \"type\":       \"door_group\"\n                                }\n                         ],\n                         \"schedule_id\":            \"6b79d12a-2a6e-4463-949c-f1a98fff40d2\"\n                  },\n                  {\n                         \"id\":     \"bbe48a65-2ac1-4bf6-bd65-bc8f9ee7fb75\",\n                         \"name\":       \"Access       Policy      Name\",\n                         \"resources\":           [],\n                         \"schedule_id\":            \"f7414bcd-f0cc-4d3e-811a-b5ac75f7ddb8\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.22",
+  "title": "Fetch the Access Policies Assigned to a User Group"
+}

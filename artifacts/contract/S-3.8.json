@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 24,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/nfc_cards/delete"
+    },
+    "permission_key": {
+      "page": 24,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 24,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 24,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 25,
+        "quote": "token                   T                     String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "token",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/users/:id/nfc_cards/delete",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 25,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/users/17d2f099-99df-429b-becb-"
+      },
+      "raw": "    curl     -XDELETE       '{{host}}/api/v1/developer/users/17d2f099-99df-429b-becb-\n    1399a6937e5a/nfc_cards/delete'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           -d   '{\n                  \"token\":        \"d27822fc682b478dc637c6db01813e465174df6e54ca515d8427db623cfda1d0\"\n           }'"
+    },
+    "response": {
+      "citation": {
+        "page": 25,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.8",
+  "title": "Unassign NFC Card from User"
+}

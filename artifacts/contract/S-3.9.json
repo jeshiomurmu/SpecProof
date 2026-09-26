@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 25,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/pin_codes"
+    },
+    "permission_key": {
+      "page": 25,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 25,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 25,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 26,
+        "quote": "pin_code               T                    String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/users/:id/pin_codes",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 26,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/users/17d2f099-99df-429b-becb-1399a6937e5a/pin_codes'"
+      },
+      "raw": "    curl     -XPUT     '{{host}}/api/v1/developer/users/17d2f099-99df-429b-becb-1399a6937e5a/pin_codes'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\n                  \"pin_code\":          \"57301208\"\n           }'"
+    },
+    "response": {
+      "citation": {
+        "page": 26,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.9",
+  "title": "Assign PIN Code to User"
+}

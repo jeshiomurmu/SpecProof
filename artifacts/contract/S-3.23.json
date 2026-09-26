@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 41,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 41,
+      "quote": "Request       URL:    /api/v1/developer/users/:id"
+    },
+    "permission_key": {
+      "page": 41,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 41,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 42,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/users/:id",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 42,
+        "quote": "curl     -XDELETE       '{{host}}/api/v1/developer/developer/users/348e868e-534a-4ace-ba77-"
+      },
+      "raw": "    curl     -XDELETE       '{{host}}/api/v1/developer/developer/users/348e868e-534a-4ace-ba77-\n    ce80394e31e3'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 42,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.23",
+  "title": "Delete User"
+}

@@ -1,0 +1,392 @@
+{
+  "citations": {
+    "path": {
+      "page": 19,
+      "quote": "Request       URL:    /api/v1/developer/users"
+    },
+    "permission_key": {
+      "page": 19,
+      "quote": "Permission        Key:    view:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 19,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 19,
+        "quote": "expand[]                F                     Boolean            access    policies     assigned      to  a user             expand[]=access_policy"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "expand[]",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    },
+    {
+      "citation": {
+        "page": 19,
+        "quote": "page_num                F                     String                                                                         1"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_num",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 19,
+        "quote": "page_size               F                     String             Number       of  users    per   page.                       25"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "page_size",
+      "required": false,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "Id                                                     String                    Identity    ID  of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "Id",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "first_name                                             String                    First  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "first_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "last_name                                              String                    Last  name      of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "last_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "full_name                                              String                    Full  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "full_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "alias                                                  String                    Preferred      name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "alias",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "user_email                                             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "email_status                                           String                    The   status    of the   user's    email."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "email_status",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "phone                                                  String                    Contact     phone     number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "phone",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "employee_number                                        String                    Employee       number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "employee_number",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "onboard_time                                           Integer                   User   onboarding        date."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "onboard_time",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "nfc_cards                                              Array[Object]             Token    associated       with   the   bound     NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "nfc_cards",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "pin_code                                               Object                    Token    associated       with   the   bound     PIN   code."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "pin_code",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policy_ids                                      Array[String]             Collection     of  the  access     policy   ID."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "access_policy_ids",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[String]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policies                                        Array[Object]             All policies    assigned      to the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "access_policies",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "status                                                 String"
+      },
+      "description": null,
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "DEACTIVATED"
+      ],
+      "enum_citation": {
+        "page": 13,
+        "quote": "enum   status   {ACTIVE,PENDING,DEACTIVATED}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "touch_pass                                             Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "touch_pass",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/users",
+  "permission_key": "view:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 22,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/users?page_num=1&page_size=25&expand[]=access_policy'"
+      },
+      "raw": "    curl     -XGET     '{{host}}/api/v1/developer/users?page_num=1&page_size=25&expand[]=access_policy'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 20,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       [\n           {\n              \"access_policies\":                [\n                  {\n                     \"id\":      \"73f15cab-c725-4a76-a419-a4026d131e96\",\n                     \"name\":       \"Default        Admin      Policy\",\n                     \"resources\":           [\n                         {\n                            \"id\":      \"d5573467-d6b3-4e8f-8e48-8a322b91664a\",\n                            \"type\":        \"door_group\"\n                         },\n                         {\n                            \"id\":      \"5c496423-6d25-4e4f-8cdf-95ad5135188a\",\n                            \"type\":        \"door_group\"\n                         }\n                     ],\n                     \"schedule_id\":             \"73facd6c-839e-4521-a4f4-c07e1d44e748\"\n                  }\n              ],\n              \"access_policy_ids\":                 [\n                  \"73f15cab-c725-4a76-a419-a4026d131e96\"\n              ],\n              \"employee_number\":                \"\",\n              \"first_name\":            \"UniFi\",\n              \"id\":      \"83569f9b-0096-48ab-b2e4-5c9a598568a8\",\n              \"last_name\":           \"User\",\n              \"touch_pass\":            {\n                  \"activated_at\":             {},\n                  \"bundles\":         [\n                     {\n                         \"bundle_id\":           \"caf6bd5b-6b8d-409a-b500-977a0f02b181\",\n                         \"bundle_status\":              \"SUSPENDED\",\n                         \"device_id\":           \"device-id-1\",\n                         \"device_name\":            \"Example        Android\",\n                         \"device_type\":            20,\n                         \"source\":         \"google\"\n                     }\n                  ],\n                  \"card_id\":         \"70A3-2FAD-181B-4CC9\",\n                  \"card_name\":           \"Test\",\n                  \"expired_at\":            {},\n                  \"id\":     \"c83b69ff-1992-4e7f-9287-1e6a161adeea\",\n                  \"last_activity\":              \"2025-04-10T00:46:20+08:00\",\n                  \"status\":        \"SUSPENDED\",\n           \"user_avatar\":            \"\",\n           \"user_email\":            \"example@ui.com\",\n           \"user_id\":         \"3e763e5d-6804-437d-ae8d-3fee74119b80\",\n           \"user_name\":           \"Example        Name\",\n           \"user_status\":            \"ACTIVE\"\n       },\n       \"user_email\":            \"\",\n       \"nfc_cards\":           [],\n       \"license_plates\":               [\n       {\n           \"credential\":            \"jq178\",\n           \"credential_status\":                 \"active\",\n           \"credential_type\":               \"license\",\n           \"id\":     \"5cac1825-f5e9-410d-a32e-a1fb9fc83b92\"\n       }\n    ],\n       \"onboard_time\":              0,\n       \"pin_code\":          null,\n       \"status\":         \"ACTIVE\"\n    },\n    {\n       \"access_policies\":                [\n           {\n              \"id\":      \"c1682fb8-ef6e-4fe2-aa8a-b6f29df753ff\",\n              \"name\":       \"policy_1690272668035\",\n              \"resources\":           [\n                  {\n                     \"id\":      \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                     \"type\":        \"door\"\n                  }\n              ],\n              \"schedule_id\":             \"0616ef06-b807-4372-9ae0-7a87e12e4019\"\n           }\n       ],\n       \"access_policy_ids\":                 [\n           \"c1682fb8-ef6e-4fe2-aa8a-b6f29df753ff\"\n       ],\n       \"employee_number\":                \"\",\n       \"first_name\":            \"Ttttt\",\n       \"id\":      \"3a3ba57a-796e-46e0-b8f3-478bb70a114d\",\n       \"last_name\":           \"Tttt\",\n       \"nfc_cards\":           [],\n       \"onboard_time\":              1689048000,\n       \"pin_code\":          null,\n       \"status\":         \"ACTIVE\"\n    }\n],\n\"msg\":       \"success\",\n\"pagination\":            {\n    \"page_num\":          1,\n    \"page_size\":           97,\n    \"total\":        97\n}\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.5",
+  "title": "Fetch All Users"
+}

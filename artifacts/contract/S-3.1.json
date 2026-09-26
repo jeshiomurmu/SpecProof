@@ -1,0 +1,428 @@
+{
+  "citations": {},
+  "definitions": [
+    {
+      "citation": {
+        "page": 12,
+        "quote": "Id                                                     String                    Identity    ID  of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "Id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "first_name                                             String                    First  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "first_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "last_name                                              String                    Last  name      of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "last_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "full_name                                              String                    Full  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "full_name",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "alias                                                  String                    Preferred      name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "alias",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "user_email                                             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "email_status                                           String                    The   status    of the   user's    email."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "email_status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "phone                                                  String                    Contact     phone     number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "phone",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "employee_number                                        String                    Employee       number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "employee_number",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "onboard_time                                           Integer                   User   onboarding        date."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "onboard_time",
+      "required": null,
+      "schema_ref": null,
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "nfc_cards                                              Array[Object]             Token    associated       with   the   bound     NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "nfc_cards",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "nfc_cards[].id                                         String                    Display    ID  of  the   NFC   card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "nfc_cards[].id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "nfc_cards[].token                                      String                    Unique     NFC    card   token."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "nfc_cards[].token",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "license_plates[].id                                    String                    Unique     ID  of  the   license   plate."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "license_plates[].id",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "license_plates[].credential                            String                    License    plate    number."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "license_plates[].credential",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "license_plates[].credential_type                       String                    Type    of credential,      should    be    \"license\"."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "license_plates[].credential_type",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "license_plates[].credential_status                     String"
+      },
+      "description": null,
+      "enum": [
+        "active",
+        "deactivate"
+      ],
+      "enum_citation": {
+        "page": 13,
+        "quote": "{active,  deactivate}."
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "license_plates[].credential_status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "pin_code                                               Object                    Token    associated       with   the   bound     PIN   code."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code",
+      "required": null,
+      "schema_ref": null,
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "pin_code.token                                         String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "pin_code.token",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policy_ids                                      Array[String]             Collection     of  the  access     policy   ID."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "access_policy_ids",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policies                                        Array[Object]             All policies    assigned      to the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "access_policies",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "status                                                 String"
+      },
+      "description": null,
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "DEACTIVATED"
+      ],
+      "enum_citation": {
+        "page": 13,
+        "quote": "enum   status   {ACTIVE,PENDING,DEACTIVATED}"
+      },
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "touch_pass                                             Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "touch_pass",
+      "required": null,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [],
+  "kind": "schema",
+  "method": null,
+  "path": null,
+  "permission_key": null,
+  "samples": {
+    "request": null,
+    "response": null
+  },
+  "schema_version": 1,
+  "section_id": "S-3.1",
+  "title": "Schemas"
+}

@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 37,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/access_policies"
+    },
+    "permission_key": {
+      "page": 37,
+      "quote": "Permission        Key:    view:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 37,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 37,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 38,
+        "quote": "only_user_policies            F                   Boolean          are  displayed.     If set to  true,  only   the              only_user_policies=true"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "query",
+      "min_version": null,
+      "name": "only_user_policies",
+      "required": false,
+      "schema_ref": null,
+      "type": "boolean",
+      "type_raw": "Boolean"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/users/:id/access_policies",
+  "permission_key": "view:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 38,
+        "quote": "curl     -XGET     '{{host}}/users/27aa91ac-2924-43d4-82e1-24b6a570d29e/access_policies?"
+      },
+      "raw": "    curl     -XGET     '{{host}}/users/27aa91ac-2924-43d4-82e1-24b6a570d29e/access_policies?\n    only_user_policies=false'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 38,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"id\":     \"89a4ca95-1502-4ae7-954f-d986b67afe5c\",\n                         \"name\":       \"Default        Site     Policy\",\n                         \"resources\":           [\n                                {\n                                       \"id\":      \"fd2a06e2-81af-4cf4-9bd5-8bceb5e7b7d7\",\n                                       \"type\":       \"door_group\"\n                                }\n                         ],\n                         \"schedule_id\":            \"6b79d12a-2a6e-4463-949c-f1a98fff40d2\"\n                  },\n                  {\n                         \"id\":     \"bbe48a65-2ac1-4bf6-bd65-bc8f9ee7fb75\",\n                         \"name\":       \"Access       Policy      Name\",\n                         \"resources\":           [],\n                         \"schedule_id\":            \"f7414bcd-f0cc-4d3e-811a-b5ac75f7ddb8\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.20",
+  "title": "Fetch the Access Policies Assigned to a User"
+}

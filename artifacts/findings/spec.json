@@ -57,6 +57,80 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 13,
+        "quote": "touch_pass                                             Array[Object]",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 20,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-41067aa7",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.5",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of touch_pass",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 45,
+        "quote": "curl     --location         --request         PUT    '{{host}}/api/v1/developer/users/cadb8707-a2c1-4407-a904-",
+        "snippet": null
+      }
+    ],
+    "id": "F-6693ba52",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.25",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 48,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-a44cc927",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.27",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 52,
         "quote": "visit_reason                                  String          Visit reason: enum reason {Interview,Business,Cooperation,Others}",
         "snippet": null
@@ -80,5 +154,79 @@
     "severity": "high",
     "title": "Sample value violates the documented enum for visit_reason",
     "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 47,
+        "quote": "curl     --location         --request         DELETE      'https://192.168.1.1:12445/api/v1/developer/users/cadb8707-",
+        "snippet": null
+      }
+    ],
+    "id": "F-b7f9fef5",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.26",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 13,
+        "quote": "pin_code                                               Object                    Token    associated       with   the   bound     PIN   code.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 20,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-befdf96f",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.5",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of pin_code",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 52,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-cbcd8313",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-3.30",
+    "severity": "medium",
+    "title": "Document sample is not valid JSON",
+    "type": "SPEC_MALFORMED_SAMPLE"
   }
 ]

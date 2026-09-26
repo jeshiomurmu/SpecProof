@@ -1,0 +1,38 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 24,
+    "items": 24,
+    "row_checked": 3,
+    "row_ok": 3,
+    "rows_detected": 3,
+    "samples": 1,
+    "samples_parsed": 0
+  },
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
+      "field": null,
+      "hint": {
+        "first_unmatched": "copy the sample through its final closing bracket"
+      },
+      "message": "response sample is an incomplete copy: 1 bracket(s) never closed",
+      "severity": "error"
+    },
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 17,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "field": null,
+      "hint": null,
+      "message": "response sample is not valid JSON: Expecting property name enclosed in double quotes (line 2)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-3.4"
+}

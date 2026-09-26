@@ -1,0 +1,358 @@
+{
+  "citations": {
+    "path": {
+      "page": 36,
+      "quote": "Request       URL:    /api/v1/developer/user_groups/:id/users/all"
+    },
+    "permission_key": {
+      "page": 36,
+      "quote": "Permission        Key:    view:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 36,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 36,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "Id                                                     String                    Identity    ID  of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "Id",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "first_name                                             String                    First  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "first_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "last_name                                              String                    Last  name      of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "last_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "full_name                                              String                    Full  name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "full_name",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "alias                                                  String                    Preferred      name     of  the  user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "alias",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "user_email                                             String"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "user_email",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "email_status                                           String                    The   status    of the   user's    email."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "email_status",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "phone                                                  String                    Contact     phone     number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "phone",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "employee_number                                        String                    Employee       number       of the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "employee_number",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 12,
+        "quote": "onboard_time                                           Integer                   User   onboarding        date."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "onboard_time",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "integer",
+      "type_raw": "Integer"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "nfc_cards                                              Array[Object]             Token    associated       with   the   bound     NFC    card."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "nfc_cards",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "pin_code                                               Object                    Token    associated       with   the   bound     PIN   code."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "pin_code",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "object",
+      "type_raw": "Object"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policy_ids                                      Array[String]             Collection     of  the  access     policy   ID."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "access_policy_ids",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[String]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "access_policies                                        Array[Object]             All policies    assigned      to the   user."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "access_policies",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "status                                                 String"
+      },
+      "description": null,
+      "enum": [
+        "ACTIVE",
+        "PENDING",
+        "DEACTIVATED"
+      ],
+      "enum_citation": {
+        "page": 13,
+        "quote": "enum   status   {ACTIVE,PENDING,DEACTIVATED}"
+      },
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "status",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 13,
+        "quote": "touch_pass                                             Array[Object]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "response",
+      "min_version": null,
+      "name": "touch_pass",
+      "required": null,
+      "schema_ref": "S-3.1",
+      "type": "array",
+      "type_raw": "Array[Object]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "GET",
+  "path": "/api/v1/developer/user_groups/:id/users/all",
+  "permission_key": "view:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 36,
+        "quote": "curl     -XGET     '{{host}}/api/v1/developer/user_groups/23676a54-382e-4121-aa80-"
+      },
+      "raw": "    curl     -XGET     '{{host}}/api/v1/developer/user_groups/23676a54-382e-4121-aa80-\n    878d2d9bacaa/users/all'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 37,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       [\n                  {\n                         \"alias\":        \"\",\n                         \"avatar_relative_path\":                   \"\",\n                         \"email\":        \"*@*.com\",\n                         \"email_status\":             \"UNVERIFIED\",\n                         \"employee_number\":               \"1000000\",\n                         \"first_name\":            \"\",\n                         \"full_name\":           \"\",\n                         \"id\":     \"27aa91ac-2924-43d4-82e1-24b6a570d29e\",\n                         \"last_name\":           \"Chen\",\n                         \"onboard_time\":             1689150139,\n                         \"phone\":        \"\",\n                         \"status\":         \"ACTIVE\",\n                         \"user_email\":            \"\",\n                         \"username\":          \"\"\n                  }\n           ],\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.19",
+  "title": "Fetch All Users in a User Group"
+}

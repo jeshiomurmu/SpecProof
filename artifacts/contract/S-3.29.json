@@ -1,0 +1,100 @@
+{
+  "citations": {
+    "method": {
+      "page": 50,
+      "quote": "Method:        DELETE"
+    },
+    "path": {
+      "page": 50,
+      "quote": "Request       URL:    /api/v1/developer/users/:user_id/license_plates/:license_plate_id"
+    },
+    "permission_key": {
+      "page": 50,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 50,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 50,
+        "quote": "user_id                  T                 String      unassign    the  license            4606-9d6e-"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "user_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 50,
+        "quote": "license_plate_id         T                 String                                          4035-aebd-"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "license_plate_id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "DELETE",
+  "path": "/api/v1/developer/users/:user_id/license_plates/:license_plate_id",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 51,
+        "quote": "curl     --location         --request         DELETE      'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-"
+      },
+      "raw": "    curl     --location         --request         DELETE      'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-\n    0f5e-4606-9d6e-764e19685e27/license_plates/74f3c466-c564-4035-aebd-fd383eebcc6a'                                                               \\\n    --header        'Authorization:             Bearer      vPUhdytCPDvt/+dSLlGTjw'                   \\"
+    },
+    "response": {
+      "citation": {
+        "page": 51,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.29",
+  "title": "Unassign License Plate Numbers from User"
+}

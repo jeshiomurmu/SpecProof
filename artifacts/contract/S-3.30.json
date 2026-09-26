@@ -1,0 +1,100 @@
+{
+  "citations": {
+    "method": {
+      "page": 51,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 51,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/avatar"
+    },
+    "permission_key": {
+      "page": 51,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 51,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 51,
+        "quote": "id                      T                     String         Unique      ID  of  the   user.         Get    it from    /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 51,
+        "quote": "file                              T                             File                Profile    picture    image     file  to  upload."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "file",
+      "required": true,
+      "schema_ref": null,
+      "type": "unknown",
+      "type_raw": "File"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/users/:id/avatar",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 52,
+        "quote": "curl     --location         'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-0f5e-4606-9d6e-"
+      },
+      "raw": "    curl     --location         'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-0f5e-4606-9d6e-\n    764e19685e27/avatar'                 \\\n    --header        'Authorization:             Bearer      vPUhdytCPDvt/+dSLlGTjw'                   \\\n    --form      'file=@\"./fa8134ba-352a-4499-ab62-713618388148.jpeg\"'                                          --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 52,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       {\n           \"avatar_url\":           \"https://192.168.1.1/proxy/users/public/avatar/d0beeccd-0f5e-4606-9d6e-\n    764e19685e27\"\n       },\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.30",
+  "title": "Upload User Profile Picture"
+}

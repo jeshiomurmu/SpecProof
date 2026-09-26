@@ -1,0 +1,83 @@
+{
+  "citations": {
+    "method": {
+      "page": 33,
+      "quote": "Method:        POST"
+    },
+    "path": {
+      "page": 33,
+      "quote": "Request       URL:    /api/v1/developer/user_groups/:id/users/delete"
+    },
+    "permission_key": {
+      "page": 33,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 33,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 34,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "POST",
+  "path": "/api/v1/developer/user_groups/:id/users/delete",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 34,
+        "quote": "curl     -XPOST      '{{host}}/api/v1/developer/user_groups/75011ee6-b7ab-4927-9d9f-"
+      },
+      "raw": "    curl     -XPOST      '{{host}}/api/v1/developer/user_groups/75011ee6-b7ab-4927-9d9f-\n    dd08ef0a3199/users/delete'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '[\n                  \"7c6e9102-acb7-4b89-8ed4-7561e6fb706c\",\n                  \"fd63bc4c-52e0-4dbf-a699-e1233339c73b\"\n         ]'"
+    },
+    "response": {
+      "citation": {
+        "page": 34,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.17",
+  "title": "Unassign User from User Group"
+}

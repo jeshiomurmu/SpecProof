@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 39,
+      "quote": "Request       URL:    /api/v1/developer/user_groups/:id/access_policies"
+    },
+    "permission_key": {
+      "page": 39,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 39,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 39,
+        "quote": "id                     T                   String\nuser   group.                         /api/v1/developer/user_groups"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 39,
+        "quote": "access_policy_ids         T                 Array[String]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "access_policy_ids",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/user_groups/:id/access_policies",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 39,
+        "quote": "curl     -XPUT     '{{host}}/user_groups/23676a54-382e-4121-aa80-878d2d9bacaa/access_policies'"
+      },
+      "raw": "    curl     -XPUT     '{{host}}/user_groups/23676a54-382e-4121-aa80-878d2d9bacaa/access_policies'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                  \"access_policy_ids\":                 [\n                         \"bbe48a65-2ac1-4bf6-bd65-bc8f9ee7fb75\"\n                    ]\n           }'"
+    },
+    "response": {
+      "citation": {
+        "page": 40,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       null,\n           \"msg\":      \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.21",
+  "title": "Assign Access Policy to User Group"
+}

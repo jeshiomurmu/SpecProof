@@ -1,0 +1,96 @@
+{
+  "citations": {
+    "path": {
+      "page": 22,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/access_policies"
+    },
+    "permission_key": {
+      "page": 22,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 22,
+        "quote": "Authorization                 T                       String           Token     required      for  authentication         and    access    control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 22,
+        "quote": "id                      T                     String\nuser.                                /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 22,
+        "quote": "access_policy_ids         T                 Array[String]"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "body",
+      "min_version": null,
+      "name": "access_policy_ids",
+      "required": true,
+      "schema_ref": null,
+      "type": "array",
+      "type_raw": "Array[String]"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/users/:id/access_policies",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 22,
+        "quote": "curl     -XPUT     '{{host}}/api/v1/developer/users/38857332-7a5e-4bb6-8837-"
+      },
+      "raw": "    curl     -XPUT     '{{host}}/api/v1/developer/users/38857332-7a5e-4bb6-8837-\n    651b2a47cea5/access_policies'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\n                  \"access_policy_ids\":[\n                         \"03895c7f-9f53-4334-812b-5db9c122c109\",\n                         \"3b6bcb0c-7498-44cf-8615-00a96d824cbe\"\n                  ]\n           }'"
+    },
+    "response": {
+      "citation": {
+        "page": 23,
+        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+      },
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\"}"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.6",
+  "title": "Assign Access Policy to User"
+}

@@ -1,5 +1,150 @@
 {
+  "S-3.1": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.10": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.11": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.12": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.13": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.14": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.15": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.16": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.17": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.18": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.19": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
   "S-3.2": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.20": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.21": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.22": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.23": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.24": {
+    "attempt": 1,
+    "extraction_errors": 1,
+    "status": "NEEDS_RETRY"
+  },
+  "S-3.25": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-3.26": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-3.27": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-3.28": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.29": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.3": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.30": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-3.4": {
+    "attempt": 1,
+    "extraction_errors": 1,
+    "status": "NEEDS_RETRY"
+  },
+  "S-3.5": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+  },
+  "S-3.6": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.7": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.8": {
+    "attempt": 1,
+    "extraction_errors": 0,
+    "status": "VERIFIED"
+  },
+  "S-3.9": {
     "attempt": 1,
     "extraction_errors": 0,
     "status": "VERIFIED"

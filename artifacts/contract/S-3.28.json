@@ -1,0 +1,79 @@
+{
+  "citations": {
+    "path": {
+      "page": 49,
+      "quote": "Request       URL:    /api/v1/developer/users/:id/license_plates"
+    },
+    "permission_key": {
+      "page": 49,
+      "quote": "Permission        Key:    edit:user"
+    }
+  },
+  "definitions": [],
+  "extraction": {
+    "attempt": 1,
+    "bob_task_ref": null,
+    "mode": "specproof-extract",
+    "producer": "claude-code",
+    "prompt_version": "extract-v1"
+  },
+  "fields": [
+    {
+      "citation": {
+        "page": 49,
+        "quote": "Authorization               T                     String          Bearer     Token     required      for  authentication         and    access     control."
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "header",
+      "min_version": null,
+      "name": "Authorization",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    },
+    {
+      "citation": {
+        "page": 49,
+        "quote": "id                      T                     String          Unique     ID   of the   user          Get   it from     /api/v1/developer/users"
+      },
+      "description": null,
+      "enum": null,
+      "enum_citation": null,
+      "example": null,
+      "location": "path",
+      "min_version": null,
+      "name": "id",
+      "required": true,
+      "schema_ref": null,
+      "type": "string",
+      "type_raw": "String"
+    }
+  ],
+  "kind": "endpoint",
+  "method": "PUT",
+  "path": "/api/v1/developer/users/:id/license_plates",
+  "permission_key": "edit:user",
+  "samples": {
+    "request": {
+      "citation": {
+        "page": 50,
+        "quote": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-"
+      },
+      "raw": "    curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/users/d0beeccd-\n    0f5e-4606-9d6e-764e19685e27/license_plates'                                  \\\n    --header        'Authorization:             Bearer      vPUhdytCPDvt/+dSLlGTjw'                   \\\n    --header        'Content-Type:            application/json'               \\\n    --data      '[\n       \"abcd5\",\n       \"efge36\"\n    ]'   --insecure"
+    },
+    "response": {
+      "citation": {
+        "page": 50,
+        "quote": "\"code\":       \"SUCCESS\","
+      },
+      "raw": "    {\n       \"code\":       \"SUCCESS\",\n       \"data\":       null,\n       \"msg\":       \"success\"\n    }"
+    }
+  },
+  "schema_version": 1,
+  "section_id": "S-3.28",
+  "title": "Assign License Plate Numbers to User"
+}

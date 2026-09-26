@@ -1,0 +1,27 @@
+{
+  "attempt": 1,
+  "counts": {
+    "grounded": 21,
+    "items": 21,
+    "row_checked": 3,
+    "row_ok": 3,
+    "rows_detected": 3,
+    "samples": 2,
+    "samples_parsed": 1
+  },
+  "issues": [
+    {
+      "category": "sample_conflict",
+      "code": "V3_SAMPLE_UNPARSEABLE",
+      "evidence": {
+        "page": 47,
+        "quote": "curl     --location         --request         DELETE      'https://192.168.1.1:12445/api/v1/developer/users/cadb8707-"
+      },
+      "field": null,
+      "hint": null,
+      "message": "request sample is not valid JSON: Expecting value (line 1)",
+      "severity": "error"
+    }
+  ],
+  "section_id": "S-3.26"
+}
