@@ -9,19 +9,6 @@
     "samples": 1,
     "samples_parsed": 1
   },
-  "issues": [
-    {
-      "category": "sample_conflict",
-      "code": "V3_TYPE_MISMATCH",
-      "evidence": {
-        "page": 87,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": null,
-      "hint": null,
-      "message": "response data sample: 'success' is not of type 'object'",
-      "severity": "error"
-    }
-  ],
+  "issues": [],
   "section_id": "S-5.10"
 }

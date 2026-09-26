@@ -9,43 +9,6 @@
     "samples": 1,
     "samples_parsed": 1
   },
-  "issues": [
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 80,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "Data",
-      "hint": null,
-      "message": "response data sample: 'Data' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 80,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "Data",
-      "hint": null,
-      "message": "response data sample: 'Data' is a required property",
-      "severity": "warning"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_REQUIRED_MISSING",
-      "evidence": {
-        "page": 80,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "Data",
-      "hint": null,
-      "message": "response data sample: 'Data' is a required property",
-      "severity": "warning"
-    }
-  ],
+  "issues": [],
   "section_id": "S-5.6"
 }

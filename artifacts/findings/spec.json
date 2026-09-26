@@ -5,28 +5,6 @@
         "file": null,
         "kind": "doc",
         "line": null,
-        "page": 102,
-        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}",
-        "snippet": null
-      }
-    ],
-    "id": "F-0456b118",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.18",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
         "page": 17,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -72,36 +50,6 @@
     "severity": "high",
     "title": "Sample value violates the documented enum for visit_reason",
     "type": "SPEC_SELF_INCONSISTENCY"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 100,
-        "quote": "Data                              T                             Array[Object]",
-        "snippet": null
-      },
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 100,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-30042b93",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.17",
-    "severity": "medium",
-    "title": "Sample omits Data, which the document marks required",
-    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [
@@ -221,28 +169,6 @@
         "file": null,
         "kind": "doc",
         "line": null,
-        "page": 77,
-        "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}",
-        "snippet": null
-      }
-    ],
-    "id": "F-bd2976fd",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.4",
-    "severity": "high",
-    "title": "Sample value type contradicts the documented type of the sample",
-    "type": "SPEC_SELF_INCONSISTENCY"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
         "page": 43,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -258,88 +184,6 @@
     "severity": "medium",
     "title": "Document sample is not valid JSON",
     "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 87,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-c756b53d",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.10",
-    "severity": "high",
-    "title": "Sample value type contradicts the documented type of the sample",
-    "type": "SPEC_SELF_INCONSISTENCY"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 78,
-        "quote": "Data                               T                              Object",
-        "snippet": null
-      },
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 78,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-d2efe779",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.5",
-    "severity": "medium",
-    "title": "Sample omits Data, which the document marks required",
-    "type": "SPEC_SAMPLE_INCOMPLETE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 79,
-        "quote": "Data                            T                            Array[Object]",
-        "snippet": null
-      },
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 80,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-df0a39dd",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-5.6",
-    "severity": "medium",
-    "title": "Sample omits Data, which the document marks required",
-    "type": "SPEC_SAMPLE_INCOMPLETE"
   },
   {
     "evidence": [

@@ -15,7 +15,7 @@
   },
   "definitions": [],
   "extraction": {
-    "attempt": 1,
+    "attempt": 2,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -74,7 +74,7 @@
         "page": 102,
         "quote": "{\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
       },
-      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}\n6.       Credential\n     The    APIs   here    are   designed      for  managing        PIN    codes,    NFC    cards,    and    other    related    credentials."
+      "raw": "    {\"code\":\"SUCCESS\",\"msg\":\"success\",\"data\":\"success\"}"
     }
   },
   "schema_version": 1,
