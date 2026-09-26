@@ -50,8 +50,16 @@ def validate_mapping(entry: Mapping, client_root: Path, verified_ids: set[str]) 
     return entry
 
 
+def mapping_producer(path: Path) -> str:
+    """Who wrote the mapping file: its top-level `producer`, or "unknown" for a bare list."""
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    return str(data.get("producer", "unknown")) if isinstance(data, dict) else "unknown"
+
+
 def parse_mapping(data: Any) -> list[Mapping]:
-    """Turn the YAML list into Mapping entries, sorted by (section, model)."""
+    """Turn the YAML (a list, or {producer, entries}) into Mapping entries, sorted."""
+    if isinstance(data, dict):
+        data = data.get("entries", [])
     entries = []
     for row in data or []:
         code = row.get("code") or {}

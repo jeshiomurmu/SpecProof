@@ -203,6 +203,35 @@ def test_CNF_013_import_error_is_environment_error(good: Good, tmp_path: Path) -
 
 
 @pytest.mark.integration
+def test_CNF_015_mapping_file_with_producer(tmp_path: Path) -> None:
+    from specproof.conformance.mapping import load_mappings, mapping_producer
+
+    path = tmp_path / "mapping.yaml"
+    path.write_text(
+        yaml.safe_dump(
+            {
+                "producer": "claude-code",
+                "entries": [
+                    {
+                        "section_id": "S-2.3",
+                        "model": "models.Widget",
+                        "json_path": "data",
+                        "code": {"file": "models.py", "line": 7},
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    valid, errors = load_mappings(path, MINI, {"S-2.3"})
+    assert (len(valid), errors) == (1, [])
+    assert mapping_producer(path) == "claude-code"
+    legacy = tmp_path / "legacy.yaml"
+    legacy.write_text(yaml.safe_dump([]), encoding="utf-8")
+    assert mapping_producer(legacy) == "unknown"
+
+
+@pytest.mark.integration
 def test_CNF_014_conform_cli(workspace: Path) -> None:
     shutil.copytree(FIXTURES / "contracts_good", workspace / "artifacts" / "contract")
     client = workspace / "client"

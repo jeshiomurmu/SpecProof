@@ -11,7 +11,7 @@ from specproof import __version__
 from specproof.config import Paths
 from specproof.conformance.check import check_inventory
 from specproof.conformance.inventory import scan_endpoints
-from specproof.conformance.mapping import load_mappings
+from specproof.conformance.mapping import load_mappings, mapping_producer
 from specproof.conformance.models import ModelField, diff_model
 from specproof.conformance.replay import generate, introspect, run_replay
 from specproof.loop.status import verified_section_ids
@@ -33,9 +33,17 @@ def ensure_replay_venv(paths: Paths, client: Path) -> str:
     if not python.exists():
         subprocess.run([sys.executable, "-m", "venv", str(venv)], check=True)
         subprocess.run(
-            [str(python), "-m", "pip", "install", "-q", "-e", str(client), "pytest"], check=True
+            [str(python), "-m", "pip", "install", "-q", "-e", str(client), "pytest", "pyyaml"],
+            check=True,
         )
     return str(python)
+
+
+def _mapping_producer(paths: Paths) -> Producer:
+    """Lineage producer for the AI-written mapping, from its own `producer` key."""
+    name = mapping_producer(paths.mapping)
+    kind = "ibm-bob" if name == "ibm-bob" else "external"
+    return Producer(kind=kind, tool=name, mode="spec-auditor" if kind == "ibm-bob" else None)
 
 
 def _label(paths: Paths, client: Path) -> str:
@@ -120,7 +128,7 @@ def run_conform(paths: Paths, client: Path, python: str | None) -> dict[str, Any
                 artifact=paths.rel(paths.mapping),
                 sha256=sha256_file(paths.mapping),
                 stage="map",
-                producer=Producer(kind="ibm-bob", mode="spec-auditor"),
+                producer=_mapping_producer(paths),
                 inputs=[InputRef(path=paths.rel(paths.status), sha256=sha256_file(paths.status))]
                 if paths.status.exists()
                 else [],
