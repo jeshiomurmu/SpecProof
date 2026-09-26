@@ -17,33 +17,9 @@
         "page": 20,
         "quote": "\"code\":       \"SUCCESS\","
       },
-      "field": "pin_code",
-      "hint": null,
-      "message": "response data sample: None is not of type 'object'",
-      "severity": "error"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_TYPE_MISMATCH",
-      "evidence": {
-        "page": 20,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": "pin_code",
-      "hint": null,
-      "message": "response data sample: None is not of type 'object'",
-      "severity": "error"
-    },
-    {
-      "category": "sample_conflict",
-      "code": "V3_TYPE_MISMATCH",
-      "evidence": {
-        "page": 20,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
       "field": "touch_pass",
       "hint": null,
-      "message": "response data sample: {'activated_at': {}, 'bundles': [{'bundle_id': 'caf6bd5b-6b8d-409a-b500-977a0f02b181', 'bundle_status': 'SUSPENDED', 'device_id': 'device-id-1', 'device_name': 'Example        Android', 'device_type': 20, 'source': 'google'}], 'card_id': '70A3-2FAD-181B-4CC9', 'card_name': 'Test', 'expired_at': {}, 'id': 'c83b69ff-1992-4e7f-9287-1e6a161adeea', 'last_activity': '2025-04-10T00:46:20+08:00', 'status': 'SUSPENDED', 'user_avatar': '', 'user_email': 'example@ui.com', 'user_id': '3e763e5d-6804-437d-ae8d-3fee74119b80', 'user_name': 'Example        Name', 'user_status': 'ACTIVE'} is not of type 'array'",
+      "message": "response data sample: {'activated_at': {}, 'bundles': [{'bundle_id': 'caf6bd5b-6b8d-409a-b500-977a0f02b181', 'bundle_status': 'SUSPENDED', 'device_id': 'device-id-1', 'device_name': 'Example        Android', 'device_type': 20, 'source': 'google'}], 'card_id': '70A3-2FAD-181B-4CC9', 'card_name': 'Test', 'expired_at': {}, 'id': 'c83b69ff-1992-4e7f-9287-1e6a161adeea', 'last_activity': '2025-04-10T00:46:20+08:00', 'status': 'SUSPENDED', 'user_avatar': '', 'user_email': 'example@ui.com', 'user_id': '3e763e5d-6804-437d-ae8d-3fee74119b80', 'user_name': 'Example        Name', 'user_status': 'ACTIVE'} is not of type 'array', 'null'",
       "severity": "error"
     }
   ],

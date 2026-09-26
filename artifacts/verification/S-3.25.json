@@ -6,22 +6,9 @@
     "row_checked": 3,
     "row_ok": 3,
     "rows_detected": 3,
-    "samples": 2,
+    "samples": 1,
     "samples_parsed": 1
   },
-  "issues": [
-    {
-      "category": "sample_conflict",
-      "code": "V3_SAMPLE_UNPARSEABLE",
-      "evidence": {
-        "page": 45,
-        "quote": "curl     --location         --request         PUT    '{{host}}/api/v1/developer/users/cadb8707-a2c1-4407-a904-"
-      },
-      "field": null,
-      "hint": null,
-      "message": "request sample is not valid JSON: Expecting value (line 1)",
-      "severity": "error"
-    }
-  ],
+  "issues": [],
   "section_id": "S-3.25"
 }

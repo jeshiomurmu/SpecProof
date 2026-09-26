@@ -19,7 +19,7 @@
       },
       "field": "visit_reason",
       "hint": null,
-      "message": "request sample: 'Interviemw' is not one of ['Interview', 'Business', 'Cooperation', 'Others']",
+      "message": "request sample: 'Interviemw' is not one of ['Interview', 'Business', 'Cooperation', 'Others', None]",
       "severity": "error"
     }
   ],

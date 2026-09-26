@@ -9,19 +9,6 @@
     "samples": 2,
     "samples_parsed": 2
   },
-  "issues": [
-    {
-      "category": "sample_conflict",
-      "code": "V3_TYPE_MISMATCH",
-      "evidence": {
-        "page": 71,
-        "quote": "curl     --location         --request         PUT    'https://192.168.1.1:12445/api/v1/developer/visitors/b8635fc9-"
-      },
-      "field": null,
-      "hint": null,
-      "message": "request sample: ['abcd', 'efge3'] is not of type 'object'",
-      "severity": "error"
-    }
-  ],
+  "issues": [],
   "section_id": "S-4.13"
 }

@@ -81,23 +81,23 @@
   },
   "S-3.24": {
     "attempt": 1,
-    "extraction_errors": 1,
-    "status": "NEEDS_RETRY"
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },
   "S-3.25": {
     "attempt": 1,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-3.26": {
     "attempt": 1,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-3.27": {
     "attempt": 1,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-3.28": {
     "attempt": 1,
@@ -117,12 +117,12 @@
   "S-3.30": {
     "attempt": 1,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-3.4": {
     "attempt": 1,
-    "extraction_errors": 1,
-    "status": "NEEDS_RETRY"
+    "extraction_errors": 0,
+    "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },
   "S-3.5": {
     "attempt": 1,
@@ -172,7 +172,7 @@
   "S-4.13": {
     "attempt": 3,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-4.14": {
     "attempt": 3,

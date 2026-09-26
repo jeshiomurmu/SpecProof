@@ -7,21 +7,8 @@
     "row_ok": 3,
     "rows_detected": 3,
     "samples": 1,
-    "samples_parsed": 0
+    "samples_parsed": 1
   },
-  "issues": [
-    {
-      "category": "sample_conflict",
-      "code": "V3_SAMPLE_UNPARSEABLE",
-      "evidence": {
-        "page": 52,
-        "quote": "\"code\":       \"SUCCESS\","
-      },
-      "field": null,
-      "hint": null,
-      "message": "response sample is not valid JSON: Invalid control character at (line 4)",
-      "severity": "error"
-    }
-  ],
+  "issues": [],
   "section_id": "S-3.30"
 }
