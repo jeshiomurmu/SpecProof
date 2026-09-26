@@ -139,7 +139,7 @@
   },
   "unit_test_coverage": {
     "source": "coverage.py",
-    "value": 0.9032
+    "value": 0.9066
   },
   "verifier_false_accept": {
     "reason": "blind audit not scored yet (specproof audit-score, T13)",
