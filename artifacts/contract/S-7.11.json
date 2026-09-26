@@ -11,7 +11,7 @@
   },
   "definitions": [],
   "extraction": {
-    "attempt": 1,
+    "attempt": 2,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -113,7 +113,7 @@
         "page": 143,
         "quote": "\"code\":       \"SUCCESS\","
       },
-      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            3602128309,\n                  \"type\":       \"keep_lock\"\n           },\n           \"msg\":      \"success\"\n    }\n    #  Keep     it   unlocked\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            3602128562,\n                  \"type\":       \"keep_unlock\"\n           },\n           \"msg\":      \"success\"\n    }\n    #  Customized          unlock      duration\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            1708673342,\n                  \"type\":       \"custom\"\n           },\n           \"msg\":      \"success\"\n    }\n    #The     `lock_early`          is    used     to   terminate        doors      in   an    unlock      schedule        early.\n    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                     \"type\":       \"lock_early\",\n                       \"ended_time\":            1708673342,\n           },\n           \"msg\":      \"success\"\n    }"
+      "raw": "    {\n           \"code\":       \"SUCCESS\",\n           \"data\":       {\n                  \"ended_time\":            3602128309,\n                  \"type\":       \"keep_lock\"\n           },\n           \"msg\":      \"success\"\n    }"
     }
   },
   "schema_version": 1,

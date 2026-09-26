@@ -196,8 +196,8 @@
   },
   "S-4.4": {
     "attempt": 3,
-    "extraction_errors": 0,
-    "status": "VERIFIED"
+    "extraction_errors": 1,
+    "status": "QUARANTINED"
   },
   "S-4.5": {
     "attempt": 2,
@@ -410,19 +410,19 @@
     "status": "VERIFIED"
   },
   "S-7.10": {
-    "attempt": 1,
+    "attempt": 2,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-7.11": {
-    "attempt": 1,
+    "attempt": 2,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-7.12": {
-    "attempt": 1,
+    "attempt": 2,
     "extraction_errors": 0,
-    "status": "VERIFIED_WITH_SPEC_FINDINGS"
+    "status": "VERIFIED"
   },
   "S-7.13": {
     "attempt": 1,
@@ -435,12 +435,12 @@
     "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },
   "S-7.3": {
-    "attempt": 1,
+    "attempt": 2,
     "extraction_errors": 0,
     "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },
   "S-7.4": {
-    "attempt": 1,
+    "attempt": 2,
     "extraction_errors": 0,
     "status": "VERIFIED_WITH_SPEC_FINDINGS"
   },

@@ -1563,7 +1563,7 @@
   },
   {
     "artifact": "artifacts/contract/S-7.10.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/sections_index.json",
@@ -1571,18 +1571,18 @@
       }
     ],
     "producer": {
-      "attempt": 1,
+      "attempt": 2,
       "kind": "external",
       "mode": "specproof-extract",
       "prompt_version": "extract-v1",
       "tool": "claude-code"
     },
-    "sha256": "bb7ea235a3b52a809925182642f7ce57c2c053df7cd45185e68e2787a20a6427",
+    "sha256": "ec1b20a73ef49dda0b2ecb51cc09c2e37ba7a0bb2cf7732a4e0abfaf0c921da1",
     "stage": "extract"
   },
   {
     "artifact": "artifacts/contract/S-7.11.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/sections_index.json",
@@ -1590,18 +1590,18 @@
       }
     ],
     "producer": {
-      "attempt": 1,
+      "attempt": 2,
       "kind": "external",
       "mode": "specproof-extract",
       "prompt_version": "extract-v1",
       "tool": "claude-code"
     },
-    "sha256": "bed893cce42daaa257c5c82ccae2d81c22ba311686b236b582220de910244eb6",
+    "sha256": "f117ba5db90b2154d1f4dd8d38e136b38f00e658c91e317a70041f8a3108a38d",
     "stage": "extract"
   },
   {
     "artifact": "artifacts/contract/S-7.12.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/sections_index.json",
@@ -1609,13 +1609,13 @@
       }
     ],
     "producer": {
-      "attempt": 1,
+      "attempt": 2,
       "kind": "external",
       "mode": "specproof-extract",
       "prompt_version": "extract-v1",
       "tool": "claude-code"
     },
-    "sha256": "b62d82725f1160876355e9695eb5a19e5f5c8ceb204e76d0659ec52aac1e3aca",
+    "sha256": "8449660733feedca83781e8a3453ad67312a572dab79a5e82f9ad903795dcf0c",
     "stage": "extract"
   },
   {
@@ -1658,7 +1658,7 @@
   },
   {
     "artifact": "artifacts/contract/S-7.3.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/sections_index.json",
@@ -1666,18 +1666,18 @@
       }
     ],
     "producer": {
-      "attempt": 1,
+      "attempt": 2,
       "kind": "external",
       "mode": "specproof-extract",
       "prompt_version": "extract-v1",
       "tool": "claude-code"
     },
-    "sha256": "0006a63542f7721f1a1c94d1effd0f73292fc433504f4084b4e59a1e5bb22bec",
+    "sha256": "bab4474e112bedc6befd4421f4425fcbd48ed860b3565f0829af140566347e2f",
     "stage": "extract"
   },
   {
     "artifact": "artifacts/contract/S-7.4.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:39Z",
     "inputs": [
       {
         "path": "artifacts/sections_index.json",
@@ -1685,13 +1685,13 @@
       }
     ],
     "producer": {
-      "attempt": 1,
+      "attempt": 2,
       "kind": "external",
       "mode": "specproof-extract",
       "prompt_version": "extract-v1",
       "tool": "claude-code"
     },
-    "sha256": "17ef5d72c90fb41165324935ce6162f4068e6210e62d36671c20bd6ce393a249",
+    "sha256": "e27ee5d9a97c282fd717f378536bd84a7b6d961e811ca14130549839debc0fc6",
     "stage": "extract"
   },
   {
@@ -2042,8 +2042,98 @@
     "stage": "classify"
   },
   {
+    "artifact": "artifacts/feedback/S-7.10.md",
+    "created_at": "2026-09-26T04:29:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/verification/S-7.10.json",
+        "sha256": "d480d9f4b12609c7bdff00585ce85e5c5778a8db930b989cf997a93c04f826d0"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "bde9208821881ed77da6c9b985b7f890bb5fcf9722a34e61ed874ce1778ab151",
+    "stage": "classify"
+  },
+  {
+    "artifact": "artifacts/feedback/S-7.11.md",
+    "created_at": "2026-09-26T04:29:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/verification/S-7.11.json",
+        "sha256": "7ba425b9357bc9d6580be6514d2cd5bbcf194f4dd77516c58c0f7f1b5c0a81f7"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "304b578e02e5f382c77b958b3194edbda64417b0f553f474179a3a210956f520",
+    "stage": "classify"
+  },
+  {
+    "artifact": "artifacts/feedback/S-7.12.md",
+    "created_at": "2026-09-26T04:29:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/verification/S-7.12.json",
+        "sha256": "302d77a645d52e18a1f7f7766da87cfe32e59d73a96089b6d5a15f5d3551179d"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "6703ec261ec99b6723696a97a44f344776ddf45fce238e1a7c473cccab2f00a8",
+    "stage": "classify"
+  },
+  {
+    "artifact": "artifacts/feedback/S-7.3.md",
+    "created_at": "2026-09-26T04:29:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/verification/S-7.3.json",
+        "sha256": "f9f4e5403abfe1a39efce91682ca617bed3d6bc6b7ba549557426e570f747a1d"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "1d0aa86cc3cd9c7cd670521ab7d2e083fadf96b71dd73c0cbdf2067c4cb24257",
+    "stage": "classify"
+  },
+  {
+    "artifact": "artifacts/feedback/S-7.4.md",
+    "created_at": "2026-09-26T04:29:14Z",
+    "inputs": [
+      {
+        "path": "artifacts/verification/S-7.4.json",
+        "sha256": "3017b0488f6f4b4f906d3617a47cfe76f044ed96038336948d6a1118222c6fc1"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "388c836766ae95d480b2191cc00d73bf50531fb42ab3de8d4cf1de22c62b0f21",
+    "stage": "classify"
+  },
+  {
     "artifact": "artifacts/findings/spec.json",
-    "created_at": "2026-09-26T04:26:45Z",
+    "created_at": "2026-09-26T04:29:40Z",
     "inputs": [
       {
         "path": "artifacts/verification/S-2.8.json",
@@ -2203,7 +2293,7 @@
       },
       {
         "path": "artifacts/verification/S-4.4.json",
-        "sha256": "1c894d74ec420533d318e49d50e0b89dbc3966451b16f801325d1ce7021078dd"
+        "sha256": "1b6d2e8c1345088f4cd3e68c8738b583e701b6d6c17582ede47ec6b02063bcc1"
       },
       {
         "path": "artifacts/verification/S-4.5.json",
@@ -2375,15 +2465,15 @@
       },
       {
         "path": "artifacts/verification/S-7.10.json",
-        "sha256": "5da7e3b116e7b93b90f0d4d8cd6643d6a93dc8b5b0996ac2d79d9379a281b20c"
+        "sha256": "ce13deeddeca9c67d063c18d21800374b2b9b1835bed3f5d2610fb1f36266521"
       },
       {
         "path": "artifacts/verification/S-7.11.json",
-        "sha256": "355fe428aca532d847f7f6120c3e08478a53f383bd885418dfbe41c0f5ece2a5"
+        "sha256": "74413767845d16f576c3c87269ea9ec6379479991471c0948748ef256b796214"
       },
       {
         "path": "artifacts/verification/S-7.12.json",
-        "sha256": "a6cb5901014c6d5ee14a60f9c3fec162c48091fa8bb443c59220fca60f1a2b44"
+        "sha256": "3513ba74f8230ca9e73c47ff9ef911e4ee5dbe96c6f1e74558e1434077477f77"
       },
       {
         "path": "artifacts/verification/S-7.13.json",
@@ -2395,11 +2485,11 @@
       },
       {
         "path": "artifacts/verification/S-7.3.json",
-        "sha256": "7a0b16949bf083da8753722f66001ac303b4cde15baeeffe59c8a27170ddfed2"
+        "sha256": "69d00bb92e8589ee3df1632c8b5b3ee31e0fd4ae7286793c3662f3c088e9a1e1"
       },
       {
         "path": "artifacts/verification/S-7.4.json",
-        "sha256": "dc7764210d956e12bbc013d39651a2abc25de4c99e598ba241b1d957ea31080f"
+        "sha256": "e0651a2a0aa41f413306be50b2627c5d0110ceb5f4e41f8b87805e5a6319754f"
       },
       {
         "path": "artifacts/verification/S-7.5.json",
@@ -2428,7 +2518,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "f094dca6967f20b4d28c42a0918d8d3bff33ffbed8a6dfa750e510d47a04c0d2",
+    "sha256": "1ab47d96601d8bf53a0c720b6c0f4590ae86ebcd820ea064593ae469771ddbf9",
     "stage": "classify"
   },
   {
@@ -2450,7 +2540,7 @@
   },
   {
     "artifact": "artifacts/status.json",
-    "created_at": "2026-09-26T04:26:45Z",
+    "created_at": "2026-09-26T04:29:40Z",
     "inputs": [
       {
         "path": "artifacts/verification/S-2.8.json",
@@ -2610,7 +2700,7 @@
       },
       {
         "path": "artifacts/verification/S-4.4.json",
-        "sha256": "1c894d74ec420533d318e49d50e0b89dbc3966451b16f801325d1ce7021078dd"
+        "sha256": "1b6d2e8c1345088f4cd3e68c8738b583e701b6d6c17582ede47ec6b02063bcc1"
       },
       {
         "path": "artifacts/verification/S-4.5.json",
@@ -2782,15 +2872,15 @@
       },
       {
         "path": "artifacts/verification/S-7.10.json",
-        "sha256": "5da7e3b116e7b93b90f0d4d8cd6643d6a93dc8b5b0996ac2d79d9379a281b20c"
+        "sha256": "ce13deeddeca9c67d063c18d21800374b2b9b1835bed3f5d2610fb1f36266521"
       },
       {
         "path": "artifacts/verification/S-7.11.json",
-        "sha256": "355fe428aca532d847f7f6120c3e08478a53f383bd885418dfbe41c0f5ece2a5"
+        "sha256": "74413767845d16f576c3c87269ea9ec6379479991471c0948748ef256b796214"
       },
       {
         "path": "artifacts/verification/S-7.12.json",
-        "sha256": "a6cb5901014c6d5ee14a60f9c3fec162c48091fa8bb443c59220fca60f1a2b44"
+        "sha256": "3513ba74f8230ca9e73c47ff9ef911e4ee5dbe96c6f1e74558e1434077477f77"
       },
       {
         "path": "artifacts/verification/S-7.13.json",
@@ -2802,11 +2892,11 @@
       },
       {
         "path": "artifacts/verification/S-7.3.json",
-        "sha256": "7a0b16949bf083da8753722f66001ac303b4cde15baeeffe59c8a27170ddfed2"
+        "sha256": "69d00bb92e8589ee3df1632c8b5b3ee31e0fd4ae7286793c3662f3c088e9a1e1"
       },
       {
         "path": "artifacts/verification/S-7.4.json",
-        "sha256": "dc7764210d956e12bbc013d39651a2abc25de4c99e598ba241b1d957ea31080f"
+        "sha256": "e0651a2a0aa41f413306be50b2627c5d0110ceb5f4e41f8b87805e5a6319754f"
       },
       {
         "path": "artifacts/verification/S-7.5.json",
@@ -2835,7 +2925,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "e3aa4a8f5e76c1f24475abbeb8478a85cfcb875999a557dd41b5e2df5b4ce70f",
+    "sha256": "e71e8c638a4b259f39fb0107aad7bb9befbbf7bed9645d329c824282d6742c0a",
     "stage": "classify"
   },
   {
@@ -5205,7 +5295,7 @@
   },
   {
     "artifact": "artifacts/verification/S-4.4.json",
-    "created_at": "2026-09-26T03:51:04Z",
+    "created_at": "2026-09-26T04:29:10Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-4.4.json",
@@ -5226,7 +5316,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "1c894d74ec420533d318e49d50e0b89dbc3966451b16f801325d1ce7021078dd",
+    "sha256": "1b6d2e8c1345088f4cd3e68c8738b583e701b6d6c17582ede47ec6b02063bcc1",
     "stage": "verify"
   },
   {
@@ -5283,7 +5373,7 @@
   },
   {
     "artifact": "artifacts/verification/S-4.4_attempt3.json",
-    "created_at": "2026-09-26T03:51:04Z",
+    "created_at": "2026-09-26T04:29:10Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-4.4.json",
@@ -5304,7 +5394,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "1c894d74ec420533d318e49d50e0b89dbc3966451b16f801325d1ce7021078dd",
+    "sha256": "1b6d2e8c1345088f4cd3e68c8738b583e701b6d6c17582ede47ec6b02063bcc1",
     "stage": "verify"
   },
   {
@@ -7637,11 +7727,11 @@
   },
   {
     "artifact": "artifacts/verification/S-7.10.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.10.json",
-        "sha256": "bb7ea235a3b52a809925182642f7ce57c2c053df7cd45185e68e2787a20a6427"
+        "sha256": "ec1b20a73ef49dda0b2ecb51cc09c2e37ba7a0bb2cf7732a4e0abfaf0c921da1"
       },
       {
         "pages": [
@@ -7659,12 +7749,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "5da7e3b116e7b93b90f0d4d8cd6643d6a93dc8b5b0996ac2d79d9379a281b20c",
+    "sha256": "ce13deeddeca9c67d063c18d21800374b2b9b1835bed3f5d2610fb1f36266521",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.10_attempt1.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:12Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.10.json",
@@ -7686,16 +7776,43 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "5da7e3b116e7b93b90f0d4d8cd6643d6a93dc8b5b0996ac2d79d9379a281b20c",
+    "sha256": "d480d9f4b12609c7bdff00585ce85e5c5778a8db930b989cf997a93c04f826d0",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-7.10_attempt2.json",
+    "created_at": "2026-09-26T04:29:38Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-7.10.json",
+        "sha256": "ec1b20a73ef49dda0b2ecb51cc09c2e37ba7a0bb2cf7732a4e0abfaf0c921da1"
+      },
+      {
+        "pages": [
+          140,
+          141,
+          142
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "ce13deeddeca9c67d063c18d21800374b2b9b1835bed3f5d2610fb1f36266521",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.11.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.11.json",
-        "sha256": "bed893cce42daaa257c5c82ccae2d81c22ba311686b236b582220de910244eb6"
+        "sha256": "f117ba5db90b2154d1f4dd8d38e136b38f00e658c91e317a70041f8a3108a38d"
       },
       {
         "pages": [
@@ -7712,12 +7829,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "355fe428aca532d847f7f6120c3e08478a53f383bd885418dfbe41c0f5ece2a5",
+    "sha256": "74413767845d16f576c3c87269ea9ec6379479991471c0948748ef256b796214",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.11_attempt1.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:12Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.11.json",
@@ -7738,16 +7855,42 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "355fe428aca532d847f7f6120c3e08478a53f383bd885418dfbe41c0f5ece2a5",
+    "sha256": "7ba425b9357bc9d6580be6514d2cd5bbcf194f4dd77516c58c0f7f1b5c0a81f7",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-7.11_attempt2.json",
+    "created_at": "2026-09-26T04:29:38Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-7.11.json",
+        "sha256": "f117ba5db90b2154d1f4dd8d38e136b38f00e658c91e317a70041f8a3108a38d"
+      },
+      {
+        "pages": [
+          142,
+          143
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "74413767845d16f576c3c87269ea9ec6379479991471c0948748ef256b796214",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.12.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.12.json",
-        "sha256": "b62d82725f1160876355e9695eb5a19e5f5c8ceb204e76d0659ec52aac1e3aca"
+        "sha256": "8449660733feedca83781e8a3453ad67312a572dab79a5e82f9ad903795dcf0c"
       },
       {
         "pages": [
@@ -7764,12 +7907,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "a6cb5901014c6d5ee14a60f9c3fec162c48091fa8bb443c59220fca60f1a2b44",
+    "sha256": "3513ba74f8230ca9e73c47ff9ef911e4ee5dbe96c6f1e74558e1434077477f77",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.12_attempt1.json",
-    "created_at": "2026-09-26T04:26:07Z",
+    "created_at": "2026-09-26T04:29:12Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.12.json",
@@ -7790,7 +7933,33 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "a6cb5901014c6d5ee14a60f9c3fec162c48091fa8bb443c59220fca60f1a2b44",
+    "sha256": "302d77a645d52e18a1f7f7766da87cfe32e59d73a96089b6d5a15f5d3551179d",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-7.12_attempt2.json",
+    "created_at": "2026-09-26T04:29:38Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-7.12.json",
+        "sha256": "8449660733feedca83781e8a3453ad67312a572dab79a5e82f9ad903795dcf0c"
+      },
+      {
+        "pages": [
+          144,
+          145
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "3513ba74f8230ca9e73c47ff9ef911e4ee5dbe96c6f1e74558e1434077477f77",
     "stage": "verify"
   },
   {
@@ -7928,11 +8097,11 @@
   },
   {
     "artifact": "artifacts/verification/S-7.3.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:38Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.3.json",
-        "sha256": "0006a63542f7721f1a1c94d1effd0f73292fc433504f4084b4e59a1e5bb22bec"
+        "sha256": "bab4474e112bedc6befd4421f4425fcbd48ed860b3565f0829af140566347e2f"
       },
       {
         "pages": [
@@ -7950,12 +8119,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "7a0b16949bf083da8753722f66001ac303b4cde15baeeffe59c8a27170ddfed2",
+    "sha256": "69d00bb92e8589ee3df1632c8b5b3ee31e0fd4ae7286793c3662f3c088e9a1e1",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.3_attempt1.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:12Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.3.json",
@@ -7977,16 +8146,43 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "7a0b16949bf083da8753722f66001ac303b4cde15baeeffe59c8a27170ddfed2",
+    "sha256": "f9f4e5403abfe1a39efce91682ca617bed3d6bc6b7ba549557426e570f747a1d",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-7.3_attempt2.json",
+    "created_at": "2026-09-26T04:29:38Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-7.3.json",
+        "sha256": "bab4474e112bedc6befd4421f4425fcbd48ed860b3565f0829af140566347e2f"
+      },
+      {
+        "pages": [
+          129,
+          130,
+          131
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "69d00bb92e8589ee3df1632c8b5b3ee31e0fd4ae7286793c3662f3c088e9a1e1",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.4.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:39Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.4.json",
-        "sha256": "17ef5d72c90fb41165324935ce6162f4068e6210e62d36671c20bd6ce393a249"
+        "sha256": "e27ee5d9a97c282fd717f378536bd84a7b6d961e811ca14130549839debc0fc6"
       },
       {
         "pages": [
@@ -8004,12 +8200,12 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "dc7764210d956e12bbc013d39651a2abc25de4c99e598ba241b1d957ea31080f",
+    "sha256": "e0651a2a0aa41f413306be50b2627c5d0110ceb5f4e41f8b87805e5a6319754f",
     "stage": "verify"
   },
   {
     "artifact": "artifacts/verification/S-7.4_attempt1.json",
-    "created_at": "2026-09-26T04:26:08Z",
+    "created_at": "2026-09-26T04:29:13Z",
     "inputs": [
       {
         "path": "artifacts/contract/S-7.4.json",
@@ -8031,7 +8227,34 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "dc7764210d956e12bbc013d39651a2abc25de4c99e598ba241b1d957ea31080f",
+    "sha256": "3017b0488f6f4b4f906d3617a47cfe76f044ed96038336948d6a1118222c6fc1",
+    "stage": "verify"
+  },
+  {
+    "artifact": "artifacts/verification/S-7.4_attempt2.json",
+    "created_at": "2026-09-26T04:29:39Z",
+    "inputs": [
+      {
+        "path": "artifacts/contract/S-7.4.json",
+        "sha256": "e27ee5d9a97c282fd717f378536bd84a7b6d961e811ca14130549839debc0fc6"
+      },
+      {
+        "pages": [
+          131,
+          132,
+          133
+        ],
+        "path": "artifacts/work/pages.jsonl",
+        "sha256": "32173460104755804007045d110a387d40a9a08900a88af3d9fc9e8e7b2d678b"
+      }
+    ],
+    "producer": {
+      "kind": "deterministic",
+      "rules_version": "v1",
+      "tool": "specproof",
+      "version": "0.1.0"
+    },
+    "sha256": "e0651a2a0aa41f413306be50b2627c5d0110ceb5f4e41f8b87805e5a6319754f",
     "stage": "verify"
   },
   {

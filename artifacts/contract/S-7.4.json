@@ -11,7 +11,7 @@
   },
   "definitions": [],
   "extraction": {
-    "attempt": 1,
+    "attempt": 2,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -182,7 +182,7 @@
         "page": 132,
         "quote": "curl     -X   PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'"
       },
-      "raw": "    curl     -X   PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\n                  \"resources\":           [\n                         \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                         \"5a2c3d4e-1f6b-4c8d-9e0f-2a3b4c5d6e7f\",\n                         \"2p3q4r5s-6t7u-8v9w-x0y1-z2a3b4c5d6e\"\n                  ]\n           }'\n           --insecure\n    #  Delete       all    door    resources\n      curl    -X    PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\n                  \"resources\":           []\n           }'\n           --insecure"
+      "raw": "    curl     -X   PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data-raw         '{\n                  \"resources\":           [\n                         \"6ff875d2-af87-470b-9cb5-774c6596afc8\",\n                         \"5a2c3d4e-1f6b-4c8d-9e0f-2a3b4c5d6e7f\",\n                         \"2p3q4r5s-6t7u-8v9w-x0y1-z2a3b4c5d6e\"\n                  ]\n           }'\n           --insecure"
     },
     "response": {
       "citation": {

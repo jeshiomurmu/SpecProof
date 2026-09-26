@@ -11,7 +11,7 @@
   },
   "definitions": [],
   "extraction": {
-    "attempt": 1,
+    "attempt": 2,
     "bob_task_ref": null,
     "mode": "specproof-extract",
     "producer": "claude-code",
@@ -80,7 +80,7 @@
         "page": 144,
         "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'"
       },
-      "raw": "    curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                \"lockdown\":          true,\n                \"evacuation\":            false\n           }'\n           --insecure\n    #  Keep     it   unlocked\n    curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                \"lockdown\":          false,\n                \"evacuation\":            true\n           }'\n           --insecure\n    #  Restore       the    initial        state     or   release       the     setting\n    curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                \"lockdown\":          false,\n                \"evacuation\":            false\n           }'\n           --insecure"
+      "raw": "    curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'\n           -H   'Authorization:             Bearer       wHFmHR******kD6wHg'\n           -H   'accept:        application/json'\n           -H   'content-type:             application/json'\n           --data      '{\n                \"lockdown\":          true,\n                \"evacuation\":            false\n           }'\n           --insecure"
     },
     "response": {
       "citation": {

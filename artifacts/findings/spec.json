@@ -147,6 +147,36 @@
         "file": null,
         "kind": "doc",
         "line": null,
+        "page": 129,
+        "quote": "resources               T              String     All doors contained  under  the group.",
+        "snippet": null
+      },
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
+        "page": 130,
+        "quote": "\"code\":       \"SUCCESS\",",
+        "snippet": null
+      }
+    ],
+    "id": "F-623698f4",
+    "review": {
+      "note": null,
+      "reviewer": null,
+      "status": "CANDIDATE"
+    },
+    "section_id": "S-7.3",
+    "severity": "high",
+    "title": "Sample value type contradicts the documented type of resources",
+    "type": "SPEC_SELF_INCONSISTENCY"
+  },
+  {
+    "evidence": [
+      {
+        "file": null,
+        "kind": "doc",
+        "line": null,
         "page": 85,
         "quote": "curl     -XPUT     '{{host}}/api/v1/developer/access_policies/holiday_groups/7be7a7a0-818f-4f76-",
         "snippet": null
@@ -229,28 +259,6 @@
         "file": null,
         "kind": "doc",
         "line": null,
-        "page": 143,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-8d78b1cf",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-7.11",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
         "page": 98,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -311,72 +319,6 @@
         "file": null,
         "kind": "doc",
         "line": null,
-        "page": 132,
-        "quote": "curl     -X   PUT'{{host}}/api/v1/developer/door_groups/0140fa3d-8973-4305-a0ce-5306ae277878'",
-        "snippet": null
-      }
-    ],
-    "id": "F-b3e7f4fb",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-7.4",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 130,
-        "quote": "\"code\":       \"SUCCESS\",",
-        "snippet": null
-      }
-    ],
-    "id": "F-c1beaa4e",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-7.3",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 144,
-        "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'",
-        "snippet": null
-      }
-    ],
-    "id": "F-c67f9601",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-7.12",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
         "page": 43,
         "quote": "\"code\":       \"SUCCESS\",",
         "snippet": null
@@ -411,28 +353,6 @@
       "status": "CANDIDATE"
     },
     "section_id": "S-6.15",
-    "severity": "medium",
-    "title": "Document sample is not valid JSON",
-    "type": "SPEC_MALFORMED_SAMPLE"
-  },
-  {
-    "evidence": [
-      {
-        "file": null,
-        "kind": "doc",
-        "line": null,
-        "page": 140,
-        "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'",
-        "snippet": null
-      }
-    ],
-    "id": "F-d763fa94",
-    "review": {
-      "note": null,
-      "reviewer": null,
-      "status": "CANDIDATE"
-    },
-    "section_id": "S-7.10",
     "severity": "medium",
     "title": "Document sample is not valid JSON",
     "type": "SPEC_MALFORMED_SAMPLE"

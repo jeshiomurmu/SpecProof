@@ -11,6 +11,17 @@
   },
   "issues": [
     {
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
+      "field": null,
+      "hint": {
+        "first_unmatched": "# Keep it unlocked"
+      },
+      "message": "response sample runs past the end of its block",
+      "severity": "error"
+    },
+    {
       "category": "sample_conflict",
       "code": "V3_SAMPLE_UNPARSEABLE",
       "evidence": {

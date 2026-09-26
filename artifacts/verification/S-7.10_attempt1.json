@@ -7,19 +7,18 @@
     "row_ok": 4,
     "rows_detected": 4,
     "samples": 2,
-    "samples_parsed": 1
+    "samples_parsed": 2
   },
   "issues": [
     {
-      "category": "sample_conflict",
-      "code": "V3_SAMPLE_UNPARSEABLE",
-      "evidence": {
-        "page": 140,
-        "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/e4978b83-203d-4015-97df-b86efc91cb0c/lock_rule'"
-      },
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
       "field": null,
-      "hint": null,
-      "message": "request sample is not valid JSON: Extra data (line 4)",
+      "hint": {
+        "first_unmatched": "# Keep it unlocked"
+      },
+      "message": "request sample runs past the end of its block",
       "severity": "error"
     }
   ],

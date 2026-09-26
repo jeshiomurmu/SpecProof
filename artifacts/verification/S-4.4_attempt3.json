@@ -9,6 +9,18 @@
     "samples": 0,
     "samples_parsed": 0
   },
-  "issues": [],
+  "issues": [
+    {
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
+      "field": null,
+      "hint": {
+        "first_unmatched": "# fetch users through keyword"
+      },
+      "message": "request sample runs past the end of its block",
+      "severity": "error"
+    }
+  ],
   "section_id": "S-4.4"
 }

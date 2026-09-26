@@ -7,19 +7,18 @@
     "row_ok": 3,
     "rows_detected": 3,
     "samples": 2,
-    "samples_parsed": 1
+    "samples_parsed": 2
   },
   "issues": [
     {
-      "category": "sample_conflict",
-      "code": "V3_SAMPLE_UNPARSEABLE",
-      "evidence": {
-        "page": 144,
-        "quote": "curl     -X   PUT    '{{host}}/api/v1/developer/doors/settings/emergency'"
-      },
+      "category": "extraction",
+      "code": "V2_SAMPLE_NOT_VERBATIM",
+      "evidence": null,
       "field": null,
-      "hint": null,
-      "message": "request sample is not valid JSON: Extra data (line 4)",
+      "hint": {
+        "first_unmatched": "# Keep it unlocked"
+      },
+      "message": "request sample runs past the end of its block",
       "severity": "error"
     }
   ],
