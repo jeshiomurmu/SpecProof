@@ -140,8 +140,9 @@ BOUNDARIES = (
     "Path Parameters",
     "curl",
     "-",
+    "#",
 )
-_HEADING = re.compile(r"^\d{1,2}\.\d{1,2}\s+[A-Z]")
+_HEADING = re.compile(r"^\d{1,2}\.(\d{1,2})?\s+[A-Z]")
 
 
 def _is_boundary(text: str) -> bool:

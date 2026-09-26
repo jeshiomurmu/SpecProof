@@ -186,6 +186,24 @@ def test_VER_016_malformed_document_sample_with_open_brackets_is_complete() -> N
 
 
 @pytest.mark.unit
+@pytest.mark.parametrize("after", ["4. Visitor", "# using the expands options", "3.5 Next Section"])
+def test_VER_017_chapter_headings_and_comments_end_a_block(after: str) -> None:
+    lines = [
+        (1, "Response Sample"),
+        (1, "{"),
+        (1, '"code": "SUCCESS"'),
+        (1, "}"),
+        (1, after),
+        (1, "more text"),
+    ]
+    ctx = SectionContext(norm_pages={1: ""}, lines=tuple(lines), page_start=1, page_end=1)
+    sample = Sample(
+        raw='{\n"code": "SUCCESS"\n}', citation=Citation(page=1, quote='"code": "SUCCESS"')
+    )
+    assert check_sample_verbatim(ctx, sample, "response") == []
+
+
+@pytest.mark.unit
 def test_VER_013_repaired_sample_not_verbatim(section_ctx: Ctx, good: Good) -> None:
     ctx = section_ctx("S-2.2")
     original = ContractSection.model_validate(good("S-2.2"))
