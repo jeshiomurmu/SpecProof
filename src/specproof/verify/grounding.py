@@ -12,6 +12,7 @@ from rapidfuzz import fuzz
 from specproof.models.contract import QUOTE_MIN, Citation, FieldSpec, Sample
 from specproof.models.verification import Issue
 from specproof.util.text import norm, row_tokens
+from specproof.verify.samples import extract_payload
 
 ROW_LOCATIONS = frozenset({"header", "body", "query", "path"})
 _HINT_MAX = 200
@@ -143,4 +144,28 @@ def check_sample_verbatim(ctx: SectionContext, sample: Sample, which: str) -> li
             hint: dict[str, str | int] = {"first_unmatched": wanted[:_HINT_MAX]}
             return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
         position += 1
+    unclosed = open_brackets(extract_payload(sample.raw) or "")
+    if unclosed:
+        msg = f"{which} sample is an incomplete copy: {unclosed} bracket(s) never closed"
+        hint = {"first_unmatched": "copy the sample through its final closing bracket"}
+        return [_issue("V2_SAMPLE_NOT_VERBATIM", msg, field=None, hint=hint)]
     return []
+
+
+def open_brackets(text: str) -> int:
+    """Number of { or [ left unclosed, ignoring brackets inside JSON strings."""
+    depth = 0
+    in_string = escaped = False
+    for char in text:
+        if in_string:
+            escaped = char == "\\" and not escaped
+            if char == '"' and not escaped:
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char in "{[":
+            depth += 1
+        elif char in "}]":
+            depth -= 1
+    return max(depth, 0)

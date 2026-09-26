@@ -143,6 +143,27 @@ def test_VER_012_fuzzy_never_decides(
 
 
 @pytest.mark.unit
+def test_VER_014_truncated_sample_is_an_extraction_error(section_ctx: Ctx, good: Good) -> None:
+    data = good("S-2.3")
+    lines = data["samples"]["response"]["raw"].split("\n")
+    data["samples"]["response"]["raw"] = "\n".join(lines[:3])
+    truncated = ContractSection.model_validate(data)
+    assert truncated.samples.response is not None
+    issues = check_sample_verbatim(section_ctx("S-2.3"), truncated.samples.response, "response")
+    assert _codes(issues) == ["V2_SAMPLE_NOT_VERBATIM"]
+    assert "incomplete" in issues[0].message
+
+
+@pytest.mark.unit
+def test_VER_015_malformed_but_complete_sample_passes_verbatim(
+    section_ctx: Ctx, good: Good
+) -> None:
+    contract = ContractSection.model_validate(good("S-2.4"))
+    assert contract.samples.request is not None
+    assert check_sample_verbatim(section_ctx("S-2.4"), contract.samples.request, "request") == []
+
+
+@pytest.mark.unit
 def test_VER_013_repaired_sample_not_verbatim(section_ctx: Ctx, good: Good) -> None:
     ctx = section_ctx("S-2.2")
     original = ContractSection.model_validate(good("S-2.2"))

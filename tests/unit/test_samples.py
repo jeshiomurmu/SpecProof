@@ -103,6 +103,34 @@ def test_SMP_008_response_envelope_and_fields(good: Good) -> None:
 
 
 @pytest.mark.unit
+def test_SMP_010_bodiless_curl_is_not_a_json_sample(good: Good) -> None:
+    data = good("S-2.2")
+    data["samples"]["request"]["raw"] = (
+        "curl -XGET '{{host}}/api/v1/widgets'\n -H 'Authorization: x'"
+    )
+    contract = ContractSection.model_validate(data)
+    issues, counts = validate_samples(contract)
+    assert [i.code for i in issues if i.field is None] == []
+    assert counts == {"samples": 1, "samples_parsed": 1}
+    assert extract_payload("curl -XDELETE '{{host}}/x'") is None
+
+
+@pytest.mark.unit
+@pytest.mark.parametrize(
+    "raw",
+    [
+        '{"code": "SUCCESS", "msg": "success"}',
+        '{"code": "SUCCESS", "msg": "success", "data": null}',
+    ],
+    ids=["no-data", "null-data"],
+)
+def test_SMP_011_response_without_data_is_fine(good: Good, raw: str) -> None:
+    data = good("S-2.3")
+    data["samples"]["response"]["raw"] = raw
+    assert _codes(ContractSection.model_validate(data)) == []
+
+
+@pytest.mark.unit
 def test_SMP_009_schema_build_golden(good: Good) -> None:
     schema = build_request_schema(ContractSection.model_validate(good("S-2.2")))
     assert schema == json.loads(GOLDEN.read_text(encoding="utf-8"))

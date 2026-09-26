@@ -21,16 +21,19 @@ _JSON_TYPES = {
     "array": "array",
 }
 _DATA_RAW = re.compile(r"--data(?:-raw|-binary)?\s+(['\"])")
-ENVELOPE = ("code", "msg", "data")
+# The document's responses always carry code and msg; data is absent or null for
+# operations that return nothing (e.g. DELETE), so it is not required.
+ENVELOPE_REQUIRED = ("code", "msg")
 _V3 = {"required": "V3_REQUIRED_MISSING", "type": "V3_TYPE_MISMATCH", "enum": "V3_ENUM_VIOLATION"}
 _SEVERITY = {"required": "warning", "type": "error", "enum": "error"}
 
 
-def extract_payload(raw: str) -> str:
-    """Return the JSON text of a sample: the --data-raw payload of a curl command, else raw."""
+def extract_payload(raw: str) -> str | None:
+    """JSON text of a sample: the --data-raw payload of a curl command, the raw text itself
+    for a plain JSON sample, or None for a curl command without a body (e.g. GET/DELETE)."""
     match = _DATA_RAW.search(raw)
     if match is None:
-        return raw.strip()
+        return None if raw.lstrip().startswith("curl") else raw.strip()
     quote = match.group(1)
     start = match.end()
     end = raw.rfind(quote)
@@ -67,9 +70,9 @@ def build_request_schema(contract: ContractSection) -> dict[str, Any]:
     return build_schema([f for f in contract.fields if f.location == "body"])
 
 
-def _parse(raw: str, which: str, citation: Citation) -> tuple[Any, list[Issue]]:
+def _parse(text: str, which: str, citation: Citation) -> tuple[Any, list[Issue]]:
     try:
-        return json.loads(extract_payload(raw)), []
+        return json.loads(text), []
     except json.JSONDecodeError as exc:
         msg = f"{which} sample is not valid JSON: {exc.msg} (line {exc.lineno})"
         issue = Issue(
@@ -133,11 +136,11 @@ def _request_issues(contract: ContractSection, payload: Any, cite: Citation) -> 
 def _response_issues(contract: ContractSection, payload: Any, cite: Citation) -> list[Issue]:
     envelope = {
         "properties": {},
-        "required": list(ENVELOPE),
+        "required": list(ENVELOPE_REQUIRED),
         "type": "object",
     }
     issues = _validate(payload, envelope, "response", cite)
-    if not isinstance(payload, dict) or "data" not in payload:
+    if not isinstance(payload, dict) or payload.get("data") is None:
         return issues
     schema = build_schema([f for f in contract.fields if f.location == "response"])
     data = payload["data"]
@@ -154,10 +157,11 @@ def validate_samples(contract: ContractSection) -> tuple[list[Issue], dict[str, 
         ("request", contract.samples.request),
         ("response", contract.samples.response),
     ):
-        if sample is None:
+        text = extract_payload(sample.raw) if sample is not None else None
+        if sample is None or text is None:
             continue
         counts["samples"] += 1
-        payload, parse_issues = _parse(sample.raw, which, sample.citation)
+        payload, parse_issues = _parse(text, which, sample.citation)
         issues.extend(parse_issues)
         if parse_issues:
             continue
