@@ -2,7 +2,7 @@
 
 > **Turn document-only API specs into verified, cited contracts — and prove whether your code keeps them.**
 
-Live evidence pack: <<LIVE_URL>>
+Live evidence pack: https://jeshiomurmu.github.io/SpecProof/
 
 Built for the IBM Bob 2.0 Hackathon (lablab.ai, Sep 25–27, 2026) · MIT License
 
@@ -55,7 +55,7 @@ Machine-readable tooling (OpenAPI diffing, contract testing) can't help, because
 | Spec self-inconsistencies and sample defects | 19 confirmed of 30 candidates |
 | Community OpenAPI discrepancies | 8 confirmed of 30 candidates |
 | Client conformance issues (py-unifi-access) | 1 confirmed of 3 candidates |
-| Manual transcription baseline | pending (eval/audit/manual_baseline.csv not recorded yet) |
+| Manual transcription baseline | 8.5 min per endpoint (n=1, single tester) |
 <!-- RESULTS:END -->
 
 ## Quickstart

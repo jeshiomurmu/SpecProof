@@ -5,7 +5,7 @@ Only the tasks below ran in IBM Bob 2.0. The deterministic engine (T01–T06, T0
 | Task | Goal | Bob mode(s) | Bob 2.0 features used | Export | Screenshot | Commit |
 |---|---|---|---|---|---|---|
 | T07 | Extraction pilot (S-3.2, S-4.1, S-4.2) | `spec-auditor` | Custom mode, skill, `/sp-extract`, PDF reading | exports/T07.md | screenshots/T07.png | `68ba261` |
-| T08 (partial) | Chapter 4 attempt 1 (S-4.3 to S-4.14) | `spec-auditor` | Custom mode, skill, PDF reading | none (the human could not export it) | none (the human could not take one; none was fabricated) | `98f4962` |
+| T08 (partial) | Chapter 4 attempt 1 (S-4.3 to S-4.14) | `spec-auditor` | Custom mode, skill, PDF reading | exports/T08.md (ends with Status: error when the allowance ran out) | screenshots/T08-docread.png, T08-skill.png, T08-write.png, T08-stopped.png | `98f4962` |
 
 ## Feature coverage summary
 | Bob 2.0 feature | Tasks where it was used |

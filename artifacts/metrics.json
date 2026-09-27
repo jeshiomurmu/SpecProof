@@ -93,8 +93,9 @@
     "value": 0.1551
   },
   "manual_minutes_per_endpoint": {
-    "reason": "eval/audit/manual_baseline.csv not recorded yet",
-    "value": null
+    "method": "median of hand transcriptions, single tester (EVALUATION_FRAMEWORK section 5)",
+    "n": 1,
+    "value": 8.5
   },
   "mean_attempts": {
     "denominator": 116,

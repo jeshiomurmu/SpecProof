@@ -2621,11 +2621,11 @@
   },
   {
     "artifact": "artifacts/findings.json",
-    "created_at": "2026-09-27T04:55:50Z",
+    "created_at": "2026-09-27T09:04:11Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "8a447a5e06f9661f4a7c97d7bb48c6154936e7564819df8ecb266a37cd454f50"
+        "sha256": "1a22b8cdbf1cfa207a2b8f113f0c02241d8f2d725eccdb6183086c29e5bf6afc"
       }
     ],
     "producer": {
@@ -2638,11 +2638,11 @@
   },
   {
     "artifact": "artifacts/findings.sarif",
-    "created_at": "2026-09-27T04:55:50Z",
+    "created_at": "2026-09-27T09:04:11Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "8a447a5e06f9661f4a7c97d7bb48c6154936e7564819df8ecb266a37cd454f50"
+        "sha256": "1a22b8cdbf1cfa207a2b8f113f0c02241d8f2d725eccdb6183086c29e5bf6afc"
       }
     ],
     "producer": {
@@ -3175,7 +3175,7 @@
   },
   {
     "artifact": "artifacts/metrics.json",
-    "created_at": "2026-09-27T04:55:48Z",
+    "created_at": "2026-09-27T09:04:10Z",
     "inputs": [
       {
         "path": "artifacts/status.json",
@@ -3191,7 +3191,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "8a447a5e06f9661f4a7c97d7bb48c6154936e7564819df8ecb266a37cd454f50",
+    "sha256": "1a22b8cdbf1cfa207a2b8f113f0c02241d8f2d725eccdb6183086c29e5bf6afc",
     "stage": "metrics"
   },
   {
@@ -3673,11 +3673,11 @@
   },
   {
     "artifact": "artifacts/report/index.html",
-    "created_at": "2026-09-27T04:55:50Z",
+    "created_at": "2026-09-27T09:04:11Z",
     "inputs": [
       {
         "path": "artifacts/metrics.json",
-        "sha256": "8a447a5e06f9661f4a7c97d7bb48c6154936e7564819df8ecb266a37cd454f50"
+        "sha256": "1a22b8cdbf1cfa207a2b8f113f0c02241d8f2d725eccdb6183086c29e5bf6afc"
       }
     ],
     "producer": {
@@ -3685,7 +3685,7 @@
       "tool": "specproof",
       "version": "0.1.0"
     },
-    "sha256": "3979fb073c215760ca1da37240a6d65a4d11a66c0134801bb5003be1a8104004",
+    "sha256": "ca75159af241b3c2a52d1dd91140b12d7ce80f1cedba137962220587f754d17a",
     "stage": "report"
   },
   {
