@@ -42,7 +42,7 @@ def ensure_replay_venv(paths: Paths, client: Path) -> str:
 def resolve_interpreter(value: str, cwd: Path) -> str:
     """An interpreter path relative to cwd made absolute; a bare command name is kept."""
     candidate = cwd / value
-    return str(candidate.resolve()) if candidate.is_file() else value
+    return str(candidate.absolute()) if candidate.is_file() else value
 
 
 def _mapping_producer(paths: Paths) -> Producer:

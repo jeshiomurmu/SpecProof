@@ -924,7 +924,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "09f41177833f133ef14a89178751b4b5293afd772fce83c6c57b73a15239c924",
+    "sha256": "4917450ddf8034cbbbdb7e1b666e253b83183e477be983a50a999e4ec52e255a",
     "stage": "extract"
   },
   {
@@ -943,7 +943,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "193bfba5a029e0d42da4120f7c2d96f5a95211f3d806435db8679859b74390f0",
+    "sha256": "31d6dbd691111bb5486d1169e44e11f3991446b6da6aa42e7b3a2152d60bfbd9",
     "stage": "extract"
   },
   {
@@ -962,7 +962,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "03f7cc9b8bd8c01f23c321d3716742b4e2fa0ed550da842742f6bef84be90add",
+    "sha256": "d33728d2f0744db04576b5edd643b4703eff9eb2666b48eec5083cfd1597eb8e",
     "stage": "extract"
   },
   {
@@ -981,7 +981,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "5d6e9c58381d80bd9fe9dc59a9584ff514c182a113112a23e8411a5f08a8b50c",
+    "sha256": "d654016470de94b3a3b1944e9cc9c8d5711bf25b444cc23587fb75ed14a9913d",
     "stage": "extract"
   },
   {
@@ -1000,7 +1000,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "c6895795b0f57eef54b70aa29815afd777eb1d331fcc1c6e7055a07d192122e8",
+    "sha256": "22529a9e4420b67dbb0f400b5a53f9905e768979733c67cb4837303d29a50f80",
     "stage": "extract"
   },
   {
@@ -1039,7 +1039,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "9352bee488f440140514985131ee6728da74caaabb566ce0be2ca89c5820070b",
+    "sha256": "af9c3b36a52da20fad62edac804b51fd9a42479c13eca7d57ce21c1e0af904f9",
     "stage": "extract"
   },
   {
@@ -1058,7 +1058,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "685a55229c1e320e8a22e4305584f601b27815660df2d500f320e004260a0daf",
+    "sha256": "fabd0088848f7b60fdb8ac8d935a2f01d7bd8b33f3572b31eb48b0aa77e024d5",
     "stage": "extract"
   },
   {
@@ -1077,7 +1077,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "4a45ed0061956f0449d8ac3c62cc65346c4a230484db4d9e7abf2efa975a851e",
+    "sha256": "ae9e57cb3abb79789b7714d01bb98a0532e5f91b06f07bc81500b0c8dbb23475",
     "stage": "extract"
   },
   {
@@ -1116,7 +1116,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "c8e1fd24a6e23d2a9c6722a6d3f896d8102d0bb00d4dae327652508613b861a9",
+    "sha256": "59bef5569b86150abd2f9d1ce9df42a768fc5bd0ba6c2fa6d835d9caea725479",
     "stage": "extract"
   },
   {
@@ -1135,7 +1135,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "cf411d798b6700ebbf07ad3c74f3712f030281f6c0a3da09216ded4c5d282952",
+    "sha256": "0f574aaf7eee852b6565eeb12b240b219ef79f0b0d3fa7bbe8e868ad099b370e",
     "stage": "extract"
   },
   {
@@ -1154,7 +1154,7 @@
       "prompt_version": "extract-v1",
       "tool": "ibm-bob+claude-code"
     },
-    "sha256": "b947122bb4ac1d117142cc62194f9e12d40eba5a3934934495a6d8af02419bc9",
+    "sha256": "0e3aa9a63ce8761b1cc4c4667123d46ca4be066e182ec836777d0b000763e90d",
     "stage": "extract"
   },
   {
