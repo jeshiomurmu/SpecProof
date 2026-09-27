@@ -68,6 +68,17 @@ make pipeline              # deterministic stages on the committed contracts
 open artifacts/report/index.html
 ```
 
+## Verify it yourself
+```bash
+git clone https://github.com/jeshiomurmu/SpecProof.git && cd SpecProof
+python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -e ".[dev]"
+pytest -m "unit or integration" --cov=specproof --cov-report=json:artifacts/work/coverage.json
+specproof fetch && specproof ingest && specproof segment
+specproof verify --report-only      # re-verifies all 116 committed contracts (~5 s)
+specproof classify && specproof eval  # 93 verified / 22 with spec findings / 1 quarantined; eval: PASS
+```
+
 ## Reproduce
 
 ```bash
