@@ -10,6 +10,6 @@ Only the tasks below ran in IBM Bob 2.0. The deterministic engine (T01–T06, T0
 ## Feature coverage summary
 | Bob 2.0 feature | Tasks where it was used |
 |---|---|
-| Custom mode `spec-auditor` + skill + `/sp-*` commands | T07, T08 (partial) |
-| Document understanding (PDF) | T07, T08 (partial) |
+| Custom mode `spec-auditor` + skill + `/sp-*` commands | T07, T08 (partial): `start_workflow specproof-extract` in exports/T08.md, screenshots/T08-skill.png |
+| Document understanding (PDF) | T07, T08 (partial): `office_read artifacts/work/spec.pdf` in exports/T08.md, screenshots/T08-docread.png |
 | Subagents, parallel tasks | not used: the allowance ran out first |

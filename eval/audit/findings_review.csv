@@ -1,0 +1,64 @@
+finding_id,status,reviewer,note
+F-00efb06c,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-0156e6d0,CONFIRMED,Jeshio,S-11.5: same unclosed -- data quote as S-11.4 (p177); JSON body itself valid
+F-040d4cd9,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-057fc198,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-0bb8a784,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-0e257d8c,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-0f3b02b5,CONFIRMED,Jeshio,S-7.4: same resources String vs array-of-objects contradiction (p132)
+F-103cd2b4,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-13962a9e,CONFIRMED,Jeshio,"S-3.4: response samc:\Users\Jeshio Murmu\Downloads\finding - findings_review.csvple open with '{'  followed by a second '{' visually checked, p17) - invalid JSON"
+F-1f37a3fc,CONFIRMED,Jeshio,"Reproduced with scripts/repro_pin_code.py: the PDF 3.4 sample returns pin_code as an object {"token": ...} (3.1 schema: Object); client User.pin_code is str|None (models/user.py:28) and rejects it. Not covered by the replay suite because the 3.4 sample is malformed JSON (F-13962a9e)."
+F-22e2f0e9,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-2518a1ed,CONFIRMED,Jeshio,"S-4.2: p52 enum visit_reason {Interview,Business,Cooperation,Others}; p56 request sample sends ""Interview"""
+F-2a2ebe0e,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-2ce06a9c,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-2d465646,CONFIRMED,Jeshio,"S-11.4: curl --data '{...} (p175) never closes its single quote before --insecure; the JSON body itself is valid, the command is broken "
+F-317997a8,CONFIRMED,Jeshio,"S-8.3: community nests nfc/bt_tap/bt_button/bt_shake/mobile_wave/pin_code/face under access_methods; the PDF table lists them top-level, while the PDF's own sample (p152) also nests under access_methods. One structural difference"
+F-318d603b,CONFIRMED,Jeshio,S-8.1: table documents flat device fields id/name/type/alias; sample returns data as an array of array [[{...}]] (p147)- extra level undocumented
+F-3202ab46,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-37cb6094,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-41067aa7,CONFIRMED,Jeshio,S-3.5: S3.1 schema types touch_pass as Array[Object]; the S-3.5 response sample (p20) sends an object {...}
+F-4406a47e,CONFIRMED,Jeshio,S-7.8: table types is_bind_hub as String; sample sends boolean true (p137)
+F-47123097,CONFIRMED,Jeshio,S-8.4: PDF marks room_name F (optional) (p153); community spec lists it in required
+F-4896b535,REJECTED,Jeshio,"Tool artifact: 'actor' exists in the S-9.2 sample, nested under data.hits[]._source (p157); contract compared it as a flat field"
+F-57e3eddb,REJECTED,Jeshio,"Tool artifact: 'even' exists in the S-9.2 sample, nested under data.hits[]._source (p157)"
+F-623698f4,CONFIRMED,Jeshio,S-7.3: same resources String vs array-of-objects contradiction (p129)
+F-64374118,CONFIRMED,Jeshio,S-5.9: request sample (p85) contains '# add a new holiday' / '#update an existing holiday' comments inside the JSON
+F-6546c17f,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-661399aa,CONFIRMED,Jeshio,"S-5.2/S-5.3: table row says 'resources' but its sub-rows say resources[].id/.type (p73, p76) and its sample use both spellings; community uses 'resources'. Present as 2 naming issue (one per endpoint), not 4"
+F-6cf173af,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-72ea066d,CONFIRMED,Jeshio,S-7.7: table types is_bind_hub as String; sample sends boolean true (p136)
+F-7926672f,CONFIRMED,Jeshio,"S-5.2/S-5.3: table row says 'resources' but its sub-rows say resources[].id/.type (p73, p76) and its sample use both spellings; community uses 'resources'. Present as 2 naming issue (one per endpoint), not 4"
+F-7c094e3d,CONFIRMED,Jeshio,"S-5.2/S-5.3: table row says 'resources' but its sub-rows say resources[].id/.type (p73, p76) and its sample use both spellings; community uses 'resources'. Present as 2 naming issue (one per endpoint), not 4"
+F-88db75e8,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-895887db,CONFIRMED,Jeshio,S-7.2: response table types resources as String but also lists resources[].id/.type; sample returns an array of objects (p128)
+F-8ae38c53,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-90f85c70,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-933cc645,REJECTED,Jeshio,"Comparison artifact: community spec defines file/cert/key under multipart/form-data (S-3.30, S-6.19, S-12.1); the comparison only read application/json bodies"
+F-93d0b6a1,CONFIRMED,Jeshio,"S-10.1: request sample (p162) has a trailing comma '},' before ']'"
+F-959533e6,CONFIRMED,Jeshio,"S-5.16: response table lists week_schedule T Object (p98); the sample has no week_schedule but a key named ""weekly"" instead (p98)"
+F-9d686227,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-9e0f7761,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-9ee3d244,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-a5b8c679,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-a7ca89ef,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-a96f5336,CONFIRMED,Jeshio,"S-4.5: p52 enum vs p63 request sample ""Interviemw"""
+F-acc5c7d6,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-af2adf84,REJECTED,Jeshio,"Comparison artifact: community spec defines file/cert/key under multipart/form-data (S-3.30, S-6.19, S-12.1); the comparison only read application/json bodies"
+F-b21d3b42,REJECTED,Jeshio,Not a client bug: client is_bind_hub: bool (models/door.py:97) matches the PDF's own samples (true); the PDF table is what's wrong - covered by F-72ea066d/F-4406a47e
+F-b2274bf9,CONFIRMED,Jeshio,"s-9.2: response sample ends with ""page"":1, ""total"":4 and has no ""msg"", although S2.8 (p12) says every response contains code, msg, data. Minor"
+F-b3aac90a,CONFIRMED,Jeshio,"PDF S-9.3 enum topic has 6 values {critical,door_openings,updats,device_events,admin_activity,visitor} (p158); community enum adds 'all'"
+F-c0e391d0,CONFIRMED,Jeshio,PDF S-9.2 enum topic has 6 values (p156); community enum adds 'all'
+F-c704b394,CONFIRMED,Jeshio,"S-3.24: p43 response sample has ""data"": { immediately followed by [ ; also ""user_email"": ""User1@*.com, is missing its closing quote"
+F-c73ffe14,REJECTED,Jeshio,Comparison artifact: PDF schema table spells the field 'Id' (S3.1) but all PDF samples and the client use 'id'; the mapping compared names case-sensitively
+F-ca1d797f,REJECTED,Jeshio,"Comparison artifact: the PDF lists path parameters (id/Id/device_id) in its request table; the community spec models them as path parameters (verified e.g. S-5.3 {id}, S-3.30 {id}, not body fields)"
+F-cea82680,CONFIRMED,Jeshio,"S-5.2/S-5.3: table row says 'resources' but its sub-rows say resources[].id/.type (p73, p76) and its sample use both spellings; community uses 'resources'. Present as 2 naming issue (one per endpoint), not 4"
+F-d0f1ee66,CONFIRMED,Jeshio,"S-6.15: request sample (p119) has a trailing comma after ""status"": ""SUSPENDED"" before"
+F-d938154e,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-ee160a81,REJECTED,Jeshio,"Tool artifact: in S-10.2/10.4/10.6 samples, data is keyed by resource type (""vpn"": [...], ""wifi"": [...]) and every item does contain id, name, deleted; contract modeled data as flat"
+F-f4d19869,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-f718c698,CONFIRMED,Jeshio,S-5.15: response table lists id T String; response sample data is {} (pp95-97)
+F-fa8911b9,REJECTED,Jeshio,Duplicate of F-317997a8(S-8.3): the field exists in the community spec nested under access_methods; not an independent discrepancy
+F-fcda0304,REJECTED,Jeshio,"Comparison artifact: community spec defines file/cert/key under multipart/form-data (S-3.30, S-6.19, S-12.1); the comparison only read application/json bodies"
+F-fd1c6e5e,REJECTED,Jeshio,"Comparison artifact: community spec defines file/cert/key under multipart/form-data (S-3.30, S-6.19, S-12.1); the comparison only read application/json bodies"

@@ -1,0 +1,2 @@
+section_id,minutes,notes
+S-5.8,8.5,"single tester, stopwatch, Sep 27; 1 header row + 9 body rows + request sample; 2 of 10 rows transcribed wrong (Authorization misspelled, holidays[].is_template typed as holidays[].template); second attempt at this section, done after having seen SpecProof output"

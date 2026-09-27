@@ -1,0 +1,368 @@
+{
+  "$defs": {
+    "Citation": {
+      "additionalProperties": false,
+      "description": "A 1-based page and a verbatim quote of 12-200 characters after normalization.",
+      "properties": {
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "page",
+        "quote"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "Extraction": {
+      "additionalProperties": false,
+      "description": "Provenance of an AI-produced contract.",
+      "properties": {
+        "attempt": {
+          "minimum": 1,
+          "title": "Attempt",
+          "type": "integer"
+        },
+        "bob_task_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bob Task Ref"
+        },
+        "mode": {
+          "title": "Mode",
+          "type": "string"
+        },
+        "producer": {
+          "title": "Producer",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "producer",
+        "mode",
+        "prompt_version",
+        "attempt"
+      ],
+      "title": "Extraction",
+      "type": "object"
+    },
+    "FieldSpec": {
+      "additionalProperties": false,
+      "description": "One documented parameter or property, with its citation.",
+      "properties": {
+        "citation": {
+          "$ref": "#/$defs/Citation"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "enum": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Enum"
+        },
+        "enum_citation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Citation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "example": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Example"
+        },
+        "location": {
+          "enum": [
+            "header",
+            "path",
+            "query",
+            "body",
+            "response"
+          ],
+          "title": "Location",
+          "type": "string"
+        },
+        "min_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Version"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Required"
+        },
+        "schema_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Schema Ref"
+        },
+        "type": {
+          "enum": [
+            "string",
+            "integer",
+            "number",
+            "boolean",
+            "object",
+            "array",
+            "unknown"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "type_raw": {
+          "title": "Type Raw",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "location",
+        "required",
+        "type",
+        "type_raw",
+        "citation"
+      ],
+      "title": "FieldSpec",
+      "type": "object"
+    },
+    "Sample": {
+      "additionalProperties": false,
+      "description": "A request or response sample copied verbatim from the document.",
+      "properties": {
+        "citation": {
+          "$ref": "#/$defs/Citation"
+        },
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw",
+        "citation"
+      ],
+      "title": "Sample",
+      "type": "object"
+    },
+    "Samples": {
+      "additionalProperties": false,
+      "description": "The optional request and response samples of a section.",
+      "properties": {
+        "request": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Sample"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "response": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Sample"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "Samples",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One section's cited contract; endpoints need method and path, schemas forbid them.",
+  "properties": {
+    "citations": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Citation"
+      },
+      "title": "Citations",
+      "type": "object"
+    },
+    "definitions": {
+      "items": {
+        "$ref": "#/$defs/FieldSpec"
+      },
+      "title": "Definitions",
+      "type": "array"
+    },
+    "extraction": {
+      "$ref": "#/$defs/Extraction"
+    },
+    "fields": {
+      "items": {
+        "$ref": "#/$defs/FieldSpec"
+      },
+      "title": "Fields",
+      "type": "array"
+    },
+    "kind": {
+      "enum": [
+        "endpoint",
+        "schema",
+        "overview"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "method": {
+      "anyOf": [
+        {
+          "enum": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Method"
+    },
+    "path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Path"
+    },
+    "permission_key": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Permission Key"
+    },
+    "samples": {
+      "$ref": "#/$defs/Samples"
+    },
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "section_id": {
+      "pattern": "^S-\\d{1,2}\\.\\d{1,2}$",
+      "title": "Section Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "section_id",
+    "kind",
+    "title",
+    "extraction"
+  ],
+  "title": "ContractSection",
+  "type": "object"
+}

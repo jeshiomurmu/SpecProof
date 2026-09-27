@@ -1,11 +1,17 @@
 {
   "audited_miss_rate": {
-    "reason": "blind audit not scored yet (specproof audit-score, T13)",
-    "value": null
+    "denominator": 32,
+    "numerator": 0,
+    "value": 0.0
   },
   "audited_precision": {
-    "reason": "blind audit not scored yet (specproof audit-score, T13)",
-    "value": null
+    "ci95": [
+      0.9123783988027135,
+      1.0
+    ],
+    "denominator": 40,
+    "numerator": 40,
+    "value": 1.0
   },
   "bobcoins_per_verified_endpoint": {
     "reason": "comes from IBM Bob task exports and screenshots (T08); not machine-readable here",
@@ -29,8 +35,10 @@
     "total": 3
   },
   "client_findings_confirmed": {
-    "by_type": {},
-    "total": 0
+    "by_type": {
+      "CLIENT_TYPE_MISMATCH": 1
+    },
+    "total": 1
   },
   "community_discrepancies_candidate": {
     "by_type": {
@@ -42,8 +50,13 @@
     "total": 30
   },
   "community_discrepancies_confirmed": {
-    "by_type": {},
-    "total": 0
+    "by_type": {
+      "COMMUNITY_ENUM_MISMATCH": 2,
+      "COMMUNITY_EXTRA_FIELD": 3,
+      "COMMUNITY_MISSING_FIELD": 2,
+      "COMMUNITY_REQUIRED_MISMATCH": 1
+    },
+    "total": 8
   },
   "determinism": {
     "denominator": 243,
@@ -126,8 +139,12 @@
     "total": 30
   },
   "spec_findings_confirmed": {
-    "by_type": {},
-    "total": 0
+    "by_type": {
+      "SPEC_MALFORMED_SAMPLE": 7,
+      "SPEC_SAMPLE_INCOMPLETE": 3,
+      "SPEC_SELF_INCONSISTENCY": 9
+    },
+    "total": 19
   },
   "specproof_minutes_per_endpoint": {
     "reason": "comes from IBM Bob task exports and screenshots (T08); not machine-readable here",
@@ -142,7 +159,8 @@
     "value": 0.9066
   },
   "verifier_false_accept": {
-    "reason": "blind audit not scored yet (specproof audit-score, T13)",
-    "value": null
+    "denominator": 40,
+    "numerator": 0,
+    "value": 0.0
   }
 }

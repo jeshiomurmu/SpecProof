@@ -114,7 +114,8 @@ def test_AUD_004_score_and_metrics(classified: Path) -> None:
 
 @pytest.mark.integration
 def test_EVL_006_eval_cli(classified: Path) -> None:
-    shutil.copytree(REPO / "eval", classified / "eval", dirs_exist_ok=True)
+    (classified / "eval").mkdir(exist_ok=True)
+    shutil.copy(REPO / "eval" / "thresholds.yaml", classified / "eval" / "thresholds.yaml")
     result = CliRunner().invoke(app, ["eval"])
     assert result.exit_code == 1
     assert "audited_precision" in result.stdout and "FAIL" in result.stdout

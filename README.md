@@ -8,6 +8,10 @@ Built for the IBM Bob 2.0 Hackathon (lablab.ai, Sep 25–27, 2026) · MIT Licens
 
 ---
 
+
+![CI](https://github.com/jeshiomurmu/specproof/actions/workflows/ci.yml/badge.svg)
+
+
 ## The problem
 
 Many integrations are governed by specifications that exist **only as documents** — PDF, Word, Excel. Vendors, payment networks and tax authorities publish them; developers read hundreds of pages by hand, transcribe them into code, and miss it when the document is wrong or changes.
@@ -47,10 +51,10 @@ Machine-readable tooling (OpenAPI diffing, contract testing) can't help, because
 | Contract items with a citation found verbatim on the cited page | 1406/1406 (100.0%) |
 | Sections verified: first pass → after the self-correction loop | 97/116 (83.6%) → 115/116 (99.1%) |
 | Sections quarantined | 1/116 (0.8%) |
-| Audited precision (blind sample) | pending (blind audit not scored yet (specproof audit-score, T13)) |
-| Spec self-inconsistencies and sample defects | 0 confirmed of 30 candidates |
-| Community OpenAPI discrepancies | 0 confirmed of 30 candidates |
-| Client conformance issues (py-unifi-access) | 0 confirmed of 3 candidates |
+| Audited precision (blind sample) | 40/40 (100.0%, 95% CI 91.2% to 100.0%) |
+| Spec self-inconsistencies and sample defects | 19 confirmed of 30 candidates |
+| Community OpenAPI discrepancies | 8 confirmed of 30 candidates |
+| Client conformance issues (py-unifi-access) | 1 confirmed of 3 candidates |
 | Manual transcription baseline | pending (eval/audit/manual_baseline.csv not recorded yet) |
 <!-- RESULTS:END -->
 
@@ -84,6 +88,8 @@ The client replay (conformance step C3) needs an interpreter that satisfies the 
 | Extraction pilot (S-3.2, S-4.1, S-4.2) and chapter 4 attempt 1 | **IBM Bob 2.0** (`spec-auditor` mode) | `bob_sessions/`, contracts with `producer: ibm-bob` |
 | Remaining extraction, chapter 4 retries, client model mapping | Claude Code, after Bob's allowance ran out | contracts and `mapping.yaml` with `producer: claude-code` |
 | Every verification verdict | Deterministic Python only | `src/specproof/verify/` (no model calls) |
+
+Final extraction status: 93 VERIFIED, 22 VERIFIED_WITH_SPEC_FINDINGS, 1 QUARANTINED (S-4.4, left unverified after 3 attempts rather than accepted).
 
 Who extracted a section does not change how it is judged: every contract, from Bob or Claude Code, passes the same deterministic verifier. Real-document runs exposed a series of verifier gaps (for example, curl requests without bodies, samples with several examples, layout-wrapped strings); each fix is a separate `fix:` commit with a regression test.
 

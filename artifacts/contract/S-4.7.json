@@ -3,7 +3,7 @@
     "attempt": 2,
     "bob_task_ref": null,
     "mode": "specproof-extract",
-    "producer": "claude-code",
+    "producer": "ibm-bob+claude-code",
     "prompt_version": "extract-v1"
   },
   "fields": [

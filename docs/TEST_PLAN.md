@@ -22,7 +22,7 @@ Version 1.0 · 2026-09-25
 
 | ID | Fixture | Contents | Purpose |
 |---|---|---|---|
-| FX-01 | `tests/fixtures/build_synthetic_pdf.py` + `synthetic_spec.yaml` | A 7-page PDF drawn with reportlab. Table columns sit at **fixed x-positions**, so layout extraction yields multi-space separators. Contents:<br>• p1: TOC with dotted leaders<br>• p2: `1.1 Overview`<br>• p3: `2.1 Schemas` defining `color: enum shade {Red,Green,Blue}`<br>• p4–5: `2.2 Create Widget`, `POST /api/v1/widgets`. Header row `Authorization  T  String`; body rows `name T String`, `color T String`, `size F Integer`, and `notes F String` with a description wrapped over 2 lines. Response Sample JSON. Request Sample curl `--data-raw` containing `"color": "Grean"` (planted enum defect). The section spans a page break.<br>• p6: `2.3 Fetch Widget`, `GET /api/v1/widgets/:id`, response sample<br>• p7: `2.4 Broken Sample`, a request sample with a trailing comma (malformed) | Offline stand-in for the real PDF, with known answers |
+| FX-01 | `tests/fixtures/build_synthetic_pdf.py` + `synthetic_spec.yaml` | A 7-page PDF drawn with reportlab. Table columns sit at **fixed x-positions**, so layout extraction yields multi-space separators. Contents:<br>• p1: TOC with dotted leaders<br>• p2: `1.1 Overview`<br>• p3: `2.1 Schemas` defining `color: enum shade {Red,Green,Blue}`<br>• p4–5: `2.2 Create Widget`, `POST /api/v1/widgets`. Header row `Authorization  T  String`; body rows `name T String`, `color T String`, `size F Integer`, and `notes` as a genuinely wrapped row (its Required/Type cells `F String` sit on the next line, so no single-line row exists). Response Sample JSON. Request Sample curl `--data-raw` containing `"color": "Grean"` (planted enum defect). The section spans a page break.<br>• p6: `2.3 Fetch Widget`, `GET /api/v1/widgets/:id`, response sample<br>• p7: `2.4 Broken Sample`, a request sample with a trailing comma (malformed) | Offline stand-in for the real PDF, with known answers |
 | FX-02 | `tests/fixtures/contracts_good/*.json` | Hand-written correct contracts for S-2.1..S-2.4 of FX-01 | Golden inputs |
 | FX-03 | `conftest.mutate(contract, kind)` | Mutations: `fabricate_quote`, `wrong_page`, `flip_required`, `flip_type`, `drop_field`, `enum_not_grounded`, `repair_sample`, `wrong_path`, `wrong_method`, `short_quote`, `name_not_in_quote` | Each must trigger exactly its reason code |
 | FX-04 | `tests/fixtures/mini_client/` | `client.py`:<br>• `self._request("GET", f"/api/v1/widgets/{widget_id}")`<br>• `self.session.post("/api/v1/widgets", …)`<br>• an undocumented `"/api/v1/gadgets"`<br>• a dynamic path built by `"/".join(parts)`<br>`models.py`: Pydantic `Widget` with `size: int` (required, but the doc marks it optional and the doc response sample omits it), `created_at: str` (doc: Integer), and a `serial: str` field that is absent from the doc | Conformance known answers |
@@ -42,6 +42,7 @@ Version 1.0 · 2026-09-25
 | TXT-004 | Idempotence (hypothesis) | `norm(norm(s))==norm(s)` for arbitrary text |
 | TXT-005 | Row tokens | `row_tokens("  first_name   T   String   First")==("first_name","T","String")` |
 | TXT-006 | Prose rejected | `row_tokens("the first_name T is String")` is None (needs ≥ 2 spaces between columns) |
+| TXT-007 | Type word required (added T05) | A row whose type position holds a description word (wrapped type cell, e.g. `ids T assign`) is None; `Int`, `string`, `Array[object]` are accepted |
 
 ### 3.2 Models (MOD)
 
@@ -55,6 +56,8 @@ Version 1.0 · 2026-09-25
 | MOD-006 | Schema version | `schema_version=2` rejected with a clear message |
 | MOD-007 | Deterministic dump | Dumping the same object twice gives identical bytes; keys sorted; trailing newline |
 | MOD-008 | Stable finding ID | Same finding with evidence in a different order gives the same `id` |
+| MOD-009 | Reason-code catalog (added T04) | `IssueCode` equals the set of codes in architecture §6, parsed from the doc |
+| MOD-010 | Finding-type catalog (added T04) | `FindingType` equals the finding types listed in architecture §5.6, parsed from the doc |
 
 ### 3.3 Fetch (FET)
 
@@ -63,6 +66,8 @@ Version 1.0 · 2026-09-25
 | FET-001 | Hash mismatch | Local `file://` source with a wrong sha → exit 1, file not kept |
 | FET-002 | Cache hit | Existing file with the correct hash is not re-downloaded (downloader called 0 times) |
 | FET-003 | Git pin | Local bare-repo fixture is checked out at the pinned commit (HEAD == pin) |
+| FET-004 | Pin format (added T02) | An unquoted or short `sha256` (YAML parses `000…` as int 0) is rejected when loading the lock |
+| FET-005 | Real lock parses (added T02) | `sources/sources.lock.yaml` loads with all 3 sources and valid pins |
 
 ### 3.4 Ingest (ING)
 
@@ -72,8 +77,10 @@ Version 1.0 · 2026-09-25
 | ING-002 | Layout fidelity | Page 4 text has a line matching the row regex for `color T String` |
 | ING-003 | Stable hashes | Page sha256 values are identical across two runs |
 | ING-004 | Manifest | Records extractor name + version + input sha |
-| ING-005 | Extractor selection | `auto` picks pdftotext when `shutil.which` finds it, else pdfplumber (monkeypatch) |
-| ING-006 | Extractor parity | On FX-01, both extractors produce the same set of detected row names |
+| ING-005 | Extractor selection | `auto` picks pdfplumber whether or not `shutil.which` finds pdftotext (monkeypatch); `pdftotext` is chosen only explicitly. Changed after the T02 spike, see `review/SPIKE_T02.md` (pdftotext misaligns table rows) |
+| ING-006 | Extractor fidelity | On FX-01, the default extractor detects exactly the expected row names per page (p4: Authorization, name, color, size — `notes` is a wrapped row; p6: id, name, color, size, created_at; p7: ids). pdftotext is checked against the same set as a non-strict xfail. Changed from "parity" after the T02 spike: xpdf `pdftotext -layout` splits table columns (`review/SPIKE_T02.md`, `review/BLOCKED.md`) |
+| ING-007 | Cache + round trip (added T02) | `pages.jsonl` reads back equal to the extraction; a second `ingest` with unchanged inputs does not extract again |
+| ING-008 | Left margin (added T05) | The common left margin of a page is removed; relative indentation is kept |
 | ING-R01 | *real_source* | Page 14 contains the `first_name T String` row |
 | ING-R02 | *real_source* | 194 pages; input sha == pin |
 
@@ -89,6 +96,9 @@ Version 1.0 · 2026-09-25
 | SEG-006 | Hints | S-2.2 `method_hint=="POST"`, `path_hint=="/api/v1/widgets"` |
 | SEG-007 | Order and IDs | Sorted by numeric section number; IDs stable |
 | SEG-008 | No full text | `sections_index.json` values contain no field longer than 200 characters |
+| SEG-009 | Path hint normalization (added T03) | Query dropped, leading `/` ensured, trailing `/` stripped, `:id` kept; a hint without `/` (e.g. `Your`) becomes `None` |
+| SEG-010 | CLI + stable manifest (added T03) | `segment` writes the index and a manifest record; a second run leaves `manifest.json` byte-identical |
+| SEG-011 | Wide layout spacing (added T05) | A heading longer than 80 chars only because of layout spacing is still detected; `Request   URL:` and `Method :` with extra spaces still give kind and hints |
 | SEG-R01 | *real_source* | ≥ 107 endpoint sections |
 | SEG-R02 | *real_source* | S-4.1 is `schema`, and 52 ∈ its page range |
 | SEG-R03 | *real_source* | S-3.2 hints: POST `/api/v1/developer/users` |
@@ -145,6 +155,8 @@ Version 1.0 · 2026-09-25
 | ENG-003 | Determinism | Identical result bytes across 2 runs |
 | ENG-004 | Mutation matrix | Parametrized over FX-03: each mutation produces **exactly** its expected code, and no other extraction-category code |
 | ENG-005 | Counts | `items`, `grounded`, `row_checked`, `row_ok` equal hand-computed values |
+| ENG-006 | verify CLI output (added T05) | `specproof verify` writes `<id>.json` and `<id>_attempt<n>.json` (identical bytes) plus manifest records |
+| ENG-007 | verify CLI exit codes (added T05) | Empty contract dir → 0; extraction error → 1; `--report-only` → 0; `--section` / `--chapter` select contracts |
 
 ### 3.10 Loop and classification (LOOP)
 
@@ -160,6 +172,8 @@ Version 1.0 · 2026-09-25
 | LOOP-008 | Malformed sample finding | S-2.4 with grounded sample citation → `SPEC_MALFORMED_SAMPLE` |
 | LOOP-009 | loop-status | `--json` lists exactly the NEEDS_RETRY sections with attempt < 3 |
 | LOOP-010 | Downstream exclusion | QUARANTINED sections are absent from export, compare and conform inputs |
+| LOOP-011 | Early stop (added T06) | A retry whose extraction-error count does not strictly decrease → QUARANTINED even at attempt < 3; a fixed retry → terminal success |
+| LOOP-012 | Stale feedback (added T06) | Once a section becomes terminal, its `feedback/<id>.md` is deleted |
 
 ### 3.11 Guard (GRD)
 
@@ -167,6 +181,8 @@ Version 1.0 · 2026-09-25
 |---|---|---|
 | GRD-001 | Protected change | A modified file under `tests/` relative to the base commit makes guard exit 1 and name the path |
 | GRD-002 | Allowed change | Changes only under `artifacts/contract/` → exit 0 |
+| GRD-003 | Not an extraction task (added T06) | Without `.specproof_extraction_task`, guard reports "not an extraction task" and exits 0 |
+| GRD-004 | Protected patterns (added T06) | Only `src/specproof/verify/**`, `tests/**`, `eval/thresholds.yaml`, `sources/sources.lock.yaml` are protected |
 
 ### 3.12 Compare (CMP)
 
@@ -180,6 +196,8 @@ Version 1.0 · 2026-09-25
 | CMP-006 | Enum mismatch | `COMMUNITY_ENUM_MISMATCH` on `color` (missing Blue) |
 | CMP-007 | Missing endpoint | `COMMUNITY_MISSING_ENDPOINT` for DELETE |
 | CMP-008 | Determinism | Sorted, identical bytes across runs |
+| CMP-009 | CLI (added T09) | `export-openapi` writes LF YAML with `x-specproof-section`; `compare --community` writes `findings/community.json`; both add manifest records |
+| CMP-010 | Missing/extra fields (added T09) | A PDF field absent in the community spec → `COMMUNITY_MISSING_FIELD`; a community-only field → `COMMUNITY_EXTRA_FIELD` (info, code evidence only) |
 
 ### 3.13 Conformance (CNF)
 
@@ -198,6 +216,8 @@ Version 1.0 · 2026-09-25
 | CNF-011 | Replay generation | One test per mapping; file compiles (`py_compile`); deterministic |
 | CNF-012 | Replay finding | Doc sample lacks `size` → `CLIENT_SAMPLE_REJECTED`, with the Pydantic error, doc citation and code citation |
 | CNF-013 | Env failure | Import error in the client is reported as `environment_error`, not a finding |
+| CNF-006b | Method mismatch (added T10) | A documented path called with an undocumented method → `CLIENT_METHOD_MISMATCH` with the PDF path citation |
+| CNF-014 | conform CLI (added T10) | `conform --client --python` writes `findings/conformance.json` with findings, inventory, uncheckable call sites, mapping errors and environment errors, plus `test_sample_replay.py` |
 | CNF-R01 | *real_source* | Inventory of py-unifi-access finds 11 distinct `/api/v1/developer/` paths (F10) |
 
 ### 3.14 Metrics and eval (MET, EVL)
@@ -213,6 +233,11 @@ Version 1.0 · 2026-09-25
 | EVL-003 | Max | `quarantine_rate` above `max` → exit 1 |
 | EVL-004 | Missing metric | Fails with a message; never passes silently |
 | EVL-005 | Result file | `eval_result.json` lists each metric, threshold and verdict |
+| EVL-006 | eval CLI (added T11) | `specproof eval` recomputes metrics, prints the gate table, writes `eval_result.json`, exits 1 on any FAIL |
+| AUD-001 | Stratified, seeded sample (added T11) | Same seed → same sample; round-robin across chapters, cycling locations |
+| AUD-002 | Small chapters (added T11) | A chapter with few items gives all of them; the rest is topped up from other chapters |
+| AUD-003 | Blind, never re-drawn (added T11) | Sheet has no verifier status; a second `audit-sample` exits 1 and leaves the sheet unchanged |
+| AUD-004 | Score (added T11) | `audit-score` writes `eval/audit/audit_score.json`; metrics show audited precision with n and a Wilson CI |
 
 ### 3.15 Report (RPT)
 
@@ -224,7 +249,8 @@ Version 1.0 · 2026-09-25
 | RPT-004 | Evidence | Every doc evidence shows the page number and quote; every code evidence shows file:line |
 | RPT-005 | SARIF | `version=="2.1.0"`; each code finding has `locations[0].physicalLocation` |
 | RPT-006 | Denominators shown | Hero metrics render as "a/b (x%)" |
-| RPT-007 | Deterministic body | No timestamps in the HTML body (the generated-at time lives only in the footer attribute read from the manifest) |
+| RPT-007 | Deterministic body | No timestamps anywhere in the HTML; generation times live only in `manifest.json` (changed T12: a footer timestamp would break byte-identical reruns, E2E-002) |
+| RPT-008 | Endpoint rows (added T12) | Endpoint table cells show the counts, not template artifacts (regression: `e.items` resolved to `dict.items`) |
 
 ### 3.16 CLI (CLI)
 

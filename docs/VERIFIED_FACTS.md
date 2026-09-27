@@ -29,5 +29,5 @@ Every claim in the pitch must trace to this file or to generated artifacts. Each
 | U2 | Exact YAML keys Bob accepts in `custom_modes.yaml` (`groups`, `fileRegex`) | Reload Bob; if the mode doesn't appear, create it via the UI (START_HERE Step 2.4) |
 | U3 | Slash-command frontmatter keys (`description`, `argument-hint`) | Type `/` in Bob chat and check that `sp-extract` appears |
 | U4 | Bob reads a 194-page PDF from the workspace with page-accurate references | Pilot extraction on §3.2 (task T07) |
-| U5 | Policy on pre-event planning docs and on using Claude Code alongside Bob | Ask in the kickoff Discord Q&A (22:00 BST) |
+| U5 | Policy on pre-event planning docs and on using Claude Code alongside Bob. Human's own reading (2026-09-25): other AI tools may build code; not confirmed by an organizer or written rule. Pre-event product code policy also unconfirmed | Ask in the kickoff Discord Q&A (22:00 BST) |
 | U6 | Whether an older UniFi Access PDF version exists (needed for the version-diff stretch goal) | Search the vendor site / Wayback Machine; stretch only |

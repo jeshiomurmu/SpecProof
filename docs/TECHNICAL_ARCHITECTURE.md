@@ -321,7 +321,7 @@ specproof/
 | Language | Python 3.11+ | Matches the client under test (Pydantic); fastest path for a solo builder |
 | CLI | Typer | Typed and minimal |
 | Models | Pydantic v2 | Strict validation; same library as the client |
-| PDF text | `pdftotext -layout` (poppler) when present, with pdfplumber fallback | `pdftotext -layout` is verified to keep table rows on one line (F6). The T02 spike confirms pdfplumber parity for portability |
+| PDF text | pdfplumber `layout=True` (default, parallel pages); `pdftotext -layout` only on request | The T02 spike (`review/SPIKE_T02.md`) found that `pdftotext -layout` misaligns table rows on p52 and differs between xpdf and poppler |
 | Fuzzy hints | rapidfuzz | Closest-match suggestions in feedback only; **never** used for pass/fail |
 | JSON Schema | jsonschema (Draft 2020-12) | Sample validation |
 | OpenAPI validation | openapi-spec-validator | Validates our export |

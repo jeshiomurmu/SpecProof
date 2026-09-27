@@ -1,0 +1,22 @@
+field,table,required,type,sample check
+Autorization,Request Header,T,String,
+name ,Request Body,T,String,
+description,Request Body,F,String,
+holidays,Request Body,F,Array[Object],
+holidays[].description,Request Body,F,String,
+holidays[].name,Request Body,F,String,
+holidays[].repeat,Request Body,F,Boolean,
+holidays[].template,Request Body,F,Boolean,
+holidays[].start_time,Request Body,F,String,
+holidays[].end_time,Request Body,F,String,
+name ,Request Sample,Holiday Group-169286791557142,String,T
+holidays[].name ,Request Sample,Holiday Name 1,String,T
+holidays[].description,Request Sample,"""""",String,T
+holidays[].repeat,Request Sample,FALSE,Boolean,T
+holidays[].start_time,Request Sample,2023-08-25T00:00:00z,String,T
+holidays[].end_time,Request Sample,2023-08-26T00:00:00z,String,T
+holidays[].name ,Request Sample,Holiday Name 2,String,T
+holidays[].description,Request Sample,"""""",String,T
+holidays[].repeat,Request Sample,FALSE,Boolean,T
+holidays[].start_time,Request Sample,2023-08-26T00:00:00z,String,T
+holidays[].end_time,Request Sample,2023-08-27T00:00:00z,String ,T
